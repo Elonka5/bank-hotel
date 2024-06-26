@@ -1,0 +1,53 @@
+.hero {
+  display: flex;
+  gap: 284px;
+  // font-family: Helvetica, sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: normal;
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    gap: 62px;
+    max-width: min-content;
+
+    h1 {
+      font-family: "Miracle regular", sans-serif;
+      font-size: 220px;
+      line-height: 200px;
+      max-width: min-content;
+
+      span {
+        color: var(--secondary-color-100);
+      }
+    }
+
+    p {
+      font-size: 18px;
+      line-height: normal;
+      text-transform: uppercase;
+
+      color: var(--secondary-color-100);
+    }
+  }
+
+  &__descr {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 96px;
+
+    &--buttons {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &--text {
+      width: 350px;
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+}

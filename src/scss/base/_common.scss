@@ -1,25 +1,25 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    // font-family: 'TTHoves 400', sans-serif;
-    font-style: normal;
-    font-size: 12px;
-    line-height: 100%;
+  font-family: Helvetica, sans-serif;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 100%;
 
-    background-color: var(--primary-color-100);
-    color: var(--white-100);
+  background-color: var(--primary-color-100);
+  color: var(--white-100);
 }
 body::-webkit-scrollbar {
-    width: 8px;
-    background-color: var(--primary-color-100);
+  width: 8px;
+  background-color: var(--primary-color-100);
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color-100);
+  background-color: var(--primary-color-100);
 
-    border-radius: 12px;
+  border-radius: 12px;
 }
 
 h1,
@@ -29,54 +29,64 @@ h4,
 h5,
 h6,
 p {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 img {
-    display: block;
-    height: auto;
-    max-width: 100%;
+  display: block;
+  height: auto;
+  max-width: 100%;
 }
 
 ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 a:focus,
 button:focus {
-    outline: 1px solid transparent;
+  outline: 1px solid transparent;
 }
 
 button {
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    font: inherit;
-    cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font: inherit;
+  cursor: pointer;
 }
 
 address {
-    font-style: normal;
+  font-style: normal;
 }
 
 .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
 
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@mixin arrow-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 12px;
+  transform: translate(-50%, -50%) rotateX(180deg);
+  @content;
 }
