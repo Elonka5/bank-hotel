@@ -1,0 +1,18 @@
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 80px;
+
+  .nav--links {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    text-transform: uppercase;
+
+    .active {
+      color: var(--secondary-color-100);
+    }
+  }
+}

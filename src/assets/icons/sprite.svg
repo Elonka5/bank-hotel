@@ -95,11 +95,14 @@
            <path d="M11.915 11.4472L12.4142 10.98L15.5423 14.4176L17.5723 12.5486L17.9716 12.9825L15.4092 15.3187L11.915 11.4472Z" fill="#1B3B36"/>
            <path d="M11.915 11.4472L12.4142 10.98L15.5423 14.4176L17.5723 12.5486L17.9716 12.9825L15.4092 15.3187L11.915 11.4472Z" fill="black" fill-opacity="0.2"/>
       <symbol id="arrow" viewBox="0 0 33 19">
-            <path d="M24 1C24 1 24.5833 3.47917 26.3333 5.60417C28.0833 7.72917 31 9.5 31 9.5C31 9.5 28.0833 11.2708 26.3333 13.3958C24.5833 15.5208 24 18 24 18" stroke="#313F38" stroke-width="2" fill="none"/>
-               <rect x="0.25" y="9.25" width="29.5" height="0.5" fill="#313F38" stroke="#313F38" stroke-width="0.5" />
+            <path d="M24 1C24 1 24.5833 3.47917 26.3333 5.60417C28.0833 7.72917 31 9.5 31 9.5C31 9.5 28.0833 11.2708 26.3333 13.3958C24.5833 15.5208 24 18 24 18" stroke="rgba(49, 63, 56, 0.48)" stroke-width="2" fill="none"/>
+               <rect x="0.25" y="9.25" width="29.5" height="0.5" fill="rgba(49, 63, 56, 0.48)" stroke="rgba(49, 63, 56, 0.48)" stroke-width="0.5" />
       </symbol>
       <symbol id="line" viewBox="0 0 1024 301">
             <path d="M1154.05 70.2667C1085.37 11.2991 897.713 -64.6111 696.583 103.488C445.172 313.612 139.999 414.762 -130.214 98.4339" stroke="#FCD043" stroke-width="2" fill="none"/>
+        </symbol>
+        <symbol id="menu" viewBox="0 0 128 32">
+        <path fill="#fffcf6" style="fill: var(--color1, #fffcf6)" d="M0 0h128v3.2h-128zM0 28.8h128v3.2h-128z"></path>
         </symbol>
     </defs>
 </svg>
