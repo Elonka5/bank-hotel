@@ -1,0 +1,15 @@
+.btnSince {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 249px;
+  height: 70px;
+  padding: 0 50px 0 30px;
+  border: 1px solid var(--white-32);
+  border-radius: 35px;
+  color: var(--white-100);
+
+  font-size: 22px;
+  line-height: normal;
+}

@@ -1,6 +1,11 @@
+@import "../../node_modules/modern-normalize/modern-normalize.css";
 @import "./base/common";
 @import "./base/container";
 @import "./base/fonts";
 
 @import "./utils/variables";
 @import "./utils/responsive";
+
+@import "./components/mainHero";
+@import "./components/buttonSince";
+@import "./components/buttonPoly";
