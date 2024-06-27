@@ -1,0 +1,109 @@
+/* Define classes for react-select components */
+.booking-form {
+  width: 1105px;
+  height: 150px;
+}
+
+.react-select__option {
+  background: #fff;
+  outline: none;
+  height: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(18, 20, 23, 0.5);
+  cursor: pointer;
+  text-align: left;
+
+  &:hover {
+    color: #3470ff;
+    font-weight: 500;
+  }
+}
+
+.react-select__control {
+  cursor: pointer;
+  border: 1px solid rgba(18, 20, 23, 0.2);
+  border-radius: 12px;
+  box-shadow: none;
+  background-color: #fff;
+  width: 200px;
+  height: 30px;
+  padding: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.react-select__single-value {
+  opacity: 1;
+  transition: opacity 250ms;
+  color: #3470ff;
+  padding-left: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+
+  &.react-select__single-value--is-disabled {
+    opacity: 0.5;
+  }
+}
+
+.react-select__menu {
+  background: #fff;
+  border-radius: 12px;
+  display: inline-block;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 30px;
+  border: none;
+  box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.2);
+}
+
+.react-select__menu-list {
+  /* Add any specific styles for the menu list here */
+}
+
+.react-select__placeholder {
+  position: absolute;
+  left: 10px;
+  color: #707070;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.react-select__value-container {
+  padding: 0;
+  margin: 0;
+}
+
+.react-select__indicator-separator {
+  display: none;
+}
+
+.react-select__indicators {
+  cursor: pointer;
+}
+
+.react-select__dropdown-indicator {
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  size: 20px;
+  color: #707070;
+
+  &:hover {
+    color: #3470ff;
+  }
+
+  &.react-select__dropdown-indicator--is-open {
+    transform: rotate(180deg);
+  }
+}
+
+.react-select__input {
+  margin: 0;
+  color: #707070;
+  width: 100%;
+  padding-left: 10px;
+}
