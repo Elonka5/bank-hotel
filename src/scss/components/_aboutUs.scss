@@ -1,0 +1,114 @@
+// $icon-path: '~../../../assets/images/mainImages/desktop1920/main-about2-desktop-1920.webp';
+
+.aboutus {
+  border-top: 1px solid var(--lines-color);
+  display: flex;
+  flex-direction: row;
+
+  &__leftwrapper {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221419%22%20height%3D%22714%22%20viewBox%3D%220%200%201419%20714%22%20fill%3D%22none%22%3E%0A%3Cpath%20d%3D%22M1418%20714C1418%20320.221%201100.79%201%20709.5%201C318.206%201%201%20320.221%201%20714%22%20stroke%3D%22%233F5148%22%2F%3E%0A%3C%2Fsvg%3E");
+    //   background-image: url(#{$icon-path});
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top right;
+    display: flex;
+    flex-direction: row;
+    gap: 162px;
+    padding: 120px 115px 268px 0;
+
+    &--imgwrapper {
+      width: 644px;
+      height: 912px;
+      padding: 31px 19px 31px 0;
+    }
+
+    &--descr {
+      padding-top: 210px;
+    }
+
+    .aboutus__heading {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      // width: 405px;
+      font-family: "Miracle regular", sans-serif;
+      font-size: 150px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 105px;
+      text-transform: uppercase;
+      //   margin-left: -212px;
+      margin-bottom: 228px;
+
+      &--left {
+        color: var(--secondary-color-100);
+        text-align: left;
+        flex: 1;
+      }
+
+      &--right {
+        text-align: right;
+        flex: 1;
+      }
+    }
+
+    &--text {
+      font-family: "Miracle regular", sans-serif;
+      font-size: 50px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 60px;
+      letter-spacing: 1.5px;
+      text-transform: capitalize;
+      margin-bottom: 40px;
+    }
+
+    &--textdescr {
+      width: 443px;
+      font-size: 18px;
+      line-height: 28px;
+      color: var(--white-64);
+    }
+  }
+
+  &__rightwrapper {
+    padding-top: 32px;
+    padding-left: 47px;
+    border-left: 1px solid var(--lines-color);
+   
+    &--imgwrapper{
+      width: 323px;
+      height: 486px;
+      padding: 44px 5px 28px 5px;
+      margin-top: -78px;
+      margin-left: 104px;
+      margin-bottom: 172px;
+    }
+
+    &--btnwrapper{
+      margin-left: 187px;
+    }
+
+    .aboutus__btnText{
+      position: absolute;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      color: var(--white-100);
+      display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 35px;
+
+
+      &--secondary{
+        color: var(--secondary-color-100);
+        font-style: italic;
+        align-self: flex-start; /* Вирівнює "Rooms" зліва */
+        text-align: left;
+        
+      }
+    }
+  }
+}
