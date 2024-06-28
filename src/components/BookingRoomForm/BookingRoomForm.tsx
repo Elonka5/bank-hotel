@@ -1,25 +1,37 @@
 import { useFormik } from "formik";
-import Select from "react-select";
-// import "../../scss/components/_bookingRoomForm.scss";
+import Select, { SingleValue } from "react-select";
+import style from "./Select.module.scss";
+import DropdownIndicator from "./DropdownIndicator";
 
-interface Values {
+interface IValues {
   checkIn: string;
   checkOut: string;
 }
 
-const initialValues = {
+interface IOptionType {
+  value: string;
+  label: string;
+}
+
+const initialValues: IValues = {
   checkIn: "",
   checkOut: "",
 };
 
-const BookingRoomForm = () => {
-  const options = [
+interface IBookingRoomFormProps {
+  className?: string;
+}
+
+const BookingRoomForm: React.FC<IBookingRoomFormProps> = ({
+  className = "",
+}) => {
+  const options: IOptionType[] = [
     { value: "standart", label: "Standart" },
     { value: "business", label: "Business" },
     { value: "superior", label: "Superior" },
   ];
 
-  const onSubmit = (values: Values) => {
+  const onSubmit = (values: IValues) => {
     console.log(
       `checkIn - ${values.checkIn} checkOut - ${values.checkOut} submit`
     );
@@ -29,30 +41,46 @@ const BookingRoomForm = () => {
     initialValues,
     onSubmit,
   });
+
+  const handleChange =
+    (field: keyof IValues) => (selectedOption: SingleValue<IOptionType>) => {
+      formik.setFieldValue(field, selectedOption?.value || "");
+    };
+
   return (
-    <div className="booking-form">
-      <form onSubmit={formik.handleSubmit}>
-        <Select
-          options={options}
-          name="checkIn"
-          placeholder="Check In"
-          value={options.find(
-            (option) => option.value === formik.values.checkIn
-          )}
-          onChange={(option) => formik.setFieldValue("checkIn", option?.value)}
-          classNamePrefix="react-select"
-        />
-        <Select
-          options={options}
-          name="checkOut"
-          placeholder="Check Out"
-          value={options.find(
-            (option) => option.value === formik.values.checkOut
-          )}
-          onChange={(option) => formik.setFieldValue("checkOut", option?.value)}
-          classNamePrefix="react-select"
-        />
-        <button type="submit">Book Room</button>
+    <div className={`booking-form ${className}`}>
+      <form onSubmit={formik.handleSubmit} className="form">
+        <div className="form__select-container first-select">
+          <Select
+            isMulti={false}
+            options={options}
+            name="checkIn"
+            placeholder="Check In"
+            components={{ DropdownIndicator }}
+            value={options.find(
+              (option) => option.value === formik.values.checkIn
+            )}
+            onChange={handleChange("checkIn")}
+            className={style.select}
+          />
+        </div>
+        <div className="form__select-container">
+          <Select
+            isMulti={false}
+            options={options}
+            name="checkOut"
+            placeholder="Check Out"
+            components={{ DropdownIndicator }}
+            value={options.find(
+              (option) => option.value === formik.values.checkOut
+            )}
+            onChange={handleChange("checkOut")}
+            className={style.select}
+          />
+        </div>
+        <button type="submit" className={`form__btn-submit ${className}`}>
+          Book Room
+        </button>
       </form>
     </div>
   );

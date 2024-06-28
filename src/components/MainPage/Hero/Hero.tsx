@@ -32,6 +32,7 @@ const Hero = () => {
       </div>
       <div className="hero__image">
         <BookingRoomForm />
+        {/* <BookingRoomForm className="touch" /> */}
       </div>
       <div className="hero__address">
         <div className="hero__address--links">
