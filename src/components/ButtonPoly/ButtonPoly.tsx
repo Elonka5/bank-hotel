@@ -10,7 +10,12 @@ interface ButtonProps {
   iconWidth: number;
   iconHeight: number;
   iconArrow: string;
-  iconId: string;
+  iconArrowId: string;
+  iconPolygonId:string;
+  onClick?: () => void;
+  // fill?:string;
+  // stroke?: string;
+
 }
 
 const ButtonPoly = ({
@@ -22,19 +27,22 @@ const ButtonPoly = ({
   iconWidth,
   iconHeight,
   iconArrow,
-  iconId,
+  iconArrowId,
+  iconPolygonId,
+  onClick,
+
 }: ButtonProps) => {
   return (
-    <button type={type} className={className} disabled={disabled}>
+    <button type={type} className={className} disabled={disabled} onClick={onClick}>
       {/* {text} */}
       {children}
       <Icon
-        className="polygon"
+        // className="polygon"
         width={iconWidth}
         height={iconHeight}
-        iconId="polygon"
+        iconId={iconPolygonId}
       />
-      <Icon className={iconArrow} iconId={iconId} />
+      <Icon className={iconArrow} iconId={iconArrowId} />
     </button>
   );
 };
