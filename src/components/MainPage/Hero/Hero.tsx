@@ -20,7 +20,8 @@ const Hero = () => {
               iconWidth={70}
               iconHeight={70}
               iconArrow="arrow50"
-              iconId="arrow-up-and-down"
+              iconArrowId="arrow-up-and-down"
+              iconPolygonId="polygon"
             />
           </div>
           <p className="hero__descr--text">
