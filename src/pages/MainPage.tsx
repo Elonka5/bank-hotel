@@ -1,4 +1,5 @@
 import AboutUs from "../components/MainPage/AboutUs/AboutUs";
+import Facilities from "../components/MainPage/Facilities/Facilities";
 import Hero from "../components/MainPage/Hero/Hero";
 
 const MainPage = () => {
@@ -6,6 +7,7 @@ const MainPage = () => {
     <div>
       <Hero />
       <AboutUs/>
+      <Facilities/>
     </div>
   );
 };

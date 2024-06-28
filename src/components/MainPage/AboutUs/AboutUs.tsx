@@ -35,7 +35,8 @@ const AboutUs = () => {
           iconWidth={200}
           iconHeight={200}
           iconArrow="arrow75"
-          iconId="arrow-up-and-down"
+          iconArrowId="arrow-up-and-down"
+          iconPolygonId="polygon"
         >
           <p className="aboutus__btnText"><span className="aboutus__btnText--secondary">Rooms</span>and <br/> apartments</p>
         </ButtonPoly>
