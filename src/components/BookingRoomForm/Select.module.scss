@@ -1,0 +1,110 @@
+.select {
+  [class$="-control"] {
+    cursor: pointer;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    width: 365px;
+    height: 150px;
+    padding: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  [class$="-option"] {
+    background: none;
+    outline: none;
+    height: 50px;
+
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color-64);
+    cursor: pointer;
+    text-align: left;
+    transition: 250ms ease-in-out;
+
+    &:hover {
+      color: var(--text-color-100);
+      font-size: 17px;
+      transition: 250ms ease-in-out;
+    }
+  }
+
+  [class$="-singleValue"] {
+    opacity: 1;
+    transition: opacity 250ms;
+    color: var(--white-100);
+    // padding-left: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  [class$="-singleValue--is-disabled"] {
+    opacity: 0.5;
+  }
+
+  [class$="-menu"] {
+    background: var(--white-32);
+    display: inline-block;
+    width: 365px;
+    padding-left: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 143px;
+    left: -1px;
+    border: none;
+    border-radius: 0;
+  }
+
+  // [class$="-menu-list"] {
+  // }
+
+  [class$="-placeholder"] {
+    position: absolute;
+    // left: 45px;
+    color: var(--white-100);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+
+  [class$="-ValueContainer2"] {
+    padding: 0;
+    margin: 0 45px;
+    color: var(--white-100);
+  }
+
+  [class$="-indicatorContainer"] {
+    padding: 0;
+    margin-right: 45px;
+  }
+
+  [class$="-indicatorSeparator"] {
+    display: none;
+  }
+
+  // [class$="-indicators"] {
+  //   cursor: pointer;
+  // }
+
+  // [class$="-Svg"] {
+  //   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  //   size: 20px;
+  //   color: #707070;
+
+  //   &:hover {
+  //     color: #3470ff;
+  //   }
+  // }
+
+  [class$="-Input2"] {
+    margin: 0;
+    color: var(--white-100);
+    width: 100%;
+    // padding-left: 10px;
+  }
+}

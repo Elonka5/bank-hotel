@@ -1,0 +1,84 @@
+/* Define classes for react-select components */
+.booking-form {
+  width: min-content;
+  height: 150px;
+  opacity: 0.9;
+  background: rgba(49, 63, 56, 0.48);
+  backdrop-filter: blur(20px);
+
+  &.touch {
+    background: none;
+    backdrop-filter: none;
+    border: 1px solid var(--primary-color-100);
+  }
+
+  & .form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    &__select-container {
+      position: relative;
+
+      &.first-select::before {
+        content: "";
+        position: absolute;
+        bottom: 50%;
+        right: 0;
+        transform: translateY(50%);
+        width: 1px;
+        height: 64px;
+        background-color: var(--white-24);
+      }
+
+      &:hover .select-dropdown {
+        transform: scale(1.3);
+      }
+
+      & .select-dropdown {
+        @include transition-standart {
+        }
+
+        &--open {
+          @include transition-standart {
+            transform: rotateX(180deg) scale(1.3);
+          }
+        }
+      }
+    }
+
+    &__btn-submit {
+      width: 370px;
+      height: 150px;
+      background: var(--button-light-color-default);
+      color: var(--text-color-100);
+      text-transform: uppercase;
+
+      &:hover {
+        background: var(--button-light-color-hover);
+      }
+
+      &:active {
+        background: var(--button-light-color-active);
+      }
+
+      &:disabled {
+        background: var(--button-light-color-disabled);
+      }
+
+      &.touch {
+        background: var(--primary-color-100);
+        color: var(--white-100);
+
+        &:hover {
+          background: var(--button-dark-color-hover);
+        }
+
+        &:active {
+          background: var(--button-dark-color-active);
+        }
+      }
+    }
+  }
+}

@@ -1,58 +1,56 @@
-:root{
-    --primary-color-100: #313F38;
-    --primary-color-80:rgba(49, 63, 56, 0.8);
-    --primary-color-64:rgba(49, 63, 56, 0.64);
-    --primary-color-48:rgba(49, 63, 56, 0.48);
-    --primary-color-32:rgba(49, 63, 56, 0.32);
-    --primary-color-24:rgba(49, 63, 56, 0.24);
-    --primary-color-16:rgba(49, 63, 56, 0.16);
+:root {
+  --primary-color-100: #313f38;
+  --primary-color-80: rgba(49, 63, 56, 0.8);
+  --primary-color-64: rgba(49, 63, 56, 0.64);
+  --primary-color-48: rgba(49, 63, 56, 0.48);
+  --primary-color-32: rgba(49, 63, 56, 0.32);
+  --primary-color-24: rgba(49, 63, 56, 0.24);
+  --primary-color-16: rgba(49, 63, 56, 0.16);
 
-    --secondary-color-100:rgba(252, 208, 67,1);
-    --secondary-color-80:rgba(252, 208, 67,0.8);
-    --secondary-color-64:rgba(252, 208, 67,0.64);
-    --secondary-color-48:rgba(252, 208, 67,0.48);
-    --secondary-color-32:rgba(252, 208, 67,0.32);
-    --secondary-color-24:rgba(252, 208, 67,0.24);
-    --secondary-color-16:rgba(252, 208, 67,0.16);
+  --secondary-color-100: rgba(252, 208, 67, 1);
+  --secondary-color-80: rgba(252, 208, 67, 0.8);
+  --secondary-color-64: rgba(252, 208, 67, 0.64);
+  --secondary-color-48: rgba(252, 208, 67, 0.48);
+  --secondary-color-32: rgba(252, 208, 67, 0.32);
+  --secondary-color-24: rgba(252, 208, 67, 0.24);
+  --secondary-color-16: rgba(252, 208, 67, 0.16);
 
-    --text-color-100:rgba(27, 59, 54,1);
-    --text-color-80:rgba(27, 59, 54,0.8);
-    --text-color-64:rgba(27, 59, 54,0.64);
-    --text-color-48:rgba(27, 59, 54,0.48);
-    --text-color-32:rgba(27, 59, 54,0.32);
-    --text-color-24:rgba(27, 59, 54,0.24);
-    --text-color-16:rgba(27, 59, 54,0.16);
+  --text-color-100: rgba(27, 59, 54, 1);
+  --text-color-80: rgba(27, 59, 54, 0.8);
+  --text-color-64: rgba(27, 59, 54, 0.64);
+  --text-color-48: rgba(27, 59, 54, 0.48);
+  --text-color-32: rgba(27, 59, 54, 0.32);
+  --text-color-24: rgba(27, 59, 54, 0.24);
+  --text-color-16: rgba(27, 59, 54, 0.16);
 
-    --white-100:rgba(255, 252, 246,1);
-    --white-80:rgba(255, 252, 246,0.8);
-    --white-64:rgba(255, 252, 246,0.64);
-    --white-48:rgba(255, 252, 246,0.48);
-    --white-32:rgba(255, 252, 246,0.32);
-    --white-24:rgba(255, 252, 246,0.24);
-    --white-16:rgba(255, 252, 246,0.16);
+  --white-100: rgba(255, 252, 246, 1);
+  --white-80: rgba(255, 252, 246, 0.8);
+  --white-64: rgba(255, 252, 246, 0.64);
+  --white-48: rgba(255, 252, 246, 0.48);
+  --white-32: rgba(255, 252, 246, 0.32);
+  --white-24: rgba(255, 252, 246, 0.24);
+  --white-16: rgba(255, 252, 246, 0.16);
 
-    --other-error:#B03E3E;
-    --other-attention:#455955;
-    --other-success:#6A7A77;
-    --other-link:linear-gradient(0deg, #162F2B 0%, #162F2B 100%), #1B3B36;
-    --other-link-hover:linear-gradient(0deg, #455955 0%, #455955 100%), #1B3B36;
+  --lines-color: #3f5148;
 
-    --lines-color:#3f5148;
+  --other-error: #b03e3e;
+  --other-attention: #455955;
+  --other-success: #6a7a77;
+  --other-link: linear-gradient(0deg, #162f2b 0%, #162f2b 100%), #1b3b36;
+  --other-link-hover: linear-gradient(0deg, #455955 0%, #455955 100%), #1b3b36;
 
+  --button-light-color-default: rgba(252, 208, 67, 1);
+  --button-light-color-hover: rgba(252, 192, 0, 1);
+  --button-light-color-active: rgba(252, 196, 18, 1);
+  --button-light-color-disabled: rgba(216, 216, 216, 1);
+
+  --button-dark-color-default: rgba(49, 63, 56, 1);
+  --button-dark-color-hover: rgba(40, 51, 45, 1);
+  --button-dark-color-active: rgba(36, 46, 41, 1);
+  --button-dark-color-disabled: rgba(216, 216, 216, 1);
 }
 
-@mixin button-with-arrow {
-    button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 221px;
-        height: 71px;
-        gap: 12px;
-        transition: var(--all);
-        &:active {
-            scale: 0.9;
-        }
-        @content;
-    }
+@mixin transition-standart {
+  transition: 250ms ease-in-out;
+  @content;
 }
