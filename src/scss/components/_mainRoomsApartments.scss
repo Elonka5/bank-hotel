@@ -1,0 +1,39 @@
+.rooms-apartments {
+  display: flex;
+  flex-direction: column;
+  padding: 300px 30px 200px;
+  background-color: var(--white-100);
+
+  &__title-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 200px;
+    color: var(--text);
+    text-transform: uppercase;
+
+    & .title {
+      align-self: start;
+      font-family: "Miracle regular", sans-serif;
+      font-size: 150px;
+      line-height: 130px; /* 86.667% */
+    }
+
+    & .descr {
+      width: 440px;
+      font-size: 26px;
+      line-height: normal;
+    }
+  }
+
+  &__slider-wrapper {
+    display: flex;
+    .slider__list {
+      display: flex;
+      &--item {
+        display: flex;
+      }
+    }
+  }
+}
