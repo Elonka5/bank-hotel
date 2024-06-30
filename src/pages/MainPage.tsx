@@ -4,11 +4,15 @@ import Hero from "../components/MainPage/Hero/Hero";
 
 const MainPage = () => {
   return (
-    <div>
-      <Hero />
-      <AboutUs/>
-      <Facilities/>
-    </div>
+    <main>
+      <div>
+        <Hero />
+        <AboutUs />
+      </div>
+      <div className="whitesection">
+        <Facilities />
+      </div>
+    </main>
   );
 };
 
