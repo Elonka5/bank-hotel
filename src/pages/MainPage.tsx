@@ -5,12 +5,16 @@ import RoomsApartments from "../components/MainPage/RoomsApartments/RoomsApartme
 
 const MainPage = () => {
   return (
-    <div>
-      <Hero />
-      <AboutUs />
-      <RoomsApartments />
-      <Facilities />
-    </div>
+    <main>
+      <div>
+        <Hero />
+        <AboutUs />
+      </div>
+      <div className="whitesection">
+        <RoomsApartments />
+        <Facilities />
+      </div>
+    </main>
   );
 };
 
