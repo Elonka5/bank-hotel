@@ -90,3 +90,10 @@ address {
   transform: translate(-50%, -50%) rotateX(180deg);
   @content;
 }
+
+@mixin text-opacity-8 {
+font-size: 18px;
+line-height: 28px;
+color: var(--text-color-80);
+@content;
+}
