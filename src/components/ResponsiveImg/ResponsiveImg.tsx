@@ -3,7 +3,7 @@ import React from 'react';
 interface ResponsiveImgProps {
   alt: string;
   srcImg:string;
-
+  className?:string;
 }
 
 const imgArr = (srcImg:string)=>{
@@ -13,7 +13,7 @@ const imgArr = (srcImg:string)=>{
   { srcSet:`/${srcImg}-375.webp`, media: "(max-width: 1023.98px)" }]
   }
 
-const ResponsiveImage: React.FC<ResponsiveImgProps> = ({ alt, srcImg}) => {
+const ResponsiveImage: React.FC<ResponsiveImgProps> = ({ alt, srcImg, className}) => {
   const sources = imgArr(srcImg);
 
   return (
@@ -21,7 +21,7 @@ const ResponsiveImage: React.FC<ResponsiveImgProps> = ({ alt, srcImg}) => {
       {sources.map((source, index) => (
         <source key={index} media={source.media} srcSet={source.srcSet} type="image/webp" />
       ))}
-      <img src={sources[sources.length-1].srcSet} alt={alt} />
+      <img src={sources[sources.length-1].srcSet} alt={alt} className={className} />
     </picture>
   );
 };

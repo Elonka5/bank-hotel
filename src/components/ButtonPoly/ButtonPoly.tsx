@@ -2,7 +2,6 @@ import Icon from "../Icon/Icon";
 import { ReactNode } from "react";
 
 interface ButtonProps {
-  // text?: string;
   children?: ReactNode;
   type?: "button" | "submit" | "reset";
   className?: string;
@@ -11,11 +10,8 @@ interface ButtonProps {
   iconHeight: number;
   iconArrow: string;
   iconArrowId: string;
-  iconPolygonId:string;
+  iconPolygonId?:string;
   onClick?: () => void;
-  // fill?:string;
-  // stroke?: string;
-
 }
 
 const ButtonPoly = ({
@@ -34,7 +30,6 @@ const ButtonPoly = ({
 }: ButtonProps) => {
   return (
     <button type={type} className={className} disabled={disabled} onClick={onClick}>
-      {/* {text} */}
       {children}
       <Icon
         // className="polygon"

@@ -4,7 +4,7 @@ interface IconProps {
     className?: string;
     width?: number;
     height?: number;
-    iconId: string;
+    iconId?: string;
 }
 
 const Icon = ({ className, width, height, iconId }: IconProps) => {
