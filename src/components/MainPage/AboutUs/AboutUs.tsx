@@ -1,7 +1,6 @@
-import aboutusleft from "../../../assets/images/mainImages/desktop1920/main-about1-desktop-1920.webp";
-import aboutusright from "../../../assets/images/mainImages/desktop1920/main-about2-desktop-1920.webp";
 import ButtonPoly from "../../ButtonPoly/ButtonPoly";
 import Icon from "../../Icon/Icon";
+import ResponsiveImage from "../../ResponsiveImg/ResponsiveImg";
 
 const AboutUs = () => {
   return (
@@ -9,7 +8,7 @@ const AboutUs = () => {
       <div className="line-container"></div>
       <div className="aboutus__leftwrapper">
         <div className="aboutus__leftwrapper--imgwrapper">
-          <img src={aboutusleft} alt="about-us-image" />
+          <ResponsiveImage alt="about-us-image" srcImg="main-about1" />
         </div>
         <div className="aboutus__leftwrapper--descr">
           <h2 className="aboutus__heading">
@@ -28,19 +27,22 @@ const AboutUs = () => {
       <div className="aboutus__rightwrapper">
         <Icon className="polygon" width={144} height={147} iconId="label" />
         <div className="aboutus__rightwrapper--imgwrapper">
-          <img src={aboutusright} className="" />
+          <ResponsiveImage alt="about-us-image" srcImg="main-about2" />
         </div>
         <div className="aboutus__rightwrapper--btnwrapper">
-        <ButtonPoly
-          className="btnPoly"
-          iconWidth={200}
-          iconHeight={200}
-          iconArrow="arrow75"
-          iconArrowId="arrow-up-and-down"
-          iconPolygonId="polygon"
-        >
-          <p className="aboutus__btnText"><span className="aboutus__btnText--secondary">Rooms</span>and <br/> apartments</p>
-        </ButtonPoly>
+          <ButtonPoly
+            className="btnPoly"
+            iconWidth={200}
+            iconHeight={200}
+            iconArrow="arrow75"
+            iconArrowId="arrow-up-and-down"
+            iconPolygonId="polygon"
+          >
+            <p className="aboutus__btnText">
+              <span className="aboutus__btnText--secondary">Rooms</span>and{" "}
+              <br /> apartments
+            </p>
+          </ButtonPoly>
         </div>
       </div>
     </section>
