@@ -16,6 +16,7 @@ const Accordion: React.FC = () => {
       {items.map((item,index) => (
         <AccordionItem key={item.id} item={item} index={index} isOpen={openItemId === item.id} 
         onToggle={() => handleToggle(item.id)}
+        nextItemOpen={openItemId === items[index + 1]?.id}
           />
       ))}
     </ul>
