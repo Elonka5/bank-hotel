@@ -6,6 +6,7 @@ import Icon from "../../Icon/Icon";
 const AboutUs = () => {
   return (
     <section className="aboutus container">
+      <div className="line-container"></div>
       <div className="aboutus__leftwrapper">
         <div className="aboutus__leftwrapper--imgwrapper">
           <img src={aboutusleft} alt="about-us-image" />
