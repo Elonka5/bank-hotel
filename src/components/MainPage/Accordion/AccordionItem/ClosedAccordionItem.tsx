@@ -1,4 +1,3 @@
-import React from "react";
 import ButtonPoly from "../../../ButtonPoly/ButtonPoly";
 import { AccordionItemProps } from "./AccordionItem";
 
@@ -8,30 +7,26 @@ const ClosedAccordionItem: React.FC<AccordionItemProps> = ({
   isOpen,
   onToggle,
 }) => {
-  const { fullText, bigImg, title } = item;
+  const { image, title } = item;
 
   return (
     <>
-      <div className="accordion__openwrapper--left">
+      <div className="accordion__thumb">
+        {image}
+      </div>
+      <div className="accordion__wrapper--open">
+        <p className="accordion__text">0{index + 1}</p>
+        <p className="accordion__text title">{title?.join(" ")}</p>
+      </div>
+      <div>
         <ButtonPoly
           className={`btnPoly ${isOpen ? "open" : "closed"}`}
           onClick={onToggle}
-          iconWidth={170}
-          iconHeight={170}
+          iconWidth={44}
+          iconHeight={20}
           iconArrow={`arrow-size ${isOpen ? "open" : "closed"}`}
-          iconArrowId="arrow"
-          iconPolygonId="polygon-green-stroke"
+          iconArrowId="arrow-right"
         />
-      </div>
-      <div className="accordion__openwrapper--middle">
-        <p className="accordion__text">0{index + 1}</p>
-        <p className="accordion__text">
-          <span>{title?.[0]}</span> <br /> {title?.[1]}
-        </p>
-        <p className="accordion__full-description">{fullText}</p>
-      </div>
-      <div className="accordion__openwrapper--right">
-        <img src={bigImg} alt="Big thumbnail" />
       </div>
     </>
   );

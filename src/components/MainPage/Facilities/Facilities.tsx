@@ -1,7 +1,6 @@
-import facilitiesleft from "../../../assets/images/mainImages/desktop1920/main-facilities2-desktop-1920.webp";
-import facilitiesright from "../../../assets/images/mainImages/desktop1920/main-facilities1-desktop-1920.webp";
 import Icon from "../../Icon/Icon";
 import Accordion from "../Accordion/Accordion";
+import ResponsiveImage from "../../ResponsiveImg/ResponsiveImg";
 
 const Facilities = () => {
   return (
@@ -10,7 +9,7 @@ const Facilities = () => {
          <div className="facilities__wrapper--left">
             <p className="text">Art & Congress hall</p>
             <div>
-            <img src={facilitiesleft} alt="restaurant-image" />
+            <ResponsiveImage alt="restaurant-image" srcImg="main-facilities2"/>
             </div>
          </div>
          <div className="facilities__wrapper--middle">
@@ -20,7 +19,7 @@ const Facilities = () => {
          <div className="facilities__wrapper--right">
           <Icon className="label" iconId="label-second" width={190} height={190}/>
          <div>
-            <img src={facilitiesright} alt="restaurant-image" />
+         <ResponsiveImage alt="restaurant-image" srcImg="main-facilities1"/>
             </div>
          </div>
         </div>

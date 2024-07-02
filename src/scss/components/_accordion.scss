@@ -19,26 +19,24 @@
     padding-top: 50px;
     padding-bottom: 50px;
     border-bottom: 1px solid var(--text-color-24);
+    
+    &.no-border {
+      border-bottom: none;
+    }
 
     & > :nth-child(1) {
         margin-right: 210px;
       }
   
       & > :nth-child(2) {
-        margin-right: 136px;
+        margin-right: 216px;
       }
   
       & > :nth-child(3) {
         margin-right: 100px;
       }
   }
-  &.no-border {
-    border-bottom: none;
-  }
-  &.has-bottom-border {
-    border-bottom: 1px solid var(--text-color-24);
 
-  }
 }
 
 .accordion__thumb {
