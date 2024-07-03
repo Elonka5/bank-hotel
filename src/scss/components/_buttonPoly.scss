@@ -39,23 +39,16 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    // cursor: pointer;
     z-index: 100;
 
     &:hover {
+      @include transition-standart {
+      }
       color: var(--text);
-      // scale: 1.1;
     }
 
     & .polygon {
       transform: rotateZ(18deg);
-
-      // &:hover {
-      //   // stroke: var(--text);
-      //   // stroke: var(--other-error);
-      //   // fill: var(--other-error);
-      //   // fill: var(--text);
-      // }
     }
     & .arrow50 {
       @include arrow-position {
