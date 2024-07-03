@@ -40,6 +40,16 @@
   --other-success: #6a7a77;
   --other-link: linear-gradient(0deg, #162f2b 0%, #162f2b 100%), #1b3b36;
   --other-link-hover: linear-gradient(0deg, #455955 0%, #455955 100%), #1b3b36;
+
+  --button-light-color-default: rgba(252, 208, 67, 1);
+  --button-light-color-hover: rgba(252, 192, 0, 1);
+  --button-light-color-active: rgba(252, 196, 18, 1);
+  --button-light-color-disabled: rgba(216, 216, 216, 1);
+
+  --button-dark-color-default: rgba(49, 63, 56, 1);
+  --button-dark-color-hover: rgba(40, 51, 45, 1);
+  --button-dark-color-active: rgba(36, 46, 41, 1);
+  --button-dark-color-disabled: rgba(216, 216, 216, 1);
 }
 
 @mixin button-with-arrow {
@@ -56,15 +66,6 @@
     }
     @content;
   }
-  --button-light-color-default: rgba(252, 208, 67, 1);
-  --button-light-color-hover: rgba(252, 192, 0, 1);
-  --button-light-color-active: rgba(252, 196, 18, 1);
-  --button-light-color-disabled: rgba(216, 216, 216, 1);
-
-  --button-dark-color-default: rgba(49, 63, 56, 1);
-  --button-dark-color-hover: rgba(40, 51, 45, 1);
-  --button-dark-color-active: rgba(36, 46, 41, 1);
-  --button-dark-color-disabled: rgba(216, 216, 216, 1);
 }
 
 @mixin transition-standart {
