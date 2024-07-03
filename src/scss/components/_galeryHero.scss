@@ -1,0 +1,39 @@
+.gallery--hero {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 377px;
+  color: var(--secondary-color-100);
+
+  margin-left: auto;
+  margin-right: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+
+  &__icon-wave {
+    position: absolute;
+    top: 2%;
+    left: 0;
+    width: 100%;
+    height: 108%;
+    z-index: 1;
+  }
+
+  &__title {
+    max-width: 872px;
+    margin-bottom: 250px;
+    font-family: "Miracle regular", sans-serif;
+    font-size: 150px;
+    font-weight: 400;
+    line-height: 0.86;
+    text-transform: uppercase;
+  }
+
+  &__info {
+    max-width: 440px;
+    font-size: 26px;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+}

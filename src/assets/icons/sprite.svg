@@ -109,7 +109,7 @@
       </symbol>
 
       <symbol id="line" viewBox="0 0 1024 301">
-            <path d="M1154.05 70.2667C1085.37 11.2991 897.713 -64.6111 696.583 103.488C445.172 313.612 139.999 414.762 -130.214 98.4339" stroke="#FCD043" stroke-width="2" fill="none"/>
+            <path d="M1154.05 70.2667C1085.37 11.2991 897.713 -64.6111 696.583 103.488C445.172 313.612 139.999 414.762 -130.214 98.4339" stroke="#FCD043" stroke-width="0.8" fill="none"/>
         </symbol>
         <symbol id="menu" viewBox="0 0 128 32">
         <path fill="#fffcf6" style="fill: var(--color1, #fffcf6)" d="M0 0h128v3.2h-128zM0 28.8h128v3.2h-128z"></path>
