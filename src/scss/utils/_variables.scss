@@ -34,16 +34,12 @@
   --white-12: rgba(255, 252, 246, 0.12);
 
   --background-section: rgb(217, 217, 217);
-
   --lines-color: #3f5148;
-
   --other-error: #b03e3e;
   --other-attention: #455955;
   --other-success: #6a7a77;
   --other-link: linear-gradient(0deg, #162f2b 0%, #162f2b 100%), #1b3b36;
   --other-link-hover: linear-gradient(0deg, #455955 0%, #455955 100%), #1b3b36;
-
-  --lines-color: #3f5148;
 }
 
 @mixin button-with-arrow {

@@ -5,11 +5,6 @@ import Hero from "../components/MainPage/Hero/Hero";
 
 const MainPage = () => {
   return (
-    <div>
-      <Hero />
-      <AboutUs />
-      <Gallery />
-    </div>
     <main>
       <div>
         <Hero />
@@ -18,6 +13,7 @@ const MainPage = () => {
       <div className="whitesection">
         <Facilities />
       </div>
+      <Gallery />
     </main>
   );
 };
