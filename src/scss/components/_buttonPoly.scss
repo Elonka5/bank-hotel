@@ -11,6 +11,7 @@
     @include arrow-position {
     }
   }
+
   & .arrow75 {
     @include arrow-position {
       top: 75%;
@@ -33,5 +34,27 @@
       transform: translate(-50%, -50%) rotateZ(0deg);
     }
   }
-}
 
+  &.rooms {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+
+    &:hover {
+      @include transition-standart {
+      }
+      color: var(--text);
+    }
+
+    & .polygon {
+      transform: rotateZ(18deg);
+    }
+    & .arrow50 {
+      @include arrow-position {
+        width: 47px;
+        height: 25px;
+      }
+    }
+  }
+}
