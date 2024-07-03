@@ -1,0 +1,122 @@
+.gallery--container {
+  padding-top: 300px;
+  padding-bottom: 300px;
+
+  border: 1px solid red;
+
+  .gallery--wrapper {
+    width: 100%;
+    display: flex;
+    align-items: start;
+  }
+
+  .gallery--part__left {
+    margin-right: 190px;
+
+    .section--introduction {
+      max-width: 255px;
+      width: 100%;
+      margin-bottom: 273px;
+      padding-top: 23px;
+      font-size: 26px;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .img--wrapper__nopaddingLeft {
+      width: 312px;
+      height: 284px;
+      margin-left: -32px;
+      margin-bottom: 342px;
+    }
+
+    .img--wrapper__left {
+      width: 285px;
+      height: 387px;
+    }
+  }
+
+  .gallery--part__center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px;
+
+    .label {
+      margin-bottom: 50px;
+      transform: rotate(45deg);
+    }
+
+    .gallery--title {
+      margin-bottom: 70px;
+      font-family: "Miracle regular", sans-serif;
+      font-size: 150px;
+      line-height: 0.86;
+      font-weight: normal;
+      text-transform: uppercase;
+      color: var(--secondary-color-100);
+    }
+
+    .gallery--description {
+      max-width: 450px;
+      width: 100%;
+      margin-bottom: 150px;
+      font-size: 18px;
+      line-height: 1.5;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .img--wrapper__center {
+      width: 916px;
+      height: 600px;
+      margin-bottom: 100px;
+    }
+
+    .gallery--info__wrapper {
+      display: flex;
+      gap: 30px;
+      align-self: start;
+    }
+
+    .gallery--info {
+      max-width: 350px;
+      width: 100%;
+      font-size: 22px;
+      font-style: italic;
+      line-height: normal;
+    }
+  }
+
+  .gallery--part__right {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 100%;
+
+    .img--wrapper__nopaddingRight {
+      width: 316px;
+      height: 400px;
+      padding-top: 358px;
+      margin-right: -30px;
+      margin-bottom: 622px;
+    }
+  }
+
+  .img--wrapper__right {
+    position: relative;
+    width: 443px;
+    height: 284px;
+    margin-left: auto;
+    z-index: 2;
+  }
+
+  .ticker--box {
+    margin-top: -80px;
+    z-index: 1;
+  }
+}
