@@ -45,6 +45,15 @@
           display: flex;
 
           &__img-wrapper {
+            overflow: hidden;
+            object-fit: contain;
+            width: 285px;
+            height: 339px;
+
+            @include xl {
+              width: 217px;
+              height: 258px;
+            }
           }
 
           & .descr-container {
@@ -91,9 +100,12 @@
         }
 
         & .right-container {
+          position: relative;
           display: flex;
 
           &__img-wrapper {
+            width: 757px;
+            height: 1000px;
           }
         }
       }

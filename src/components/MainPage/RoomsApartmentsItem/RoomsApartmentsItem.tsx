@@ -1,3 +1,4 @@
+import ButtonPoly from "../../ButtonPoly/ButtonPoly";
 import ButtonSince from "../../ButtonSince/ButtonSince";
 
 export interface IRoomsApartments {
@@ -37,6 +38,16 @@ const RoomsApartmentsItem: React.FC<IRoomsApartments> = ({
         </div>
       </div>
       <div className="right-container">
+        <ButtonPoly
+          className="btnPoly booking"
+          iconWidth={200}
+          iconHeight={200}
+          iconPolygonId="polygon-fill"
+          iconArrow="arrow50"
+          // onClick={}
+        >
+          <span>Book room</span>
+        </ButtonPoly>
         <div className="right-container__img-wrapper">{imgRight}</div>
       </div>
     </li>

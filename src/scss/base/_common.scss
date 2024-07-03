@@ -36,7 +36,7 @@ p {
 img {
   display: block;
   height: auto;
-  // max-width: 100%;
+  width: 100%;
 }
 
 ul {
@@ -92,8 +92,8 @@ address {
 }
 
 @mixin text-opacity-8 {
-font-size: 18px;
-line-height: 28px;
-color: var(--text-color-80);
-@content;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--text-color-80);
+  @content;
 }
