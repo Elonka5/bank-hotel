@@ -16,7 +16,7 @@ const Header: React.FC = () => {
   return (
     <header>
       <div className="container header__container">
-        <NavLink to="/" className="Logo">
+        <NavLink to="/" className="logo">
           BankHotel
         </NavLink>
         {isMobile ? (
@@ -35,7 +35,9 @@ const Header: React.FC = () => {
               </ul>
             </nav>
             <address>
-              <a href="tel:+380322975020">+38 032 297 50 20</a>
+              <a className="phone" href="tel:+380322975020">
+                +38 032 297 50 20
+              </a>
             </address>
           </>
         )}

@@ -1,0 +1,94 @@
+.section {
+  background-color: var(--background-section);
+}
+
+.touch__container {
+  position: relative;
+  padding-top: 300px;
+  padding-bottom: 200px;
+  // background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDI0IDMwMSI+PHBhdGggZD0iTTExNTQuMDUgNzAuMjY2N0MxMDg1LjM3IDExLjI5OTEgODk3LjcxMyAtNjQuNjExMSA2OTYuNTgzIDEwMy40ODhDNDQ1LjE3MiAzMTMuNjEyIDEzOS45OTkgNDE0Ljc2MiAtMTMwLjIxNCA5OC40MzM5IiBzdHJva2U9IiNGQ0QwNDMiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==");
+  // background-repeat: no-repeat;
+  // background-size: contain;
+  // background-position: center;
+  // background-size: 1920px;
+
+  &--phone {
+    border-bottom: 1px solid var(--primary-color-100);
+    font-size: 80px;
+    line-height: 1;
+    color: var(--text-color-100);
+  }
+
+  &--icon-wave {
+    position: absolute;
+    top: -2%;
+    left: 0;
+    width: 99%;
+    height: 120%;
+    transform: rotate(11deg);
+    z-index: 2;
+  }
+
+  .touch__wrapper {
+    position: relative;
+    display: flex;
+    margin-top: 83px;
+
+    justify-content: start;
+    align-items: center;
+
+    &--title {
+      font-family: "Miracle regular", sans-serif;
+      font-size: 300px;
+      font-weight: 400;
+      line-height: 0.8;
+      color: var(--text-color-70);
+      text-transform: uppercase;
+      z-index: 2;
+
+      span {
+        position: absolute;
+        bottom: -168px;
+        right: 0.1px;
+        color: var(--secondary-color-100);
+      }
+    }
+  }
+
+  .info--wrapper {
+    display: flex;
+    align-items: center;
+    gap: 195px;
+    margin-left: 38px;
+  }
+
+  .address--info {
+    margin-bottom: 177px;
+    max-width: 284px;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 26px;
+    line-height: 1.19;
+    color: var(--text-color-100);
+  }
+
+  .wrapper__star--img {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 195px;
+  }
+
+  .touch__img---wrapper {
+    position: relative;
+    width: 443px;
+    height: 443px;
+    z-index: 1;
+
+    .touch__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
