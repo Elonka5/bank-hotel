@@ -34,6 +34,9 @@
   --white-12: rgba(255, 252, 246, 0.12);
 
   --background-section: rgb(217, 217, 217);
+
+  --lines-color: #3f5148;
+
   --other-error: #b03e3e;
   --other-attention: #455955;
   --other-success: #6a7a77;
@@ -57,4 +60,18 @@
     }
     @content;
   }
+  --button-light-color-default: rgba(252, 208, 67, 1);
+  --button-light-color-hover: rgba(252, 192, 0, 1);
+  --button-light-color-active: rgba(252, 196, 18, 1);
+  --button-light-color-disabled: rgba(216, 216, 216, 1);
+
+  --button-dark-color-default: rgba(49, 63, 56, 1);
+  --button-dark-color-hover: rgba(40, 51, 45, 1);
+  --button-dark-color-active: rgba(36, 46, 41, 1);
+  --button-dark-color-disabled: rgba(216, 216, 216, 1);
+}
+
+@mixin transition-standart {
+  transition: 250ms ease-in-out;
+  @content;
 }

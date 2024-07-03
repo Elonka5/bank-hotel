@@ -16,4 +16,22 @@
       top: 75%;
     }
   }
+
+  & .arrow-size {
+    @include arrow-position {
+      width: 168px;
+      height: 137px;
+    }
+
+    &.open {
+      transform: translate(-50%, -50%) rotateZ(90deg);
+    }
+
+    &.closed {
+      width: 64px;
+      height: 40px;
+      transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+  }
 }
+
