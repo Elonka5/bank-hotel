@@ -10,7 +10,7 @@ interface ButtonProps {
   iconHeight: number;
   iconArrow: string;
   iconArrowId: string;
-  iconPolygonId?:string;
+  iconPolygonId?: string;
   onClick?: () => void;
 }
 
@@ -26,13 +26,17 @@ const ButtonPoly = ({
   iconArrowId,
   iconPolygonId,
   onClick,
-
 }: ButtonProps) => {
   return (
-    <button type={type} className={className} disabled={disabled} onClick={onClick}>
+    <button
+      type={type}
+      className={className}
+      disabled={disabled}
+      onClick={onClick}
+    >
       {children}
       <Icon
-        // className="polygon"
+        className="polygon"
         width={iconWidth}
         height={iconHeight}
         iconId={iconPolygonId}
