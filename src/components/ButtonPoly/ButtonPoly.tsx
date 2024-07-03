@@ -9,7 +9,7 @@ interface ButtonProps {
   iconWidth: number;
   iconHeight: number;
   iconArrow: string;
-  iconArrowId: string;
+  iconArrowId?: string;
   iconPolygonId?: string;
   onClick?: () => void;
 }

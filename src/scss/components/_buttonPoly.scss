@@ -57,4 +57,25 @@
       }
     }
   }
+
+  &.booking {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    width: 200px;
+    height: 200px;
+    // z-index: 100;
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      font-size: 20px;
+      font-style: italic;
+      // font-weight: 400;
+      line-height: normal;
+    }
+  }
 }
