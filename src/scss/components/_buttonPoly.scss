@@ -42,8 +42,7 @@
     z-index: 100;
 
     &:hover {
-      @include transition-standart {
-      }
+      @include transition-standart;
       color: var(--text);
     }
 
@@ -64,7 +63,12 @@
     right: 50px;
     width: 200px;
     height: 200px;
-    // z-index: 100;
+    color: #fcd043;
+
+    // & .polygon {
+    // }
+
+    @include btn-state-changes($svg: yes);
 
     span {
       position: absolute;
@@ -74,8 +78,8 @@
 
       font-size: 20px;
       font-style: italic;
-      // font-weight: 400;
       line-height: normal;
+      color: var(--text);
     }
   }
 }

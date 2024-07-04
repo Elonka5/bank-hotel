@@ -121,7 +121,8 @@
         <symbol id="polygon-fill" viewBox="0 0 192 200">
             <path
                 d="M37.5305 19.5236L96 0.525732L154.47 19.5236L190.606 69.2608V130.739L154.469 180.476L96 199.474L37.5305 180.476L1.39435 130.739V69.2608L37.5305 19.5236Z"
-                fill="#FCD043"></path>
+                fill="currentColor"></path>
+            <!-- fill="#FCD043"></path> -->
         </symbol>
         <symbol id="label-second" viewBox="0 0 80 80">
             <path

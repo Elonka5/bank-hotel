@@ -43,7 +43,6 @@ const RoomsApartmentsItem: React.FC<IRoomsApartments> = ({
           iconWidth={200}
           iconHeight={200}
           iconPolygonId="polygon-fill"
-          iconArrow="arrow50"
           // onClick={}
         >
           <span>Book room</span>

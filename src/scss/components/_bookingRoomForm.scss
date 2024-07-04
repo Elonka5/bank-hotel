@@ -51,32 +51,19 @@
     &__btn-submit {
       width: 370px;
       height: 150px;
-      background: var(--button-light-color-default);
       color: var(--text-color-100);
       text-transform: uppercase;
 
-      &:hover {
-        background: var(--button-light-color-hover);
-      }
-
-      &:active {
-        background: var(--button-light-color-active);
-      }
-
-      &:disabled {
-        background: var(--button-light-color-disabled);
-      }
+      @include btn-state-changes($svg: no);
 
       &.touch {
-        background: var(--primary-color-100);
-        color: var(--white-100);
-
-        &:hover {
-          background: var(--button-dark-color-hover);
-        }
-
-        &:active {
-          background: var(--button-dark-color-active);
+        @include btn-state-changes(
+          var(--primary-color-100),
+          var(--button-dark-color-hover),
+          var(--button-dark-color-active),
+          $svg: no
+        ) {
+          color: var(--white-100);
         }
       }
     }

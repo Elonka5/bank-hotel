@@ -8,7 +8,7 @@ interface ButtonProps {
   disabled?: boolean;
   iconWidth: number;
   iconHeight: number;
-  iconArrow: string;
+  iconArrow?: string;
   iconArrowId?: string;
   iconPolygonId?: string;
   onClick?: () => void;
@@ -41,7 +41,7 @@ const ButtonPoly = ({
         height={iconHeight}
         iconId={iconPolygonId}
       />
-      <Icon className={iconArrow} iconId={iconArrowId} />
+      {iconArrowId ? <Icon className={iconArrow} iconId={iconArrowId} /> : ""}
     </button>
   );
 };
