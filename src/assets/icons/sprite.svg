@@ -104,14 +104,14 @@
 <rect x="65.3448" y="85.4901" width="0.689671" height="37.932" transform="rotate(-90 65.3448 85.4901)" fill="#313F38" stroke="#313F38" stroke-width="0.689671"/>
       </symbol>
 <symbol id="arrow-right" viewBox="0 0 47 22" fill='none' >
-           <path d="M35.1719 1C35.1719 1 35.944 3.91667 38.2604 6.41667C40.5767 8.91667 44.4373 11 44.4373 11C44.4373 11 40.5767 13.0833 38.2604 15.5833C35.944 18.0833 35.1719 21 35.1719 21" stroke="#313F38" stroke-width="2"/>
-           <rect x="0.285714" y="11.2856" width="0.571428" height="42.9196" transform="rotate(-90 0.285714 11.2856)" fill="#313F38" stroke="#313F38" stroke-width="0.571428"/>
+           <path d="M35.1719 1C35.1719 1 35.944 3.91667 38.2604 6.41667C40.5767 8.91667 44.4373 11 44.4373 11C44.4373 11 40.5767 13.0833 38.2604 15.5833C35.944 18.0833 35.1719 21 35.1719 21" stroke="currentColor" stroke-width="2"/>
+           <rect x="0.285714" y="11.2856" width="0.571428" height="42.9196" transform="rotate(-90 0.285714 11.2856)" fill="currentColor" stroke="currentColor" stroke-width="0.571428"/>
       </symbol>
 
       <symbol id="line" viewBox="0 0 1024 301">
             <path d="M1154.05 70.2667C1085.37 11.2991 897.713 -64.6111 696.583 103.488C445.172 313.612 139.999 414.762 -130.214 98.4339" stroke="#FCD043" stroke-width="0.8" fill="none"/>
         </symbol>
-        <symbol id="menu" viewBox="0 0 128 32">
+        <symbol id="menu-burger" viewBox="0 0 128 32">
         <path fill="#fffcf6" style="fill: var(--color1, #fffcf6)" d="M0 0h128v3.2h-128zM0 28.8h128v3.2h-128z"></path>
         </symbol>
         <symbol id="star-8" viewBox="0 0 71 72">
@@ -121,5 +121,9 @@
         <symbol id="star-16" viewBox="0 0 150 149">
             <path d="M75 0L80.4577 49.3236L105.505 6.48409L90.4294 53.7633L130.736 24.8152L97.7332 61.875L146.329 51.8237L101.106 72.2561L149.589 82.8396L99.9652 83.1117L139.952 112.5L94.5076 92.5647L119.084 135.676L85.6768 98.9806L90.5934 148.361L75 101.25L59.4066 148.361L64.3232 98.9806L30.9161 135.676L55.4924 92.5647L10.0481 112.5L50.0348 83.1117L0.410858 82.8396L48.8938 72.2561L3.67076 51.8237L52.2668 61.875L19.2641 24.8152L59.5706 53.7633L44.4948 6.48409L69.5423 49.3236L75 0Z" fill="#FCD043"/>
         </symbol>
+        <symbol id="menu-close" viewBox="0 0 32 32">
+<path fill="#fffcf6" style="fill: var(--color1, #fffcf6)" d="M0.78 0.005l31.21 31.21-0.78 0.78-31.21-31.21 0.78-0.78z"></path>
+<path fill="#fffcf6" style="fill: var(--color1, #fffcf6)" d="M31.211 0.005l-31.21 31.21 0.78 0.78 31.21-31.21-0.78-0.78z"></path>
+</symbol>
     </defs>
 </svg>

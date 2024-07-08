@@ -114,7 +114,7 @@ address {
   --secondary-color-32: rgba(252, 208, 67, 0.32);
   --secondary-color-24: rgba(252, 208, 67, 0.24);
   --secondary-color-16: rgba(252, 208, 67, 0.16);
-  --text-color-100: rgba(27, 59, 54, 1);
+  --text-color-100: rgb(27, 59, 54);
   --text-color-80: rgba(27, 59, 54, 0.8);
   --text-color-70: rgba(27, 59, 54, 0.7);
   --text-color-64: rgba(27, 59, 54, 0.64);
@@ -122,7 +122,7 @@ address {
   --text-color-32: rgba(27, 59, 54, 0.32);
   --text-color-24: rgba(27, 59, 54, 0.24);
   --text-color-16: rgba(27, 59, 54, 0.16);
-  --white-100: rgba(255, 252, 246, 1);
+  --white-100: rgb(255, 252, 246);
   --white-80: rgba(255, 252, 246, 0.8);
   --white-64: rgba(255, 252, 246, 0.64);
   --white-48: rgba(255, 252, 246, 0.48);
@@ -294,6 +294,7 @@ address {
   width: 64px;
   height: 40px;
   transform: translate(-50%, -50%) rotateZ(0deg);
+  color: var(--primary-color-100);
 }
 
 /* Define classes for react-select components */
@@ -357,6 +358,7 @@ address {
 .booking-form .form__btn-submit.touch {
   background: var(--primary-color-100);
   color: var(--white-100);
+  font-size: 18px;
 }
 .booking-form .form__btn-submit.touch:hover {
   background: var(--button-dark-color-hover);
@@ -644,7 +646,6 @@ address {
 .gallery--container {
   padding-top: 300px;
   padding-bottom: 300px;
-  border: 1px solid red;
 }
 .gallery--container .gallery--wrapper {
   width: 100%;
@@ -683,8 +684,10 @@ address {
   align-items: center;
   margin-right: 30px;
 }
-.gallery--container .gallery--part__center .label {
-  margin-bottom: 50px;
+.gallery--container .gallery--part__center--label {
+  width: 200px;
+  height: 180px;
+  margin-bottom: 25px;
   transform: rotate(45deg);
 }
 .gallery--container .gallery--part__center .gallery--title {

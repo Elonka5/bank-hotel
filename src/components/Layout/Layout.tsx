@@ -5,13 +5,25 @@ import Footer from "../Footer/Footer";
 import GetInTouch from "../GetInTouch/GetInTouch";
 
 const Layout = () => {
+  // const location = useLocation();
+
+  // useEffect(() => {
+  //   const hash = location.hash;
+  //   if (hash) {
+  //     const element = document.getElementById(hash.substring(1));
+  //     if (element) {
+  //       element.scrollIntoView({ behavior: "smooth" });
+  //     }
+  //   }
+  // }, [location]);
+
   return (
     <>
       <Header />
       <Suspense fallback={<p>Loading...</p>}>
         <Outlet />
       </Suspense>
-      <GetInTouch />
+      <GetInTouch id="contacts" />
       <Footer />
     </>
   );
