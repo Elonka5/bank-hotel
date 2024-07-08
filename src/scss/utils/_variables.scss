@@ -33,7 +33,8 @@
   --white-16: rgba(255, 252, 246, 0.16);
   --white-12: rgba(255, 252, 246, 0.12);
 
-  --background-section: rgb(217, 217, 217);
+  --text: #1b3b36;
+
   --lines-color: #3f5148;
   --other-error: #b03e3e;
   --other-attention: #455955;
@@ -71,4 +72,47 @@
 @mixin transition-standart {
   transition: 250ms ease-in-out;
   @content;
+}
+
+@mixin btn-state-changes(
+  $bg-default: var(--button-light-color-default),
+  $bg-hover: var(--button-light-color-hover),
+  $bg-active: var(--button-light-color-active),
+  $bg-disabled: var(--button-light-color-disabled),
+  $svg: no
+) {
+  @include transition-standart() {
+    @if $svg == yes {
+      color: $bg-default;
+
+      &:hover {
+        color: $bg-hover;
+      }
+
+      &:active {
+        color: $bg-active;
+      }
+
+      &:disabled {
+        color: $bg-disabled;
+        opacity: 0.2;
+      }
+    } @else {
+      background: $bg-default;
+
+      &:hover {
+        background: $bg-hover;
+      }
+
+      &:active {
+        background: $bg-active;
+      }
+
+      &:disabled {
+        background: $bg-disabled;
+        opacity: 0.2;
+      }
+    }
+    @content;
+  }
 }

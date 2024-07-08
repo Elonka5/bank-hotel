@@ -4,6 +4,7 @@ import Facilities from "../components/MainPage/Facilities/Facilities";
 import Hero from "../components/MainPage/Hero/Hero";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import RoomsApartments from "../components/MainPage/RoomsApartments/RoomsApartments";
 
 const MainPage = () => {
   const location = useLocation();
@@ -42,6 +43,8 @@ const MainPage = () => {
         <AboutUs id="about" />
       </div>
       <div className="whitesection" id="facilities">
+        {/* <div className="whitesection"> */}
+        <RoomsApartments />
         <Facilities />
       </div>
       <Gallery />

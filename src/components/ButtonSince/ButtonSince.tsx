@@ -1,7 +1,7 @@
 import Icon from "../Icon/Icon";
 
 interface ButtonProps {
-  // onClick?: () => void;
+  onClick?: () => void;
   text?: string;
   type?: "button" | "submit" | "reset";
   className?: string;
@@ -9,17 +9,17 @@ interface ButtonProps {
 }
 
 const ButtonSince = ({
-  // onClick,
+  onClick,
   text,
   type = "button",
-  className = "button",
+  className = "btnSince",
   disabled = false,
 }: ButtonProps) => {
   return (
     <button
       type={type}
-      // onClick={onClick}
-      className={className}
+      onClick={onClick}
+      className={`btnSince ${className}`}
       disabled={disabled}
     >
       <Icon className="star" width={35} height={35} iconId="star" />

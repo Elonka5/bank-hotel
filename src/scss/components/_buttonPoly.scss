@@ -11,6 +11,7 @@
     @include arrow-position {
     }
   }
+
   & .arrow75 {
     @include arrow-position {
       top: 75%;
@@ -32,6 +33,54 @@
       height: 40px;
       transform: translate(-50%, -50%) rotateZ(0deg);
       color: var(--primary-color-100);
+    }
+  }
+
+  &.rooms {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+
+    &:hover {
+      @include transition-standart;
+      color: var(--text);
+    }
+
+    & .polygon {
+      transform: rotateZ(18deg);
+    }
+    & .arrow50 {
+      @include arrow-position {
+        width: 47px;
+        height: 25px;
+      }
+    }
+  }
+
+  &.booking {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    width: 200px;
+    height: 200px;
+    color: #fcd043;
+
+    // & .polygon {
+    // }
+
+    @include btn-state-changes($svg: yes);
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      font-size: 20px;
+      font-style: italic;
+      line-height: normal;
+      color: var(--text);
     }
   }
 }
