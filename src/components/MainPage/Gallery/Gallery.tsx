@@ -3,10 +3,10 @@ import GallerySection from "./GallerySection/GallerySection";
 
 const Gallery = () => {
   return (
-    <div>
+    <section>
       <GalleryHero />
       <GallerySection />
-    </div>
+    </section>
   );
 };
 

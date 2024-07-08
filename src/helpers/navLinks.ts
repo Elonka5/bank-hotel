@@ -17,12 +17,13 @@ export const navLinks = [
   {
     id: 4,
     value: "Restaurant",
-    to: "/facility",
+    to: "/restaurant",
   },
   {
     id: 5,
-    value: "Conference hall",
-    to: "/#conference",
+    // value: "Conference hall",
+    value: "Facilities",
+    to: "/#facilities",
   },
   {
     id: 6,

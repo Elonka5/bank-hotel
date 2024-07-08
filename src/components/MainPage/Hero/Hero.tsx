@@ -4,7 +4,7 @@ import ButtonSince from "../../ButtonSince/ButtonSince";
 
 const Hero = () => {
   return (
-    <section className="hero container">
+    <section className="hero container" id="#hero">
       <div className="hero__wrapper">
         <div className="hero__title">
           <h1>

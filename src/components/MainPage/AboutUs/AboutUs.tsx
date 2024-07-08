@@ -1,10 +1,11 @@
+import { NavProps } from "../../../entities/navprops";
 import ButtonPoly from "../../ButtonPoly/ButtonPoly";
 import Icon from "../../Icon/Icon";
 import ResponsiveImage from "../../ResponsiveImg/ResponsiveImg";
 
-const AboutUs = () => {
+const AboutUs: React.FC<NavProps> = ({ id }) => {
   return (
-    <section className="aboutus container">
+    <section className="aboutus container" id={id}>
       <div className="line-container"></div>
       <div className="aboutus__leftwrapper">
         <div className="aboutus__leftwrapper--imgwrapper">

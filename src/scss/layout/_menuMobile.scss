@@ -1,0 +1,22 @@
+.menu--container {
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  position: fixed;
+  top: 144px;
+  right: 0;
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transform: translate(100%);
+  transition: transform 250ms linear;
+  //    opacity 250ms linear, visibility 250ms linear,
+
+  & .active {
+    pointer-events: initial;
+    transform: translate(0);
+  }
+}

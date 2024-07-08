@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--background-section);
+  background-color: var(--white-100);
 }
 
 .footer__container {
@@ -39,11 +39,12 @@
     .title::before {
       content: "";
       position: absolute;
-      left: -2px;
-      top: 0;
+      top: -36%;
+      left: -1%;
+      // transform: translate(-50%, 50%);
       display: block;
-      width: 1px;
-      height: 110%;
+      width: 2px;
+      height: 170%;
       background-color: var(--secondary-color-100);
       transform-origin: top left;
       transform: rotate(20deg);
