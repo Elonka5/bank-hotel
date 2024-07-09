@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch } from '../../redux/hooks';
-import { fetchImg } from '../../redux/main/mainImg';
+import { fetchImg } from '../../redux/images/images';
 
 export type ResponsiveImgProps = {
   alt: string;
@@ -27,8 +27,8 @@ const ResponsiveImage: React.FC<ResponsiveImgProps> = ({ alt, srcImg, className,
   const [imageURL] = useState<string>('');
 
   useEffect(() => {
-    dispatch(fetchImg({ imageName: srcImg }));
-  }, [dispatch, srcImg]);
+    dispatch(fetchImg({ imageName: srcImg, path:path }));
+  }, [dispatch, srcImg,path]);
 
 
   return (

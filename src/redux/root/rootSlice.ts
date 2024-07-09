@@ -50,6 +50,7 @@
 
 import { createSlice, isAnyOf, PayloadAction } from "@reduxjs/toolkit";
 import {getAccordionThunk } from "../accordion/accordionThunk";
+import { fetchImg } from "../images/images";
 
 interface ServiceState {
   error: string | null;
@@ -81,6 +82,7 @@ const serviceSlice = createSlice({
       .addMatcher(
         isAnyOf(
             getAccordionThunk.pending,
+            fetchImg.pending,
         ),
         (state) => {
           state.error = null;
@@ -90,6 +92,7 @@ const serviceSlice = createSlice({
       .addMatcher(
         isAnyOf(
             getAccordionThunk.fulfilled,
+            fetchImg.fulfilled,
  
         ),
         (state) => {
@@ -100,6 +103,7 @@ const serviceSlice = createSlice({
       .addMatcher(
         isAnyOf(
             getAccordionThunk.rejected,
+            fetchImg.rejected
         ),
         (state, action) => {
           state.isLoading = false;
