@@ -1,4 +1,5 @@
 import ButtonPoly from "../../../ButtonPoly/ButtonPoly";
+import ResponsiveFetchImg from "../../../ResponsiveImg/ResponsiveFetchImg";
 import { AccordionItemProps } from "./AccordionItem";
 
 const ClosedAccordionItem: React.FC<AccordionItemProps> = ({
@@ -7,12 +8,13 @@ const ClosedAccordionItem: React.FC<AccordionItemProps> = ({
   isOpen,
   onToggle,
 }) => {
-  const { image, title } = item;
+  const { imageResolutions, title } = item;
 
   return (
     <>
       <div className="accordion__thumb">
-        {image}
+        {imageResolutions && <ResponsiveFetchImg nameImg={imageResolutions} alt="Accordion thumbnail" />}
+        
       </div>
       <div className="accordion__wrapper--open">
         <p className="accordion__text">0{index + 1}</p>

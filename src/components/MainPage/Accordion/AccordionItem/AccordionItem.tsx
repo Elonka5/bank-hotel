@@ -1,16 +1,19 @@
 import React from "react";
 import OpenAccordionItem from "./OpenAccordionItem";
 import ClosedAccordionItem from "./ClosedAccordionItem";
+import { AccordionItemInterface } from "../../../../redux/interface/accordion";
+
 
 export interface AccordionItemProps {
-  item: {
-    id: number;
-    image?: React.ReactNode;
-    bigImg?: React.ReactNode;
-    title?: string[];
-    fullText?: string;
-    isItemOpen?: boolean;
-  };
+  item:AccordionItemInterface;
+  // {
+  //   id: number;
+  //   image?: React.ReactNode;
+  //   bigImg?: React.ReactNode;
+  //   title?: string[];
+  //   fullText?: string;
+  //   isItemOpen?: boolean;
+  // };
   index: number;
   isOpen: boolean;
   onToggle: () => void;

@@ -9,7 +9,8 @@ const Facilities = () => {
          <div className="facilities__wrapper--left">
             <p className="text">Art & Congress hall</p>
             <div>
-            <ResponsiveImage alt="restaurant-image" srcImg="main-facilities2"/>
+            {/* <ResponsiveImage alt="restaurant-image" srcImg="main-facilities2"/> */}
+            <ResponsiveImage alt="restaurant-image" srcImg="main-facilities2" path="main" />
             </div>
          </div>
          <div className="facilities__wrapper--middle">
@@ -19,7 +20,9 @@ const Facilities = () => {
          <div className="facilities__wrapper--right">
           <Icon className="label" iconId="label-second" width={190} height={190}/>
          <div>
-         <ResponsiveImage alt="restaurant-image" srcImg="main-facilities1"/>
+         {/* <ResponsiveImage alt="restaurant-image" srcImg="main-facilities1"/> */}
+         <ResponsiveImage alt="restaurant-image" srcImg="main-facilities1" path="main" />
+         
             </div>
          </div>
         </div>
