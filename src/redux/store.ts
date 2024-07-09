@@ -3,7 +3,7 @@ import storage from "redux-persist/lib/storage";
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
 import { rootReducer } from "./root/rootSlice";
 import { roomsReducer } from "./rooms/roomsSlice";
-import { mainReducer } from "./main/mainSlice";
+import { imageReducer} from "./images/imagesSlice";
 import { accordionReducer } from "./accordion/accordionSlice";
 
 const persistConfig = {
@@ -15,7 +15,7 @@ const store = configureStore({
     reducer: {
         service: persistReducer(persistConfig, rootReducer),
         rooms:persistReducer(persistConfig,roomsReducer),
-        main:persistReducer(persistConfig,mainReducer),
+        image:persistReducer(persistConfig,imageReducer),
         accordion:persistReducer(persistConfig,accordionReducer),
 
     },

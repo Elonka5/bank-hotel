@@ -1,9 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { AccordionItem, getAccordionThunk} from './accordionThunk';
+import {getAccordionThunk} from './accordionThunk';
+import { AccordionItemInterface } from '../interface/accordion';
 
 type AccordionState = {
-  accordionData: AccordionItem[];
+  accordionData: AccordionItemInterface[];
 }
 
 const initialState: AccordionState = {
@@ -17,7 +18,7 @@ const accordionSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getAccordionThunk.fulfilled, (state, action: PayloadAction<AccordionItem[]>) => {
+      .addCase(getAccordionThunk.fulfilled, (state, action: PayloadAction<AccordionItemInterface[]>) => {
         state.accordionData = action.payload;
 
       })
