@@ -21,9 +21,6 @@
     &__select-container {
       position: relative;
 
-      // &.first-select {
-      // }
-
       &.first-select::before {
         content: "";
         position: absolute;
@@ -79,10 +76,6 @@
             color: var(--white-100);
           }
         }
-      }
-
-      &.touch::before {
-        background-color: var(--primary-color-24);
       }
     }
   }

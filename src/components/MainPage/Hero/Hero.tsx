@@ -1,5 +1,4 @@
-// import BookingRoomForm from "../../BookingRoomForm/BookingRoomForm";
-import BookingRoomFormDatePicker from "../../BookingRoomForm/BookingRoomFormDatePicker";
+import BookingRoomForm from "../../BookingRoomForm/BookingRoomForm";
 import ButtonPoly from "../../ButtonPoly/ButtonPoly";
 import ButtonSince from "../../ButtonSince/ButtonSince";
 
@@ -32,8 +31,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="hero__image">
-        <BookingRoomFormDatePicker />
-        {/* <BookingRoomForm /> */}
+        <BookingRoomForm />
         {/* <BookingRoomForm className="touch" /> */}
       </div>
       <div className="hero__address">
