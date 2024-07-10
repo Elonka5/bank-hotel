@@ -8,7 +8,6 @@ import styles from "./1DatePicker.module.scss";
 //   setMinutes,
 //   newDate,
 // } from "react-datepicker/dist/date_utils";
-// import { useState } from "react";
 
 const DatePickerComponent: React.FC<{
   selectedDate: Date | null;
