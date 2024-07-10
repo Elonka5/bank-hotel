@@ -1,14 +1,15 @@
+import { NavProps } from "../../../entities/navprops";
 import ButtonPoly from "../../ButtonPoly/ButtonPoly";
 import Icon from "../../Icon/Icon";
 import ResponsiveImage from "../../ResponsiveImg/ResponsiveImg";
 
-const AboutUs = () => {
+const AboutUs: React.FC<NavProps> = ({ id }) => {
   return (
-    <section className="aboutus container">
+    <section className="aboutus container" id={id}>
       <div className="line-container"></div>
       <div className="aboutus__leftwrapper">
         <div className="aboutus__leftwrapper--imgwrapper">
-          <ResponsiveImage alt="about-us-image" srcImg="main-about1" />
+          <ResponsiveImage alt="about-us-image" srcImg="main-about1" path="main" />
         </div>
         <div className="aboutus__leftwrapper--descr">
           <h2 className="aboutus__heading">
@@ -27,7 +28,7 @@ const AboutUs = () => {
       <div className="aboutus__rightwrapper">
         <Icon className="polygon" width={144} height={147} iconId="label" />
         <div className="aboutus__rightwrapper--imgwrapper">
-          <ResponsiveImage alt="about-us-image" srcImg="main-about2" />
+          <ResponsiveImage alt="about-us-image" srcImg="main-about2" path="main" />
         </div>
         <div className="aboutus__rightwrapper--btnwrapper">
           <ButtonPoly

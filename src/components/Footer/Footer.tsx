@@ -53,7 +53,12 @@ const Footer = () => {
             href="mailto:mailto@gmail.com"
           >
             <p>Email</p>
-            <Icon width={32} height={18} iconId="arrow" />
+            <Icon
+              className="email--link__icon"
+              width={31}
+              height={17}
+              iconId="arrow-right"
+            />
           </a>
         </div>
       </div>

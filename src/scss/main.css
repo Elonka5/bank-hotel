@@ -36,6 +36,7 @@ p {
 img {
   display: block;
   height: auto;
+  width: 100%;
 }
 
 ul {
@@ -114,7 +115,7 @@ address {
   --secondary-color-32: rgba(252, 208, 67, 0.32);
   --secondary-color-24: rgba(252, 208, 67, 0.24);
   --secondary-color-16: rgba(252, 208, 67, 0.16);
-  --text-color-100: rgba(27, 59, 54, 1);
+  --text-color-100: rgb(27, 59, 54);
   --text-color-80: rgba(27, 59, 54, 0.8);
   --text-color-70: rgba(27, 59, 54, 0.7);
   --text-color-64: rgba(27, 59, 54, 0.64);
@@ -122,7 +123,7 @@ address {
   --text-color-32: rgba(27, 59, 54, 0.32);
   --text-color-24: rgba(27, 59, 54, 0.24);
   --text-color-16: rgba(27, 59, 54, 0.16);
-  --white-100: rgba(255, 252, 246, 1);
+  --white-100: rgb(255, 252, 246);
   --white-80: rgba(255, 252, 246, 0.8);
   --white-64: rgba(255, 252, 246, 0.64);
   --white-48: rgba(255, 252, 246, 0.48);
@@ -130,7 +131,7 @@ address {
   --white-24: rgba(255, 252, 246, 0.24);
   --white-16: rgba(255, 252, 246, 0.16);
   --white-12: rgba(255, 252, 246, 0.12);
-  --background-section: rgb(217, 217, 217);
+  --text: #1b3b36;
   --lines-color: #3f5148;
   --other-error: #b03e3e;
   --other-attention: #455955;
@@ -250,6 +251,10 @@ address {
   font-size: 22px;
   line-height: normal;
 }
+.btnSince.white-bg {
+  color: var(--text);
+  border: 1px solid var(--primary-color-48);
+}
 
 .btnPoly {
   position: relative;
@@ -294,6 +299,60 @@ address {
   width: 64px;
   height: 40px;
   transform: translate(-50%, -50%) rotateZ(0deg);
+  color: var(--primary-color-100);
+}
+.btnPoly.rooms {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+.btnPoly.rooms:hover {
+  transition: 250ms ease-in-out;
+  color: var(--text);
+}
+.btnPoly.rooms .polygon {
+  transform: rotateZ(18deg);
+}
+.btnPoly.rooms .arrow50 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 12px;
+  transform: translate(-50%, -50%) rotateX(180deg);
+  width: 47px;
+  height: 25px;
+}
+.btnPoly.booking {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  width: 200px;
+  height: 200px;
+  color: #fcd043;
+  transition: 250ms ease-in-out;
+  color: var(--button-light-color-default);
+}
+.btnPoly.booking:hover {
+  color: var(--button-light-color-hover);
+}
+.btnPoly.booking:active {
+  color: var(--button-light-color-active);
+}
+.btnPoly.booking:disabled {
+  color: var(--button-light-color-disabled);
+  opacity: 0.2;
+}
+.btnPoly.booking span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-style: italic;
+  line-height: normal;
+  color: var(--text);
 }
 
 /* Define classes for react-select components */
@@ -341,9 +400,10 @@ address {
 .booking-form .form__btn-submit {
   width: 370px;
   height: 150px;
-  background: var(--button-light-color-default);
   color: var(--text-color-100);
   text-transform: uppercase;
+  transition: 250ms ease-in-out;
+  background: var(--button-light-color-default);
 }
 .booking-form .form__btn-submit:hover {
   background: var(--button-light-color-hover);
@@ -353,16 +413,31 @@ address {
 }
 .booking-form .form__btn-submit:disabled {
   background: var(--button-light-color-disabled);
+  opacity: 0.2;
 }
 .booking-form .form__btn-submit.touch {
   background: var(--primary-color-100);
   color: var(--white-100);
+  font-size: 18px;
 }
 .booking-form .form__btn-submit.touch:hover {
   background: var(--button-dark-color-hover);
 }
 .booking-form .form__btn-submit.touch:active {
   background: var(--button-dark-color-active);
+  transition: 250ms ease-in-out;
+  background: var(--primary-color-100);
+  color: var(--white-100);
+}
+.booking-form .form__btn-submit.touch:active:hover {
+  background: var(--button-dark-color-hover);
+}
+.booking-form .form__btn-submit.touch:active:active {
+  background: var(--button-dark-color-active);
+}
+.booking-form .form__btn-submit.touch:active:disabled {
+  background: var(--button-light-color-disabled);
+  opacity: 0.2;
 }
 
 .aboutus {
@@ -418,8 +493,6 @@ address {
 .aboutus__leftwrapper--text {
   font-family: "Miracle regular", sans-serif;
   font-size: 50px;
-  font-style: normal;
-  font-weight: 400;
   line-height: 60px;
   letter-spacing: 1.5px;
   text-transform: capitalize;
@@ -450,8 +523,6 @@ address {
 .aboutus__rightwrapper .aboutus__btnText {
   position: absolute;
   font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
   line-height: normal;
   color: var(--white-100);
   display: flex;
@@ -522,6 +593,107 @@ address {
   position: absolute;
   top: 2%;
   right: 78%;
+}
+
+.rooms-apartments {
+  display: flex;
+  flex-direction: column;
+  padding: 300px 30px 200px;
+  background-color: var(--white-100);
+  color: var(--text);
+}
+.rooms-apartments__title-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 200px;
+  color: var(--text);
+  text-transform: uppercase;
+}
+.rooms-apartments__title-wrapper .title {
+  align-self: start;
+  font-family: "Miracle regular", sans-serif;
+  font-size: 150px;
+  line-height: 130px; /* 86.667% */
+}
+.rooms-apartments__title-wrapper .descr {
+  width: 440px;
+  font-size: 26px;
+  line-height: normal;
+}
+.rooms-apartments__slider-wrapper {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+.rooms-apartments__slider-wrapper .slider__list {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.rooms-apartments__slider-wrapper .slider__list--item {
+  display: flex;
+}
+.rooms-apartments__slider-wrapper .slider__list--item .left-container {
+  display: flex;
+}
+.rooms-apartments__slider-wrapper .slider__list--item .left-container__img-wrapper {
+  overflow: hidden;
+  object-fit: contain;
+  width: 285px;
+  height: 339px;
+}
+@media screen and (max-width: 1919.98px) {
+  .rooms-apartments__slider-wrapper .slider__list--item .left-container__img-wrapper {
+    width: 217px;
+    height: 258px;
+  }
+}
+.rooms-apartments__slider-wrapper .slider__list--item .left-container .descr-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 442px;
+  margin: 0 188px;
+}
+.rooms-apartments__slider-wrapper .slider__list--item .left-container .descr-container__title {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  margin-top: 380px;
+  font-family: "Miracle regular", sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: capitalize;
+  color: var(--text);
+}
+.rooms-apartments__slider-wrapper .slider__list--item .left-container .descr-container__descr {
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--text-color-80);
+  margin-top: 40px;
+}
+.rooms-apartments__slider-wrapper .slider__list--item .left-container .descr-container__counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 118px;
+  height: 25px;
+  font-size: 22px;
+  line-height: normal;
+  margin-top: 100px;
+}
+.rooms-apartments__slider-wrapper .slider__list--item .left-container .descr-container__counter span {
+  color: var(--text-color-32);
+}
+.rooms-apartments__slider-wrapper .slider__list--item .right-container {
+  position: relative;
+  display: flex;
+}
+.rooms-apartments__slider-wrapper .slider__list--item .right-container__img-wrapper {
+  width: 757px;
+  height: 1000px;
 }
 
 .accordion__item--open {
@@ -644,7 +816,6 @@ address {
 .gallery--container {
   padding-top: 300px;
   padding-bottom: 300px;
-  border: 1px solid red;
 }
 .gallery--container .gallery--wrapper {
   width: 100%;
@@ -683,8 +854,10 @@ address {
   align-items: center;
   margin-right: 30px;
 }
-.gallery--container .gallery--part__center .label {
-  margin-bottom: 50px;
+.gallery--container .gallery--part__center--label {
+  width: 200px;
+  height: 180px;
+  margin-bottom: 25px;
   transform: rotate(45deg);
 }
 .gallery--container .gallery--part__center .gallery--title {

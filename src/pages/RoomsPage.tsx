@@ -1,8 +1,11 @@
-
 const RoomsPage = () => {
+
+ 
   return (
-    <div>RoomsPage</div>
-  )
+    <div>
+      Rooms
+    </div>
+  );
 }
 
 export default RoomsPage

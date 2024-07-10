@@ -1,10 +1,12 @@
 import "../../scss/layout/_getInTouch.scss";
 import mgTouch_1920 from "../../assets/images/getInTouchImages/touch-desktop-1920.webp";
 import Icon from "../Icon/Icon";
+import BookingRoomForm from "../BookingRoomForm/BookingRoomForm";
+import { NavProps } from "../../entities/navprops";
 
-const GetInTouch: React.FC = () => {
+const GetInTouch: React.FC<NavProps> = ({ id }) => {
   return (
-    <div className="section">
+    <section className="section" id={id}>
       <div className="container touch__container">
         <a className="touch__container--phone" href="tel:+380322975020">
           +38 032 297 50 20
@@ -22,7 +24,7 @@ const GetInTouch: React.FC = () => {
               className="icon--star"
               width={150}
               height={150}
-              iconId="star"
+              iconId="star-16"
             />
             <div>
               <p className="address--info">8 Lystopadovoho Chynu, Lviv</p>
@@ -34,8 +36,12 @@ const GetInTouch: React.FC = () => {
             </div>
           </div>
         </div>
+        <div className="touch__form--wrapper">
+          <h3 className="touch__form--title">Find a room</h3>
+          <BookingRoomForm className="touch" />
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
