@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 
@@ -8,13 +8,15 @@ const Facility = lazy(() => import("./pages/FacilityPage"));
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Main />} />
-        <Route path="rooms" element={<Rooms />} />
-        <Route path="facility" element={<Facility />} />
-      </Route>
-    </Routes>
+    <Suspense fallback={<p>Loading...</p>}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Main />} />
+          <Route path="rooms" element={<Rooms />} />
+          <Route path="restaurant" element={<Facility />} />
+        </Route>
+      </Routes>
+    </Suspense>
   );
 }
 
