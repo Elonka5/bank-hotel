@@ -50,7 +50,7 @@ const BookingRoomForm: React.FC<IBookingRoomFormProps> = ({
   return (
     <div className={`booking-form ${className}`}>
       <form onSubmit={formik.handleSubmit} className="form">
-        <div className="form__select-container first-select">
+        <div className={`form__select-container first-select ${className}`}>
           <Select
             isMulti={false}
             options={options}
