@@ -1,11 +1,26 @@
-import { roomsApartmentsArr } from "../../../helpers/roomsApartmentsItems";
+// import { roomsApartmentsArr } from "../../../helpers/roomsApartmentsItems";
+import { getApartmentsThunk } from "../../../redux/apartments/apartmentsThunk";
+import { useAppDispatch, useAppSelector } from "../../../redux/hooks/hooks";
+import { ApartmentsInterface } from "../../../redux/interface/interface";
 import ButtonPoly from "../../ButtonPoly/ButtonPoly";
 import RoomsApartmentsItem from "../RoomsApartmentsItem/RoomsApartmentsItem";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const RoomsApartments = () => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
+
+  const roomsApartmentsArr = useAppSelector(
+    (state: { apartments: { apartmentsData: ApartmentsInterface[] } }) =>
+      state.apartments.apartmentsData
+  );
+
   const totalPage: number = roomsApartmentsArr.length;
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getApartmentsThunk());
+  }, [dispatch]);
 
   const handleNextSlide = () => {
     setCurrentSlide((prevSlide) =>

@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import {getAccordionThunk} from './accordionThunk';
-import { AccordionItemInterface } from '../interface/accordion';
+import { AccordionItemInterface } from '../interface/interface';
 
 type AccordionState = {
   accordionData: AccordionItemInterface[];

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useAppDispatch } from '../../redux/hooks';
+import { useAppDispatch } from '../../redux/hooks/hooks';
 import { fetchImg } from '../../redux/images/images';
 
 export type ResponsiveImgProps = {

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import AccordionItem from './AccordionItem/AccordionItem';
-import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
+import { useAppDispatch, useAppSelector } from '../../../redux/hooks/hooks';
 import {  getAccordionThunk } from '../../../redux/accordion/accordionThunk';
-import { AccordionItemInterface } from '../../../redux/interface/accordion';
+import { AccordionItemInterface } from '../../../redux/interface/interface';
 // import { items } from '../../../helpers/accordionItems';
 
 const Accordion: React.FC = () => {
@@ -12,6 +12,8 @@ const Accordion: React.FC = () => {
     const dispatch = useAppDispatch();
 
     const accItems = useAppSelector((state: { accordion: { accordionData: AccordionItemInterface[] } }) => state.accordion.accordionData);
+
+    
 
       useEffect(() => {
       // dispatch(fetchAccordionData({ imageName: 'main-about2',bigImageName:'main-about1' }));

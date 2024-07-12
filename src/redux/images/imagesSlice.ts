@@ -1,12 +1,13 @@
 // slice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchImg } from "./images";
+import { ImageItem } from "../interface/interface";
 
-export interface ImageItem {
-  id: string;
-  path: string;
-  url: string;
-}
+// export interface ImageItem {
+//   id: string;
+//   path: string;
+//   url: string;
+// }
 
 interface ImageState {
   images: ImageItem[];

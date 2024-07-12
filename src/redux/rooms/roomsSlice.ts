@@ -3,8 +3,6 @@ import { fetchRooms, RoomItem } from "./roomsThunk";
 
 interface RoomsState {
     roomsData: RoomItem[];
-    // isLoading: boolean;
-    // error: string | null;
   }
   
   const initialState: RoomsState = {

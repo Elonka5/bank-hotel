@@ -19,4 +19,24 @@ export interface ImageResolution {
    export interface AsyncThunkConfig {
     rejectValue: string;
   }
+
+  export interface ApartmentsInterface {
+    id: number;
+    imgLeft: string;
+    imgRight: string;
+    title: string;
+    text: string;
+    imageLeftResolutions?: ImageResolution;
+    imageRightResolutions?: ImageResolution;
+  }
   
+  export interface ImageItem {
+    id: string;
+    path: string;
+    url: string;
+  }
+  
+  export interface ImageFetchParams {
+    imageName: string;
+    path: string;
+  }
