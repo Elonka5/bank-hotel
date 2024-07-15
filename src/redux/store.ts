@@ -15,19 +15,23 @@ import { roomsReducer } from "./rooms/roomsSlice";
 import { imageReducer } from "./images/imagesSlice";
 import { accordionReducer } from "./accordion/accordionSlice";
 import { apartmentsReducer } from "./apartments/apartmentsSlice";
+import { bookingReducer } from "./booking/bookingSlice";
 
 const persistConfig = {
   key: "root",
   storage,
 };
 
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
 const store = configureStore({
   reducer: {
-    service: persistReducer(persistConfig, rootReducer),
-    rooms: persistReducer(persistConfig, roomsReducer),
-    image: persistReducer(persistConfig, imageReducer),
-    accordion: persistReducer(persistConfig, accordionReducer),
-    apartments: persistReducer(persistConfig, apartmentsReducer),
+    service: persistedReducer,
+    rooms: roomsReducer,
+    image: imageReducer,
+    accordion: accordionReducer,
+    apartments: apartmentsReducer,
+    booking: bookingReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

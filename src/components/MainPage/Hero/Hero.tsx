@@ -1,5 +1,5 @@
 // import BookingRoomForm from "../../BookingRoomForm/BookingRoomForm";
-import BookingRoomFormDatePicker from "../../BookingRoomForm/1BookingRoomFormDatePicker";
+import BookingRoomFormDatePicker from "../../BookingRoomForm/BookingRoomFormDatePicker";
 import ButtonPoly from "../../ButtonPoly/ButtonPoly";
 import ButtonSince from "../../ButtonSince/ButtonSince";
 

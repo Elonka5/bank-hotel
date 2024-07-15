@@ -2,13 +2,7 @@ import { createSlice, isAnyOf, PayloadAction } from "@reduxjs/toolkit";
 import { getAccordionThunk } from "../accordion/accordionThunk";
 import { fetchImg } from "../images/images";
 import { getApartmentsThunk } from "../apartments/apartmentsThunk";
-
-interface ServiceState {
-  error: string | null;
-  isLoading: boolean;
-  openModal: boolean;
-  modalContent: string;
-}
+import { ServiceState } from "../interface/interface";
 
 const initialState: ServiceState = {
   error: null,
