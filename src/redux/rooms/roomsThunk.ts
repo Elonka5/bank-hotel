@@ -1,58 +1,48 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import { DataSnapshot, get, ref } from "firebase/database";
-import { db,storage } from "../../firebase/firebase";
+import { AsyncThunk, createAsyncThunk } from "@reduxjs/toolkit";
+import { get, ref } from "firebase/database";
+import { db } from "../../firebase/firebase";
+import { generateImageURLs } from "../../helpers/generateImageURLs";
+import { AsyncThunkConfig, RoomItemInterface } from "../interface/interface";
 
-import { ref as storageRef, getDownloadURL, } from "firebase/storage";
 
-export type RoomItem = {
-  id?: string;
-  title?: string;
-  imgHero?: string;
-  roomDescription?: string;
-  imgDescription?: string;
-  leftSection?: {
-    image: string;
-    description: string;
-  }[];
-  righSection?: {
-    image: string;
-    description: string[];
-  }[];
-};
-
-export const fetchRooms = createAsyncThunk<
-  RoomItem[],
+export const getRoomsThunk: AsyncThunk<RoomItemInterface[], undefined, AsyncThunkConfig> = createAsyncThunk<
+  RoomItemInterface[],
   undefined,
-  { rejectValue: string }
->('rooms/fetchRooms', async function (_, { rejectWithValue }) {
-  try {
-    const roomsRef = ref(db, 'rooms');
-    console.log(roomsRef);
+  AsyncThunkConfig
+>(
+  'rooms/getRoomsThunk',
+  async (_, { rejectWithValue }) => {
+    try {
+      const roomsRef = ref(db, 'rooms');
+      const snapshot = await get(roomsRef);
 
-    // const str = getDownloadURL(storageRef(storage, 'main'))
+      let roomsData: RoomItemInterface[] = [];
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        roomsData = Object.values(data);
+      } else {
+        console.log('No data available');
+      }
 
-    // console.log(str);
+      const sizes = ['1920', '1440', '1024', '375'];
 
-    const storageReference = storageRef(storage, `main/`);
-    console.log(storageReference);
-    // const snapsh = await uploadBytes(storageReference);
-    const downloadURL = await getDownloadURL(storageReference);
-console.log(downloadURL);
+      const updatedRoomsData = await Promise.all(roomsData.map(async (item) => {
+        const path = `rooms`;
+        const imageHeroResolutions = await generateImageURLs(item.imgHero, sizes, path);
+        const imageDescriptionResolutions = await generateImageURLs(item.imgDescription, sizes, path);
+        const imageLeftSectionResolutions = await generateImageURLs(item.leftSection.image, sizes, path);
+        const imageRightSectionResolutions = await generateImageURLs(item.rightSection.image, sizes, path);
 
-    const snapshot: DataSnapshot = await get(roomsRef);
-
-    if (snapshot.exists()) {
-      const roomsData: RoomItem[] = snapshot.val();
-      console.log('data:', roomsData);
-      return roomsData;
-    } else {
-      return [];
+        return { ...item, imageHeroResolutions, imageDescriptionResolutions,imageLeftSectionResolutions,imageRightSectionResolutions };
+      }));
+      return updatedRoomsData;
+    } catch (error: unknown) {
+      let errorMessage = 'An unknown error occurred';
+      if (error instanceof Error) {
+        errorMessage = error.message;
+      }
+      console.error('Error fetching apartments:', errorMessage);
+      return rejectWithValue(errorMessage);
     }
-  } catch (error: unknown) {
-    let errorMessage = "An unknown error occurred";
-    if (error instanceof Error) {
-      errorMessage = error.message;
-    }
-    return rejectWithValue(errorMessage);
   }
-});
+);

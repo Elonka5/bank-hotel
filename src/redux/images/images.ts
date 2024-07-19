@@ -1,35 +1,39 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import { getDownloadURL, ref as storageRef } from 'firebase/storage';
-import { storage } from '../../firebase/firebase';
-import { ImageFetchParams, ImageItem } from '../interface/interface';
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import { getDownloadURL, ref as storageRef, listAll } from "firebase/storage";
+import { storage } from "../../firebase/firebase";
+import { ImageFetchParams, ImageItem } from "../interface/interface";
 
+export const fetchImg = createAsyncThunk<
+  ImageItem[],
+  ImageFetchParams,
+  { rejectValue: string }
+>("image/fetchImg", async ({ imageName, path }, { rejectWithValue }) => {
+  try {
 
+    const folderRef = storageRef(storage, path);
+    const folderContents = await listAll(folderRef);
+    const fileNames = folderContents.items.map(item => item.name);
 
-export const fetchImg = createAsyncThunk<ImageItem[], ImageFetchParams, { rejectValue: string }>(
-  'image/fetchImg',
-  async ({ imageName, path }, { rejectWithValue }) => {
-    try {
-      const img1920 = await getDownloadURL(storageRef(storage, `${path}/${imageName}-1920.webp`));
-      const img1440 = await getDownloadURL(storageRef(storage, `${path}/${imageName}-1440.webp`));
-      const img1024 = await getDownloadURL(storageRef(storage, `${path}/${imageName}-1024.webp`));
-      const img375 = await getDownloadURL(storageRef(storage, `${path}/${imageName}-375.webp`));
+    const images: ImageItem[] = [];
+    const sizes = ["1920", "1440", "1024", "375"];
 
-      return [
-        { id: 'img-1920', path: `${path}/${imageName}-1920.webp`, url: img1920 },
-        { id: 'img-1440', path: `${path}/${imageName}-1440.webp`, url: img1440 },
-        { id: 'img-1024', path: `${path}/${imageName}-1024.webp`, url: img1024 },
-        { id: 'img-375', path: `${path}/${imageName}-375.webp`, url: img375 },
-      ];
-    } catch (error: unknown) {
-      let errorMessage = 'An unknown error occurred';
-      if (error instanceof Error) {
-        errorMessage = error.message;
+    for (const size of sizes) {
+      const filePath = `${imageName}-${size}.webp`;
+      if (fileNames.includes(filePath)) {
+        const url = await getDownloadURL(storageRef(storage, `${path}/${filePath}`));
+        images.push({ id: `img-${size}`, path: `${path}/${filePath}`, url });
       }
-      return rejectWithValue(errorMessage);
+      //  else {
+      //   console.warn(`Image ${filePath} not found at path ${path}.`);
+      // }
     }
+
+    return images;
+  } catch (error: unknown) {
+    let errorMessage = "An unknown error occurred";
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    }
+    return rejectWithValue(errorMessage);
   }
-);
-
-
-
-
+});

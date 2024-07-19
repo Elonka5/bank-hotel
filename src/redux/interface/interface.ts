@@ -1,4 +1,4 @@
-import { RoomItem } from "../rooms/roomsThunk";
+// import { RoomItem } from "../rooms/roomsThunk";
 
 export interface ImageResolution {
   "img-1920": string;
@@ -47,8 +47,29 @@ export interface ImageFetchParams {
   path: string;
 }
 
+
+export interface RoomItemInterface {
+  id?: string;
+  title?: string;
+  imgHero: string;
+  roomDescription?: string;
+  imgDescription: string;
+  leftSection: {
+    image: string;
+    description: string;
+  };
+  rightSection: {
+    image: string;
+    description: string;
+  };
+  imageHeroResolutions?: ImageResolution;
+  imageDescriptionResolutions?: ImageResolution;
+  imageLeftSectionResolutions?: ImageResolution;
+  imageRightSectionResolutions?: ImageResolution;
+}
+
 export interface RoomsState {
-  roomsData: RoomItem[];
+  roomsData: RoomItemInterface[];
 }
 
 export interface IBookingState {

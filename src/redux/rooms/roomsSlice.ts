@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { fetchRooms, RoomItem } from "./roomsThunk";
-import { RoomsState } from "../interface/interface";
+import { getRoomsThunk} from "./roomsThunk";
+import { RoomItemInterface, RoomsState } from "../interface/interface";
 
 const initialState: RoomsState = {
   roomsData: [],
@@ -12,8 +12,8 @@ const roomsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(
-      fetchRooms.fulfilled,
-      (state, action: PayloadAction<RoomItem[]>) => {
+      getRoomsThunk.fulfilled,
+      (state, action: PayloadAction<RoomItemInterface[]>) => {
         state.roomsData = action.payload;
       }
     );

@@ -6,14 +6,6 @@ import { AccordionItemInterface } from "../../../../redux/interface/interface";
 
 export interface AccordionItemProps {
   item:AccordionItemInterface;
-  // {
-  //   id: number;
-  //   image?: React.ReactNode;
-  //   bigImg?: React.ReactNode;
-  //   title?: string[];
-  //   fullText?: string;
-  //   isItemOpen?: boolean;
-  // };
   index: number;
   isOpen: boolean;
   onToggle: () => void;
