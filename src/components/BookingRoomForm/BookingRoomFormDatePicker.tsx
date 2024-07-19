@@ -5,18 +5,11 @@ import { useAppDispatch } from "../../redux/hooks/hooks";
 import {
   setCheckInDate,
   setCheckOutDate,
+  setSubmitDates,
 } from "../../redux/booking/bookingSlice";
-
-// interface IValues {
-//   // checkIn: string;
-//   // checkOut: string;
-//   checkInDate: Date | null;
-//   checkOutDate: Date | null;
-// }
+// import DatePicker from "react-datepicker";
 
 const initialValues: IBookingState = {
-  // checkIn: "",
-  // checkOut: "",
   checkInDate: null,
   checkOutDate: null,
 };
@@ -30,10 +23,19 @@ const BookingRoomFormDatePicker: React.FC<IBookingRoomFormProps> = ({
 }) => {
   const dispatch = useAppDispatch();
 
+  // const closeWithRef = (ref: React.RefObject<DatePicker | null>) => {
+  //   ref.current?.setOpen(false);
+  // };
+
   const onSubmit = (values: IBookingState) => {
-    console.log(
-      `checkIn - ${values.checkInDate} checkOut - ${values.checkOutDate} submit`
-    );
+    const dates = {
+      checkIn: values.checkInDate,
+      checkOut: values.checkOutDate,
+    };
+    dispatch(setSubmitDates(dates));
+    dispatch(setCheckInDate(null));
+    dispatch(setCheckOutDate(null));
+    formik.resetForm();
   };
 
   const formik = useFormik({
@@ -41,20 +43,15 @@ const BookingRoomFormDatePicker: React.FC<IBookingRoomFormProps> = ({
     onSubmit,
   });
 
-  // const handleChange = (field: keyof IValues) => () => {
-  //   formik.setFieldValue(field, "");
-  // };
-
   const handleDateChange =
     (field: keyof IBookingState) => (date: Date | null) => {
       const dateString = date ? date.toISOString() : null;
-      formik.setFieldValue(field, date);
+      formik.setFieldValue(field, dateString);
+      // formik.setFieldValue(field, date);
       if (field === "checkInDate") {
         dispatch(setCheckInDate(dateString));
-        console.log("setCheckInDate", date?.toISOString());
       } else if (field === "checkOutDate") {
         dispatch(setCheckOutDate(dateString));
-        console.log("setCheckOutDate", date?.toISOString());
       }
     };
 
@@ -75,6 +72,8 @@ const BookingRoomFormDatePicker: React.FC<IBookingRoomFormProps> = ({
             iconWidth={26}
             iconHeight={26}
             iconText="Cancel"
+            // closeWithRef={closeWithRef}
+            clearFormikField={() => formik.resetForm()}
           />
         </div>
         <div className="form__select-container">
@@ -91,9 +90,19 @@ const BookingRoomFormDatePicker: React.FC<IBookingRoomFormProps> = ({
             iconWidth={26}
             iconHeight={26}
             iconText="Cancel"
+            // closeWithRef={closeWithRef}
+            clearFormikField={() => formik.resetForm()}
           />
         </div>
-        <button type="submit" className={`form__btn-submit ${className}`}>
+        <button
+          type="submit"
+          disabled={
+            formik.values.checkOutDate && formik.values.checkInDate
+              ? false
+              : true
+          }
+          className={`form__btn-submit ${className}`}
+        >
           Book Room
         </button>
       </form>

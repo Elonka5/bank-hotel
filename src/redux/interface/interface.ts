@@ -54,6 +54,12 @@ export interface RoomsState {
 export interface IBookingState {
   checkInDate: string | null;
   checkOutDate: string | null;
+  submitDates?:
+    | Array<{
+        checkIn: string | null;
+        checkOut: string | null;
+      }>
+    | undefined;
 }
 
 export interface ServiceState {
