@@ -43,7 +43,6 @@ const MainPage = () => {
         <AboutUs id="about" />
       </div>
       <div className="whitesection" id="facilities">
-        {/* <div className="whitesection"> */}
         <RoomsApartments />
         <Facilities />
       </div>

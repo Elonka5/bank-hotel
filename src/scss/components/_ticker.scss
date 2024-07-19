@@ -31,6 +31,14 @@
   height: 140px;
   // white-space: nowrap;
 
+  @include lg {
+    height: 120px;
+  }
+
+  @include md {
+    height: 80px;
+  }
+
   &__right {
     width: calc(100% + 600px);
     animation: scrollRight 20s linear infinite;
@@ -50,6 +58,16 @@
   color: var(--white-12);
   //   animation: scrollTicker 20s linear infinite;
   //   animation-direction: reverse;
+
+  @include lg {
+    font-size: 100px;
+    line-height: 1.2;
+  }
+
+  @include md {
+    font-size: 60px;
+    line-height: 1.2;
+  }
 
   .highlight {
     color: var(--white-100);

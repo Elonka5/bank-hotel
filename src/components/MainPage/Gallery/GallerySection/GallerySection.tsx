@@ -34,7 +34,7 @@ const GallerySection = () => {
           </div>
 
           <div className="gallery--info__wrapper">
-            <Icon width={50} height={50} iconId="polygon-fill" />
+            <Icon className="gallery--info__icon" iconId="polygon-fill" />
             <p className="gallery--info">
               It is our pleasure to meet your most unrealistic expectations.
             </p>

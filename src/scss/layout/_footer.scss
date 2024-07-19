@@ -1,3 +1,5 @@
+@import "../utils/responsive";
+
 .footer {
   background-color: var(--white-100);
 }
@@ -18,14 +20,27 @@
   //   margin-bottom: 30px;
   // }
 
+  @include md {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
   .footer__list {
     display: flex;
     align-items: start;
     gap: 188px;
 
+    @include md {
+      gap: 146px;
+    }
+
     &--item:not(:last-child) {
       max-width: 285px;
       width: 100%;
+
+      @include md {
+        max-width: 231px;
+      }
     }
 
     .title {
@@ -34,6 +49,11 @@
       margin-bottom: 40px;
       font-size: 26px;
       font-weight: 400;
+
+      @include md {
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
     }
 
     .title::before {
@@ -48,6 +68,11 @@
       background-color: var(--secondary-color-100);
       transform-origin: top left;
       transform: rotate(20deg);
+
+      @include md {
+        top: -20%;
+        height: 144%;
+      }
     }
 
     .description {
@@ -55,6 +80,11 @@
       font-size: 16px;
       font-weight: 400;
       line-height: 1.75;
+
+      @include md {
+        font-size: 13px;
+        line-height: 1.76;
+      }
     }
   }
 
@@ -65,6 +95,13 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 1.25;
+
+    @include md {
+      flex-direction: column;
+      gap: 16px;
+      font-size: 12px;
+      line-height: 1.6;
+    }
   }
 
   .wrapper {
@@ -73,10 +110,18 @@
     gap: 188px;
     width: 100%;
 
+    @include md {
+      gap: 146px;
+    }
+
     .rights,
     .email--link {
       max-width: 285px;
       width: 100%;
+
+      @include md {
+        max-width: 249px;
+      }
     }
 
     .rights {
@@ -97,6 +142,12 @@
       font-weight: 400;
       line-height: 1.25;
       text-transform: uppercase;
+
+      @include md {
+        padding: 18px 20px;
+        font-size: 12px;
+        line-height: 1.6;
+      }
     }
   }
 }
