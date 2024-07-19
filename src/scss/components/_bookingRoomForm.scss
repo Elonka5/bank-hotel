@@ -61,20 +61,13 @@
         color: var(--white-100);
         font-size: 18px;
 
-        &:hover {
-          background: var(--button-dark-color-hover);
-        }
-
-        &:active {
-          background: var(--button-dark-color-active);
-          @include btn-state-changes(
-            var(--primary-color-100),
-            var(--button-dark-color-hover),
-            var(--button-dark-color-active),
-            $svg: no
-          ) {
-            color: var(--white-100);
-          }
+        @include btn-state-changes(
+          var(--primary-color-100),
+          var(--button-dark-color-hover),
+          var(--button-dark-color-active),
+          $svg: no
+        ) {
+          color: var(--white-100);
         }
       }
     }

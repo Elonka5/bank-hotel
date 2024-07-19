@@ -9,7 +9,7 @@ const AboutUs: React.FC<NavProps> = ({ id }) => {
       <div className="line-container"></div>
       <div className="aboutus__leftwrapper">
         <div className="aboutus__leftwrapper--imgwrapper">
-          <ResponsiveImage alt="about-us-image" srcImg="main-about1" />
+          <ResponsiveImage alt="about-us-image" srcImg="main-about1" path="main" />
         </div>
         <div className="aboutus__leftwrapper--descr">
           <h2 className="aboutus__heading">
@@ -28,7 +28,7 @@ const AboutUs: React.FC<NavProps> = ({ id }) => {
       <div className="aboutus__rightwrapper">
         <Icon className="polygon" width={144} height={147} iconId="label" />
         <div className="aboutus__rightwrapper--imgwrapper">
-          <ResponsiveImage alt="about-us-image" srcImg="main-about2" />
+          <ResponsiveImage alt="about-us-image" srcImg="main-about2" path="main" />
         </div>
         <div className="aboutus__rightwrapper--btnwrapper">
           <ButtonPoly

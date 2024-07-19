@@ -1,0 +1,72 @@
+@mixin hideChildElements($firstChild, $lastChild) {
+  @for $i from $firstChild through $lastChild {
+    &:nth-of-type(#{$i}) {
+      display: none;
+    }
+  }
+}
+
+@mixin arrow-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 12px;
+  transform: translate(-50%, -50%) rotateX(180deg);
+  @content;
+}
+
+@mixin text-opacity-8 {
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--text-color-80);
+  @content;
+}
+
+@mixin transition-standart {
+  transition: 250ms ease-in-out;
+  @content;
+}
+
+@mixin btn-state-changes(
+  $bg-default: var(--button-light-color-default),
+  $bg-hover: var(--button-light-color-hover),
+  $bg-active: var(--button-light-color-active),
+  $bg-disabled: var(--button-light-color-disabled),
+  $svg: no
+) {
+  @include transition-standart() {
+    @if $svg == yes {
+      color: $bg-default;
+
+      &:hover {
+        color: $bg-hover;
+      }
+
+      &:active {
+        color: $bg-active;
+      }
+
+      &:disabled {
+        color: $bg-disabled;
+        opacity: 0.2;
+      }
+    } @else {
+      background: $bg-default;
+
+      &:hover {
+        background: $bg-hover;
+      }
+
+      &:active {
+        background: $bg-active;
+      }
+
+      &:disabled {
+        background: $bg-disabled;
+        opacity: 0.2;
+      }
+    }
+    @content;
+  }
+}
