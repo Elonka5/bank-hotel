@@ -7,6 +7,13 @@ import CustomHeaderComponent from "./CustomHeaderComponent";
 import BottomButtonsComponents from "./BottomButtonsComponents";
 import Icon from "../Icon/Icon";
 import { useRef } from "react";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
+import {
+  setCheckInDate,
+  setCheckOutDate,
+  setSubmitDates,
+} from "../../redux/booking/bookingSlice";
+import DropdownIndicatorDatepicker from "../BookingRoomForm/DropdownIndicatorDatepicker";
 
 interface IDatePickerProps {
   selectedDate: Date | null;
@@ -17,6 +24,8 @@ interface IDatePickerProps {
   iconWidth?: number;
   iconHeight?: number;
   iconText?: string;
+  // closeWithRef?: (ref: React.RefObject<DatePicker | null>) => void;
+  clearFormikField?: () => void;
 }
 
 const DatePickerComponent: React.FC<IDatePickerProps> = ({
@@ -28,30 +37,42 @@ const DatePickerComponent: React.FC<IDatePickerProps> = ({
   iconWidth,
   iconHeight,
   iconText,
+  // closeWithRef,
+  clearFormikField,
 }) => {
   const datePickerRef = useRef<DatePicker | null>(null);
+
+  const dispatch = useAppDispatch();
+
+  const selectCheckInDate = useAppSelector(
+    (state) => state.booking.checkInDate
+  );
+  const selectCheckOutDate = useAppSelector(
+    (state) => state.booking.checkOutDate
+  );
   const minTime = new Date();
   minTime.setHours(8, 0, 0, 0);
 
   const maxTime = new Date();
   maxTime.setHours(22, 0, 0, 0);
 
-  const minDate = new Date();
-
-  const filterPassedTime = (time: Date) => {
-    const currentDate = new Date();
-    const selectedDate = new Date(time);
-
-    return currentDate.getTime() < selectedDate.getTime();
+  const handleMinDate = () => {
+    let minDate = new Date();
+    if (selectCheckInDate) {
+      minDate = new Date(selectCheckInDate);
+    }
+    return minDate;
   };
 
-  // const CloseAndClear = () => {
-  //   if (datePickerRef.current) {
-  //     datePickerRef.current.setOpen(false);
-  //     // console.log(datePickerRef.current.input.value);
-  //     datePickerRef.current.clear();
-  //   }
-  // };
+  const filterPassedTime = (time: Date) => {
+    let currentDate = new Date();
+    const selectedDate = new Date(time);
+
+    if (selectCheckInDate) {
+      currentDate = new Date(selectCheckInDate);
+    }
+    return currentDate.getTime() < selectedDate.getTime();
+  };
 
   const HandleCloseOrReset = (evt?: string) => {
     if (datePickerRef.current) {
@@ -60,14 +81,26 @@ const DatePickerComponent: React.FC<IDatePickerProps> = ({
       } else if (evt === "reset") {
         datePickerRef.current.setOpen(false);
         datePickerRef.current.clear();
-      } else {
-        console.log("submit");
+      } else if (evt === "submit") {
+        datePickerRef.current.setOpen(false);
+        // closeWithRef?.(datePickerRef);
+
+        dispatch(
+          setSubmitDates({
+            checkIn: selectCheckInDate,
+            checkOut: selectCheckOutDate,
+          })
+        );
+        dispatch(setCheckInDate(null));
+        dispatch(setCheckOutDate(null));
+        clearFormikField?.();
       }
     }
   };
 
   return (
     <div className={styles.datepicker}>
+      <DropdownIndicatorDatepicker datePickerRef={datePickerRef} />
       <DatePicker
         ref={datePickerRef}
         selected={selectedDate}
@@ -79,7 +112,7 @@ const DatePickerComponent: React.FC<IDatePickerProps> = ({
         timeIntervals={60}
         minTime={minTime}
         maxTime={maxTime}
-        minDate={minDate}
+        minDate={handleMinDate()}
         dateFormat="Pp"
         useWeekdaysShort={true}
         placeholderText={placeholderText}
@@ -98,7 +131,7 @@ const DatePickerComponent: React.FC<IDatePickerProps> = ({
         <BottomButtonsComponents
           text={iconText}
           onClick={HandleCloseOrReset}
-          onClickEvent="close"
+          onClickEvent="reset"
         >
           <Icon
             iconId={iconId}
