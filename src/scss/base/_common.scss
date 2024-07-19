@@ -81,6 +81,15 @@ address {
   overflow: hidden;
 }
 
+@mixin visually-hidden {
+  position: relative;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 @mixin arrow-position {
   position: absolute;
   top: 50%;

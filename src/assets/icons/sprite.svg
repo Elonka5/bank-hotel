@@ -196,5 +196,14 @@
 <path fill="#fffcf6" style="fill: var(--color1, #fffcf6)" d="M0.78 0.005l31.21 31.21-0.78 0.78-31.21-31.21 0.78-0.78z"></path>
 <path fill="#fffcf6" style="fill: var(--color1, #fffcf6)" d="M31.211 0.005l-31.21 31.21 0.78 0.78 31.21-31.21-0.78-0.78z"></path>
 </symbol>
+
+<symbol id="wave-Lg" viewBox="0 0 1920 563" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.6" d="M2345.86 130.875C2217.07 20.3109 1865.21 -122.021 1488.1 193.165C1016.7 587.147 444.5 776.804 -62.1477 183.689" stroke="#FCD043"/>
+</symbol>
+
+<symbol id="wave-maxLg" viewBox="0 0 1024 257" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.6" d="M1268 60.0742C1195.48 9.78365 997.341 -54.9566 784.977 88.407C519.523 267.612 197.305 353.878 -87.9999 84.0968" stroke="#FCD043"/>
+</symbol>
+
     </defs>
 </svg>
