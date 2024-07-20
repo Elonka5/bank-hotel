@@ -3,23 +3,34 @@ import imgRestaurant from "../../../../assets/images/mainImages/desktop1920/main
 import imgHall from "../../../../assets/images/mainImages/desktop1920/main-gallery3-desktop-1920.webp";
 import imgConference from "../../../../assets/images/mainImages/desktop1920/main-gallery2-desktop-1920.webp";
 import imgBath from "../../../../assets/images/mainImages/desktop1920/main-gallery5-desktop-1920.webp";
+
+import imgGalleryLeftUp from "../../../../assets/images/mainImages/mobile/main-facilities2-mobile.webp";
+import imgGalleryRightUp from "../../../../assets/images/mainImages/mobile/main-gallery1-mobile.webp";
+import imgGalleryCenter from "../../../../assets/images/mainImages/mobile/main-gallery3-mobile.webp";
+
 import Icon from "../../../Icon/Icon";
 import TickerRight from "./Ticker/TickerRight";
 import TickerLeft from "./Ticker/TickerLeft";
+import { useMediaQuery } from "react-responsive";
 
 const GallerySection = () => {
+  const isMobileSm = useMediaQuery({ maxWidth: 1023.99 });
+
   return (
     <div className="container gallery--container">
       <div className="gallery--wrapper">
-        <div className="gallery--part__left">
-          <p className="section--introduction">Art & Congress hall</p>
-          <div className="img--wrapper__nopaddingLeft">
-            <img src={imgRoom} alt="Room equipment" />
+        {!isMobileSm && (
+          <div className="gallery--part__left">
+            <p className="section--introduction">Art & Congress hall</p>
+            <div className="img--wrapper__nopaddingLeft">
+              <img src={imgRoom} alt="Room equipment" />
+            </div>
+            <div className="img--wrapper__left">
+              <img src={imgRestaurant} alt="Restaurant equipment" />
+            </div>
           </div>
-          <div className="img--wrapper__left">
-            <img src={imgRestaurant} alt="Restaurant equipment" />
-          </div>
-        </div>
+        )}
+
         <div className="gallery--part__center">
           <Icon className="gallery--part__center--label" iconId="label" />
           <h2 className="gallery--title">Our gallery</h2>
@@ -29,30 +40,65 @@ const GallerySection = () => {
             decorated with modern art pieces that will make your stay
             unforgettable.{" "}
           </p>
-          <div className="img--wrapper__center">
-            <img src={imgHall} alt="Hall equipment" />
-          </div>
+          <div className="gallery--wrapper__imgInfo">
+            {!isMobileSm ? (
+              <div className="img--wrapper__center">
+                <img src={imgHall} alt="Hall equipment" />
+              </div>
+            ) : (
+              <div className="gallery--imgs--wrapper__mobile">
+                <div className="gallery--part__left--mobile">
+                  <div className="img--wrapper__leftUp">
+                    <img src={imgGalleryLeftUp} alt="Room equipment" />
+                  </div>
+                  <div className="img--wrapper__leftTransp">
+                    <img src="#" alt="Room equipment" />
+                  </div>
+                </div>
+                {/* <div className="gallery--part__center--mobile"> */}
+                <div className="img--wrapper__center--mobile">
+                  <img src={imgGalleryCenter} alt="Room equipment" />
+                </div>
+                {/* </div> */}
+                <div className="gallery--part__right--mobile">
+                  <div className="img--wrapper__rightUp">
+                    <img src={imgGalleryRightUp} alt="Room equipment" />
+                  </div>
+                  <div className="img--wrapper__rightTransp">
+                    <img src="#" alt="Room equipment" />
+                  </div>
+                </div>
+              </div>
+            )}
 
-          <div className="gallery--info__wrapper">
-            <Icon className="gallery--info__icon" iconId="polygon-fill" />
-            <p className="gallery--info">
-              It is our pleasure to meet your most unrealistic expectations.
-            </p>
+            <div className="gallery--info__wrapper">
+              <Icon className="gallery--info__icon" iconId="polygon-fill" />
+              <p className="gallery--info">
+                It is our pleasure to meet your most unrealistic expectations.
+              </p>
+            </div>
           </div>
         </div>
-        <div className="gallery--part__right">
-          <div className="img--wrapper__nopaddingRight">
-            <img src={imgConference} alt="Conference hall equipment" />
+
+        {!isMobileSm && (
+          <div className="gallery--part__right">
+            <div className="img--wrapper__nopaddingRight">
+              <img src={imgConference} alt="Conference hall equipment" />
+            </div>
           </div>
-        </div>
+        )}
       </div>
-      <div className="img--wrapper__right">
-        <img src={imgBath} alt="Bathroom equipment" />
-      </div>
-      <div className="ticker--box">
-        <TickerRight />
-        <TickerLeft />
-      </div>
+      {!isMobileSm && (
+        <>
+          <div className="img--wrapper__right">
+            <img src={imgBath} alt="Bathroom equipment" />
+          </div>
+          <div className="ticker--box">
+            <TickerRight />
+            <TickerLeft />
+          </div>
+        </>
+      )}
     </div>
   );
 };

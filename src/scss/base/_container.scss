@@ -1,7 +1,22 @@
+@import "../utils/responsive";
+
 .container {
   max-width: 1920px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding: 0 30px;
+
+  @include lg {
+    max-width: 1440px;
+    padding: 0 20px;
+  }
+
+  @include md {
+    max-width: 1024px;
+  }
+
+  @include sm {
+    max-width: 375px;
+  }
 }

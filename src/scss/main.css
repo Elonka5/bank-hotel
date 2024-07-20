@@ -87,6 +87,22 @@ address {
   margin-right: auto;
   padding: 0 30px;
 }
+@media screen and (max-width: 1919.98px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 20px;
+  }
+}
+@media screen and (max-width: 1439.99px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+@media screen and (max-width: 1023.99px) {
+  .container {
+    max-width: 375px;
+  }
+}
 
 @font-face {
   font-family: "Helvetica Neue LT 55";
@@ -108,7 +124,7 @@ address {
   --primary-color-32: rgba(49, 63, 56, 0.32);
   --primary-color-24: rgba(49, 63, 56, 0.24);
   --primary-color-16: rgba(49, 63, 56, 0.16);
-  --secondary-color-100: rgba(252, 208, 67, 1);
+  --secondary-color-100: rgb(252, 208, 67);
   --secondary-color-80: rgba(252, 208, 67, 0.8);
   --secondary-color-64: rgba(252, 208, 67, 0.64);
   --secondary-color-48: rgba(252, 208, 67, 0.48);
@@ -717,9 +733,13 @@ address {
   margin-right: 100px;
 }
 
-.accordion__thumb .preview {
-  width: 284px;
-  height: 284px;
+.accordion__list {
+  padding-bottom: 300px;
+}
+
+.accordion__thumb img {
+  width: 217px;
+  height: 217px;
   object-fit: cover;
 }
 
@@ -773,12 +793,13 @@ address {
 
 .gallery--hero {
   position: relative;
+  display: flex;
+  flex-direction: column;
   padding-top: 100px;
   padding-bottom: 377px;
   color: var(--secondary-color-100);
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -788,6 +809,12 @@ address {
   .gallery--hero {
     padding-top: 50px;
     padding-bottom: 149px;
+  }
+}
+@media screen and (max-width: 1023.99px) {
+  .gallery--hero {
+    padding-top: 70px;
+    padding-bottom: 66px;
   }
 }
 .gallery--hero__icon-wave {
@@ -833,6 +860,14 @@ address {
     line-height: 0.8;
   }
 }
+@media screen and (max-width: 1023.99px) {
+  .gallery--hero__title {
+    max-width: 357px;
+    margin-bottom: 530px;
+    font-size: 60px;
+    line-height: 1;
+  }
+}
 .gallery--hero__info {
   max-width: 440px;
   font-size: 26px;
@@ -848,6 +883,12 @@ address {
 @media screen and (max-width: 1439.99px) {
   .gallery--hero__info {
     max-width: 231px;
+  }
+}
+@media screen and (max-width: 1023.99px) {
+  .gallery--hero__info {
+    max-width: 210px;
+    align-self: flex-end;
   }
 }
 
@@ -867,22 +908,21 @@ address {
     padding-bottom: 100px;
   }
 }
+@media screen and (max-width: 1023.99px) {
+  .gallery--container {
+    padding-top: 69px;
+    padding-bottom: 69px;
+  }
+}
 .gallery--container .gallery--wrapper {
   width: 100%;
   display: flex;
   align-items: start;
+  justify-content: space-between;
 }
-.gallery--container .gallery--part__left {
-  margin-right: 190px;
-}
-@media screen and (max-width: 1919.98px) {
-  .gallery--container .gallery--part__left {
-    margin-right: 138px;
-  }
-}
-@media screen and (max-width: 1439.99px) {
-  .gallery--container .gallery--part__left {
-    margin-right: 124px;
+@media screen and (max-width: 1023.99px) {
+  .gallery--container .gallery--wrapper {
+    justify-content: center;
   }
 }
 .gallery--container .gallery--part__left .section--introduction {
@@ -915,6 +955,15 @@ address {
     margin-bottom: 204px;
     padding-top: 0;
     font-size: 18px;
+  }
+}
+@media screen and (max-width: 1023.99px) {
+  .gallery--container .gallery--part__left .section--introduction {
+    position: relative;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
   }
 }
 .gallery--container .gallery--part__left .img--wrapper__nopaddingLeft {
@@ -954,16 +1003,10 @@ address {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 190px;
 }
-@media screen and (max-width: 1919.98px) {
+@media screen and (max-width: 1023.99px) {
   .gallery--container .gallery--part__center {
-    margin-right: 138px;
-  }
-}
-@media screen and (max-width: 1439.99px) {
-  .gallery--container .gallery--part__center {
-    margin-right: 126px;
+    width: 100%;
   }
 }
 .gallery--container .gallery--part__center--label {
@@ -985,6 +1028,13 @@ address {
     margin-bottom: 30px;
   }
 }
+@media screen and (max-width: 1023.99px) {
+  .gallery--container .gallery--part__center--label {
+    width: 50px;
+    height: 70px;
+    margin-bottom: 21px;
+  }
+}
 .gallery--container .gallery--part__center .gallery--title {
   margin-bottom: 70px;
   font-family: "Miracle regular", sans-serif;
@@ -992,6 +1042,7 @@ address {
   line-height: 0.86;
   font-weight: normal;
   text-transform: uppercase;
+  text-align: center;
   color: var(--secondary-color-100);
 }
 @media screen and (max-width: 1919.98px) {
@@ -1006,6 +1057,14 @@ address {
     margin-bottom: 50px;
     font-size: 100px;
     line-height: 0.88;
+  }
+}
+@media screen and (max-width: 1023.99px) {
+  .gallery--container .gallery--part__center .gallery--title {
+    max-width: 338px;
+    font-size: 60px;
+    line-height: 1;
+    text-align: center;
   }
 }
 .gallery--container .gallery--part__center .gallery--description {
@@ -1030,6 +1089,17 @@ address {
     line-height: 1.76;
   }
 }
+@media screen and (max-width: 1023.99px) {
+  .gallery--container .gallery--part__center .gallery--description {
+    max-width: 354px;
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 1023.99px) {
+  .gallery--container .gallery--part__center .gallery--wrapper__imgInfo {
+    width: 100%;
+  }
+}
 .gallery--container .gallery--part__center .img--wrapper__center {
   width: 916px;
   margin-bottom: 100px;
@@ -1046,6 +1116,56 @@ address {
     margin-bottom: 50px;
   }
 }
+.gallery--container .gallery--part__center .gallery--imgs--wrapper__mobile {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.gallery--container .gallery--part__center .gallery--imgs--wrapper__mobile .gallery--part__left--mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 51px;
+  padding-top: 76px;
+}
+.gallery--container .gallery--part__center .gallery--imgs--wrapper__mobile .gallery--part__left--mobile .img--wrapper__leftUp {
+  width: 152px;
+  height: 206px;
+}
+.gallery--container .gallery--part__center .gallery--imgs--wrapper__mobile .gallery--part__left--mobile .img--wrapper__leftTransp {
+  margin-left: -20px;
+  width: 161px;
+  height: 140px;
+}
+.gallery--container .gallery--part__center .gallery--imgs--wrapper__mobile .img--wrapper__center--mobile {
+  position: absolute;
+  top: 170px;
+  right: 0;
+  left: 0;
+  width: 192px;
+  height: 250px;
+}
+.gallery--container .gallery--part__center .gallery--imgs--wrapper__mobile .gallery--part__right--mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.gallery--container .gallery--part__center .gallery--imgs--wrapper__mobile .gallery--part__right--mobile .img--wrapper__rightUp {
+  position: relative;
+  width: 123px;
+  height: 123px;
+  z-index: 1;
+}
+.gallery--container .gallery--part__center .gallery--imgs--wrapper__mobile .gallery--part__right--mobile .img--wrapper__rightTransp {
+  margin-right: -20px;
+  margin-top: -30px;
+  width: 182px;
+  height: 147px;
+}
 .gallery--container .gallery--part__center .gallery--info__wrapper {
   display: flex;
   gap: 30px;
@@ -1059,6 +1179,7 @@ address {
 .gallery--container .gallery--part__center .gallery--info__wrapper .gallery--info__icon {
   width: 50px;
   height: 50px;
+  color: var(--secondary-color-100);
 }
 @media screen and (max-width: 1439.99px) {
   .gallery--container .gallery--part__center .gallery--info__wrapper .gallery--info__icon {
@@ -1077,13 +1198,13 @@ address {
   .gallery--container .gallery--part__center .gallery--info__wrapper .gallery--info {
     max-width: 223px;
     font-size: 16px;
+    text-transform: capitalize;
   }
 }
 .gallery--container .gallery--part__right {
   display: flex;
   flex-direction: column;
   align-items: end;
-  width: 100%;
 }
 .gallery--container .gallery--part__right .img--wrapper__nopaddingRight {
   width: 316px;
@@ -1193,7 +1314,7 @@ address {
 @media screen and (max-width: 1439.99px) {
   .ticker-text {
     font-size: 60px;
-    line-height: 1.2;
+    line-height: 1.3;
   }
 }
 .ticker-text .highlight {
