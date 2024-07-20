@@ -316,6 +316,9 @@
 <symbol id="wave-maxLg" viewBox="0 0 1024 257" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path opacity="0.6" d="M1268 60.0742C1195.48 9.78365 997.341 -54.9566 784.977 88.407C519.523 267.612 197.305 353.878 -87.9999 84.0968" stroke="#FCD043"/>
 </symbol>
+<symbol id="wave-maxMd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 189" fill="none">
+<path d="M432.971 44.3211C404.485 7.44134 326.662 -40.0349 243.25 65.0985C138.985 196.515 12.424 259.777 -99.6377 61.9376" stroke="#FCD043"/>
+</symbol>
 
     </defs>
 </svg>

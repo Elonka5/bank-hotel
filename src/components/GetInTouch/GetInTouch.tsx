@@ -6,7 +6,7 @@ import { NavProps } from "../../entities/navprops";
 import { useMediaQuery } from "react-responsive";
 
 const GetInTouch: React.FC<NavProps> = ({ id }) => {
-  const isLg = useMediaQuery({ minWidth: 1920 });
+  const isDesktopLg = useMediaQuery({ minWidth: 1919.98 });
 
   return (
     <section className="section" id={id}>
@@ -17,7 +17,7 @@ const GetInTouch: React.FC<NavProps> = ({ id }) => {
 
         <div className="touch__container--icon-wave--wrapper">
           {/* <Icon className="icon-wave" iconId="line" /> */}
-          {isLg ? (
+          {isDesktopLg ? (
             <Icon className="icon-wave" iconId="wave-Lg" />
           ) : (
             <Icon className="icon-wave" iconId="wave-maxLg" />

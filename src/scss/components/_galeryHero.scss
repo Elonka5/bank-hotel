@@ -1,12 +1,14 @@
 .gallery--hero {
   position: relative;
+  display: flex;
+  flex-direction: column;
   padding-top: 100px;
   padding-bottom: 377px;
   color: var(--secondary-color-100);
 
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
+  // width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -15,6 +17,11 @@
   @include md {
     padding-top: 50px;
     padding-bottom: 149px;
+  }
+
+  @include sm {
+    padding-top: 70px;
+    padding-bottom: 66px;
   }
 
   &__icon-wave {
@@ -56,6 +63,13 @@
       font-size: 100px;
       line-height: 0.8;
     }
+
+    @include sm {
+      max-width: 357px;
+      margin-bottom: 530px;
+      font-size: 60px;
+      line-height: 1;
+    }
   }
 
   &__info {
@@ -71,6 +85,11 @@
 
     @include md {
       max-width: 231px;
+    }
+
+    @include sm {
+      max-width: 210px;
+      align-self: flex-end;
     }
   }
 }
