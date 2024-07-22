@@ -7,9 +7,16 @@
   backdrop-filter: blur(20px);
 
   &.touch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
     background: none;
-    backdrop-filter: none;
     border: 1px solid var(--primary-color-100);
+
+    & .form {
+      height: 100%;
+    }
   }
 
   & .form {
@@ -57,6 +64,8 @@
       @include btn-state-changes($svg: no);
 
       &.touch {
+        width: 285px;
+        height: 140px;
         background: var(--primary-color-100);
         color: var(--white-100);
         font-size: 18px;
