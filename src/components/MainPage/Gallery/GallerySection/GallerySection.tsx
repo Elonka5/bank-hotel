@@ -4,7 +4,7 @@ import imgHall from "../../../../assets/images/mainImages/desktop1920/main-galle
 import imgConference from "../../../../assets/images/mainImages/desktop1920/main-gallery2-desktop-1920.webp";
 import imgBath from "../../../../assets/images/mainImages/desktop1920/main-gallery5-desktop-1920.webp";
 
-import imgGalleryLeftUp from "../../../../assets/images/mainImages/mobile/main-facilities2-mobile.webp";
+import imgGalleryLeftUp from "../../../../assets/images/mainImages/mobile/main-gallery2-mobile.webp";
 import imgGalleryRightUp from "../../../../assets/images/mainImages/mobile/main-gallery1-mobile.webp";
 import imgGalleryCenter from "../../../../assets/images/mainImages/mobile/main-gallery3-mobile.webp";
 

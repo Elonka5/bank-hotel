@@ -248,7 +248,7 @@
         }
 
         .img--wrapper__leftTransp {
-          margin-left: -20px;
+          margin-left: -10px;
           width: 161px;
           height: 140px;
         }
@@ -256,9 +256,9 @@
 
       .img--wrapper__center--mobile {
         position: absolute;
-        top: 170px;
-        right: 0;
-        left: 0;
+        top: 173px;
+        right: 25%;
+        left: 25%;
         width: 192px;
         height: 250px;
       }
@@ -266,7 +266,7 @@
       .gallery--part__right--mobile {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: flex-end;
         justify-content: flex-start;
 
         .img--wrapper__rightUp {
@@ -277,7 +277,7 @@
         }
 
         .img--wrapper__rightTransp {
-          margin-right: -20px;
+          margin-right: -10px;
           margin-top: -30px;
           width: 182px;
           height: 147px;

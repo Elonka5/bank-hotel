@@ -101,6 +101,7 @@ address {
 @media screen and (max-width: 1023.99px) {
   .container {
     max-width: 375px;
+    padding: 0 10px;
   }
 }
 
@@ -350,6 +351,16 @@ address {
   transition: 250ms ease-in-out;
   color: var(--button-light-color-default);
 }
+@media screen and (max-width: 1023.99px) {
+  .btnPoly.booking {
+    width: 120px;
+    height: 120px;
+  }
+}
+.btnPoly.booking.intouch {
+  left: 0;
+  bottom: -38px;
+}
 .btnPoly.booking:hover {
   color: var(--button-light-color-hover);
 }
@@ -370,6 +381,12 @@ address {
   line-height: normal;
   color: var(--text);
 }
+@media screen and (max-width: 1023.99px) {
+  .btnPoly.booking span {
+    width: 100%;
+    font-size: 14px;
+  }
+}
 
 /* Define classes for react-select components */
 .booking-form {
@@ -380,9 +397,15 @@ address {
   backdrop-filter: blur(20px);
 }
 .booking-form.touch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 140px;
   background: none;
-  backdrop-filter: none;
   border: 1px solid var(--primary-color-100);
+}
+.booking-form.touch .form {
+  height: 100%;
 }
 .booking-form .form {
   display: flex;
@@ -432,6 +455,8 @@ address {
   opacity: 0.2;
 }
 .booking-form .form__btn-submit.touch {
+  width: 285px;
+  height: 140px;
   background: var(--primary-color-100);
   color: var(--white-100);
   font-size: 18px;
@@ -1136,22 +1161,22 @@ address {
   height: 206px;
 }
 .gallery--container .gallery--part__center .gallery--imgs--wrapper__mobile .gallery--part__left--mobile .img--wrapper__leftTransp {
-  margin-left: -20px;
+  margin-left: -10px;
   width: 161px;
   height: 140px;
 }
 .gallery--container .gallery--part__center .gallery--imgs--wrapper__mobile .img--wrapper__center--mobile {
   position: absolute;
-  top: 170px;
-  right: 0;
-  left: 0;
+  top: 173px;
+  right: 25%;
+  left: 25%;
   width: 192px;
   height: 250px;
 }
 .gallery--container .gallery--part__center .gallery--imgs--wrapper__mobile .gallery--part__right--mobile {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: flex-start;
 }
 .gallery--container .gallery--part__center .gallery--imgs--wrapper__mobile .gallery--part__right--mobile .img--wrapper__rightUp {
@@ -1161,7 +1186,7 @@ address {
   z-index: 1;
 }
 .gallery--container .gallery--part__center .gallery--imgs--wrapper__mobile .gallery--part__right--mobile .img--wrapper__rightTransp {
-  margin-right: -20px;
+  margin-right: -10px;
   margin-top: -30px;
   width: 182px;
   height: 147px;
