@@ -14,15 +14,16 @@
   gap: 30px;
   color: var(--text-color-100);
 
-  // .footer__border {
-  //   width: 100%;
-  //   border-top: 1px solid var(--primary-color-100);
-  //   margin-bottom: 30px;
-  // }
-
   @include md {
     padding-top: 70px;
     padding-bottom: 70px;
+  }
+
+  @include sm {
+    align-items: center;
+    gap: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
   .footer__list {
