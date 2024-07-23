@@ -6,6 +6,10 @@
   background: rgba(49, 63, 56, 0.48);
   backdrop-filter: blur(20px);
 
+  @include lg {
+    height: 125px;
+  }
+
   &.touch {
     display: flex;
     justify-content: center;
@@ -62,6 +66,9 @@
       text-transform: uppercase;
 
       @include btn-state-changes($svg: no);
+      @include lg {
+        height: 125px;
+      }
 
       &.touch {
         width: 285px;
