@@ -12,21 +12,27 @@ const Footer = () => {
           <>
             <ul className="footer__list">
               <li className="footer__list--item">
-                <h3 className="title">About us</h3>
+                <h3 className="title">
+                  <span className="title__prefix">/</span>About us
+                </h3>
                 <p className="description">
                   The five-star hotel in a beautiful European city with a modern
                   restaurant, conference-hall, and art-bar.
                 </p>
               </li>
               <li className="footer__list--item">
-                <h3 className="title">News</h3>
+                <h3 className="title">
+                  <span className="title__prefix">/</span>News
+                </h3>
                 <p className="description">
                   Sign up to our newsletter not to miss exclusive offers and
                   information about the upcoming events.
                 </p>
               </li>
               <li className="footer__list--item">
-                <h3 className="title">Social</h3>
+                <h3 className="title">
+                  <span className="title__prefix">/</span>Social
+                </h3>
                 <ul className="social--list">
                   <li>
                     <a

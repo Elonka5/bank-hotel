@@ -16,10 +16,12 @@ const initialValues: IBookingState = {
 
 interface IBookingRoomFormProps {
   className?: string;
+  touchClassName?: string;
 }
 
 const BookingRoomFormDatePicker: React.FC<IBookingRoomFormProps> = ({
   className = "",
+  touchClassName,
 }) => {
   const dispatch = useAppDispatch();
 
@@ -67,6 +69,7 @@ const BookingRoomFormDatePicker: React.FC<IBookingRoomFormProps> = ({
             }
             onChange={handleDateChange("checkInDate")}
             placeholderText="Check In"
+            touchClassName={touchClassName}
             iconId="cancel-in-circle"
             iconClassName="cancel-in-circle"
             iconWidth={26}
@@ -85,6 +88,7 @@ const BookingRoomFormDatePicker: React.FC<IBookingRoomFormProps> = ({
             }
             onChange={handleDateChange("checkOutDate")}
             placeholderText="Check Out"
+            touchClassName={touchClassName}
             iconId="cancel-in-circle"
             iconClassName="cancel-in-circle"
             iconWidth={26}

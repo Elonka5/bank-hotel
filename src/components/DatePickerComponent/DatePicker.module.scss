@@ -307,6 +307,21 @@
     }
   }
 
+  &.touch {
+    .wrapper {
+      [class$="__input-container"] {
+        width: 315px;
+        height: 140px;
+      }
+    }
+    .popperStart {
+      transform: translate(0, 140px) !important;
+    }
+    .popperEnd {
+      transform: translate(-316px, 140px) !important;
+    }
+  }
+
   .wrapper {
     [class$="__input-container"] {
       width: 368.5px;

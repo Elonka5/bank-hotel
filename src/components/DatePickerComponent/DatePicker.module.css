@@ -278,6 +278,16 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+.datepicker.touch .wrapper [class$=__input-container] {
+  width: 315px;
+  height: 140px;
+}
+.datepicker.touch .popperStart {
+  transform: translate(0, 140px) !important;
+}
+.datepicker.touch .popperEnd {
+  transform: translate(-316px, 140px) !important;
+}
 .datepicker .wrapper [class$=__input-container] {
   width: 368.5px;
   height: 150px;

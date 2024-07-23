@@ -404,14 +404,12 @@ address {
   background: none;
   border: 1px solid var(--primary-color-100);
 }
-.booking-form.touch .form {
-  height: 100%;
-}
 .booking-form .form {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 .booking-form .form__select-container {
   position: relative;
@@ -993,6 +991,7 @@ address {
 }
 .gallery--container .gallery--part__left .img--wrapper__nopaddingLeft {
   width: 312px;
+  height: 284px;
   margin-left: -32px;
   margin-bottom: 342px;
 }

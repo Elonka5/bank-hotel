@@ -1,10 +1,12 @@
 import "../../scss/layout/_getInTouch.scss";
-import mgTouch_1920 from "../../assets/images/getInTouchImages/touch-desktop-1920.webp";
 import Icon from "../Icon/Icon";
 import { NavProps } from "../../entities/navprops";
 import { useMediaQuery } from "react-responsive";
 import ButtonPoly from "../ButtonPoly/ButtonPoly";
 import BookingRoomFormDatePicker from "../BookingRoomForm/BookingRoomFormDatePicker";
+
+import styles from "../DatePickerComponent/DatePicker.module.scss";
+import ResponsiveImage from "../ResponsiveImg/ResponsiveImg";
 
 const GetInTouch: React.FC<NavProps> = ({ id }) => {
   const isDesktopLg = useMediaQuery({ minWidth: 1919.98 });
@@ -56,14 +58,21 @@ const GetInTouch: React.FC<NavProps> = ({ id }) => {
               </a>
             </div>
             <div className="touch__img--wrapper">
-              <img className="touch__img" src={mgTouch_1920} />
+              <ResponsiveImage
+                alt="Room interior"
+                srcImg="touch"
+                path="touch"
+              />
             </div>
           </div>
         </div>
         {!isMobileSm && (
           <div className="touch__form--wrapper">
             <h3 className="touch__form--wrapper--title">Find a room</h3>
-            <BookingRoomFormDatePicker className="touch" />
+            <BookingRoomFormDatePicker
+              className="touch"
+              touchClassName={styles.touch}
+            />
           </div>
         )}
       </div>
