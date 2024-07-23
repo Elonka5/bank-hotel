@@ -1,3 +1,5 @@
+@import "./responsive";
+
 @mixin hideChildElements($firstChild, $lastChild) {
   @for $i from $firstChild through $lastChild {
     &:nth-of-type(#{$i}) {
@@ -78,4 +80,45 @@
     }
     @content;
   }
+}
+
+@mixin popper-positions($start: yes, $touch: no, $size: xl) {
+  $x: 0;
+  $y: 150px;
+
+  @if $size == lg {
+    $y: 125px;
+  } @else if $size == md {
+    $y: 100px;
+  }
+
+  @if $touch == yes {
+    $y: 140px;
+    @if $size == lg {
+      $y: 120px;
+    } @else if $size == md {
+      $y: 100px;
+    }
+  }
+
+  @if $start == no {
+    $x: -368.5px;
+    @if $size == lg {
+      $x: -368.5px;
+    } @else if $size == md {
+      $x: -305.5px;
+    }
+
+    @if $touch == yes {
+      $x: -314.5px;
+      @if $size == lg {
+        $x: -294.5px;
+      } @else if $size == md {
+        $x: -188.5px;
+      }
+    }
+  }
+  transform: translate($x, $y) !important;
+
+  @content;
 }

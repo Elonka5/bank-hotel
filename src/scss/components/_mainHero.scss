@@ -1,5 +1,5 @@
 $bg-img-1920: "~../../../assets/images/mainImages/desktop1920/main-hero-desktop-1920.webp";
-$bg-img-1440: "../../../assets/images/mainImages/desktop1440/main-hero-desktop-1440.webp";
+$bg-img-1440: "~../../../assets/images/mainImages/desktop1440/main-hero-desktop-1440.webp";
 
 .hero {
   display: flex;
@@ -12,6 +12,10 @@ $bg-img-1440: "../../../assets/images/mainImages/desktop1440/main-hero-desktop-1
   &__wrapper {
     display: flex;
     gap: 284px;
+
+    @include lg {
+      gap: 192px;
+    }
   }
 
   &__title {
@@ -20,11 +24,20 @@ $bg-img-1440: "../../../assets/images/mainImages/desktop1440/main-hero-desktop-1
     gap: 62px;
     max-width: min-content;
 
+    @include lg {
+      gap: 35px;
+    }
+
     h1 {
       font-family: "Miracle regular", sans-serif;
       font-size: 220px;
       line-height: 200px;
       max-width: min-content;
+
+      @include lg {
+        font-size: 170px;
+        line-height: 153px;
+      }
 
       span {
         color: var(--secondary-color-100);
@@ -38,6 +51,10 @@ $bg-img-1440: "../../../assets/images/mainImages/desktop1440/main-hero-desktop-1
 
       color: var(--secondary-color-100);
       margin-bottom: 95px;
+
+      @include lg {
+        margin-bottom: 88px;
+      }
     }
   }
 
@@ -57,6 +74,11 @@ $bg-img-1440: "../../../assets/images/mainImages/desktop1440/main-hero-desktop-1
       width: 350px;
       font-size: 18px;
       line-height: 28px;
+
+      @include lg {
+        font-size: 16px;
+        line-height: 26px;
+      }
     }
   }
 
@@ -72,6 +94,13 @@ $bg-img-1440: "../../../assets/images/mainImages/desktop1440/main-hero-desktop-1
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+
+    @include lg {
+      background-image: url(#{$bg-img-1440});
+      width: 1400px;
+      height: 588px;
+      margin-bottom: 75px;
+    }
   }
 
   &__address {

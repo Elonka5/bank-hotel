@@ -1,12 +1,20 @@
 @import "../../scss/utils/mixins";
+@import "../../scss/utils/responsive";
 
 .datepicker {
   position: relative;
+
   .popperStart {
-    transform: translate(0, 150px) !important;
+    @include popper-positions();
+    @include lg {
+      @include popper-positions($size: lg);
+    }
   }
   .popperEnd {
-    transform: translate(-368.5px, 150px) !important;
+    @include popper-positions($start: no);
+    @include lg {
+      @include popper-positions($start: no, $size: lg);
+    }
   }
 
   [class$="dropdown-indicator"] {
@@ -311,6 +319,10 @@
     [class$="__input-container"] {
       width: 368.5px;
       height: 150px;
+
+      @include lg {
+        height: 125px;
+      }
 
       // Можна використовувати через контент 2 шляхами,
       // але неможливо тоді зробити динамічні зміни при ховері та фокусі
