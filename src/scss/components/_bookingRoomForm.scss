@@ -17,10 +17,6 @@
     height: 140px;
     background: none;
     border: 1px solid var(--primary-color-100);
-
-    & .form {
-      height: 100%;
-    }
   }
 
   & .form {
@@ -28,6 +24,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    height: 100%;
 
     &__select-container {
       position: relative;

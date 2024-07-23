@@ -45,7 +45,6 @@
     }
 
     .title {
-      position: relative;
       text-transform: uppercase;
       margin-bottom: 40px;
       font-size: 26px;
@@ -55,26 +54,30 @@
         margin-bottom: 20px;
         font-size: 18px;
       }
-    }
 
-    .title::before {
-      content: "";
-      position: absolute;
-      top: -36%;
-      left: -1%;
-      // transform: translate(-50%, 50%);
-      display: block;
-      width: 2px;
-      height: 170%;
-      background-color: var(--secondary-color-100);
-      transform-origin: top left;
-      transform: rotate(20deg);
-
-      @include md {
-        top: -20%;
-        height: 144%;
+      &__prefix {
+        color: var(--secondary-color-100);
       }
     }
+
+    // .title::before {
+    //   content: "";
+    //   position: absolute;
+    //   top: -36%;
+    //   left: -1%;
+    //   // transform: translate(-50%, 50%);
+    //   display: block;
+    //   width: 2px;
+    //   height: 170%;
+    //   background-color: var(--secondary-color-100);
+    //   transform-origin: top left;
+    //   transform: rotate(20deg);
+
+    //   @include md {
+    //     top: -20%;
+    //     height: 144%;
+    //   }
+    // }
 
     .description {
       color: var(--text-color-80);

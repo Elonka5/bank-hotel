@@ -19,17 +19,20 @@ interface IDatePickerProps {
   selectedDate: Date | null;
   onChange: (dates: Date | null) => void;
   placeholderText: string;
+  touchClassName?: string;
   iconId?: string;
   iconClassName?: string;
   iconWidth?: number;
   iconHeight?: number;
   iconText?: string;
+  touch?: string;
   // closeWithRef?: (ref: React.RefObject<DatePicker | null>) => void;
   clearFormikField?: () => void;
 }
 
 const DatePickerComponent: React.FC<IDatePickerProps> = ({
   placeholderText,
+  touchClassName,
   selectedDate,
   onChange,
   iconId,
@@ -99,7 +102,7 @@ const DatePickerComponent: React.FC<IDatePickerProps> = ({
   };
 
   return (
-    <div className={styles.datepicker}>
+    <div className={`${styles.datepicker} ${touchClassName || ""}`}>
       <DropdownIndicatorDatepicker datePickerRef={datePickerRef} />
       <DatePicker
         ref={datePickerRef}
@@ -116,7 +119,13 @@ const DatePickerComponent: React.FC<IDatePickerProps> = ({
         dateFormat="Pp"
         useWeekdaysShort={true}
         placeholderText={placeholderText}
-        wrapperClassName={styles.wrapper}
+        // wrapperClassName={styles.wrapper}
+        wrapperClassName={`${styles.wrapper} ${touchClassName || ""}`}
+        // wrapperClassName={
+        //   nameSection === "touch"
+        //     ? styles.wrapper && styles.touch
+        //     : styles.wrapper
+        // }
         popperClassName={
           placeholderText === "Check In" ? styles.popperStart : styles.popperEnd
         }
