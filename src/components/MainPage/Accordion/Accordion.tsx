@@ -3,7 +3,6 @@ import AccordionItem from './AccordionItem/AccordionItem';
 import { useAppDispatch, useAppSelector } from '../../../redux/hooks/hooks';
 import {  getAccordionThunk } from '../../../redux/accordion/accordionThunk';
 import { AccordionItemInterface } from '../../../redux/interface/interface';
-// import { items } from '../../../helpers/accordionItems';
 
 const Accordion: React.FC = () => {
     const [openItemId, setOpenItemId] = useState<number | null>(1);
@@ -16,7 +15,6 @@ const Accordion: React.FC = () => {
     
 
       useEffect(() => {
-      // dispatch(fetchAccordionData({ imageName: 'main-about2',bigImageName:'main-about1' }));
       dispatch(getAccordionThunk());
     }, [dispatch]);
 

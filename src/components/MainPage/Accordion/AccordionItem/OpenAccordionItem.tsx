@@ -9,7 +9,6 @@ const OpenAccordionItem: React.FC<AccordionItemProps> = ({
   isOpen,
   onToggle,
 }) => {
-  // const { fullText, bigImg, title } = item;
 
   const { fullText, bigImageResolutions, title } = item;
 
@@ -34,14 +33,6 @@ const OpenAccordionItem: React.FC<AccordionItemProps> = ({
         <p className="accordion__full-description">{fullText}</p>
       </div>
       <div className="accordion__openwrapper--right">
-        {/* <img src={bigImg} alt="Big thumbnail" /> */}
-        {/* <picture>
-          <source srcSet={bigImg['img-1920']} media="(min-width: 1920px)" />
-          <source srcSet={bigImg['img-1440']} media='(min-width: 1439.99px) and (max-width: 1919.98px)' />
-          <source srcSet={bigImg['img-1024']} media="(min-width: 1024px)" />
-          <img src={bigImg['img-1920']} alt="Accordion thumbnail" width="100%" />
-        </picture> */}
-        {/* <ResponsiveFetchImg nameImg={bigImg} alt="Accordion thumbnail" /> */}
         {bigImageResolutions && <ResponsiveFetchImg nameImg={bigImageResolutions} alt="Accordion thumbnail" />}
       </div>
     </>

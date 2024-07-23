@@ -16,6 +16,10 @@
     @include arrow-position {
       top: 75%;
     }
+    @include lg {
+      width: 9px;
+      height: 18px;
+    }
   }
 
   & .arrow-size {
