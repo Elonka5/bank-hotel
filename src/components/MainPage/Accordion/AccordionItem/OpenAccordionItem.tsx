@@ -2,6 +2,7 @@ import React from "react";
 import ButtonPoly from "../../../ButtonPoly/ButtonPoly";
 import { AccordionItemProps } from "./AccordionItem";
 import ResponsiveFetchImg from "../../../ResponsiveImg/ResponsiveFetchImg";
+import { useMediaQuery } from "react-responsive";
 
 const OpenAccordionItem: React.FC<AccordionItemProps> = ({
   item,
@@ -9,8 +10,8 @@ const OpenAccordionItem: React.FC<AccordionItemProps> = ({
   isOpen,
   onToggle,
 }) => {
-  // const { fullText, bigImg, title } = item;
-
+  const isTablet = useMediaQuery({ minWidth: 1023.98, maxWidth: 1439.98 });
+  const isMobile = useMediaQuery({ maxWidth: 1023.98 });
   const { fullText, bigImageResolutions, title } = item;
 
   return (
@@ -28,21 +29,35 @@ const OpenAccordionItem: React.FC<AccordionItemProps> = ({
       </div>
       <div className="accordion__openwrapper--middle">
         <p className="accordion__text">0{index + 1}</p>
-        <p className="accordion__text">
-          <span>{title?.[0]}</span> <br /> {title?.[1]}
-        </p>
-        <p className="accordion__full-description">{fullText}</p>
+        {!isMobile ? (
+          <>
+            <h3 className="accordion__text--title">
+              <span>{title?.[0]}</span> <br /> {title?.[1]}
+            </h3>
+            <p className="accordion__full--description">{fullText}</p>
+          </>
+        ) : (
+          <div>
+            {" "}
+            <h3 className="accordion__text--title">
+              <span>{title?.[0]}</span> <br /> {title?.[1]}
+            </h3>
+            <p className="accordion__full--description">{fullText}</p>
+          </div>
+        )}
       </div>
       <div className="accordion__openwrapper--right">
-        {/* <img src={bigImg} alt="Big thumbnail" /> */}
-        {/* <picture>
-          <source srcSet={bigImg['img-1920']} media="(min-width: 1920px)" />
-          <source srcSet={bigImg['img-1440']} media='(min-width: 1439.99px) and (max-width: 1919.98px)' />
-          <source srcSet={bigImg['img-1024']} media="(min-width: 1024px)" />
-          <img src={bigImg['img-1920']} alt="Accordion thumbnail" width="100%" />
-        </picture> */}
-        {/* <ResponsiveFetchImg nameImg={bigImg} alt="Accordion thumbnail" /> */}
-        {bigImageResolutions && <ResponsiveFetchImg nameImg={bigImageResolutions} alt="Accordion thumbnail" />}
+        {bigImageResolutions && (
+          <ResponsiveFetchImg
+            nameImg={bigImageResolutions}
+            alt="Accordion thumbnail"
+          />
+        )}
+        {isTablet && (
+          <p className="text">
+            Art & Congress <span className="text--hall">hall</span>
+          </p>
+        )}
       </div>
     </>
   );

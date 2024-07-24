@@ -3,9 +3,8 @@ import OpenAccordionItem from "./OpenAccordionItem";
 import ClosedAccordionItem from "./ClosedAccordionItem";
 import { AccordionItemInterface } from "../../../../redux/interface/interface";
 
-
 export interface AccordionItemProps {
-  item:AccordionItemInterface;
+  item: AccordionItemInterface;
   index: number;
   isOpen: boolean;
   onToggle: () => void;
@@ -19,7 +18,6 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   nextItemOpen,
   onToggle,
 }) => {
-
   const isArrowOpen = isOpen;
 
   const handleToggle = () => {
@@ -40,13 +38,22 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
       onClick={isOpen ? undefined : handleItemClick}
     >
       {!isOpen ? (
-                <ClosedAccordionItem item={item} index={index} isOpen={isArrowOpen} onToggle={handleToggle}/> 
+        <ClosedAccordionItem
+          item={item}
+          index={index}
+          isOpen={isArrowOpen}
+          onToggle={handleToggle}
+        />
       ) : (
-<OpenAccordionItem item={item} index={index} isOpen={isArrowOpen} onToggle={handleToggle}/>
+        <OpenAccordionItem
+          item={item}
+          index={index}
+          isOpen={isArrowOpen}
+          onToggle={handleToggle}
+        />
       )}
     </li>
   );
 };
 
 export default AccordionItem;
-
