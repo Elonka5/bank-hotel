@@ -44,6 +44,7 @@
   $bg-hover: var(--button-light-color-hover),
   $bg-active: var(--button-light-color-active),
   $bg-disabled: var(--button-light-color-disabled),
+  $text-default: var(--text-color-100),
   $svg: no
 ) {
   @include transition-standart() {
@@ -76,6 +77,7 @@
       &:disabled {
         background: $bg-disabled;
         opacity: 0.2;
+        color: $text-default;
       }
     }
     @content;
@@ -114,7 +116,7 @@
       @if $size == lg {
         $x: -294.5px;
       } @else if $size == md {
-        $x: -188.5px;
+        $x: -199.5px;
       }
     }
   }

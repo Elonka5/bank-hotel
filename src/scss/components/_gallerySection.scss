@@ -22,6 +22,15 @@
     display: flex;
     align-items: start;
     justify-content: space-between;
+    color: var(--white-80);
+
+    @include lg {
+      padding-top: 13px;
+    }
+
+    @include md {
+      padding-top: 0;
+    }
 
     @include sm {
       justify-content: center;
@@ -29,62 +38,53 @@
   }
 
   .gallery--part__left {
-    // margin-right: 190px;
+    padding-top: 23px;
 
     @include lg {
-      // margin-right: 138px;
+      padding-top: 297px;
     }
 
     @include md {
-      // margin-right: 124px;
+      padding-top: 0;
     }
 
     .section--introduction {
       max-width: 255px;
       width: 100%;
       margin-bottom: 273px;
-      padding-top: 23px;
       font-size: 26px;
       line-height: normal;
       text-transform: uppercase;
 
       @include lg {
-        @include visually-hidden;
+        display: none;
       }
 
       @include md {
-        position: static;
-        overflow: visible;
         display: block;
-        white-space: inherit;
-        clip-path: none;
-        clip: rect(0 0 0 0);
-
         max-width: 200px;
         margin-bottom: 204px;
-        padding-top: 0;
         font-size: 18px;
-      }
-
-      @include sm {
-        @include visually-hidden;
       }
     }
 
     .img--wrapper__nopaddingLeft {
       width: 312px;
       height: 284px;
-      margin-left: -32px;
+      margin-left: -30px;
       margin-bottom: 342px;
 
       @include lg {
         width: 237px;
         height: 228px;
+        margin-left: -20px;
+        margin-bottom: 298px;
       }
 
       @include md {
         width: 146px;
         height: 192px;
+        margin-bottom: 108px;
       }
     }
 
@@ -108,14 +108,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // margin-right: 190px;
+    margin-left: 190px;
+    margin-right: 190px;
 
     @include lg {
-      // margin-right: 138px;
+      margin-left: 87px;
+      margin-right: 130px;
     }
 
     @include md {
-      // margin-right: 126px;
+      margin-left: 67px;
+      margin-right: 67px;
     }
 
     @include sm {
@@ -123,14 +126,13 @@
     }
 
     &--label {
-      width: 200px;
-      height: 180px;
-      margin-bottom: 25px;
-      transform: rotate(45deg);
+      width: 150px;
+      height: 108px;
+      margin-bottom: 50px;
 
       @include lg {
-        width: 150px;
-        height: 144px;
+        width: 100px;
+        height: 72px;
       }
 
       @include md {
@@ -163,6 +165,7 @@
       }
 
       @include md {
+        width: 599px;
         margin-bottom: 50px;
         font-size: 100px;
         line-height: 0.88;
@@ -190,7 +193,7 @@
       }
 
       @include md {
-        max-width: 350px;
+        max-width: 348px;
         margin-bottom: 70px;
         font-size: 13px;
         line-height: 1.76;
@@ -210,28 +213,29 @@
 
     .img--wrapper__center {
       width: 916px;
-      // height: 600px;
+      height: 600px;
       margin-bottom: 100px;
 
       @include lg {
         width: 690px;
-        // height: 452px;
+        height: 452px;
         margin-bottom: 75px;
       }
 
       @include md {
         width: 482px;
-        // height: 316px;
+        height: 316px;
         margin-bottom: 50px;
       }
     }
 
-    // === MOBILE ===
+    // ====== MOBILE ======
     .gallery--imgs--wrapper__mobile {
       position: relative;
       width: 100%;
       display: flex;
       justify-content: space-between;
+      gap: 31px;
       margin-bottom: 50px;
 
       .gallery--part__left--mobile {
@@ -251,6 +255,9 @@
           margin-left: -10px;
           width: 161px;
           height: 140px;
+          background: rgba(211, 211, 211, 50%);
+          background-size: cover;
+          background-repeat: no-repeat;
         }
       }
 
@@ -285,7 +292,7 @@
       }
     }
 
-    // ==============
+    // ===========================
 
     .gallery--info__wrapper {
       display: flex;
@@ -327,28 +334,22 @@
     display: flex;
     flex-direction: column;
     align-items: end;
-    // width: 100%;
 
     .img--wrapper__nopaddingRight {
-      width: 316px;
-      // height: 400px;
+      width: 311px;
+      height: 400px;
       padding-top: 358px;
       margin-right: -30px;
-      // margin-bottom: 622px;
 
       @include lg {
         width: 217px;
         height: 237px;
         padding-top: 297px;
-        // margin-bottom: 581px;
-        // padding-top: 310px;
-        // background-size: cover;
-        // background-repeat: no-repeat;
-        // background-position: center;
+        margin-right: -20px;
       }
 
       @include md {
-        width: 147px;
+        width: 146px;
         height: 147px;
         padding-top: 293px;
       }

@@ -17,6 +17,14 @@
     height: 140px;
     background: none;
     border: 1px solid var(--primary-color-100);
+
+    @include lg {
+      height: 120px;
+    }
+
+    @include md {
+      height: 100px;
+    }
   }
 
   & .form {
@@ -28,6 +36,17 @@
 
     &__select-container {
       position: relative;
+
+      &.touch {
+        &.first-select::before {
+          background-color: var(--primary-color-24);
+          height: 60px;
+
+          @include md {
+            height: 35px;
+          }
+        }
+      }
 
       &.first-select::before {
         content: "";
@@ -59,7 +78,7 @@
     &__btn-submit {
       width: 370px;
       height: 150px;
-      color: var(--text-color-100);
+      // color: var(--text-color-100);
       text-transform: uppercase;
 
       @include btn-state-changes($svg: no);
@@ -71,13 +90,27 @@
         width: 285px;
         height: 140px;
         background: var(--primary-color-100);
-        color: var(--white-100);
         font-size: 18px;
+        line-height: 1.1;
+
+        @include lg {
+          width: 217px;
+          height: 120px;
+        }
+
+        @include md {
+          width: 214px;
+          height: 100px;
+          font-size: 14px;
+          line-height: 1.4;
+        }
 
         @include btn-state-changes(
           var(--primary-color-100),
           var(--button-dark-color-hover),
           var(--button-dark-color-active),
+          var(--button-dark-color-disabled),
+          var(--white-100),
           $svg: no
         ) {
           color: var(--white-100);
