@@ -5,6 +5,13 @@
   background-color: var(--white-100);
   color: var(--text);
 
+  @include lg {
+    padding: 250px 20px 200px;
+  }
+  @include md {
+    padding: 125px 20px 160px;
+  }
+
   &__title-wrapper {
     display: flex;
     flex-direction: row;
@@ -14,17 +21,42 @@
     color: var(--text);
     text-transform: uppercase;
 
+    @include lg {
+      padding-bottom: 145px;
+    }
+
     & .title {
       align-self: start;
       font-family: "Miracle regular", sans-serif;
       font-size: 150px;
       line-height: 130px; /* 86.667% */
+
+      @include lg {
+        font-size: 125px;
+        line-height: 105px; /* 84% */
+      }
+
+      @include md {
+        margin-top: 76px;
+        font-size: 100px;
+        line-height: 80px; /* 80% */
+      }
     }
 
     & .descr {
       width: 440px;
       font-size: 26px;
       line-height: normal;
+
+      @include lg {
+        width: 335px;
+        font-size: 18px;
+      }
+
+      @include md {
+        width: 200px;
+        font-size: 16px;
+      }
     }
   }
 
@@ -41,6 +73,10 @@
       &--item {
         display: flex;
 
+        @include md {
+          padding-left: 250px;
+        }
+
         & .left-container {
           display: flex;
 
@@ -54,6 +90,10 @@
               width: 217px;
               height: 258px;
             }
+
+            @include md {
+              display: none;
+            }
           }
 
           & .descr-container {
@@ -63,6 +103,16 @@
             width: 442px;
             margin: 0 188px;
 
+            @include lg {
+              width: 335px;
+              margin: 0 138px;
+            }
+
+            @include md {
+              width: 250px;
+              margin: 0 127px 0 0;
+            }
+
             &__title {
               display: flex;
               align-items: center;
@@ -70,15 +120,36 @@
               margin-top: 380px;
               font-family: "Miracle regular", sans-serif;
               font-size: 50px;
-              font-weight: 400;
               letter-spacing: 1.5px;
               text-transform: capitalize;
               color: var(--text);
+
+              @include lg {
+                height: 36px;
+                margin-top: 235px;
+                font-size: 36px;
+                letter-spacing: 1.08px;
+              }
+
+              @include md {
+                margin-top: 120px;
+              }
             }
 
             &__descr {
               @include text-opacity-8 {
                 margin-top: 40px;
+              }
+
+              @include lg {
+                font-size: 18px;
+                line-height: 28px; /* 155.556% */
+              }
+
+              @include md {
+                margin-top: 30px;
+                font-size: 13px;
+                line-height: 23px; /* 176.923% */
               }
             }
 
@@ -106,6 +177,16 @@
           &__img-wrapper {
             width: 757px;
             height: 1000px;
+
+            @include lg {
+              width: 572px;
+              height: 755.6px;
+            }
+
+            @include md {
+              width: 356px;
+              height: 470.3px;
+            }
           }
         }
       }

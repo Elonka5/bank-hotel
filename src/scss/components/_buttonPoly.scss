@@ -8,7 +8,11 @@
   border: none;
 
   & .arrow50 {
-    @include arrow-position {
+    @include arrow-position;
+
+    @include md {
+      width: 16px;
+      height: 8px;
     }
   }
 
@@ -26,6 +30,7 @@
     @include arrow-position {
       width: 168px;
       height: 137px;
+
       @include sm {
         width: 70px;
         height: 70px;
@@ -48,7 +53,12 @@
     position: absolute;
     bottom: 0;
     left: 0;
+
     z-index: 100;
+
+    @include md {
+      bottom: 50%;
+    }
 
     &:hover {
       @include transition-standart;
@@ -57,11 +67,20 @@
 
     & .polygon {
       transform: rotateZ(18deg);
+
+      @include md {
+        width: 105px;
+        height: 105px;
+      }
     }
     & .arrow50 {
-      @include arrow-position {
-        width: 47px;
-        height: 25px;
+      @include arrow-position;
+      width: 47px;
+      height: 25px;
+
+      @include md {
+        width: 23px;
+        height: 12px;
       }
     }
   }
@@ -74,13 +93,31 @@
     height: 200px;
     color: #fcd043;
 
-    // & .polygon {
-    // }
+    @include lg {
+      width: 175px;
+      height: 175px;
+      svg {
+        width: 175px;
+        height: 175px;
+      }
+    }
 
-    @include sm {
+    @include md {
       width: 120px;
       height: 120px;
+      bottom: 15px;
+      right: 15px;
+
+      svg {
+        width: 120px;
+        height: 120px;
+      }
     }
+
+    // @include sm {
+    //   width: 120px;
+    //   height: 120px;
+    // }
 
     &.intouch {
       left: 0;
@@ -100,10 +137,13 @@
       line-height: normal;
       color: var(--text);
 
-      @include sm {
+      @include md {
         width: 100%;
         font-size: 14px;
       }
+
+      // @include sm {
+      // }
     }
   }
 }

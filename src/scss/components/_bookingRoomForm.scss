@@ -2,12 +2,16 @@
 .booking-form {
   width: min-content;
   height: 150px;
-  opacity: 0.9;
+  // opacity: 0.9;
   background: rgba(49, 63, 56, 0.48);
   backdrop-filter: blur(20px);
 
   @include lg {
     height: 125px;
+  }
+
+  @include md {
+    height: 100px;
   }
 
   &.touch {
@@ -45,8 +49,7 @@
       }
 
       & .select-dropdown {
-        @include transition-standart {
-        }
+        @include transition-standart;
 
         &--open {
           @include transition-standart {
@@ -63,8 +66,18 @@
       text-transform: uppercase;
 
       @include btn-state-changes($svg: no);
+
       @include lg {
         height: 125px;
+      }
+
+      @include md {
+        width: 248px;
+        height: 100px;
+
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px; /* 142.857% */
       }
 
       &.touch {

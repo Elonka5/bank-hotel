@@ -338,6 +338,9 @@
       @include lg {
         height: 125px;
       }
+      @include md {
+        height: 100px;
+      }
 
       // Можна використовувати через контент 2 шляхами,
       // але неможливо тоді зробити динамічні зміни при ховері та фокусі
@@ -388,12 +391,20 @@
         font-size: 16px;
         line-height: 1.25;
 
+        @include md {
+          font-size: 16px;
+        }
+
         &::placeholder {
           color: var(--white-100);
           font-size: 16px;
           font-weight: 500;
           line-height: 1.25;
           text-transform: uppercase;
+
+          @include md {
+            font-size: 16px;
+          }
         }
 
         &[class$="-ignore-onclickoutside"] {
