@@ -1,7 +1,7 @@
-$bg-img-1920: "~../../../assets/images/mainImages/desktop1920/main-hero-desktop-1920.webp";
-$bg-img-1440: "~../../../assets/images/mainImages/desktop1440/main-hero-desktop-1440.webp";
-$bg-img-tablet: "~../../../assets/images/mainImages/tablet/main-hero-tablet.webp";
-$bg-img-mobile: "~../../../assets/images/mainImages/mobile/main-hero-mobile.webp";
+$bg-img-1920: "/main-hero-desktop-1920.webp";
+$bg-img-1440: "/main-hero-desktop-1440.webp";
+$bg-img-tablet: "/main-hero-tablet.webp";
+$bg-img-mobile: "/main-hero-mobile.webp";
 
 .hero {
   display: flex;
@@ -126,9 +126,12 @@ $bg-img-mobile: "~../../../assets/images/mainImages/mobile/main-hero-mobile.webp
       display: flex;
       align-items: center;
       justify-content: space-between;
+      width: 100%;
 
-      .btnPoly {
-        @include md {
+      @include md {
+        width: 70px;
+
+        .btnPoly {
           width: 45px;
           height: 45px;
         }
