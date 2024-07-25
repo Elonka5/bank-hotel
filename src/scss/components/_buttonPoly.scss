@@ -16,12 +16,20 @@
     @include arrow-position {
       top: 75%;
     }
+    @include lg {
+      width: 9px;
+      height: 18px;
+    }
   }
 
   & .arrow-size {
     @include arrow-position {
       width: 168px;
       height: 137px;
+      @include sm {
+        width: 70px;
+        height: 70px;
+      }
     }
 
     &.open {
