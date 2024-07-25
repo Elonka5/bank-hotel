@@ -119,13 +119,7 @@ const DatePickerComponent: React.FC<IDatePickerProps> = ({
         dateFormat="Pp"
         useWeekdaysShort={true}
         placeholderText={placeholderText}
-        // wrapperClassName={styles.wrapper}
         wrapperClassName={`${styles.wrapper} ${touchClassName || ""}`}
-        // wrapperClassName={
-        //   nameSection === "touch"
-        //     ? styles.wrapper && styles.touch
-        //     : styles.wrapper
-        // }
         popperClassName={
           placeholderText === "Check In" ? styles.popperStart : styles.popperEnd
         }

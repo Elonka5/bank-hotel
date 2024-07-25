@@ -4,8 +4,18 @@
 .datepicker .popperStart {
   transform: translate(0, 150px) !important;
 }
+@media screen and (max-width: 1919.98px) {
+  .datepicker .popperStart {
+    transform: translate(0, 125px) !important;
+  }
+}
 .datepicker .popperEnd {
   transform: translate(-368.5px, 150px) !important;
+}
+@media screen and (max-width: 1919.98px) {
+  .datepicker .popperEnd {
+    transform: translate(-368.5px, 125px) !important;
+  }
 }
 .datepicker [class$=dropdown-indicator] {
   position: absolute;
@@ -278,19 +288,14 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.datepicker.touch .wrapper [class$=__input-container] {
-  width: 315px;
-  height: 140px;
-}
-.datepicker.touch .popperStart {
-  transform: translate(0, 140px) !important;
-}
-.datepicker.touch .popperEnd {
-  transform: translate(-316px, 140px) !important;
-}
 .datepicker .wrapper [class$=__input-container] {
   width: 368.5px;
   height: 150px;
+}
+@media screen and (max-width: 1919.98px) {
+  .datepicker .wrapper [class$=__input-container] {
+    height: 125px;
+  }
 }
 .datepicker .wrapper [class$=__input-container] [class$=__close-icon] {
   top: 50%;
@@ -334,6 +339,67 @@
 }
 .datepicker .wrapper [class$=__input-container] input[class$=-ignore-onclickoutside] {
   outline: none;
+}
+.datepicker.touch .popperStart {
+  transform: translate(0, 140px) !important;
+}
+@media screen and (max-width: 1919.98px) {
+  .datepicker.touch .popperStart {
+    transform: translate(0, 120px) !important;
+  }
+}
+@media screen and (max-width: 1439.98px) {
+  .datepicker.touch .popperStart {
+    transform: translate(0, 100px) !important;
+  }
+}
+.datepicker.touch .popperEnd {
+  transform: translate(-314.5px, 140px) !important;
+}
+@media screen and (max-width: 1919.98px) {
+  .datepicker.touch .popperEnd {
+    transform: translate(-294.5px, 120px) !important;
+  }
+}
+@media screen and (max-width: 1439.98px) {
+  .datepicker.touch .popperEnd {
+    transform: translate(-199.5px, 100px) !important;
+  }
+}
+.datepicker.touch [class$=dropdown-indicator] {
+  width: 25px;
+  height: 25px;
+}
+.datepicker.touch .wrapper [class$=__input-container] {
+  width: 315px;
+  height: 140px;
+}
+@media screen and (max-width: 1919.98px) {
+  .datepicker.touch .wrapper [class$=__input-container] {
+    width: 296px;
+    height: 120px;
+  }
+}
+@media screen and (max-width: 1439.98px) {
+  .datepicker.touch .wrapper [class$=__input-container] {
+    width: 199px;
+    height: 100px;
+  }
+}
+.datepicker.touch .wrapper [class$=__input-container] [class$=__close-icon]::after {
+  background-color: var(--primary-color-100);
+}
+.datepicker.touch .wrapper [class$=__input-container] input {
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--text-color-100);
+}
+.datepicker.touch .wrapper [class$=__input-container] input::placeholder {
+  padding-left: 24px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-color-100);
 }
 
 [class*=buttons-wrapper] {
@@ -393,6 +459,7 @@
 [class*=buttons-wrapper] [class$=buttons] [class*=bottom]:disabled {
   background: var(--button-light-color-disabled);
   opacity: 0.2;
+  color: var(--text-color-100);
 }
 [class*=buttons-wrapper] [class$=buttons] [class*=bottom][class*=desktop] {
   width: 160px;
