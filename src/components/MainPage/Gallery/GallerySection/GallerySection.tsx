@@ -43,7 +43,10 @@ const GallerySection = () => {
         )}
 
         <div className="gallery--part__center">
-          <Icon className="gallery--part__center--label" iconId="label" />
+          <Icon
+            className="gallery--part__center--label"
+            iconId="label-gallery"
+          />
           <h2 className="gallery--title">Our gallery</h2>
           <p className="gallery--description">
             Explore our spacious rooms with the gorgeous view to the historical

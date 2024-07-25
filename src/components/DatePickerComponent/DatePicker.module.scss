@@ -315,21 +315,6 @@
     }
   }
 
-  &.touch {
-    .wrapper {
-      [class$="__input-container"] {
-        width: 315px;
-        height: 140px;
-      }
-    }
-    .popperStart {
-      transform: translate(0, 140px) !important;
-    }
-    .popperEnd {
-      transform: translate(-316px, 140px) !important;
-    }
-  }
-
   .wrapper {
     [class$="__input-container"] {
       width: 368.5px;
@@ -413,6 +398,71 @@
       }
     }
   }
+
+  // ====== TOUCH FORM STYLES ======
+
+  &.touch {
+    .popperStart {
+      @include popper-positions($touch: yes);
+      @include lg {
+        @include popper-positions($touch: yes, $size: lg);
+      }
+
+      @include md {
+        @include popper-positions($touch: yes, $size: md);
+      }
+    }
+    .popperEnd {
+      @include popper-positions($touch: yes, $start: no);
+      @include lg {
+        @include popper-positions($touch: yes, $start: no, $size: lg);
+      }
+
+      @include md {
+        @include popper-positions($touch: yes, $start: no, $size: md);
+      }
+    }
+
+    [class$="dropdown-indicator"] {
+      width: 25px;
+      height: 25px;
+    }
+
+    .wrapper {
+      [class$="__input-container"] {
+        width: 315px;
+        height: 140px;
+
+        @include lg {
+          width: 296px;
+          height: 120px;
+        }
+
+        @include md {
+          width: 199px;
+          height: 100px;
+        }
+
+        [class$="__close-icon"]::after {
+          background-color: var(--primary-color-100);
+        }
+
+        & input {
+          padding-left: 20px;
+          font-size: 14px;
+          line-height: 1.2;
+          color: var(--text-color-100);
+          &::placeholder {
+            padding-left: 24px;
+            font-size: 12px;
+            line-height: 1.6;
+            color: var(--text-color-100);
+          }
+        }
+      }
+    }
+  }
+  // ==================================
 }
 
 [class*="buttons-wrapper"] {
