@@ -9,11 +9,17 @@
     @include lg {
       @include popper-positions($size: lg);
     }
+    @include md {
+      @include popper-positions($size: md);
+    }
   }
   .popperEnd {
     @include popper-positions($start: no);
     @include lg {
       @include popper-positions($start: no, $size: lg);
+    }
+    @include md {
+      @include popper-positions($start: no, $size: md);
     }
   }
 
@@ -25,6 +31,13 @@
     width: 30px;
     height: 30px;
     z-index: 2;
+
+    @include md {
+      svg {
+        width: 16px;
+        height: 8px;
+      }
+    }
 
     &:hover .select-dropdown {
       transform: scale(1.2);
@@ -324,6 +337,7 @@
         height: 125px;
       }
       @include md {
+        width: 305.5px;
         height: 100px;
       }
 
@@ -377,7 +391,8 @@
         line-height: 1.25;
 
         @include md {
-          font-size: 16px;
+          font-size: 12px;
+          line-height: 20px;
         }
 
         &::placeholder {
@@ -388,7 +403,8 @@
           text-transform: uppercase;
 
           @include md {
-            font-size: 16px;
+            font-size: 12px;
+            line-height: 20px;
           }
         }
 

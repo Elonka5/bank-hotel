@@ -31,9 +31,15 @@ const RoomsApartments = () => {
   return (
     <section className="rooms-apartments container">
       <div className="rooms-apartments__title-wrapper">
+        <p className="rooms-all">70 Rooms</p>
         <h2 className="title">
           Rooms
           <br />& Apartments
+        </h2>
+        <h2 className="title-mobile">
+          Rooms &
+          <br />
+          Apartments
         </h2>
         <p className="descr">
           All room decoration was made with ecological certified and safe

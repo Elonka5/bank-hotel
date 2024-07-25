@@ -60,6 +60,10 @@
       bottom: 50%;
     }
 
+    @include sm {
+      bottom: 115px;
+    }
+
     &:hover {
       @include transition-standart;
       color: var(--text);
@@ -71,6 +75,11 @@
       @include md {
         width: 105px;
         height: 105px;
+      }
+
+      @include sm {
+        width: 70px;
+        height: 70px;
       }
     }
     & .arrow50 {
@@ -105,19 +114,14 @@
     @include md {
       width: 120px;
       height: 120px;
-      bottom: 15px;
-      right: 15px;
+      bottom: 20px;
+      right: 20px;
 
       svg {
         width: 120px;
         height: 120px;
       }
     }
-
-    // @include sm {
-    //   width: 120px;
-    //   height: 120px;
-    // }
 
     &.intouch {
       left: 0;
@@ -141,9 +145,6 @@
         width: 100%;
         font-size: 14px;
       }
-
-      // @include sm {
-      // }
     }
   }
 }

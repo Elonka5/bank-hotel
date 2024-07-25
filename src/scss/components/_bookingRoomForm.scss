@@ -2,9 +2,9 @@
 .booking-form {
   width: min-content;
   height: 150px;
-  // opacity: 0.9;
   background: rgba(49, 63, 56, 0.48);
   backdrop-filter: blur(20px);
+  z-index: 10;
 
   @include lg {
     height: 125px;
