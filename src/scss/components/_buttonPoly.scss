@@ -123,6 +123,11 @@
       }
     }
 
+    @include sm {
+      &.mobile {
+      }
+    }
+
     &.intouch {
       left: 0;
       bottom: -38px;

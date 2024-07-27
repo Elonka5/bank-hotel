@@ -274,3 +274,25 @@
     }
   }
 }
+
+// style with GRID =====================
+// .descr-container {
+//   display: grid;
+//   grid-template-areas:
+//     "counter"
+//     "title"
+//     "descr";
+//   grid-template-rows: auto auto auto; /* додає додаткові рядки */
+
+//   &__counter {
+//     grid-area: counter;
+//   }
+
+//   &__title {
+//     grid-area: title;
+//   }
+
+//   &__descr {
+//     grid-area: descr;
+//   }
+// }

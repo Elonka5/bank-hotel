@@ -1,8 +1,39 @@
+import { useMediaQuery } from "react-responsive";
 import BookingRoomFormDatePicker from "../../BookingRoomForm/BookingRoomFormDatePicker";
 import ButtonPoly from "../../ButtonPoly/ButtonPoly";
 import ButtonSince from "../../ButtonSince/ButtonSince";
+import { AnimationEvent, useState } from "react";
+import styles from "../../DatePickerComponent/DatePicker.module.scss";
 
 const Hero = () => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1024px)",
+  });
+  const isMobile = useMediaQuery({ query: "(max-width: 1023.98px)" });
+  const [isOpenForm, setIsOpenForm] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
+  const handleClick = () => {
+    if (isOpen) {
+      setIsOpen(false);
+      setIsClosing(true);
+      setTimeout(() => {
+        setIsOpenForm(false);
+      }, 900);
+    } else {
+      setIsOpenForm(true);
+      setIsOpen(true);
+    }
+  };
+
+  const handleAnimationEnd = (event: AnimationEvent<HTMLDivElement>) => {
+    if (isClosing && event.animationName === "animation-form-close") {
+      setIsOpen(false);
+      setIsClosing(false);
+    }
+  };
+
   return (
     <section className="hero container" id="#hero">
       <div className="hero__wrapper">
@@ -31,7 +62,29 @@ const Hero = () => {
         </div>
       </div>
       <div className="hero__image">
-        <BookingRoomFormDatePicker />
+        {isDesktopOrLaptop && <BookingRoomFormDatePicker />}
+        {isMobile && (
+          <>
+            <ButtonPoly
+              className="btnPoly booking mobile"
+              iconWidth={120}
+              iconHeight={120}
+              iconPolygonId="polygon-fill"
+              onClick={handleClick}
+            >
+              <span>Book room</span>
+            </ButtonPoly>
+            {isOpenForm && (
+              <BookingRoomFormDatePicker
+                className={`mobile ${
+                  isOpen ? "open" : isClosing ? "close" : null
+                }`}
+                onAnimationEnd={handleAnimationEnd}
+                touchClassName={styles.mobile}
+              />
+            )}
+          </>
+        )}
       </div>
       <div className="hero__address">
         <div className="hero__address--links">
