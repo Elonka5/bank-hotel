@@ -209,13 +209,10 @@ $bg-img-mobile: "/main-hero-mobile.webp";
     }
 
     @include sm {
+      position: relative;
       background-image: url(#{$bg-img-mobile});
       width: 355px;
       height: 425px;
-
-      .booking-form {
-        display: none;
-      }
     }
   }
 

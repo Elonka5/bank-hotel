@@ -1,9 +1,17 @@
 @import "../../scss/utils/mixins";
 @import "../../scss/utils/responsive";
+// ========= ADDING THIS STYLE IN _bookingRoomForm.scss ==========
+// .form {
+//   &__select-container {
+//     &:hover [class$="select-dropdown"] {
+//       scale: 1.2;
+//     }
+//   }
+// }
+// ================================================
 
 .datepicker {
   position: relative;
-
   .popperStart {
     @include popper-positions();
     @include lg {
@@ -23,37 +31,67 @@
     }
   }
 
-  [class$="dropdown-indicator"] {
+  [class*="dropdown-indicator"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     z-index: 2;
 
-    @include md {
-      svg {
+    [class$="select-dropdown"] {
+      @include transition-standart;
+      @include md {
         width: 16px;
         height: 8px;
       }
     }
 
-    &:hover .select-dropdown {
-      transform: scale(1.2);
+    [class$="select-dropdown"]:hover {
+      @include transition-standart;
+      scale: 1.2;
     }
 
-    & .select-dropdown {
+    [class*="select-dropdown"][class$="--open"] {
       @include transition-standart;
+      transform: rotateZ(180deg);
+      scale: 1.2;
+      @include md {
+        width: 16px;
+        height: 8px;
+      }
+    }
 
-      &--open {
-        @include transition-standart {
-          transform: rotateX(180deg) scale(1.2);
+    &[class*="__close-icon"] {
+      @include sm {
+        svg {
+          width: 24px;
+          height: 24px;
         }
+      }
+
+      [class*="cancel-dropdown"] {
+        @include transition-standart;
+      }
+
+      [class*="cancel-dropdown"]:hover {
+        @include transition-standart;
+        transform: rotateZ(90deg);
+        scale: 1.1;
+      }
+
+      [class*="cancel-dropdown"][class$="--open"] {
+        @include transition-standart;
+        opacity: 0.5;
       }
     }
   }
 
+  // ========== CALENDAR MONTH CONTAINER start ============
   [class$="__month-container"] {
     display: flex;
     flex-direction: column;
@@ -100,9 +138,6 @@
         display: none;
       }
     }
-
-    // [class$="__header--has-time-select"] {
-    // }
 
     [class$="__current-month"] {
       display: flex;
@@ -211,12 +246,13 @@
       text-transform: uppercase;
     }
   }
+  // ========== CALENDAR MONTH CONTAINER end ============
 
+  // ========== CALENDAR TIME CONTAINER start ============
   [class*="__time-container"] {
     display: flex;
     flex-direction: column;
     width: 247px;
-    // height: min-content;
     border: none;
 
     [class*="__header--time"] {
@@ -247,7 +283,6 @@
       display: flex;
       margin: 0;
       width: 100%;
-      // height: 100%;
     }
 
     [class$="__time-list"] {
@@ -292,6 +327,7 @@
       font-weight: normal !important;
     }
   }
+  // ========== CALENDAR TIME CONTAINER end ============
 
   [class*="__children-container"] {
     width: 100%;
@@ -341,8 +377,8 @@
         height: 100px;
       }
 
-      // Можна використовувати через контент 2 шляхами,
-      // але неможливо тоді зробити динамічні зміни при ховері та фокусі
+      // === Can using from standart datepicker button close with content in 2 path,
+      // === but then impossible dynamic change into hover and focus
       // [class$="__close-icon"]::after {
       //   background-color: transparent;
       //   width: 24px;
@@ -351,33 +387,32 @@
       //   // content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABhUlEQVR4nL2WWU5CQRBFD3wqmigKfCoa3QN86IfDFozDAhQ2YSAswIG4E4VdoGzAeQFuwJS5JOWTfgMQT/JCp7q43V3vdgFkI6dnZlSAJtAH3oAvPTbuAQ3lZGYB6AAfwDWwBxTdvI33gRvltIFCWvENYAhcRURDrGihJ6CaRvwFOCI7x/ruelxZhhOKjzgBHkPl6qgs09IFWtFgRS8rWvNFYCtGbFs5nlVplX2wKbeME3gH6mPm6pqznCi3wIUP9GVFYoTqCTHPAfDgA5a8RJiajr2r8SewE5NflKN+yOt2JrWAujYSt/MROWnm/2UB4xVYJkzNlcWXK4Q56dkHeuots3rJh8C9DzTUT6JsprCp5Yy7bOc+UNaxrXF55gICfgOW4ylJyz5/0Q6cIit3wOW4iYJarnXFSTkDBsB8KKGqCzLJIqdyzlpSYlUttyu7JVFSWQZpxH25WvK+LWS9xRvAFjYr2py9UKt5sCxxmLusK5qn7TKOfvRtbDGz4h+3TEPmvy3fuB5UN1GRp1kAAAAASUVORK5CYII=");
       // }
 
-      [class$="__close-icon"] {
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
-        width: 24px;
-        height: 24px;
-      }
+      // [class$="__close-icon"] {
+      //   top: 50%;
+      //   right: 10px;
+      //   transform: translateY(-50%);
+      //   width: 24px;
+      //   height: 24px;
+      // }
 
-      [class$="__close-icon"]::after {
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        content: "";
-        background-color: var(--white-80);
-        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='24' height='24' viewBox='0 0 50 50'%0Astyle='fill:%23000000'%3E%3Cpath d='M 25 2 C 12.309534 2 2 12.309534 2 25 C 2 37.690466 12.309534 48 25 48 C 37.690466 48 48 37.690466 48 25 C 48 12.309534 37.690466 2 25 2 z M 25 4 C 36.609534 4 46 13.390466 46 25 C 46 36.609534 36.609534 46 25 46 C 13.390466 46 4 36.609534 4 25 C 4 13.390466 13.390466 4 25 4 z M 32.990234 15.986328 A 1.0001 1.0001 0 0 0 32.292969 16.292969 L 25 23.585938 L 17.707031 16.292969 A 1.0001 1.0001 0 0 0 16.990234 15.990234 A 1.0001 1.0001 0 0 0 16.292969 17.707031 L 23.585938 25 L 16.292969 32.292969 A 1.0001 1.0001 0 1 0 17.707031 33.707031 L 25 26.414062 L 32.292969 33.707031 A 1.0001 1.0001 0 1 0 33.707031 32.292969 L 26.414062 25 L 33.707031 17.707031 A 1.0001 1.0001 0 0 0 32.990234 15.986328 z'%3E%3C/path%3E%3C/svg%3E")
-          no-repeat center/contain;
-        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='24' height='24' viewBox='0 0 50 50'%0Astyle='fill:%23000000'%3E%3Cpath d='M 25 2 C 12.309534 2 2 12.309534 2 25 C 2 37.690466 12.309534 48 25 48 C 37.690466 48 48 37.690466 48 25 C 48 12.309534 37.690466 2 25 2 z M 25 4 C 36.609534 4 46 13.390466 46 25 C 46 36.609534 36.609534 46 25 46 C 13.390466 46 4 36.609534 4 25 C 4 13.390466 13.390466 4 25 4 z M 32.990234 15.986328 A 1.0001 1.0001 0 0 0 32.292969 16.292969 L 25 23.585938 L 17.707031 16.292969 A 1.0001 1.0001 0 0 0 16.990234 15.990234 A 1.0001 1.0001 0 0 0 16.292969 17.707031 L 23.585938 25 L 16.292969 32.292969 A 1.0001 1.0001 0 1 0 17.707031 33.707031 L 25 26.414062 L 32.292969 33.707031 A 1.0001 1.0001 0 1 0 33.707031 32.292969 L 26.414062 25 L 33.707031 17.707031 A 1.0001 1.0001 0 0 0 32.990234 15.986328 z'%3E%3C/path%3E%3C/svg%3E")
-          no-repeat center/contain;
-        @include transition-standart;
-      }
+      //=== This third method, can use background-color and mask from dynamic styles
+      // [class$="__close-icon"]::after {
+      //   display: inline-block;
+      //   width: 24px;
+      //   height: 24px;
+      //   content: "";
+      //   background-color: var(--white-80);
+      //   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='24' height='24' viewBox='0 0 50 50'%0Astyle='fill:%23000000'%3E%3Cpath d='M 25 2 C 12.309534 2 2 12.309534 2 25 C 2 37.690466 12.309534 48 25 48 C 37.690466 48 48 37.690466 48 25 C 48 12.309534 37.690466 2 25 2 z M 25 4 C 36.609534 4 46 13.390466 46 25 C 46 36.609534 36.609534 46 25 46 C 13.390466 46 4 36.609534 4 25 C 4 13.390466 13.390466 4 25 4 z M 32.990234 15.986328 A 1.0001 1.0001 0 0 0 32.292969 16.292969 L 25 23.585938 L 17.707031 16.292969 A 1.0001 1.0001 0 0 0 16.990234 15.990234 A 1.0001 1.0001 0 0 0 16.292969 17.707031 L 23.585938 25 L 16.292969 32.292969 A 1.0001 1.0001 0 1 0 17.707031 33.707031 L 25 26.414062 L 32.292969 33.707031 A 1.0001 1.0001 0 1 0 33.707031 32.292969 L 26.414062 25 L 33.707031 17.707031 A 1.0001 1.0001 0 0 0 32.990234 15.986328 z'%3E%3C/path%3E%3C/svg%3E")
+      //     no-repeat center/contain;
+      //   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='24' height='24' viewBox='0 0 50 50'%0Astyle='fill:%23000000'%3E%3Cpath d='M 25 2 C 12.309534 2 2 12.309534 2 25 C 2 37.690466 12.309534 48 25 48 C 37.690466 48 48 37.690466 48 25 C 48 12.309534 37.690466 2 25 2 z M 25 4 C 36.609534 4 46 13.390466 46 25 C 46 36.609534 36.609534 46 25 46 C 13.390466 46 4 36.609534 4 25 C 4 13.390466 13.390466 4 25 4 z M 32.990234 15.986328 A 1.0001 1.0001 0 0 0 32.292969 16.292969 L 25 23.585938 L 17.707031 16.292969 A 1.0001 1.0001 0 0 0 16.990234 15.990234 A 1.0001 1.0001 0 0 0 16.292969 17.707031 L 23.585938 25 L 16.292969 32.292969 A 1.0001 1.0001 0 1 0 17.707031 33.707031 L 25 26.414062 L 32.292969 33.707031 A 1.0001 1.0001 0 1 0 33.707031 32.292969 L 26.414062 25 L 33.707031 17.707031 A 1.0001 1.0001 0 0 0 32.990234 15.986328 z'%3E%3C/path%3E%3C/svg%3E")
+      //     no-repeat center/contain;
+      //   @include transition-standart;
+      // }
 
-      [class$="__close-icon"]:hover::after {
-        @include transition-standart {
-          transform: rotateZ(180deg);
-          background-color: var(--primary-color-100);
-        }
-      }
+      //=====SITE USING FOR THIS METOD=======
+      // https://brexston.github.io/svg-css-converter/#/ru
+      // https://icons8.com/icons/set/cancel
+      //=====================================
 
       & input {
         width: 100%;
@@ -410,6 +445,104 @@
 
         &[class$="-ignore-onclickoutside"] {
           outline: none;
+        }
+      }
+    }
+  }
+
+  // ====== MOBILE FORM STYLES ======
+  &.mobile {
+    .popperStart,
+    .popperEnd {
+      z-index: 10;
+    }
+
+    .popperEnd {
+      @include sm {
+        @include popper-positions($size: md);
+      }
+    }
+
+    .wrapper {
+      [class$="__input-container"] {
+        @include sm {
+          width: 355px;
+        }
+      }
+      input {
+        padding: 16px 40px;
+        font-size: 16px;
+        color: var(--text-color-64);
+
+        &::placeholder {
+          font-size: 16px;
+          color: var(--text-color-64);
+        }
+      }
+    }
+
+    .calendar {
+      width: 355px;
+      justify-content: center;
+      padding: 10px;
+      border: 1px solid var(--primary-color-100);
+
+      &__title {
+        width: max-content;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        margin: 0 auto 14px;
+      }
+
+      &__children {
+        flex-direction: column;
+
+        [class$="__month-container"] {
+          width: 100%;
+
+          [class$="__header-custom"] {
+            margin-bottom: 12px;
+          }
+        }
+
+        [class*="__time-container"] {
+          margin: 20px auto 0;
+          width: 100%;
+
+          [class*="__header--time"] {
+            margin: 0 auto;
+          }
+
+          [class$="-time__header"] {
+            margin-top: 0;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 20px;
+          }
+
+          [class$="__time-list"] {
+            gap: 5px;
+            row-gap: 13px;
+            grid-template-columns: repeat(5, 60px);
+            grid-template-rows: repeat(3, 35px);
+          }
+
+          [class*="__time-list-item"] {
+            width: 60px;
+            height: 35px !important;
+            line-height: 18px;
+          }
+        }
+
+        [class*="buttons-wrapper"] {
+          span {
+            margin-top: 14px;
+          }
+
+          [class$="buttons"] {
+            margin-top: 14px;
+          }
         }
       }
     }
@@ -457,10 +590,6 @@
         @include md {
           width: 199px;
           height: 100px;
-        }
-
-        [class$="__close-icon"]::after {
-          background-color: var(--primary-color-100);
         }
 
         & input {
@@ -512,7 +641,6 @@
       height: 26px;
 
       p {
-        // padding-top: 5px;
         font-size: 14px;
         font-weight: 500;
         line-height: normal;
@@ -540,14 +668,16 @@
       ) {
         color: var(--white-100);
       }
-      &[class*="desktop"] {
-        width: 160px;
-        height: 70px;
+      width: 160px;
+      height: 70px;
 
-        font-size: 14px;
-        font-weight: 500;
-        line-height: normal;
-        text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: normal;
+      text-transform: uppercase;
+
+      &[class*="desktop"] {
+        font-size: 16px;
       }
 
       &[class*="mobile"] {
