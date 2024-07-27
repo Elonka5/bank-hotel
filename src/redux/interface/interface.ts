@@ -51,7 +51,6 @@ export interface ImageFetchParams {
 export interface RoomItemInterface {
   id?: string;
   title?: string;
-  imgHero: string;
   roomDescription?: string;
   imgDescription: string;
   leftSection: {
@@ -62,7 +61,6 @@ export interface RoomItemInterface {
     image: string;
     description: string;
   };
-  imageHeroResolutions?: ImageResolution;
   imageDescriptionResolutions?: ImageResolution;
   imageLeftSectionResolutions?: ImageResolution;
   imageRightSectionResolutions?: ImageResolution;

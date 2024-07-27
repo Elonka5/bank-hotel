@@ -1,0 +1,103 @@
+$bg-img-1920: "/rooms-hero-desktop1920.webp";
+$bg-img-1440: "/rooms-hero-desktop1440.webp";
+$bg-img-tablet: "/rooms-hero-tablet.webp";
+$bg-img-mobile: "/rooms-hero-mobile.webp";
+
+.hero__rooms {
+  width: 100%;
+  height: auto;
+
+  &--carousel {
+    position: relative;
+    width: 100%;
+    height: 900px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out;
+    padding: 50px 0;
+  }
+
+  .carousel__dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 18px;
+
+    .dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+
+      &.active {
+        background: var(--secondary-color-100);
+        border-radius: 50%;
+      }
+    }
+  }
+  &--title-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 347px;
+
+    .title {
+      font-family: "Miracle regular", sans-serif;
+      font-size: 150px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130px;
+      width: 711px;
+      color: var(--secondary-color-100);
+    }
+    .description {
+      color: var(--secondary-color-100);
+      font-size: 26px;
+      line-height: normal;
+      text-transform: uppercase;
+      width: 440px;
+    }
+  }
+
+  &--description {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding: 200px 159px 179px 159px;
+
+    .rooms-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .room-text {
+        width: 757px;
+        font-family: Miracle regular, sans-serif;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 60px; /* 120% */
+        letter-spacing: 1.5px;
+      }
+
+      .descr-room {
+          @include text-opacity-8 {
+            width: 350px;
+            color: var(--white-80);
+            // @include sm {
+            //   width: 100%;
+            //   font-size: 13px;
+            //   line-height: 23px;
+            //   padding-left: 68px;
+            // }
+
+        }
+      }
+    }
+  }
+}

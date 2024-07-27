@@ -28,12 +28,11 @@ export const getRoomsThunk: AsyncThunk<RoomItemInterface[], undefined, AsyncThun
 
       const updatedRoomsData = await Promise.all(roomsData.map(async (item) => {
         const path = `rooms`;
-        const imageHeroResolutions = await generateImageURLs(item.imgHero, sizes, path);
         const imageDescriptionResolutions = await generateImageURLs(item.imgDescription, sizes, path);
         const imageLeftSectionResolutions = await generateImageURLs(item.leftSection.image, sizes, path);
         const imageRightSectionResolutions = await generateImageURLs(item.rightSection.image, sizes, path);
 
-        return { ...item, imageHeroResolutions, imageDescriptionResolutions,imageLeftSectionResolutions,imageRightSectionResolutions };
+        return { ...item, imageDescriptionResolutions,imageLeftSectionResolutions,imageRightSectionResolutions };
       }));
       return updatedRoomsData;
     } catch (error: unknown) {
