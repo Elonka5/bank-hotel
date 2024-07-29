@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import GetInTouch from "../GetInTouch/GetInTouch";
+import Loader from "./Loader/Loader";
 
 const Layout = () => {
   // const location = useLocation();
@@ -20,7 +21,7 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
       <GetInTouch id="contacts" />
