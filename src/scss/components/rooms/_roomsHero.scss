@@ -17,21 +17,7 @@ $bg-img-mobile: "/rooms-hero-mobile.webp";
   }
 
   @include sm {
-    position: relative;
-    max-width: 375px;
-  }
-
-  .touch__container--icon-wave--wrapper{
-    // width: 375px;
-    height: 200px;
-    // top: 380px;
-    position: absolute;
-    width: 100%;
-    overflow: hidden;
-    // top: 0;
-    // top: 180px;
-    top:16%;
-    left: 0;
+    font-size: 12px;
   }
 
   &--carousel {
@@ -52,7 +38,7 @@ $bg-img-mobile: "/rooms-hero-mobile.webp";
     }
 
     @include sm {
-      height: 470px;
+      font-size: 12px;
     }
   }
 

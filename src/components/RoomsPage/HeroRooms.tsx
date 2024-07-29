@@ -1,43 +1,25 @@
-// import React from 'react'
-
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { RoomItemInterface } from "../../redux/interface/interface";
 import ButtonPoly from "../ButtonPoly/ButtonPoly";
 import ButtonSince from "../ButtonSince/ButtonSince";
+import { images } from "../../helpers/heroRoomsBgImg";
+import Icon from "../Icon/Icon";
 
-export interface RoomItemProps {
-  room: RoomItemInterface;
-}
-
-const HeroRooms: React.FC<RoomItemProps> = ({ room }) => {
-  const images = {
-    desktop: [
-      "/rooms-hero-desktop1920.webp",
-      "/rooms-hero-desktop1-1920.webp",
-      "/rooms-hero-desktop2-1920.webp",
-    ],
-    // tablet: [
-    //   '/rooms-hero-tablet-1.webp',
-    //   '/rooms-hero-tablet-2.webp',
-    //   '/rooms-hero-tablet-3.webp',
-    // ],
-    // mobile: [
-    //   '/rooms-hero-mobile-1.webp',
-    //   '/rooms-hero-mobile-2.webp',
-    //   '/rooms-hero-mobile-3.webp',
-    // ]
-  };
-
+const HeroRooms: React.FC = () => {
+ 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const isDesktop = useMediaQuery({ minWidth: 1440 });
+  const isDesktop1920 = useMediaQuery({ minWidth: 1919.98 });
+  const isDesktop1440 = useMediaQuery({ minWidth: 1440, maxWidth: 1919.98 });
+  const isTablet = useMediaQuery({ minWidth: 1023.98, maxWidth: 1439.98 });
+  const isMobile = useMediaQuery({ maxWidth: 1023.98 });
 
   const getCurrentImages = () => {
-    if (isDesktop) return images.desktop;
-    // if (isTablet) return images.tablet;
-    // if (isMobile) return images.mobile;
-    return images.desktop;
+    if (isDesktop1920) return images.desktop1920;
+    if (isDesktop1440) return images.desktop1440;
+    if (isTablet) return images.tablet;
+    if (isMobile) return images.mobile;
+    return images.desktop1920;
   };
 
   useEffect(() => {
@@ -48,20 +30,21 @@ const HeroRooms: React.FC<RoomItemProps> = ({ room }) => {
     }, 5000);
 
     return () => clearInterval(intervalId);
-  }, [isDesktop]);
+  }, [isDesktop1920, isDesktop1440, isTablet, isMobile]);
 
   const handleDotClick = (index: number) => {
     setCurrentImageIndex(index);
   };
 
-  if (!room) {
-    return <div>Loading...</div>;
-  }
-
-  const { roomDescription, title } = room;
-
   return (
     <section className="hero__rooms">
+      {isMobile && (
+         <div className="touch__container--icon-wave--wrapper">
+            
+         <Icon className="icon-wave" iconId="wave-hero-rooms" />
+     </div>
+      )}
+     
       <div
         className="hero__rooms--carousel"
         style={{
@@ -78,13 +61,13 @@ const HeroRooms: React.FC<RoomItemProps> = ({ room }) => {
           ))}
         </div>
         <div className="hero__rooms--title-wrapper container">
-          <h1 className="title">{title}</h1>
+          <h1 className="title">Superior twin</h1>
           <p className="description">
             All room decoration was made with ecological certified and safe
             materials.
           </p>
         </div>
-        <div>
+        <div className="hero__rooms--button">
           <ButtonPoly
             className="btnPoly booking"
             iconWidth={200}
@@ -103,8 +86,9 @@ const HeroRooms: React.FC<RoomItemProps> = ({ room }) => {
             All suites have a unique design because we want our every guest to
             feel special.
           </p>
-          <p className="descr-room">{roomDescription}</p>
+          <p className="descr-room">The Superior twin would perfectly match the needs of those who plan to stay long. The bright and airy room is equipped with superior soft Italian furniture. Large windows open a beautiful view to the historical part of the city. Contemporary interior design and comfortable beds will make your stay cozy and delightful.</p>
         </div>
+
       </div>
     </section>
   );
