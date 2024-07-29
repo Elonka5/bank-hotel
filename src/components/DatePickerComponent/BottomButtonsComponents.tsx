@@ -2,12 +2,12 @@ import { ReactNode, useEffect, useState } from "react";
 import { useAppSelector } from "../../redux/hooks/hooks";
 
 interface ICustomButtonProps {
-  classNameComponent?: "mobile" | "desktop";
+  classNameComponent?: string | undefined;
   classNameBtn?: "cancel" | "back";
   text?: string;
   children?: ReactNode;
   onClick?: (evt?: string) => void;
-  onClickEvent?: "reset" | "close" | "submit";
+  onClickEvent?: "reset" | "close" | "submit" | "save";
 }
 
 const BottomButtonsComponents: React.FC<ICustomButtonProps> = ({
@@ -30,6 +30,7 @@ const BottomButtonsComponents: React.FC<ICustomButtonProps> = ({
 
   useEffect(() => {
     if (selectCheckInDate || selectCheckOutDate) {
+      setButtonEvent("save");
       setButtonText("Save & Close");
     }
     if (selectCheckInDate && selectCheckOutDate) {

@@ -4,7 +4,7 @@ import ButtonSince from "../../ButtonSince/ButtonSince";
 import ResponsiveFetchImg from "../../ResponsiveImg/ResponsiveFetchImg";
 
 export interface IRoomsApartments {
-  room: ApartmentsInterface,
+  room: ApartmentsInterface;
   // {
   //   id: number;
   //   imgLeft?: React.ReactNode;
@@ -19,7 +19,7 @@ const RoomsApartmentsItem: React.FC<IRoomsApartments> = ({
   room,
   totalPage,
 }) => {
-  const { id, title, text,imageLeftResolutions,imageRightResolutions } = room;
+  const { id, title, text, imageLeftResolutions, imageRightResolutions } = room;
 
   function formatNumber(num: number) {
     return num < 10 ? `0${num}` : num;
@@ -29,8 +29,9 @@ const RoomsApartmentsItem: React.FC<IRoomsApartments> = ({
     <li className={`slider__list--item slide-${id}`}>
       <div className="left-container">
         <div className="left-container__img-wrapper">
-          {/* {imgLeft} */}
-        {imageLeftResolutions && <ResponsiveFetchImg nameImg={imageLeftResolutions} alt="" />}
+          {imageLeftResolutions && (
+            <ResponsiveFetchImg nameImg={imageLeftResolutions} alt="" />
+          )}
         </div>
         <div className="descr-container">
           <ButtonSince className="white-bg" text="Since 1973" />
@@ -55,8 +56,10 @@ const RoomsApartmentsItem: React.FC<IRoomsApartments> = ({
         </ButtonPoly>
         <div className="right-container__img-wrapper">
           {/* {imgRight} */}
-          {imageRightResolutions && <ResponsiveFetchImg nameImg={imageRightResolutions} alt="" />}
-          </div>
+          {imageRightResolutions && (
+            <ResponsiveFetchImg nameImg={imageRightResolutions} alt="" />
+          )}
+        </div>
       </div>
     </li>
   );

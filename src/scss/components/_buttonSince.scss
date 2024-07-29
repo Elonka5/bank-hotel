@@ -13,6 +13,14 @@
   font-size: 22px;
   line-height: normal;
 
+  @include lg {
+    height: 65px;
+  }
+
+  @include md {
+    display: none;
+  }
+
   &.white-bg {
     color: var(--text);
     border: 1px solid var(--primary-color-48);

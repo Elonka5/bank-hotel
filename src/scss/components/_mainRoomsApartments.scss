@@ -5,6 +5,18 @@
   background-color: var(--white-100);
   color: var(--text);
 
+  @include lg {
+    padding: 250px 20px 200px;
+  }
+
+  @include md {
+    padding: 125px 20px 160px;
+  }
+
+  @include sm {
+    padding: 70px 10px;
+  }
+
   &__title-wrapper {
     display: flex;
     flex-direction: row;
@@ -14,17 +26,81 @@
     color: var(--text);
     text-transform: uppercase;
 
+    @include lg {
+      padding-bottom: 145px;
+    }
+
+    @include sm {
+      flex-direction: column;
+      padding-bottom: 50px;
+    }
+
+    .rooms-all {
+      display: none;
+
+      @include sm {
+        display: flex;
+        align-self: flex-end;
+        text-transform: none;
+        font-size: 16px;
+        line-height: 100%;
+      }
+    }
+
     & .title {
       align-self: start;
       font-family: "Miracle regular", sans-serif;
       font-size: 150px;
       line-height: 130px; /* 86.667% */
+
+      @include lg {
+        font-size: 125px;
+        line-height: 105px; /* 84% */
+      }
+
+      @include md {
+        margin-top: 76px;
+        font-size: 100px;
+        line-height: 80px; /* 80% */
+      }
+
+      @include sm {
+        display: none;
+      }
+
+      &-mobile {
+        display: none;
+        @include sm {
+          display: flex;
+          align-self: start;
+          font-family: "Miracle regular", sans-serif;
+          margin-top: 30px;
+          font-size: 60px;
+          line-height: 60px;
+        }
+      }
     }
 
     & .descr {
       width: 440px;
       font-size: 26px;
       line-height: normal;
+
+      @include lg {
+        width: 335px;
+        font-size: 18px;
+      }
+
+      @include md {
+        width: 200px;
+        font-size: 16px;
+      }
+
+      @include sm {
+        width: 150px;
+        font-size: 12px;
+        margin-top: 50px;
+      }
     }
   }
 
@@ -41,6 +117,16 @@
       &--item {
         display: flex;
 
+        @include md {
+          padding-left: 250px;
+        }
+
+        @include sm {
+          padding-left: 0;
+          flex-direction: column-reverse;
+          justify-content: flex-end;
+        }
+
         & .left-container {
           display: flex;
 
@@ -54,6 +140,10 @@
               width: 217px;
               height: 258px;
             }
+
+            @include md {
+              display: none;
+            }
           }
 
           & .descr-container {
@@ -63,6 +153,22 @@
             width: 442px;
             margin: 0 188px;
 
+            @include lg {
+              width: 335px;
+              margin: 0 138px;
+            }
+
+            @include md {
+              width: 250px;
+              margin: 0 127px 0 0;
+            }
+
+            @include sm {
+              width: 100%;
+              margin: 0;
+              align-items: flex-end;
+            }
+
             &__title {
               display: flex;
               align-items: center;
@@ -70,15 +176,48 @@
               margin-top: 380px;
               font-family: "Miracle regular", sans-serif;
               font-size: 50px;
-              font-weight: 400;
               letter-spacing: 1.5px;
               text-transform: capitalize;
               color: var(--text);
+
+              @include lg {
+                height: 36px;
+                margin-top: 235px;
+                font-size: 36px;
+                letter-spacing: 1.08px;
+              }
+
+              @include md {
+                margin-top: 120px;
+              }
+
+              @include sm {
+                margin-top: 30px;
+                order: 2;
+                align-self: flex-start;
+              }
             }
 
             &__descr {
               @include text-opacity-8 {
                 margin-top: 40px;
+              }
+
+              @include lg {
+                font-size: 18px;
+                line-height: 28px; /* 155.556% */
+              }
+
+              @include md {
+                margin-top: 30px;
+                font-size: 13px;
+                line-height: 23px; /* 176.923% */
+              }
+
+              @include sm {
+                order: 3;
+                width: 221px;
+                margin-top: 50px;
               }
             }
 
@@ -91,6 +230,14 @@
               font-size: 22px;
               line-height: normal;
               margin-top: 100px;
+
+              @include sm {
+                margin-top: 50px;
+                order: 1;
+                width: 86px;
+                height: 20px;
+                font-size: 16px;
+              }
 
               span {
                 color: var(--text-color-32);
@@ -106,9 +253,46 @@
           &__img-wrapper {
             width: 757px;
             height: 1000px;
+
+            @include lg {
+              width: 572px;
+              height: 755.6px;
+            }
+
+            @include md {
+              width: 356px;
+              height: 470.3px;
+            }
+
+            @include sm {
+              width: 355px;
+              height: 423.7px;
+            }
           }
         }
       }
     }
   }
 }
+
+// style with GRID =====================
+// .descr-container {
+//   display: grid;
+//   grid-template-areas:
+//     "counter"
+//     "title"
+//     "descr";
+//   grid-template-rows: auto auto auto; /* додає додаткові рядки */
+
+//   &__counter {
+//     grid-area: counter;
+//   }
+
+//   &__title {
+//     grid-area: title;
+//   }
+
+//   &__descr {
+//     grid-area: descr;
+//   }
+// }

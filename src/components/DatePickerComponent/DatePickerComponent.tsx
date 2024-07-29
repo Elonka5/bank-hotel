@@ -14,6 +14,7 @@ import {
   setSubmitDates,
 } from "../../redux/booking/bookingSlice";
 import DropdownIndicatorDatepicker from "../BookingRoomForm/DropdownIndicatorDatepicker";
+import { useClearCurrentState } from "../../helpers/redux";
 
 interface IDatePickerProps {
   selectedDate: Date | null;
@@ -26,7 +27,6 @@ interface IDatePickerProps {
   iconHeight?: number;
   iconText?: string;
   touch?: string;
-  // closeWithRef?: (ref: React.RefObject<DatePicker | null>) => void;
   clearFormikField?: () => void;
 }
 
@@ -40,12 +40,12 @@ const DatePickerComponent: React.FC<IDatePickerProps> = ({
   iconWidth,
   iconHeight,
   iconText,
-  // closeWithRef,
   clearFormikField,
 }) => {
   const datePickerRef = useRef<DatePicker | null>(null);
 
   const dispatch = useAppDispatch();
+  const clearCurrentState = useClearCurrentState();
 
   const selectCheckInDate = useAppSelector(
     (state) => state.booking.checkInDate
@@ -77,25 +77,51 @@ const DatePickerComponent: React.FC<IDatePickerProps> = ({
     return currentDate.getTime() < selectedDate.getTime();
   };
 
+  const handleDispatch = (
+    evt: string,
+    placeholderText: string,
+    selectedDate: Date | null
+  ) => {
+    const dateString = selectedDate ? selectedDate.toISOString() : null;
+    if (evt === "close" || evt === "save") {
+      dispatch(
+        placeholderText === "Check In"
+          ? setCheckInDate(dateString)
+          : setCheckOutDate(dateString)
+      );
+    } else if (evt === "reset") {
+      dispatch(
+        placeholderText === "Check In"
+          ? setCheckInDate(null)
+          : setCheckOutDate(null)
+      );
+    } else if (evt === "submit") {
+      dispatch(
+        setSubmitDates({
+          checkIn: selectCheckInDate,
+          checkOut: selectCheckOutDate,
+        })
+      );
+      clearCurrentState();
+    }
+  };
+
   const HandleCloseOrReset = (evt?: string) => {
     if (datePickerRef.current) {
       if (evt === "close") {
         datePickerRef.current.setOpen(false);
+        handleDispatch(evt, placeholderText, selectedDate);
+      } else if (evt === "save") {
+        handleDispatch(evt, placeholderText, selectedDate);
       } else if (evt === "reset") {
         datePickerRef.current.setOpen(false);
         datePickerRef.current.clear();
+
+        handleDispatch(evt, placeholderText, selectedDate);
       } else if (evt === "submit") {
         datePickerRef.current.setOpen(false);
-        // closeWithRef?.(datePickerRef);
+        handleDispatch(evt, placeholderText, selectedDate);
 
-        dispatch(
-          setSubmitDates({
-            checkIn: selectCheckInDate,
-            checkOut: selectCheckOutDate,
-          })
-        );
-        dispatch(setCheckInDate(null));
-        dispatch(setCheckOutDate(null));
         clearFormikField?.();
       }
     }
@@ -127,7 +153,6 @@ const DatePickerComponent: React.FC<IDatePickerProps> = ({
         calendarContainer={CustomCalendarComponent}
         timeCaption="CHOOSE TIME"
         shouldCloseOnSelect={false}
-        isClearable={true}
         clearButtonClassName={styles.clear}
         renderCustomHeader={(props) => <CustomHeaderComponent {...props} />}
       >
@@ -135,6 +160,7 @@ const DatePickerComponent: React.FC<IDatePickerProps> = ({
           text={iconText}
           onClick={HandleCloseOrReset}
           onClickEvent="reset"
+          classNameComponent={touchClassName ? touchClassName : undefined}
         >
           <Icon
             iconId={iconId}
