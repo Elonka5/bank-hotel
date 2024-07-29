@@ -252,12 +252,24 @@
         }
 
         .img--wrapper__leftTransp {
+          position: relative;
           margin-left: -10px;
           width: 161px;
           height: 140px;
           background: rgba(211, 211, 211, 50%);
           background-size: cover;
           background-repeat: no-repeat;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(49, 63, 56, 0.8);
+            pointer-events: none;
+          }
         }
       }
 
@@ -268,6 +280,7 @@
         left: 25%;
         width: 192px;
         height: 250px;
+        z-index: 1;
       }
 
       .gallery--part__right--mobile {
@@ -284,10 +297,22 @@
         }
 
         .img--wrapper__rightTransp {
+          position: relative;
           margin-right: -10px;
           margin-top: -30px;
           width: 182px;
           height: 147px;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(49, 63, 56, 0.9);
+            pointer-events: none;
+          }
         }
       }
     }

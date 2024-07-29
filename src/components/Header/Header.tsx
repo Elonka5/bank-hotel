@@ -1,31 +1,42 @@
 import { NavLink } from "react-router-dom";
-import "../../scss/layout/_header.scss";
-// import "../../scss/layout/_menuMobile.scss";
-import { navLinks } from "../../helpers/navLinks.ts";
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import "../../scss/layout/_header.scss";
+import { navLinks } from "../../helpers/navLinks.ts";
 import Icon from "../Icon/Icon.tsx";
-import { useState } from "react";
 import { NavLinkType } from "../../entities/navLinkTypes.ts";
-// import MenuMobile from "./MenuMobile.tsx";
+import MobileMenu from "./MobileMenu.tsx";
 
 const Header: React.FC = () => {
-  const isMobile = useMediaQuery({ maxWidth: 1024 });
-
+  const isNotDesktop = useMediaQuery({ maxWidth: 1439.98 });
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.classList.add("no-scroll");
+    }
+    if (!menuOpen) {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [menuOpen]);
+
+  const handleToggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <header>
-      <div className="container header__container">
-        <NavLink to="/" className="logo">
+      <div className="container header--container">
+        <NavLink className="header--container__logo" to="/#home">
           BankHotel
         </NavLink>
-        {!isMobile ? (
+        {!isNotDesktop ? (
           <>
             <nav>
-              <ul className="nav--links">
+              <ul className="nav--list">
                 {navLinks.map(({ id, value, to }: NavLinkType) => (
                   <li key={id}>
-                    <NavLink className="item" to={to}>
+                    <NavLink className="nav--list__link" to={to}>
                       {value}
                     </NavLink>
                   </li>
@@ -33,56 +44,30 @@ const Header: React.FC = () => {
               </ul>
             </nav>
             <address>
-              <a className="phone" href="tel:+380322975020">
+              <a className="header--phone" href="tel:+380322975020">
                 +38 032 297 50 20
               </a>
             </address>
           </>
         ) : (
-          <button type="button" onClick={() => setMenuOpen(!menuOpen)}>
-            {!menuOpen ? (
-              <Icon width={40} height={10} iconId="menu-burger" />
-            ) : (
-              <Icon width={30} height={30} iconId="menu-close" />
-            )}
-          </button>
+          <div>
+            <button
+              className="menu__toggle--button"
+              type="button"
+              onClick={handleToggleMenu}
+            >
+              {!menuOpen ? (
+                <Icon width={40} height={30} iconId="menu-burger" />
+              ) : (
+                <Icon width={30} height={30} iconId="menu-close" />
+              )}
+            </button>
+          </div>
         )}
       </div>
 
-      {isMobile && (
-        // ------------------------------
-        <div className={`menu--container  ${menuOpen ? "active" : ""}`}>
-          <nav>
-            <ul className="nav--links--mobile">
-              {navLinks.map(({ id, value, to }: NavLinkType) => (
-                <li key={id}>
-                  <NavLink className="nav--links--mobile__item" to={to}>
-                    {value}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <address className="mobile--address">
-            <a className="phone" href="tel:+380322975020">
-              +38 032 297 50 20
-            </a>
-            <a
-              className="address--link"
-              target="_blank"
-              rel="noopener nofollow noreferrer"
-              href="https://maps.app.goo.gl/HvW2oCnHNjAGywFU8"
-            >
-              8 Lystopadovoho Chynu,Lviv
-            </a>
-          </address>
-          <div className="social--links">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-          </div>
-        </div>
-        // -------------------------------
+      {isNotDesktop && (
+        <MobileMenu menuOpen={menuOpen} onClick={handleToggleMenu} />
       )}
     </header>
   );

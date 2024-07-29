@@ -1,5 +1,5 @@
 import { Suspense, lazy } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 
 const Main = lazy(() => import("./pages/MainPage"));
@@ -15,6 +15,7 @@ function App() {
           <Route path="rooms" element={<Rooms />} />
           <Route path="restaurant" element={<Facility />} />
         </Route>
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Suspense>
   );

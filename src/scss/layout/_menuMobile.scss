@@ -1,22 +1,97 @@
-.menu--container {
-  width: 100vw;
-  height: 100vh;
-  background-color: red;
+.mobile--menu--container {
   position: fixed;
-  top: 144px;
+  top: 82px;
   right: 0;
-  z-index: 300;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 82px);
+  height: 100%;
+  padding-bottom: 46px;
+  text-transform: uppercase;
+  background-color: var(--primary-color-100);
   pointer-events: none;
-  transform: translate(100%);
-  transition: transform 250ms linear;
-  //    opacity 250ms linear, visibility 250ms linear,
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  z-index: 100;
+  transition: transform 250ms linear, opacity 250ms linear,
+    visibility 250ms linear;
 
-  & .active {
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
     pointer-events: initial;
-    transform: translate(0);
+  }
+
+  .inner-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    overflow-y: auto;
+  }
+
+  .nav--mobile {
+    margin-bottom: auto;
+  }
+
+  .nav--list--mobile {
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    line-height: 1;
+
+    &__link {
+      display: flex;
+      align-items: center;
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      &__icon {
+        width: 40px;
+        height: 40px;
+        display: none;
+      }
+
+      &.active {
+        .nav--list--mobile__link {
+          &__icon {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  .mobile--address {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 41px;
+    margin-bottom: 40px;
+
+    .phone {
+      font-size: 20px;
+      line-height: 1;
+      text-decoration: underline;
+      text-decoration-color: var(--white-20);
+      text-underline-offset: 6px;
+    }
+
+    .address--link {
+      font-size: 18px;
+      line-height: normal;
+    }
+  }
+
+  .social--links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    line-height: 1.66;
+    text-decoration: underline;
+    text-decoration-color: var(--white-20);
+    text-underline-offset: 6px;
   }
 }

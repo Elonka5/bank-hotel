@@ -4,7 +4,6 @@ import { NavProps } from "../../entities/navprops";
 import { useMediaQuery } from "react-responsive";
 import ButtonPoly from "../ButtonPoly/ButtonPoly";
 import BookingRoomFormDatePicker from "../BookingRoomForm/BookingRoomFormDatePicker";
-
 import styles from "../DatePickerComponent/DatePicker.module.scss";
 import ResponsiveImage from "../ResponsiveImg/ResponsiveImg";
 
@@ -35,7 +34,6 @@ const GetInTouch: React.FC<NavProps> = ({ id }) => {
             <Icon className="icon--star" iconId="star-16" />
             <span className="second-title-part">touch</span>
           </h2>
-
           {isMobileSm && (
             <ButtonPoly
               className="btnPoly booking intouch"
@@ -46,7 +44,6 @@ const GetInTouch: React.FC<NavProps> = ({ id }) => {
               <span>Book room</span>
             </ButtonPoly>
           )}
-
           <div className="touch__address--img--wrapper">
             <div className="address--wrapper">
               <a
