@@ -59,6 +59,7 @@
     height: 140px;
     background: none;
     border: 1px solid var(--primary-color-100);
+    opacity: 1;
 
     @include lg {
       height: 120px;

@@ -1,13 +1,3 @@
-// import imgRoom from "../../../../assets/images/mainImages/desktop1920/main-gallery1-desktop-1920.webp";
-// import imgRestaurant from "../../../../assets/images/mainImages/desktop1920/main-gallery4-desktop-1920.webp";
-// import imgHall from "../../../../assets/images/mainImages/desktop1920/main-gallery3-desktop-1920.webp";
-// import imgConference from "../../../../assets/images/mainImages/desktop1920/main-gallery2-desktop-1920.webp";
-// import imgBath from "../../../../assets/images/mainImages/desktop1920/main-gallery5-desktop-1920.webp";
-
-// import imgGalleryLeftUp from "../../../../assets/images/mainImages/mobile/main-gallery2-mobile.webp";
-// import imgGalleryRightUp from "../../../../assets/images/mainImages/mobile/main-gallery1-mobile.webp";
-// import imgGalleryCenter from "../../../../assets/images/mainImages/mobile/main-gallery3-mobile.webp";
-
 import Icon from "../../../Icon/Icon";
 import TickerRight from "./Ticker/TickerRight";
 import TickerLeft from "./Ticker/TickerLeft";
@@ -24,7 +14,6 @@ const GallerySection = () => {
           <div className="gallery--part__left">
             <p className="section--introduction">Art & Congress hall</p>
             <div className="img--wrapper__nopaddingLeft">
-              {/* <img src={imgRoom} alt="Room equipment" /> */}
               <ResponsiveImage
                 alt="Room equipment"
                 srcImg="main-gallery1"
@@ -32,7 +21,6 @@ const GallerySection = () => {
               />
             </div>
             <div className="img--wrapper__left">
-              {/* <img src={imgRestaurant} alt="Restaurant equipment" /> */}
               <ResponsiveImage
                 alt="Room equipment"
                 srcImg="main-gallery2"
@@ -57,7 +45,6 @@ const GallerySection = () => {
           <div className="gallery--wrapper__imgInfo">
             {!isMobileSm ? (
               <div className="img--wrapper__center">
-                {/* <img src={imgHall} alt="Hall equipment" /> */}
                 <ResponsiveImage
                   alt="Room equipment"
                   srcImg="main-gallery3"
@@ -68,7 +55,6 @@ const GallerySection = () => {
               <div className="gallery--imgs--wrapper__mobile">
                 <div className="gallery--part__left--mobile">
                   <div className="img--wrapper__leftUp">
-                    {/* <img src={imgGalleryLeftUp} alt="Room equipment" /> */}
                     <ResponsiveImage
                       alt="Room equipment"
                       srcImg="main-gallery1"
@@ -76,7 +62,6 @@ const GallerySection = () => {
                     />
                   </div>
                   <div className="img--wrapper__leftTransp">
-                    {/* <img src="#" alt="Room equipment" /> */}
                     <ResponsiveImage
                       alt="Room equipment"
                       srcImg="main-gallery2"
@@ -84,19 +69,15 @@ const GallerySection = () => {
                     />
                   </div>
                 </div>
-                {/* <div className="gallery--part__center--mobile"> */}
                 <div className="img--wrapper__center--mobile">
-                  {/* <img src={imgGalleryCenter} alt="Room equipment" /> */}
                   <ResponsiveImage
                     alt="Room equipment"
                     srcImg="main-gallery3"
                     path="gallery"
                   />
                 </div>
-                {/* </div> */}
                 <div className="gallery--part__right--mobile">
                   <div className="img--wrapper__rightUp">
-                    {/* <img src={imgGalleryRightUp} alt="Room equipment" /> */}
                     <ResponsiveImage
                       alt="Room equipment"
                       srcImg="main-gallery4"
@@ -104,7 +85,6 @@ const GallerySection = () => {
                     />
                   </div>
                   <div className="img--wrapper__rightTransp">
-                    {/* <img src="#" alt="Room equipment" /> */}
                     <ResponsiveImage
                       alt="Room equipment"
                       srcImg="main-gallery5"
@@ -127,7 +107,6 @@ const GallerySection = () => {
         {!isMobileSm && (
           <div className="gallery--part__right">
             <div className="img--wrapper__nopaddingRight">
-              {/* <img src={imgConference} alt="Conference hall equipment" /> */}
               <ResponsiveImage
                 alt="Conference hall equipment"
                 srcImg="main-gallery4"
@@ -140,7 +119,6 @@ const GallerySection = () => {
       {!isMobileSm && (
         <>
           <div className="img--wrapper__right">
-            {/* <img src={imgBath} alt="Bathroom equipment" /> */}
             <ResponsiveImage
               alt="Conference hall equipment"
               srcImg="main-gallery5"
