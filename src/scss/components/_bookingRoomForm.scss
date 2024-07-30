@@ -70,6 +70,51 @@
     }
   }
 
+  &.hero_rooms{
+    position: absolute;
+    top: 0;
+    right:0; 
+    background: rgba(49, 63, 56, 0.28);
+    backdrop-filter: blur(5px); 
+
+    @keyframes animation-form-open {
+      from {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    @keyframes animation-form-close {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+    }
+
+    &.close {
+      animation: 1000ms linear animation-form-close;
+    }
+
+    &.open {
+      animation: 1000ms linear animation-form-open;
+    }
+
+    & .form__btn-submit {
+
+      @include lg {
+        width: 252px;
+      }
+    }
+
+  }
+
   & .form {
     display: flex;
     flex-direction: row;

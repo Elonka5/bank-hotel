@@ -84,7 +84,7 @@
   }
 }
 
-@mixin popper-positions($start: yes, $touch: no, $size: xl) {
+@mixin popper-positions($start: yes, $touch: no, $size: xl,$hero_rooms:no,) {
   $x: 0;
   $y: 150px;
 
@@ -117,6 +117,13 @@
         $x: -294.5px;
       } @else if $size == md {
         $x: -199.5px;
+      }
+    }
+    @if $hero_rooms == yes {
+      @if $size == lg {
+        $x: -242.5px;
+      } @else if $size == md {
+        $x: -242px;
       }
     }
   }
