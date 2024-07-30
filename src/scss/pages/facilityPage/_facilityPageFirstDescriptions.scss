@@ -1,0 +1,153 @@
+.first-descriptions {
+  display: flex;
+  flex-direction: column;
+
+  &__images {
+    display: flex;
+    justify-content: space-between;
+
+    .first-image--wrapper {
+      width: 1230px;
+      height: 800px;
+      overflow: hidden;
+
+      @include lg {
+        width: 925.8px;
+        height: 602px;
+      }
+
+      @include md {
+        width: 608px;
+        height: 450px;
+      }
+
+      @include sm {
+        display: none;
+      }
+    }
+
+    .second-image--wrapper {
+      width: 600px;
+      height: 600px;
+      overflow: hidden;
+
+      @include lg {
+        width: 451.5px;
+        height: 451.5px;
+      }
+
+      @include md {
+        width: 356px;
+        height: 356px;
+      }
+
+      @include sm {
+        width: 355px;
+        height: 423.4px;
+      }
+    }
+  }
+
+  &__texts {
+    display: flex;
+    margin: 150px 0;
+    gap: 345px;
+
+    @include lg {
+      margin: 60px 0 100px;
+      gap: 149px;
+    }
+
+    @include md {
+      margin: 100px 0;
+      gap: 0;
+    }
+
+    @include sm {
+      flex-direction: column;
+      margin: 70px 0;
+    }
+
+    .description1 {
+      display: flex;
+      flex-direction: column;
+      width: 443px;
+      gap: 40px;
+
+      @include md {
+        width: 357px;
+        gap: 20px;
+      }
+
+      @include sm {
+        width: 100%;
+        padding-bottom: 70px;
+        border-bottom: 1px solid var(--white-12);
+      }
+
+      .title {
+        font-family: Miracle regular, sans-serif;
+        font-size: 50px;
+        line-height: normal;
+        letter-spacing: 1.5px;
+
+        @include lg {
+          font-size: 36px;
+          letter-spacing: 1.08px;
+        }
+
+        @include sm {
+          font-size: 30px;
+          letter-spacing: 0.9px;
+        }
+      }
+
+      .text {
+        font-size: 18px;
+        line-height: 28px; /* 155.556% */
+        opacity: 0.8;
+
+        @include lg {
+          font-size: 13px;
+          line-height: 23px; /* 176.923% */
+        }
+
+        @include sm {
+          width: 293px;
+        }
+      }
+    }
+
+    .description2 {
+      width: 942px;
+      margin-top: 747px;
+      font-family: Miracle regular, sans-serif;
+      font-size: 50px;
+      line-height: 60px; /* 120% */
+      letter-spacing: 1.5px;
+
+      @include lg {
+        width: 690px;
+        margin-top: 540px;
+        line-height: 50px; /* 100% */
+      }
+
+      @include md {
+        width: 593px;
+        margin-top: 500px;
+        font-size: 40px;
+        line-height: 40px; /* 100% */
+        letter-spacing: 1.2px;
+      }
+
+      @include sm {
+        width: 264px;
+        margin-top: 70px;
+        font-size: 30px;
+        line-height: 30px; /* 100% */
+        letter-spacing: 0.9px;
+        align-self: flex-end;
+      }
+    }
+  }
+}
