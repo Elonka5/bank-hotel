@@ -451,7 +451,7 @@
   }
 
   // ====== MOBILE FORM STYLES ======
-  &.mobile {
+  &.mobile,&.mobile_rooms {
     .popperStart,
     .popperEnd {
       z-index: 10;
@@ -547,6 +547,12 @@
       }
     }
   }
+  
+  &.mobile_rooms {
+    .calendar{
+      width: 375px;
+    }
+  }
 
   // ====== TOUCH FORM STYLES ======
 
@@ -604,6 +610,51 @@
             color: var(--text-color-100);
           }
         }
+      }
+    }
+  }
+
+  // ====== HERO FORM STYLES ======
+
+  &.hero_rooms{
+    .popperEnd {
+      @include popper-positions($hero_rooms: yes, $start: no);
+      @include lg {
+        @include popper-positions($hero_rooms: yes, $start: no, $size: lg);
+      }
+
+      @include md {
+        @include popper-positions($hero_rooms: yes, $start: no, $size: md);
+      }
+    }
+
+    .wrapper {
+      [class$="__input-container"] {
+
+        @include lg {
+          width: 242.5px;
+          height: 120px;
+        }
+
+        @include md {
+          width: 243px;
+          height: 100px;
+        }
+      }}
+
+    .calendar {
+
+      @include lg{
+          padding: 34px 50px 30px;
+          width: 737px;
+      }
+
+      @include md{
+        padding: 34px 36px 33px;
+      }
+
+      @include sm {
+        width: 375px;
       }
     }
   }
