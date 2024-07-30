@@ -1,8 +1,11 @@
+import Hero from "../components/FacilityPage/Hero/Hero";
 
 const FacilityPage = () => {
   return (
-    <div>FacilityPage</div>
-  )
-}
+    <div>
+      <Hero />
+    </div>
+  );
+};
 
-export default FacilityPage
+export default FacilityPage;

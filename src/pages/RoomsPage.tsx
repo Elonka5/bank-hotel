@@ -1,11 +1,10 @@
 import HeroRooms from "../components/RoomsPage/HeroRooms";
-import SecondSectionRooms from "../components/RoomsPage/SecondSectionRooms";
+import SecondSectionRooms from "../components/RoomsPage/SecondSection/SecondSectionRooms";
 
 const RoomsPage = () => {
-
   return (
     <main>
-      <HeroRooms/>
+      <HeroRooms />
       <SecondSectionRooms />
     </main>
   );
