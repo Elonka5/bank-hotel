@@ -1,11 +1,16 @@
-import { useEffect, useState,AnimationEvent, } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
-import ButtonPoly from "../ButtonPoly/ButtonPoly";
-import ButtonSince from "../ButtonSince/ButtonSince";
-import { images } from "../../helpers/heroRoomsBgImg";
-import Icon from "../Icon/Icon";
-import BookingRoomFormDatePicker from "../BookingRoomForm/BookingRoomFormDatePicker";
-import styles from "../DatePickerComponent/DatePicker.module.scss";
+import ButtonPoly from "../../ButtonPoly/ButtonPoly";
+import ButtonSince from "../../ButtonSince/ButtonSince";
+import { images } from "../../../helpers/heroRoomsBgImg";
+import Icon from "../../Icon/Icon";
+import BookingRoomFormDatePicker from "../../BookingRoomForm/BookingRoomFormDatePicker";
+import styles from "../../DatePickerComponent/DatePicker.module.scss";
+import {
+  classNameForm,
+  handleAnimationEnd,
+  handleClick,
+} from "../../../helpers/animationHandleForm";
 
 const HeroRooms: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -13,70 +18,55 @@ const HeroRooms: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
 
-  const handleClick = () => {
-    if (isOpen) {
-      setIsOpen(false);
-      setIsClosing(true);
-      setTimeout(() => {
-        setIsOpenForm(false);
-      }, 900);
-    } else {
-      setIsOpenForm(true);
-      setIsOpen(true);
-    }
-  };
-
-  const handleAnimationEnd = (event: AnimationEvent<HTMLDivElement>) => {
-    if (isClosing && event.animationName === "animation-form-close") {
-      setIsOpen(false);
-      setIsClosing(false);
-    }
-  };
-
   const isDesktop1920 = useMediaQuery({ minWidth: 1919.98 });
   const isDesktop1440 = useMediaQuery({ minWidth: 1440, maxWidth: 1919.98 });
   const isTablet = useMediaQuery({ minWidth: 1023.98, maxWidth: 1439.98 });
   const isMobile = useMediaQuery({ maxWidth: 1023.98 });
 
-  const getCurrentImages = () => {
+  const intervalRef = useRef<number | null>(null);
+
+  const getCurrentImages = useCallback(() => {
     if (isDesktop1920) return images.desktop1920;
     if (isDesktop1440) return images.desktop1440;
     if (isTablet) return images.tablet;
     if (isMobile) return images.mobile;
     return images.desktop1920;
+  }, [isDesktop1920, isDesktop1440, isTablet, isMobile]);
+
+  const preloadImages = useCallback((images: string[]) => {
+    images.forEach((image) => {
+      const img = new Image();
+      img.src = image;
+    });
+  }, []);
+
+  const clearExistingInterval = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
   };
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
+  const startImageChangeInterval = useCallback(() => {
+    clearExistingInterval();
+    intervalRef.current = window.setInterval(() => {
       setCurrentImageIndex(
         (prevIndex) => (prevIndex + 1) % getCurrentImages().length
       );
     }, 5000);
+  }, [getCurrentImages]);
 
-    return () => clearInterval(intervalId);
-  }, [isDesktop1920, isDesktop1440, isTablet, isMobile]);
+  useEffect(() => {
+    preloadImages(getCurrentImages());
+  }, [getCurrentImages, preloadImages]);
+
+  useEffect(() => {
+    startImageChangeInterval();
+    return () => clearExistingInterval();
+  }, [getCurrentImages, startImageChangeInterval]);
 
   const handleDotClick = (index: number) => {
     setCurrentImageIndex(index);
-  };
-
-  const classNameForm = (isMobile: boolean, isOpen: boolean) => {
-    const classForm = isMobile ? "mobile_rooms" : "hero_rooms";
-    if (isMobile) {
-      if (isOpen) {
-        return `mobile ${classForm} open`;
-      } else {
-        return `mobile ${classForm} close`;
-      }
-    }
-    
-    else {
-      if (isOpen) {
-        return `${classForm} open`;
-      } else {
-        return `${classForm} close`;
-      }
-    }
+    startImageChangeInterval();
   };
 
   return (
@@ -115,17 +105,23 @@ const HeroRooms: React.FC = () => {
             iconWidth={200}
             iconHeight={200}
             iconPolygonId="polygon-fill"
-            onClick={handleClick}
+            onClick={() =>
+              handleClick(isOpen, setIsOpen, setIsClosing, setIsOpenForm)
+            }
           >
             <span>Book room</span>
           </ButtonPoly>
           {isOpenForm && (
-              <BookingRoomFormDatePicker
-                                className={classNameForm(isMobile, isOpen)}
-                onAnimationEnd={handleAnimationEnd}
-                touchClassName={!isMobile ? styles.hero_rooms : styles.mobile_rooms}
-              />
-            )}
+            <BookingRoomFormDatePicker
+              className={classNameForm(isMobile, isOpen)}
+              onAnimationEnd={(event) =>
+                handleAnimationEnd(event, isClosing, setIsOpen, setIsClosing)
+              }
+              touchClassName={
+                !isMobile ? styles.hero_rooms : styles.mobile_rooms
+              }
+            />
+          )}
         </div>
       </div>
       <div className="hero__rooms--description">
