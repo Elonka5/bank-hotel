@@ -1,6 +1,6 @@
 import { useMediaQuery } from "react-responsive";
-import Icon from "../Icon/Icon";
-import ResponsiveImage from "../ResponsiveImg/ResponsiveImg";
+import Icon from "../../Icon/Icon";
+import ResponsiveImage from "../../ResponsiveImg/ResponsiveImg";
 
 const SecondSectionRooms = () => {
   const isMobile = useMediaQuery({ maxWidth: 1023.98 });

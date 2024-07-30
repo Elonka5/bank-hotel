@@ -131,3 +131,22 @@
 
   @content;
 }
+
+@mixin circle-room-radius($size: xl) {
+  $width: 1443px;
+
+  @if $size == lg {
+    $width: 913px;
+  } @else if ($size == md) {
+    $width: 738px;
+  } @else if ($size == sm) {
+    $width: 284px;
+  }
+
+  $circle-height: calc(($width / 2) + 2px);
+  width: $width;
+  height: $circle-height;
+  border-top-left-radius: $circle-height;
+  border-top-right-radius: $circle-height;
+  @content;
+}

@@ -1,17 +1,10 @@
-import { ApartmentsInterface } from "../../../redux/interface/interface";
-import ButtonPoly from "../../ButtonPoly/ButtonPoly";
-import ButtonSince from "../../ButtonSince/ButtonSince";
-import ResponsiveFetchImg from "../../ResponsiveImg/ResponsiveFetchImg";
+import { ApartmentsInterface } from "../../../../redux/interface/interface";
+import ButtonPoly from "../../../ButtonPoly/ButtonPoly";
+import ButtonSince from "../../../ButtonSince/ButtonSince";
+import ResponsiveFetchImg from "../../../ResponsiveImg/ResponsiveFetchImg";
 
 export interface IRoomsApartments {
   room: ApartmentsInterface;
-  // {
-  //   id: number;
-  //   imgLeft?: React.ReactNode;
-  //   imgRight?: React.ReactNode;
-  //   title?: string;
-  //   text?: string;
-  // };
   totalPage: number;
 }
 
@@ -50,12 +43,10 @@ const RoomsApartmentsItem: React.FC<IRoomsApartments> = ({
           iconWidth={200}
           iconHeight={200}
           iconPolygonId="polygon-fill"
-          // onClick={}
         >
           <span>Book room</span>
         </ButtonPoly>
         <div className="right-container__img-wrapper">
-          {/* {imgRight} */}
           {imageRightResolutions && (
             <ResponsiveFetchImg nameImg={imageRightResolutions} alt="" />
           )}
