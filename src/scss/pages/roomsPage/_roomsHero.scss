@@ -22,14 +22,10 @@ $bg-img-mobile: "/rooms-hero-mobile.webp";
   }
 
   .touch__container--icon-wave--wrapper{
-    // width: 375px;
     height: 200px;
-    // top: 380px;
     position: absolute;
     width: 100%;
     overflow: hidden;
-    // top: 0;
-    // top: 180px;
     top:16%;
     left: 0;
   }
@@ -154,6 +150,11 @@ $bg-img-mobile: "/rooms-hero-mobile.webp";
       @include sm {
         bottom: -60px;
         right: 7px;
+      }
+    }
+    ._datepicker._calendar {
+      @include sm {
+        width: 375px;
       }
     }
   }
