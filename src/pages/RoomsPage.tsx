@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import HeroRooms from "../components/RoomsPage/HeroRooms";
 import { useAppDispatch, useAppSelector } from "../redux/hooks/hooks";
 import { getRoomsThunk } from "../redux/rooms/roomsThunk";
@@ -22,6 +21,13 @@ const RoomsPage = () => {
     <main>
       <HeroRooms room={room} />
       <RoomEquipment />
+import SecondSectionRooms from "../components/RoomsPage/SecondSection/SecondSectionRooms";
+
+const RoomsPage = () => {
+  return (
+    <main>
+      <HeroRooms />
+      <SecondSectionRooms />
     </main>
   );
 };

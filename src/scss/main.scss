@@ -7,19 +7,26 @@
 @import "./utils/variables";
 @import "./utils/responsive";
 
-@import "./components/mainHero";
 @import "./components/buttonSince";
 @import "./components/buttonPoly";
 @import "./components/bookingRoomForm";
-@import "./components/aboutUs";
-@import "./components/facilities";
-@import "./components/mainRoomsApartments";
 @import "./components/accordion";
-@import "./components/galeryHero";
-@import "./components/gallerySection";
 @import "./components/ticker";
 
 @import "./components/rooms/roomsHero";
 @import "./components/rooms/roomEquipment";
 
-@import "./pages/mainPage";
+@import "./pages/mainPage/mainPage";
+@import "./pages/mainPage/mainHero";
+@import "./pages/mainPage/mainRoomsApartments";
+@import "./pages/mainPage/aboutUs";
+@import "./pages/mainPage/facilities";
+@import "./pages/mainPage/galeryHero";
+@import "./pages/mainPage/gallerySection";
+
+@import "./pages/roomsPage/roomsHero";
+@import "./pages/roomsPage/secondSectionRooms";
+
+@import "./pages/facilityPage/facilityPageHero";
+
+@import "./layout/loader";

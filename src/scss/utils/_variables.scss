@@ -33,7 +33,7 @@
   --white-32: rgba(255, 252, 246, 0.32);
   --white-24: rgba(255, 252, 246, 0.24);
   --white-16: rgba(255, 252, 246, 0.16);
-  --white-12: rgba(255, 252, 246, 0.12);
+  --white-12: #fffcf61f;
 
   --text: #1b3b36;
 
@@ -53,4 +53,6 @@
   --button-dark-color-hover: rgba(40, 51, 45, 1);
   --button-dark-color-active: rgb(36, 46, 41, 1);
   --button-dark-color-disabled: rgba(27, 59, 54, 1);
+
+  --backdrop: rgba(46, 47, 66, 0.7);
 }

@@ -84,7 +84,7 @@
   }
 }
 
-@mixin popper-positions($start: yes, $touch: no, $size: xl) {
+@mixin popper-positions($start: yes, $touch: no, $size: xl,$hero_rooms:no,) {
   $x: 0;
   $y: 150px;
 
@@ -119,8 +119,34 @@
         $x: -199.5px;
       }
     }
+    @if $hero_rooms == yes {
+      @if $size == lg {
+        $x: -242.5px;
+      } @else if $size == md {
+        $x: -242px;
+      }
+    }
   }
   transform: translate($x, $y) !important;
 
+  @content;
+}
+
+@mixin circle-room-radius($size: xl) {
+  $width: 1443px;
+
+  @if $size == lg {
+    $width: 913px;
+  } @else if ($size == md) {
+    $width: 738px;
+  } @else if ($size == sm) {
+    $width: 284px;
+  }
+
+  $circle-height: calc(($width / 2) + 2px);
+  width: $width;
+  height: $circle-height;
+  border-top-left-radius: $circle-height;
+  border-top-right-radius: $circle-height;
   @content;
 }

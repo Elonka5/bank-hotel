@@ -17,7 +17,17 @@ $bg-img-mobile: "/rooms-hero-mobile.webp";
   }
 
   @include sm {
-    font-size: 12px;
+    position: relative;
+    max-width: 375px;
+  }
+
+  .touch__container--icon-wave--wrapper{
+    height: 200px;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    top:16%;
+    left: 0;
   }
 
   &--carousel {
@@ -38,7 +48,7 @@ $bg-img-mobile: "/rooms-hero-mobile.webp";
     }
 
     @include sm {
-      font-size: 12px;
+      height: 470px;
     }
   }
 
@@ -142,11 +152,12 @@ $bg-img-mobile: "/rooms-hero-mobile.webp";
         right: 7px;
       }
     }
-
-
+    ._datepicker._calendar {
+      @include sm {
+        width: 375px;
+      }
+    }
   }
-
-
 
   &--description {
     display: flex;
