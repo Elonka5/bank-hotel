@@ -3,9 +3,9 @@ import HeroRooms from "../components/RoomsPage/HeroRooms";
 import { useAppDispatch, useAppSelector } from "../redux/hooks/hooks";
 import { getRoomsThunk } from "../redux/rooms/roomsThunk";
 import { RoomItemInterface } from "../redux/interface/interface";
+import RoomEquipment from "../components/RoomsPage/RoomEquipment";
 
 const RoomsPage = () => {
-
   const dispatch = useAppDispatch();
 
   const room = useAppSelector(
@@ -17,12 +17,13 @@ const RoomsPage = () => {
   useEffect(() => {
     dispatch(getRoomsThunk());
   }, [dispatch]);
- 
+
   return (
     <main>
-      <HeroRooms room={room}/>
+      <HeroRooms room={room} />
+      <RoomEquipment />
     </main>
   );
-}
+};
 
-export default RoomsPage
+export default RoomsPage;

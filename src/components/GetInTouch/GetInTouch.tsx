@@ -9,7 +9,7 @@ import ResponsiveImage from "../ResponsiveImg/ResponsiveImg";
 
 const GetInTouch: React.FC<NavProps> = ({ id }) => {
   const isDesktopLg = useMediaQuery({ minWidth: 1919.98 });
-  const isMobileSm = useMediaQuery({ maxWidth: 1023.99 });
+  const isMobileSm = useMediaQuery({ maxWidth: 1023.98 });
 
   return (
     <section className="section" id={id}>

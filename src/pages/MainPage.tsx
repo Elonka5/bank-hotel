@@ -9,17 +9,6 @@ import RoomsApartments from "../components/MainPage/RoomsApartments/RoomsApartme
 const MainPage = () => {
   const location = useLocation();
 
-  // useEffect(() => {
-  //   document.body.scrollTop = 0;
-  //   document.documentElement.scrollTop = 0;
-
-  //   const hash = location.hash.substring(1);
-  //   if (hash) {
-  //     const element = document.getElementById(hash);
-  //     if (element) element.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // }, [location]);
-
   useEffect(() => {
     const handleScroll = () => {
       const hash = location.hash.substring(1);

@@ -9,6 +9,11 @@
     transform: translate(0, 125px) !important;
   }
 }
+@media screen and (max-width: 1439.98px) {
+  .datepicker .popperStart {
+    transform: translate(0, 100px) !important;
+  }
+}
 .datepicker .popperEnd {
   transform: translate(-368.5px, 150px) !important;
 }
@@ -17,24 +22,64 @@
     transform: translate(-368.5px, 125px) !important;
   }
 }
-.datepicker [class$=dropdown-indicator] {
+@media screen and (max-width: 1439.98px) {
+  .datepicker .popperEnd {
+    transform: translate(-305.5px, 100px) !important;
+  }
+}
+.datepicker [class*=dropdown-indicator] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   z-index: 2;
 }
-.datepicker [class$=dropdown-indicator]:hover .select-dropdown {
-  transform: scale(1.2);
-}
-.datepicker [class$=dropdown-indicator] .select-dropdown {
+.datepicker [class*=dropdown-indicator] [class$=select-dropdown] {
   transition: 250ms ease-in-out;
 }
-.datepicker [class$=dropdown-indicator] .select-dropdown--open {
+@media screen and (max-width: 1439.98px) {
+  .datepicker [class*=dropdown-indicator] [class$=select-dropdown] {
+    width: 16px;
+    height: 8px;
+  }
+}
+.datepicker [class*=dropdown-indicator] [class$=select-dropdown]:hover {
   transition: 250ms ease-in-out;
-  transform: rotateX(180deg) scale(1.2);
+  scale: 1.2;
+}
+.datepicker [class*=dropdown-indicator] [class*=select-dropdown][class$="--open"] {
+  transition: 250ms ease-in-out;
+  transform: rotateZ(180deg);
+  scale: 1.2;
+}
+@media screen and (max-width: 1439.98px) {
+  .datepicker [class*=dropdown-indicator] [class*=select-dropdown][class$="--open"] {
+    width: 16px;
+    height: 8px;
+  }
+}
+@media screen and (max-width: 1023.98px) {
+  .datepicker [class*=dropdown-indicator][class*=__close-icon] svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+.datepicker [class*=dropdown-indicator][class*=__close-icon] [class*=cancel-dropdown] {
+  transition: 250ms ease-in-out;
+}
+.datepicker [class*=dropdown-indicator][class*=__close-icon] [class*=cancel-dropdown]:hover {
+  transition: 250ms ease-in-out;
+  transform: rotateZ(90deg);
+  scale: 1.1;
+}
+.datepicker [class*=dropdown-indicator][class*=__close-icon] [class*=cancel-dropdown][class$="--open"] {
+  transition: 250ms ease-in-out;
+  opacity: 0.5;
 }
 .datepicker [class$=__month-container] {
   display: flex;
@@ -297,27 +342,11 @@
     height: 125px;
   }
 }
-.datepicker .wrapper [class$=__input-container] [class$=__close-icon] {
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
-}
-.datepicker .wrapper [class$=__input-container] [class$=__close-icon]::after {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  content: "";
-  background-color: var(--white-80);
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='24' height='24' viewBox='0 0 50 50'%0Astyle='fill:%23000000'%3E%3Cpath d='M 25 2 C 12.309534 2 2 12.309534 2 25 C 2 37.690466 12.309534 48 25 48 C 37.690466 48 48 37.690466 48 25 C 48 12.309534 37.690466 2 25 2 z M 25 4 C 36.609534 4 46 13.390466 46 25 C 46 36.609534 36.609534 46 25 46 C 13.390466 46 4 36.609534 4 25 C 4 13.390466 13.390466 4 25 4 z M 32.990234 15.986328 A 1.0001 1.0001 0 0 0 32.292969 16.292969 L 25 23.585938 L 17.707031 16.292969 A 1.0001 1.0001 0 0 0 16.990234 15.990234 A 1.0001 1.0001 0 0 0 16.292969 17.707031 L 23.585938 25 L 16.292969 32.292969 A 1.0001 1.0001 0 1 0 17.707031 33.707031 L 25 26.414062 L 32.292969 33.707031 A 1.0001 1.0001 0 1 0 33.707031 32.292969 L 26.414062 25 L 33.707031 17.707031 A 1.0001 1.0001 0 0 0 32.990234 15.986328 z'%3E%3C/path%3E%3C/svg%3E") no-repeat center/contain;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='24' height='24' viewBox='0 0 50 50'%0Astyle='fill:%23000000'%3E%3Cpath d='M 25 2 C 12.309534 2 2 12.309534 2 25 C 2 37.690466 12.309534 48 25 48 C 37.690466 48 48 37.690466 48 25 C 48 12.309534 37.690466 2 25 2 z M 25 4 C 36.609534 4 46 13.390466 46 25 C 46 36.609534 36.609534 46 25 46 C 13.390466 46 4 36.609534 4 25 C 4 13.390466 13.390466 4 25 4 z M 32.990234 15.986328 A 1.0001 1.0001 0 0 0 32.292969 16.292969 L 25 23.585938 L 17.707031 16.292969 A 1.0001 1.0001 0 0 0 16.990234 15.990234 A 1.0001 1.0001 0 0 0 16.292969 17.707031 L 23.585938 25 L 16.292969 32.292969 A 1.0001 1.0001 0 1 0 17.707031 33.707031 L 25 26.414062 L 32.292969 33.707031 A 1.0001 1.0001 0 1 0 33.707031 32.292969 L 26.414062 25 L 33.707031 17.707031 A 1.0001 1.0001 0 0 0 32.990234 15.986328 z'%3E%3C/path%3E%3C/svg%3E") no-repeat center/contain;
-  transition: 250ms ease-in-out;
-}
-.datepicker .wrapper [class$=__input-container] [class$=__close-icon]:hover::after {
-  transition: 250ms ease-in-out;
-  transform: rotateZ(180deg);
-  background-color: var(--primary-color-100);
+@media screen and (max-width: 1439.98px) {
+  .datepicker .wrapper [class$=__input-container] {
+    width: 305.5px;
+    height: 100px;
+  }
 }
 .datepicker .wrapper [class$=__input-container] input {
   width: 100%;
@@ -330,6 +359,12 @@
   font-size: 16px;
   line-height: 1.25;
 }
+@media screen and (max-width: 1439.98px) {
+  .datepicker .wrapper [class$=__input-container] input {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
 .datepicker .wrapper [class$=__input-container] input::placeholder {
   color: var(--white-100);
   font-size: 16px;
@@ -337,8 +372,89 @@
   line-height: 1.25;
   text-transform: uppercase;
 }
+@media screen and (max-width: 1439.98px) {
+  .datepicker .wrapper [class$=__input-container] input::placeholder {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
 .datepicker .wrapper [class$=__input-container] input[class$=-ignore-onclickoutside] {
   outline: none;
+}
+.datepicker.mobile .popperStart,
+.datepicker.mobile .popperEnd {
+  z-index: 10;
+}
+@media screen and (max-width: 1023.98px) {
+  .datepicker.mobile .popperEnd {
+    transform: translate(0, 100px) !important;
+  }
+}
+@media screen and (max-width: 1023.98px) {
+  .datepicker.mobile .wrapper [class$=__input-container] {
+    width: 355px;
+  }
+}
+.datepicker.mobile .wrapper input {
+  padding: 16px 40px;
+  font-size: 16px;
+  color: var(--text-color-64);
+}
+.datepicker.mobile .wrapper input::placeholder {
+  font-size: 16px;
+  color: var(--text-color-64);
+}
+.datepicker.mobile .calendar {
+  width: 355px;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid var(--primary-color-100);
+}
+.datepicker.mobile .calendar__title {
+  width: max-content;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 0 auto 14px;
+}
+.datepicker.mobile .calendar__children {
+  flex-direction: column;
+}
+.datepicker.mobile .calendar__children [class$=__month-container] {
+  width: 100%;
+}
+.datepicker.mobile .calendar__children [class$=__month-container] [class$=__header-custom] {
+  margin-bottom: 12px;
+}
+.datepicker.mobile .calendar__children [class*=__time-container] {
+  margin: 20px auto 0;
+  width: 100%;
+}
+.datepicker.mobile .calendar__children [class*=__time-container] [class*=__header--time] {
+  margin: 0 auto;
+}
+.datepicker.mobile .calendar__children [class*=__time-container] [class$=-time__header] {
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.datepicker.mobile .calendar__children [class*=__time-container] [class$=__time-list] {
+  gap: 5px;
+  row-gap: 13px;
+  grid-template-columns: repeat(5, 60px);
+  grid-template-rows: repeat(3, 35px);
+}
+.datepicker.mobile .calendar__children [class*=__time-container] [class*=__time-list-item] {
+  width: 60px;
+  height: 35px !important;
+  line-height: 18px;
+}
+.datepicker.mobile .calendar__children [class*=buttons-wrapper] span {
+  margin-top: 14px;
+}
+.datepicker.mobile .calendar__children [class*=buttons-wrapper] [class$=buttons] {
+  margin-top: 14px;
 }
 .datepicker.touch .popperStart {
   transform: translate(0, 140px) !important;
@@ -385,9 +501,6 @@
     width: 199px;
     height: 100px;
   }
-}
-.datepicker.touch .wrapper [class$=__input-container] [class$=__close-icon]::after {
-  background-color: var(--primary-color-100);
 }
 .datepicker.touch .wrapper [class$=__input-container] input {
   padding-left: 20px;
@@ -449,6 +562,12 @@
   transition: 250ms ease-in-out;
   background: var(--primary-color-100);
   color: var(--white-100);
+  width: 160px;
+  height: 70px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
 }
 [class*=buttons-wrapper] [class$=buttons] [class*=bottom]:hover {
   background: var(--button-dark-color-hover);
@@ -462,12 +581,7 @@
   color: var(--text-color-100);
 }
 [class*=buttons-wrapper] [class$=buttons] [class*=bottom][class*=desktop] {
-  width: 160px;
-  height: 70px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: normal;
-  text-transform: uppercase;
+  font-size: 16px;
 }
 [class*=buttons-wrapper] [class$=buttons] [class*=bottom][class*=mobile] {
   height: 60px;
