@@ -1,0 +1,206 @@
+.section {
+  margin-bottom: -1px;
+}
+
+.roomEqpt-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 164px 187px 1px;
+  color: var(--text-color-80);
+
+  @include lg {
+    padding: 114px 138px 1px;
+  }
+
+  @include md {
+    padding: 144px 20px 1px;
+  }
+
+  @include sm {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 70px 10px 1px;
+  }
+
+  &__lef-part {
+    @include sm {
+      margin-bottom: 50px;
+    }
+
+    .roomEqpt__img--wrapper1 {
+      margin-top: -46px;
+      margin-bottom: 60px;
+      width: 600px;
+      height: 600px;
+
+      @include lg {
+        margin-top: -42px;
+        width: 453px;
+        height: 453px;
+      }
+
+      @include md {
+        margin-top: -24px;
+        margin-bottom: 69px;
+        width: 357px;
+        height: 357px;
+      }
+
+      @include sm {
+        display: none;
+      }
+    }
+
+    .roomEqpt-title {
+      margin-bottom: 39px;
+      font-family: "Miracle regular", sans-serif;
+      font-size: 50px;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 1.5px;
+      text-transform: capitalize;
+      color: var(--text-color-100);
+
+      @include lg {
+        font-size: 39px;
+        letter-spacing: 1.08px;
+      }
+
+      @include md {
+        margin-bottom: 20px;
+        font-size: 36px;
+      }
+
+      @include sm {
+        font-size: 30px;
+        line-height: 1;
+        letter-spacing: 0.9px;
+      }
+    }
+
+    .roomEqpt__allRooms-descr {
+      margin-bottom: 250px;
+      max-width: 350px;
+      font-size: 18px;
+      line-height: 1.55;
+
+      @include lg {
+        margin-bottom: 200px;
+      }
+
+      @include md {
+        margin-bottom: 100px;
+        max-width: 250px;
+        font-size: 13px;
+        line-height: 1.77;
+      }
+
+      @include sm {
+        margin-bottom: 0;
+      }
+    }
+  }
+  // ---------------------------
+  .roomEqpt-label {
+    display: block;
+    margin-left: auto;
+    margin-right: -116px;
+    width: 160px;
+    height: 160px;
+
+    @include lg {
+      margin-right: -114px;
+    }
+
+    @include md {
+      margin-right: -62px;
+      width: 80px;
+      height: 80px;
+    }
+
+    @include sm {
+      margin-left: 214px;
+      margin-right: 0;
+    }
+  }
+  // ---------------------------
+
+  .roomEqpt__bookBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 19px 39px;
+    border-radius: 99px;
+    border: 1px solid var(--primary-color-50);
+    color: var(--text-color-100);
+    font-size: 26px;
+    line-height: normal;
+    text-transform: uppercase;
+
+    @include md {
+      padding: 14px 26px;
+      font-size: 18px;
+    }
+
+    @include sm {
+      margin-left: auto;
+    }
+  }
+  // ----------------------------
+
+  &__right-part {
+    padding-top: 115px;
+
+    @include lg {
+      padding-top: 118px;
+    }
+
+    @include md {
+      padding-top: 56px;
+    }
+
+    @include sm {
+      padding-top: 0;
+    }
+
+    .roomEqpt__img--wrapper2 {
+      margin-bottom: 70px;
+      width: 600px;
+      height: 800px;
+
+      @include lg {
+        width: 454px;
+        height: 605px;
+      }
+
+      @include md {
+        width: 357px;
+        height: 500px;
+      }
+
+      @include sm {
+        margin-bottom: 38px;
+        width: 355px;
+        height: 355px;
+      }
+    }
+
+    .roomEqpt__room-descr {
+      max-width: 443px;
+      font-size: 18px;
+      line-height: 1.55;
+
+      @include md {
+        max-width: 355px;
+        font-size: 13px;
+        line-height: 1.77;
+      }
+
+      @include sm {
+        margin-bottom: 50px;
+        margin-top: -24px;
+        max-width: 250px;
+      }
+    }
+  }
+}
