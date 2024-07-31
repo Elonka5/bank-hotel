@@ -2,6 +2,10 @@
   display: flex;
   justify-content: space-between;
 
+  // @include ms {
+  //   position: relative;
+  // }
+
   @include sm {
     flex-direction: column-reverse;
     gap: 70px;
@@ -22,7 +26,12 @@
       width: 231px;
     }
 
+    @include ms {
+      display: none;
+    }
+
     @include sm {
+      display: flex;
       width: 192px;
       gap: 30px;
     }
@@ -42,7 +51,12 @@
         height: 337px;
       }
 
+      @include ms {
+        display: none;
+      }
+
       @include sm {
+        display: block;
         width: 173px;
         height: 232.9px;
       }
@@ -79,8 +93,12 @@
       width: 607px;
     }
 
-    @include sm {
+    @include ms {
       width: 100%;
+      gap: 30px;
+    }
+
+    @include sm {
       gap: 70px;
     }
 
@@ -99,7 +117,12 @@
         height: 336.9px;
       }
 
+      @include ms {
+        align-self: center;
+      }
+
       @include sm {
+        align-self: flex-start;
         width: 307.5px;
         height: 270px;
       }
@@ -117,8 +140,15 @@
         align-self: flex-end;
       }
 
+      @include ms {
+        width: 607px;
+        gap: 20px;
+        align-self: center;
+      }
+
       @include sm {
         width: 264px;
+        align-self: flex-end;
       }
 
       .title {
@@ -138,8 +168,14 @@
           width: 323px;
         }
 
+        @include ms {
+          width: 100%;
+          text-align: center;
+        }
+
         @include sm {
           width: 242px;
+          text-align: left;
           font-size: 30px;
           letter-spacing: 0.9px;
         }
