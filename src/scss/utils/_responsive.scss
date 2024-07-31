@@ -1,9 +1,16 @@
-$sm: 1023.98px;
+$sm: 767.98px;
+$ms: 1023.98px;
 $md: 1439.98px;
 $lg: 1919.98px;
 
 @mixin sm {
   @media screen and (max-width: ($sm)) {
+    @content;
+  }
+}
+
+@mixin ms {
+  @media screen and (max-width: ($ms)) {
     @content;
   }
 }
