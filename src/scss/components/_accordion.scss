@@ -42,6 +42,9 @@
       @include md {
         margin-right: 64px;
       }
+      @include ms {
+        margin-right: 52px;
+      }
       @include sm {
         margin: 0 0 40px auto;
       }
@@ -57,6 +60,14 @@
     .button-wrapper {
       @include sm {
         display: none;
+      }
+
+      .btnPoly {
+        .arrow-size.closed{
+          @include ms {
+ width: 44px;
+          }
+        }
       }
     }
   }
@@ -99,6 +110,11 @@
       height: 180px;
     }
 
+    @include ms {
+      width: 160px;
+      height: 160px;
+    }
+
     @include sm {
       width: 150px;
       height: 150px;
@@ -123,6 +139,11 @@
     min-width: 684px;
   }
 
+  @include ms {
+    gap: 80px;
+    min-width: 284px;
+  }
+
   @include sm {
     gap: 0;
     min-width: 340px;
@@ -142,6 +163,10 @@
 
   @include md {
     font-size: 36px;
+  }
+
+  @include ms {
+    font-size: 32px;
   }
 
   @include sm {
@@ -181,16 +206,33 @@
     display: flex;
     align-items: center;
 
+    @include ms {
+     margin-right: 80px;
+    }
+
     .btnPoly {
+
       @include md {
         width: 105px;
         height: 105px;
+      }
+
+      @include ms {
+        width: 90px;
+        height: 90px;
       }
       @include sm {
         position: absolute;
         bottom: 9%;
         width: 70px;
         height: 70px;
+      }
+
+      .polygon{
+        @include ms {
+          width: 90px;
+          height: 90px;
+        }
       }
     }
   }
@@ -215,6 +257,9 @@
       }
       @include md {
         margin-bottom: 149px;
+      }
+      @include md {
+        margin-bottom: 68px;
       }
       @include sm {
         margin-bottom: 30px;
@@ -250,6 +295,12 @@
         width: 356px;
         height: 578px;
       }
+
+      @include ms {
+        width: 226px;
+        height: 412px;
+      }
+
       @include sm {
         height: 424px;
       }

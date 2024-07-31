@@ -21,12 +21,12 @@ $bg-img-mobile: "/rooms-hero-mobile.webp";
     max-width: 375px;
   }
 
-  .touch__container--icon-wave--wrapper{
+  .touch__container--icon-wave--wrapper {
     height: 200px;
     position: absolute;
     width: 100%;
     overflow: hidden;
-    top:16%;
+    top: 16%;
     left: 0;
   }
 
@@ -70,7 +70,7 @@ $bg-img-mobile: "/rooms-hero-mobile.webp";
 
       @include sm {
         width: 14px;
-      height: 14px;
+        height: 14px;
       }
 
       &.active {
@@ -255,6 +255,11 @@ $bg-img-mobile: "/rooms-hero-mobile.webp";
             font-size: 13px;
             line-height: 23px;
             padding-left: 502px;
+          }
+
+          @include ms {
+            width: 707px;
+            padding-left: 362px;
           }
 
           @include sm {

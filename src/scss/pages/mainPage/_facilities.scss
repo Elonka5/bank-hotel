@@ -52,6 +52,11 @@
         text-align: right;
       }
 
+      @include ms {
+        width: 140px;
+        font-size: 14px;
+      }
+
       @include sm {
         width: 115px;
         top: 70px;
@@ -105,6 +110,12 @@
       margin-bottom: 100px;
     }
 
+    @include ms {
+      font-size: 80px;
+      line-height: 70px;
+      margin-bottom: 128px;
+    }
+
     @include sm {
       font-size: 60px;
       line-height: 60px;
@@ -125,6 +136,11 @@
         margin-right: 42px;
         width: 50px;
         height: 50px;
+      }
+
+      @include ms {
+        margin-left: 64px;
+        margin-right: 38px;
       }
 
       @include sm {
@@ -170,6 +186,11 @@
         height: 80px;
         top: 154px;
         right: 714px;
+      }
+
+      @include ms {
+        top: 142px;
+        right: 460px;
       }
     }
 
