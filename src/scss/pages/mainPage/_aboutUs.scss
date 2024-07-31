@@ -22,6 +22,10 @@
       width: 623px;
     }
 
+    @include ms {
+      width: 478px;
+    }
+
     @include sm {
       width: 228px;
     }
@@ -48,6 +52,11 @@
       gap: 145px;
     }
 
+    @include ms {
+      padding: 75px 70px 100px 0;
+      gap: 145px;
+    }
+
     @include sm {
       padding: 50px 70px 70px 0;
       flex-direction: column-reverse;
@@ -65,6 +74,11 @@
         width: 357px;
         height: 530px;
       }
+
+      // @include ms {
+      //   width: 728px;
+      //   height: 430px;
+      // }
 
       @include sm {
         width: 355px;
@@ -108,6 +122,14 @@
         font-size: 100px;
         margin-left: -322px;
         margin-bottom: 119px;
+        line-height: 80px;
+      }
+
+      @include md {
+        width: 324px;
+        font-size: 80px;
+        margin-left: 0;
+        margin-bottom: 0;
         line-height: 80px;
       }
 
