@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   border-top: 1px solid var(--lines-color);
-  // height: 803px;
 
   &__title {
     position: absolute;
@@ -25,6 +24,11 @@
     @include md {
       font-size: 100px;
       line-height: 80px; /* 80% */
+    }
+
+    @include ms {
+      font-size: 80px;
+      line-height: 70px; /* 80% */
     }
 
     @include sm {
@@ -86,7 +90,6 @@
       position: relative;
       display: flex;
       justify-content: flex-end;
-      // width: 100%;
       width: 1443px;
 
       @include lg {
@@ -95,6 +98,10 @@
 
       @include md {
         width: 738px;
+      }
+
+      @include ms {
+        width: 474px;
       }
 
       @include sm {
@@ -116,6 +123,10 @@
 
         @include md {
           @include circle-room-radius($size: md);
+        }
+
+        @include ms {
+          @include circle-room-radius($size: ms);
         }
 
         @include sm {
