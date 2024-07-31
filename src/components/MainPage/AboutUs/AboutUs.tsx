@@ -5,8 +5,8 @@ import Icon from "../../Icon/Icon";
 import ResponsiveImage from "../../ResponsiveImg/ResponsiveImg";
 
 const AboutUs: React.FC<NavProps> = ({ id }) => {
-  const isTablet = useMediaQuery({ minWidth: 1023.98, maxWidth: 1439.98 });
-  const isMobile = useMediaQuery({ maxWidth: 1023.98 });
+  const isTablet = useMediaQuery({ minWidth: 767.98, maxWidth: 1439.98 });
+  const isMobile = useMediaQuery({ maxWidth: 767.98 });
   
   return (
     <section className="aboutus container" id={id}>
