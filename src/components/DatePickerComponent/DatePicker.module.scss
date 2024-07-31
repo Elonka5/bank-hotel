@@ -626,6 +626,10 @@
       @include md {
         @include popper-positions($hero_rooms: yes, $start: no, $size: md);
       }
+      
+      @include ms {
+        @include popper-positions($hero_rooms: yes, $start: no, $size: ms);
+      }
     }
 
     .wrapper {
@@ -640,6 +644,10 @@
           width: 243px;
           height: 100px;
         }
+
+        @include ms {
+          width: 258px;
+        }
       }}
 
     .calendar {
@@ -651,6 +659,10 @@
 
       @include md{
         padding: 34px 36px 33px;
+      }
+
+      @include ms{
+        width: 768px;
       }
 
       @include sm {

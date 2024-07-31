@@ -23,7 +23,7 @@
     }
 
     @include ms {
-      width: 478px;
+      width: 468px;
     }
 
     @include sm {
@@ -53,8 +53,8 @@
     }
 
     @include ms {
-      padding: 75px 70px 100px 0;
-      gap: 145px;
+      padding: 75px 40px 100px 0;
+      gap: 80px;
     }
 
     @include sm {
@@ -75,10 +75,11 @@
         height: 530px;
       }
 
-      // @include ms {
-      //   width: 728px;
-      //   height: 430px;
-      // }
+      @include ms {
+        width: 290px;
+        height: 430px;
+        overflow: hidden;
+      }
 
       @include sm {
         width: 355px;
@@ -96,6 +97,10 @@
 
       @include md {
         padding-top: 50px;
+      }
+
+      @include ms {
+        padding-top: 62px;
       }
     }
 
@@ -125,12 +130,12 @@
         line-height: 80px;
       }
 
-      @include md {
-        width: 324px;
-        font-size: 80px;
-        margin-left: 0;
-        margin-bottom: 0;
-        line-height: 80px;
+      @include ms {
+        width: 194px;
+        font-size: 60px;
+        margin-left: -192px;
+        margin-bottom: 59px;
+        line-height: 60px;
       }
 
       @include sm {
@@ -174,6 +179,12 @@
         font-size: 28px;
         letter-spacing: 0.84px;
         margin-bottom: 30px;
+      }
+
+      @include ms {
+        width: 124px;
+        font-size: 22px;
+        letter-spacing: 0.84px;
       }
       @include sm {
         font-size: 30px;
@@ -220,6 +231,10 @@
       padding-left: 24px;
     }
 
+    @include ms {
+      padding-left: 18px;
+    }
+
     & .label {
       width: 144px;
       height: 147px;
@@ -253,6 +268,10 @@
         margin-left: 53px;
         margin-top: -16px;
         margin-bottom: 0;
+      }
+
+      @include ms {
+        width: 120px;
       }
       @include sm {
         display: none;
@@ -308,27 +327,27 @@
     }
   }
 
-  .aboutus__mobilecontainer{
+  .aboutus__mobilecontainer {
     display: flex;
     flex-direction: column;
     padding-bottom: 70px;
 
-  .aboutus__mobilewrapper{
-    @include sm {
-     position: relative;
-     padding-top: 20px;
-    }
-
-    .label{
+    .aboutus__mobilewrapper {
       @include sm {
-            position: absolute;
-            top: 2px;
-            right: 12px;
-            width: 85px;
-      height: 85px;
-      transform: rotateZ(90deg);
-                }
+        position: relative;
+        padding-top: 20px;
+      }
+
+      .label {
+        @include sm {
+          position: absolute;
+          top: 2px;
+          right: 12px;
+          width: 85px;
+          height: 85px;
+          transform: rotateZ(90deg);
+        }
+      }
     }
   }
-}
 }

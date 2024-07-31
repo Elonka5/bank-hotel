@@ -122,8 +122,12 @@
     @if $hero_rooms == yes {
       @if $size == lg {
         $x: -242.5px;
-      } @else if $size == md {
+      }
+      @if $size == md {
         $x: -242px;
+      } @else if $size == ms {
+        $x: -258.5px;
+        $y: 100px;
       }
     }
   }

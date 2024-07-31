@@ -10,8 +10,8 @@ const OpenAccordionItem: React.FC<AccordionItemProps> = ({
   isOpen,
   onToggle,
 }) => {
-  const isTablet = useMediaQuery({ minWidth: 1023.98, maxWidth: 1439.98 });
-  const isMobile = useMediaQuery({ maxWidth: 1023.98 });
+  const isTablet = useMediaQuery({ minWidth: 767.98, maxWidth: 1439.98 });
+  const isMobile = useMediaQuery({ maxWidth: 767.98 });
   const { fullText, bigImageResolutions, title } = item;
 
   return (
