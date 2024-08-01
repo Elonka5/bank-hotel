@@ -2,10 +2,11 @@ import { useMediaQuery } from "react-responsive";
 import BookingRoomFormDatePicker from "../../BookingRoomForm/BookingRoomFormDatePicker";
 import ButtonPoly from "../../ButtonPoly/ButtonPoly";
 import ButtonSince from "../../ButtonSince/ButtonSince";
-import { AnimationEvent, useState } from "react";
+import React, { AnimationEvent, useState } from "react";
 import styles from "../../DatePickerComponent/DatePicker.module.scss";
+import { NavProps } from "../../../entities/navprops";
 
-const Hero = () => {
+const Hero = React.forwardRef<HTMLDivElement, NavProps>(({ id }, ref) => {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1024px)",
   });
@@ -35,7 +36,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero container" id="#hero">
+    <section className="hero container" ref={ref} id={id}>
       <div className="hero__wrapper">
         <div className="hero__title">
           <h1>
@@ -104,6 +105,6 @@ const Hero = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Hero;

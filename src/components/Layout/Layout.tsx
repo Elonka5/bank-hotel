@@ -2,8 +2,12 @@ import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import GetInTouch from "../GetInTouch/GetInTouch";
+// import GetInTouch from "../GetInTouch/GetInTouch";
 import Loader from "./Loader/Loader";
+
+// type ActiveSectionContextType = {
+//   getintouchRef: React.RefObject<HTMLDivElement>;
+// };
 
 const Layout = () => {
   // const location = useLocation();
@@ -24,7 +28,7 @@ const Layout = () => {
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
-      <GetInTouch id="contacts" />
+      {/* <GetInTouch ref={getintouchRef} id="contacts" /> */}
       <Footer />
     </>
   );

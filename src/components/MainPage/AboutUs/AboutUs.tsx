@@ -3,13 +3,14 @@ import { NavProps } from "../../../entities/navprops";
 import ButtonPoly from "../../ButtonPoly/ButtonPoly";
 import Icon from "../../Icon/Icon";
 import ResponsiveImage from "../../ResponsiveImg/ResponsiveImg";
+import React from "react";
 
-const AboutUs: React.FC<NavProps> = ({ id }) => {
+const AboutUs = React.forwardRef<HTMLDivElement, NavProps>(({ id }, ref) => {
   const isTablet = useMediaQuery({ minWidth: 1023.98, maxWidth: 1439.98 });
   const isMobile = useMediaQuery({ maxWidth: 1023.98 });
-  
+
   return (
-    <section className="aboutus container" id={id}>
+    <section className="aboutus container" ref={ref} id={id}>
       <div className="line-container"></div>
       {!isMobile ? (
         <>
@@ -63,8 +64,8 @@ const AboutUs: React.FC<NavProps> = ({ id }) => {
                 iconPolygonId="polygon"
               >
                 <p className="aboutus__btnText">
-                  <span className="aboutus__btnText--secondary">Rooms</span>and{" "}
-                  <br /> apartments
+                  <span className="aboutus__btnText--secondary">Rooms</span>
+                  and <br /> apartments
                 </p>
               </ButtonPoly>
             </div>
@@ -104,6 +105,6 @@ const AboutUs: React.FC<NavProps> = ({ id }) => {
       )}
     </section>
   );
-};
+});
 
 export default AboutUs;

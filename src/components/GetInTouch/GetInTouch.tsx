@@ -6,13 +6,14 @@ import ButtonPoly from "../ButtonPoly/ButtonPoly";
 import BookingRoomFormDatePicker from "../BookingRoomForm/BookingRoomFormDatePicker";
 import styles from "../DatePickerComponent/DatePicker.module.scss";
 import ResponsiveImage from "../ResponsiveImg/ResponsiveImg";
+import React from "react";
 
-const GetInTouch: React.FC<NavProps> = ({ id }) => {
+const GetInTouch = React.forwardRef<HTMLDivElement, NavProps>(({ id }, ref) => {
   const isDesktopLg = useMediaQuery({ minWidth: 1919.98 });
   const isMobileSm = useMediaQuery({ maxWidth: 1023.98 });
 
   return (
-    <section className="section" id={id}>
+    <section className="section" ref={ref} id={id}>
       <div className="container touch__container">
         <a className="touch__container--phone" href="tel:+380322975020">
           +38 032 297 50 20
@@ -40,6 +41,7 @@ const GetInTouch: React.FC<NavProps> = ({ id }) => {
               iconWidth={120}
               iconHeight={120}
               iconPolygonId="polygon-fill"
+              // onClick={handleClick}
             >
               <span>Book room</span>
             </ButtonPoly>
@@ -75,6 +77,6 @@ const GetInTouch: React.FC<NavProps> = ({ id }) => {
       </div>
     </section>
   );
-};
+});
 
 export default GetInTouch;

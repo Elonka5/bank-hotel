@@ -1,6 +1,7 @@
 import { Suspense, lazy } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
+import { ActiveSectionProvider } from "./helpers/ActiveSectionContext";
 
 const Main = lazy(() => import("./pages/MainPage"));
 const Rooms = lazy(() => import("./pages/RoomsPage"));
@@ -9,14 +10,16 @@ const Facility = lazy(() => import("./pages/FacilityPage"));
 function App() {
   return (
     <Suspense fallback={<p>Loading...</p>}>
+      {/* <ActiveSectionProvider> */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />} />
-          <Route path="rooms" element={<Rooms />} />
-          <Route path="restaurant" element={<Facility />} />
+          <Route path="/rooms" element={<Rooms />} />
+          <Route path="/restaurant" element={<Facility />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+      {/* </ActiveSectionProvider> */}
     </Suspense>
   );
 }
