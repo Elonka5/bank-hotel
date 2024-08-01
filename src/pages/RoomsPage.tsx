@@ -1,4 +1,4 @@
-import HeroRooms from "../components/RoomsPage/HeroRooms";
+import HeroRooms from "../components/RoomsPage/HeroRooms/HeroRooms";
 import SecondSectionRooms from "../components/RoomsPage/SecondSection/SecondSectionRooms";
 import RoomEquipment from "../components/RoomsPage/RoomEquipment";
 

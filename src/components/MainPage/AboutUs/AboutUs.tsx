@@ -6,8 +6,8 @@ import ResponsiveImage from "../../ResponsiveImg/ResponsiveImg";
 import React from "react";
 
 const AboutUs = React.forwardRef<HTMLDivElement, NavProps>(({ id }, ref) => {
-  const isTablet = useMediaQuery({ minWidth: 1023.98, maxWidth: 1439.98 });
-  const isMobile = useMediaQuery({ maxWidth: 1023.98 });
+  const isTablet = useMediaQuery({ minWidth: 767.98, maxWidth: 1439.98 });
+  const isMobile = useMediaQuery({ maxWidth: 767.98 });
 
   return (
     <section className="aboutus container" ref={ref} id={id}>

@@ -84,7 +84,7 @@
   }
 }
 
-@mixin popper-positions($start: yes, $touch: no, $size: xl,$hero_rooms:no,) {
+@mixin popper-positions($start: yes, $touch: no, $size: xl, $hero_rooms: no) {
   $x: 0;
   $y: 150px;
 
@@ -122,8 +122,12 @@
     @if $hero_rooms == yes {
       @if $size == lg {
         $x: -242.5px;
-      } @else if $size == md {
+      }
+      @if $size == md {
         $x: -242px;
+      } @else if $size == ms {
+        $x: -258.5px;
+        $y: 100px;
       }
     }
   }
@@ -139,6 +143,8 @@
     $width: 913px;
   } @else if ($size == md) {
     $width: 738px;
+  } @else if ($size == ms) {
+    $width: 474px;
   } @else if ($size == sm) {
     $width: 284px;
   }

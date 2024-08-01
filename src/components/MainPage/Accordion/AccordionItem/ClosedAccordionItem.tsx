@@ -11,7 +11,7 @@ const ClosedAccordionItem: React.FC<AccordionItemProps> = ({
 }) => {
   const { imageResolutions, title } = item;
 
-  const isMobile = useMediaQuery({ maxWidth: 1023.98 });
+  const isMobile = useMediaQuery({ maxWidth: 767.98 });
 
   return (
     <>

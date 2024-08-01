@@ -2,9 +2,13 @@ import { useMediaQuery } from "react-responsive";
 import BookingRoomFormDatePicker from "../../BookingRoomForm/BookingRoomFormDatePicker";
 import ButtonPoly from "../../ButtonPoly/ButtonPoly";
 import ButtonSince from "../../ButtonSince/ButtonSince";
-import React, { AnimationEvent, useState } from "react";
+import React, { useState } from "react";
 import styles from "../../DatePickerComponent/DatePicker.module.scss";
 import { NavProps } from "../../../entities/navprops";
+import {
+  handleAnimationEnd,
+  handleClick,
+} from "../../../helpers/animationHandleForm";
 
 const Hero = React.forwardRef<HTMLDivElement, NavProps>(({ id }, ref) => {
   const isDesktopOrLaptop = useMediaQuery({
@@ -14,26 +18,6 @@ const Hero = React.forwardRef<HTMLDivElement, NavProps>(({ id }, ref) => {
   const [isOpenForm, setIsOpenForm] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
-
-  const handleClick = () => {
-    if (isOpen) {
-      setIsOpen(false);
-      setIsClosing(true);
-      setTimeout(() => {
-        setIsOpenForm(false);
-      }, 900);
-    } else {
-      setIsOpenForm(true);
-      setIsOpen(true);
-    }
-  };
-
-  const handleAnimationEnd = (event: AnimationEvent<HTMLDivElement>) => {
-    if (isClosing && event.animationName === "animation-form-close") {
-      setIsOpen(false);
-      setIsClosing(false);
-    }
-  };
 
   return (
     <section className="hero container" ref={ref} id={id}>
@@ -71,7 +55,9 @@ const Hero = React.forwardRef<HTMLDivElement, NavProps>(({ id }, ref) => {
               iconWidth={120}
               iconHeight={120}
               iconPolygonId="polygon-fill"
-              onClick={handleClick}
+              onClick={() =>
+                handleClick(isOpen, setIsOpen, setIsClosing, setIsOpenForm)
+              }
             >
               <span>Book room</span>
             </ButtonPoly>
@@ -80,7 +66,9 @@ const Hero = React.forwardRef<HTMLDivElement, NavProps>(({ id }, ref) => {
                 className={`mobile ${
                   isOpen ? "open" : isClosing ? "close" : null
                 }`}
-                onAnimationEnd={handleAnimationEnd}
+                onAnimationEnd={(event) =>
+                  handleAnimationEnd(event, isClosing, setIsOpen, setIsClosing)
+                }
                 touchClassName={styles.mobile}
               />
             )}

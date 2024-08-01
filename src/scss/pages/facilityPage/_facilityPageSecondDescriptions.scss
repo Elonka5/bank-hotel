@@ -1,0 +1,196 @@
+.second-descriptions {
+  display: flex;
+  justify-content: space-between;
+
+  // @include ms {
+  //   position: relative;
+  // }
+
+  @include sm {
+    flex-direction: column-reverse;
+    gap: 70px;
+  }
+
+  &__first-container {
+    display: flex;
+    flex-direction: column;
+    width: 446px;
+    gap: 70px;
+
+    @include lg {
+      width: 335px;
+      gap: 50px;
+    }
+
+    @include md {
+      width: 231px;
+    }
+
+    @include ms {
+      display: none;
+    }
+
+    @include sm {
+      display: flex;
+      width: 192px;
+      gap: 30px;
+    }
+
+    .image-wrapper {
+      width: 442px;
+      height: 595px;
+      overflow: hidden;
+
+      @include lg {
+        width: 332px;
+        height: 447px;
+      }
+
+      @include md {
+        width: 231px;
+        height: 337px;
+      }
+
+      @include ms {
+        display: none;
+      }
+
+      @include sm {
+        display: block;
+        width: 173px;
+        height: 232.9px;
+      }
+    }
+
+    .descriptions {
+      color: var(--secondary-color-100);
+      font-size: 26px;
+      line-height: normal;
+      text-transform: uppercase;
+
+      @include lg {
+        font-size: 18px;
+      }
+
+      @include sm {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__second-container {
+    display: flex;
+    flex-direction: column;
+    width: 1072px;
+    gap: 150px;
+
+    @include lg {
+      width: 808px;
+      gap: 100px;
+    }
+
+    @include md {
+      width: 607px;
+    }
+
+    @include ms {
+      width: 100%;
+      gap: 30px;
+    }
+
+    @include sm {
+      gap: 70px;
+    }
+
+    .image-wrapper {
+      width: 1072px;
+      height: 595px;
+      overflow: hidden;
+
+      @include lg {
+        width: 808px;
+        height: 448.5px;
+      }
+
+      @include md {
+        width: 607px;
+        height: 336.9px;
+      }
+
+      @include ms {
+        align-self: center;
+      }
+
+      @include sm {
+        align-self: flex-start;
+        width: 307.5px;
+        height: 270px;
+      }
+    }
+
+    .descriptions-container {
+      display: flex;
+      flex-direction: column;
+      width: 442px;
+      gap: 40px;
+
+      @include md {
+        width: 356px;
+        gap: 20px;
+        align-self: flex-end;
+      }
+
+      @include ms {
+        width: 607px;
+        gap: 20px;
+        align-self: center;
+      }
+
+      @include sm {
+        width: 264px;
+        align-self: flex-end;
+      }
+
+      .title {
+        font-family: Miracle regular, sans-serif;
+        font-size: 50px;
+        line-height: normal;
+        letter-spacing: 1.5px;
+        text-transform: capitalize;
+
+        @include lg {
+          width: 335px;
+          font-size: 36px;
+          letter-spacing: 1.08px;
+        }
+
+        @include md {
+          width: 323px;
+        }
+
+        @include ms {
+          width: 100%;
+          text-align: center;
+        }
+
+        @include sm {
+          width: 242px;
+          text-align: left;
+          font-size: 30px;
+          letter-spacing: 0.9px;
+        }
+      }
+
+      .descriptions {
+        font-size: 18px;
+        line-height: 28px; /* 155.556% */
+        opacity: 0.8;
+
+        @include md {
+          font-size: 13px;
+          line-height: 23px; /* 176.923% */
+        }
+      }
+    }
+  }
+}

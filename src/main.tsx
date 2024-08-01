@@ -5,14 +5,18 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store.ts";
 import { ActiveSectionProvider } from "./helpers/ActiveSectionContext.tsx";
+// import store, { persistor } from "./redux/store.ts";
+// import { PersistGate } from "redux-persist/integration/react";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   // <React.StrictMode>
   <ActiveSectionProvider>
     <Provider store={store}>
+      {/* <PersistGate loading={null} persistor={persistor}> */}
       <BrowserRouter>
         <App />
       </BrowserRouter>
+      {/* </PersistGate> */}
     </Provider>
   </ActiveSectionProvider>
   // </React.StrictMode>
