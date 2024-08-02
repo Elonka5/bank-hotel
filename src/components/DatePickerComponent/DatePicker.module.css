@@ -63,7 +63,7 @@
     height: 8px;
   }
 }
-@media screen and (max-width: 1023.98px) {
+@media screen and (max-width: 767.98px) {
   .datepicker [class*=dropdown-indicator][class*=__close-icon] svg {
     width: 24px;
     height: 24px;
@@ -386,12 +386,12 @@
 .datepicker.mobile_rooms .popperEnd {
   z-index: 10;
 }
-@media screen and (max-width: 1023.98px) {
+@media screen and (max-width: 767.98px) {
   .datepicker.mobile .popperEnd, .datepicker.mobile_rooms .popperEnd {
     transform: translate(0, 100px) !important;
   }
 }
-@media screen and (max-width: 1023.98px) {
+@media screen and (max-width: 767.98px) {
   .datepicker.mobile .wrapper [class$=__input-container], .datepicker.mobile_rooms .wrapper [class$=__input-container] {
     width: 355px;
   }
@@ -531,6 +531,11 @@
     transform: translate(-242px, 100px) !important;
   }
 }
+@media screen and (max-width: 1023.98px) {
+  .datepicker.hero_rooms .popperEnd {
+    transform: translate(-258.5px, 100px) !important;
+  }
+}
 @media screen and (max-width: 1919.98px) {
   .datepicker.hero_rooms .wrapper [class$=__input-container] {
     width: 242.5px;
@@ -541,6 +546,11 @@
   .datepicker.hero_rooms .wrapper [class$=__input-container] {
     width: 243px;
     height: 100px;
+  }
+}
+@media screen and (max-width: 1023.98px) {
+  .datepicker.hero_rooms .wrapper [class$=__input-container] {
+    width: 258px;
   }
 }
 @media screen and (max-width: 1919.98px) {
@@ -555,6 +565,11 @@
   }
 }
 @media screen and (max-width: 1023.98px) {
+  .datepicker.hero_rooms .calendar {
+    width: 768px;
+  }
+}
+@media screen and (max-width: 767.98px) {
   .datepicker.hero_rooms .calendar {
     width: 375px;
   }

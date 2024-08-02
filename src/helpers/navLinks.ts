@@ -1,17 +1,3 @@
-// export const navLinks = [
-//   {
-//     id: 3,
-//     value: "Rooms",
-//     to: "/rooms",
-//   },
-//   {
-//     id: 4,
-//     value: "Restaurant",
-//     to: "/restaurant",
-//   },
-// ];
-
-// =================================================
 export const navLinks = [
   {
     id: 1,

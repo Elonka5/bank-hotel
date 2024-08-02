@@ -13,9 +13,9 @@
   // transition: 250ms ease-in;
   // overflow: hidden;
 
-  .header-bg {
-    // background-color: rgba(0, 0, 0, 0.2);
-  }
+  // .header-bg {
+  // background-color: rgba(0, 0, 0, 0.2);
+  // }
 
   .header--container {
     display: flex;
@@ -54,9 +54,6 @@
           color: var(--secondary-color-100);
         }
       }
-      // .active {
-      //   color: var(--secondary-color-100);
-      // }
     }
 
     .header--phone {
@@ -74,82 +71,3 @@
     }
   }
 }
-
-// ===========================================================
-
-// @import "../utils/responsive";
-// @import "../utils/mixins";
-
-// .header {
-//   position: fixed;
-//   height: 142px;
-//   width: 100%;
-//   top: 0;
-//   left: 0;
-//   background-color: var(--primary-color-100);
-//   z-index: 999;
-//   transition: 250ms ease-in;
-//   overflow: hidden;
-
-//   &.header-bg {
-//     background-color: rgba(0, 0, 0, 0.2);
-//     backdrop-filter: blur(64px);
-//   }
-
-//   .header--container {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-
-//     &__logo {
-//       padding-top: 40px;
-//       padding-bottom: 80px;
-//       font-size: 20px;
-//       font-weight: 500;
-//       line-height: 1.2;
-
-//       @include md {
-//         padding-top: 22px;
-//         padding-bottom: 43px;
-//         font-size: 16px;
-//         line-height: normal;
-//       }
-//     }
-
-//     .nav--list {
-//       display: flex;
-//       align-items: center;
-//       gap: 70px;
-//       text-transform: uppercase;
-//       font-size: 14px;
-//       font-weight: 400;
-//       line-height: 1.4;
-
-//       .nav--list__link {
-//         padding-top: 40px;
-//         padding-bottom: 80px;
-
-//         &.active {
-//           color: var(--secondary-color-100);
-//         }
-//       }
-//       // .active {
-//       //   color: var(--secondary-color-100);
-//       // }
-//     }
-
-//     .header--phone {
-//       padding-top: 40px;
-//       padding-bottom: 80px;
-//       font-size: 16px;
-//       font-weight: 400;
-//       line-height: 1.25;
-//     }
-
-//     .menu__toggle--button {
-//       padding-top: 20px;
-//       padding-bottom: 30px;
-//       @include transition-standart;
-//     }
-//   }
-// }

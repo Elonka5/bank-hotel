@@ -16,6 +16,11 @@
   // background-position: center;
   // background-size: 1920px;
 
+  .touchDPForm {
+    background: var(--text-color-16);
+    backdrop-filter: blur(20px);
+  }
+
   @include lg {
     padding-top: 250px;
     padding-bottom: 150px;

@@ -6,11 +6,18 @@ import ButtonPoly from "../ButtonPoly/ButtonPoly";
 import BookingRoomFormDatePicker from "../BookingRoomForm/BookingRoomFormDatePicker";
 import styles from "../DatePickerComponent/DatePicker.module.scss";
 import ResponsiveImage from "../ResponsiveImg/ResponsiveImg";
-import React from "react";
+import React, { useState } from "react";
+import {
+  handleAnimationEnd,
+  handleClick,
+} from "../../helpers/animationHandleForm";
 
 const GetInTouch = React.forwardRef<HTMLDivElement, NavProps>(({ id }, ref) => {
   const isDesktopLg = useMediaQuery({ minWidth: 1919.98 });
   const isMobileSm = useMediaQuery({ maxWidth: 1023.98 });
+  const [isOpenForm, setIsOpenForm] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   return (
     <section className="section" ref={ref} id={id}>
@@ -36,15 +43,35 @@ const GetInTouch = React.forwardRef<HTMLDivElement, NavProps>(({ id }, ref) => {
             <span className="second-title-part">touch</span>
           </h2>
           {isMobileSm && (
-            <ButtonPoly
-              className="btnPoly booking intouch"
-              iconWidth={120}
-              iconHeight={120}
-              iconPolygonId="polygon-fill"
-              // onClick={handleClick}
-            >
-              <span>Book room</span>
-            </ButtonPoly>
+            <>
+              <ButtonPoly
+                className="btnPoly booking intouch"
+                iconWidth={120}
+                iconHeight={120}
+                iconPolygonId="polygon-fill"
+                onClick={() =>
+                  handleClick(isOpen, setIsOpen, setIsClosing, setIsOpenForm)
+                }
+              >
+                <span>Book room</span>
+              </ButtonPoly>
+              {isOpenForm && (
+                <BookingRoomFormDatePicker
+                  className={`mobile ${
+                    isOpen ? "open" : isClosing ? "close" : null
+                  } touchDPForm`}
+                  onAnimationEnd={(event) =>
+                    handleAnimationEnd(
+                      event,
+                      isClosing,
+                      setIsOpen,
+                      setIsClosing
+                    )
+                  }
+                  touchClassName={styles.mobile}
+                />
+              )}
+            </>
           )}
           <div className="touch__address--img--wrapper">
             <div className="address--wrapper">
