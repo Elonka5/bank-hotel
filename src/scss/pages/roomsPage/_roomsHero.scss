@@ -16,8 +16,13 @@ $bg-img-mobile: "/rooms-hero-mobile.webp";
     max-width: 1024px;
   }
 
+  @include ms {
+    max-width: 768px;
+  }
+
   @include sm {
     position: relative;
+    margin-top:-85px;
     max-width: 375px;
   }
 
