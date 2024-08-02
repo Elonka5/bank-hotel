@@ -29,6 +29,9 @@
     @include md {
       @include popper-positions($start: no, $size: md);
     }
+    @include ms {
+      @include popper-positions($start: no, $size: ms);
+    }
   }
 
   [class*="dropdown-indicator"] {
@@ -344,7 +347,7 @@
     background: var(--white-100);
 
     @include ms {
-      width: 727px;
+      width: 728px;
       padding: 20px;
     }
 
@@ -380,6 +383,10 @@
       @include md {
         width: 305.5px;
         height: 100px;
+      }
+
+      @include ms {
+        width: 264px;
       }
 
       // === Can using from standart datepicker button close with content in 2 path,
@@ -649,13 +656,12 @@
           width: 243px;
           height: 100px;
         }
+
+        @include ms {
+          width: 258px;
+        }
       }
     }
-
-    //   @include ms {
-    //     width: 258px;
-    //   }
-    // }}
 
     .calendar {
       @include lg {

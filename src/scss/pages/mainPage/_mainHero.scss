@@ -227,7 +227,7 @@ $bg-img-mobile: "/main-hero-mobile.webp";
     }
 
     @include ms {
-      overflow: hidden;
+      // overflow: hidden;
       background-image: url(#{$bg-img-tablet});
       align-items: flex-start;
       width: 728px;
