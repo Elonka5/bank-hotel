@@ -17,6 +17,11 @@
     padding: 55px 0 0;
   }
 
+  @include ms {
+    width: 768px;
+    padding-top: 30px;
+  }
+
   @include sm {
     width: 375px;
     padding-top: 30px;
@@ -51,10 +56,14 @@
         left: -70px;
       }
 
-      @include sm {
+      @include ms {
         width: 1024px;
         height: 375px;
         top: 0;
+        left: -40px;
+      }
+
+      @include sm {
         left: -240px;
       }
     }
@@ -100,10 +109,15 @@
         margin-top: 70px;
       }
 
+      @include ms {
+        width: 768px;
+        height: 472.5px;
+        margin-top: 50px;
+      }
+
       @include sm {
         width: 375px;
         height: 426px;
-        margin-top: 50px;
       }
     }
   }
