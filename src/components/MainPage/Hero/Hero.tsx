@@ -2,14 +2,16 @@ import { useMediaQuery } from "react-responsive";
 import BookingRoomFormDatePicker from "../../BookingRoomForm/BookingRoomFormDatePicker";
 import ButtonPoly from "../../ButtonPoly/ButtonPoly";
 import ButtonSince from "../../ButtonSince/ButtonSince";
-import { useState } from "react";
+import React, { useState } from "react";
 import styles from "../../DatePickerComponent/DatePicker.module.scss";
+import { NavProps } from "../../../entities/navprops";
 import {
   handleAnimationEnd,
   handleClick,
 } from "../../../helpers/animationHandleForm";
 
-const Hero = () => {
+// const Hero = React.forwardRef<HTMLDivElement, NavProps>(({ id }, ref) => {
+const Hero: React.FC<NavProps> = ({ id }) => {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 768px)",
   });
@@ -19,7 +21,8 @@ const Hero = () => {
   const [isClosing, setIsClosing] = useState(false);
 
   return (
-    <section className="hero container" id="#hero">
+    // <section className="hero container" ref={ref} id={id}>
+    <section className="hero container" id={id}>
       <div className="hero__wrapper">
         <div className="hero__title">
           <h1>

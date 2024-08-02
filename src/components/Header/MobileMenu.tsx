@@ -1,11 +1,15 @@
-import { NavLink } from "react-router-dom";
 import "../../scss/layout/_menuMobile.scss";
 import { NavLinkType } from "../../entities/navLinkTypes";
 import { navLinks } from "../../helpers/navLinks";
 import Icon from "../Icon/Icon";
 import { MobileMenuProps } from "../../entities/mobileMenu";
+import { Link } from "react-router-dom";
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ menuOpen, onClick }) => {
+const MobileMenu: React.FC<MobileMenuProps> = ({
+  menuOpen,
+  onClick,
+  isActive,
+}) => {
   return (
     <div className={`mobile--menu--container  ${menuOpen ? "active" : ""}`}>
       <div className="container inner-wrapper">
@@ -13,17 +17,20 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ menuOpen, onClick }) => {
           <ul className="nav--list--mobile">
             {navLinks.map(({ id, value, to }: NavLinkType) => (
               <li key={id}>
-                <NavLink
-                  className="nav--list--mobile__link"
+                <Link
+                  className={`nav--list--mobile__link ${
+                    isActive(to) ? "active" : ""
+                  }`}
                   to={to}
                   onClick={onClick}
                 >
                   {value}
+
                   <Icon
                     className="nav--list--mobile__link__icon"
                     iconId="star-8"
                   />
-                </NavLink>
+                </Link>
               </li>
             ))}
           </ul>

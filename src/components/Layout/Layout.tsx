@@ -5,6 +5,10 @@ import Footer from "../Footer/Footer";
 import GetInTouch from "../GetInTouch/GetInTouch";
 import Loader from "./Loader/Loader";
 
+// type ActiveSectionContextType = {
+//   getintouchRef: React.RefObject<HTMLDivElement>;
+// };
+
 const Layout = () => {
   // const location = useLocation();
 

@@ -1,15 +1,19 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import "../../scss/layout/_header.scss";
-import { navLinks } from "../../helpers/navLinks.ts";
 import Icon from "../Icon/Icon.tsx";
-import { NavLinkType } from "../../entities/navLinkTypes.ts";
 import MobileMenu from "./MobileMenu.tsx";
+// import { useActiveSection } from "../../helpers/useActiveSection.ts";
+import { navLinks } from "../../helpers/navLinks.ts";
+import { NavLinkType } from "../../entities/navLinkTypes.ts";
 
 const Header: React.FC = () => {
   const isNotDesktop = useMediaQuery({ maxWidth: 1439.98 });
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection] = useState<string | null>(null);
+  // const { activeSection } = useActiveSection();
+  const location = useLocation();
 
   useEffect(() => {
     if (menuOpen) {
@@ -24,10 +28,31 @@ const Header: React.FC = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const isActive = (path: string) => {
+    const sectionPath = path.split(" ")[1];
+    return sectionPath
+      ? activeSection === sectionPath
+      : location.pathname + location.hash === path;
+  };
+
+  // window.addEventListener("scroll", changeColor);
+  // ------------------------------------------------------
+
   return (
-    <header>
-      <div className="container header--container">
-        <NavLink className="header--container__logo" to="/#home">
+    <header className="header">
+      <div
+        className="container header--container"
+        style={
+          menuOpen
+            ? { backgroundColor: "var(--primary-color-100)" }
+            : { backgroundColor: "transparent" }
+        }
+      >
+        <NavLink
+          className="header--container__logo"
+          to="/#home"
+          onClick={() => setMenuOpen(false)}
+        >
           BankHotel
         </NavLink>
         {!isNotDesktop ? (
@@ -36,9 +61,14 @@ const Header: React.FC = () => {
               <ul className="nav--list">
                 {navLinks.map(({ id, value, to }: NavLinkType) => (
                   <li key={id}>
-                    <NavLink className="nav--list__link" to={to}>
+                    <Link
+                      className={`nav--list__link
+                      ${isActive(to) ? "active" : ""}
+                      `}
+                      to={to}
+                    >
                       {value}
-                    </NavLink>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -67,7 +97,11 @@ const Header: React.FC = () => {
       </div>
 
       {isNotDesktop && (
-        <MobileMenu menuOpen={menuOpen} onClick={handleToggleMenu} />
+        <MobileMenu
+          menuOpen={menuOpen}
+          onClick={handleToggleMenu}
+          isActive={isActive}
+        />
       )}
     </header>
   );

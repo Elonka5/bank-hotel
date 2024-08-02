@@ -12,7 +12,7 @@
   opacity: 0;
   visibility: hidden;
   transform: translateX(100%);
-  z-index: 100;
+  z-index: 10000;
   transition: transform 250ms linear, opacity 250ms linear,
     visibility 250ms linear;
 
