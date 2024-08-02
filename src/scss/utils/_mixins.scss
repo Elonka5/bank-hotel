@@ -90,7 +90,9 @@
 
   @if $size == lg {
     $y: 125px;
-  } @else if $size == md {
+  } @else if ($size == md) {
+    $y: 100px;
+  } @else if ($size == ms) {
     $y: 100px;
   }
 
@@ -109,6 +111,8 @@
       $x: -368.5px;
     } @else if $size == md {
       $x: -305.5px;
+    } @else if $size == ms {
+      $x: -264px;
     }
 
     @if $touch == yes {

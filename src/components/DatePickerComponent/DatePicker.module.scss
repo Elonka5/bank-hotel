@@ -29,6 +29,9 @@
     @include md {
       @include popper-positions($start: no, $size: md);
     }
+    @include ms {
+      @include popper-positions($start: no, $size: ms);
+    }
   }
 
   [class*="dropdown-indicator"] {
@@ -343,6 +346,11 @@
     // border: 1px solid var(--primary-color-100);
     background: var(--white-100);
 
+    @include ms {
+      width: 728px;
+      padding: 20px;
+    }
+
     &__title {
       display: flex;
       width: 305px;
@@ -375,6 +383,10 @@
       @include md {
         width: 305.5px;
         height: 100px;
+      }
+
+      @include ms {
+        width: 264px;
       }
 
       // === Can using from standart datepicker button close with content in 2 path,
@@ -451,7 +463,8 @@
   }
 
   // ====== MOBILE FORM STYLES ======
-  &.mobile,&.mobile_rooms {
+  &.mobile,
+  &.mobile_rooms {
     .popperStart,
     .popperEnd {
       z-index: 10;
@@ -547,9 +560,9 @@
       }
     }
   }
-  
+
   &.mobile_rooms {
-    .calendar{
+    .calendar {
       width: 375px;
     }
   }
@@ -616,7 +629,7 @@
 
   // ====== HERO FORM STYLES ======
 
-  &.hero_rooms{
+  &.hero_rooms {
     .popperEnd {
       @include popper-positions($hero_rooms: yes, $start: no);
       @include lg {
@@ -626,7 +639,7 @@
       @include md {
         @include popper-positions($hero_rooms: yes, $start: no, $size: md);
       }
-      
+
       @include ms {
         @include popper-positions($hero_rooms: yes, $start: no, $size: ms);
       }
@@ -634,7 +647,6 @@
 
     .wrapper {
       [class$="__input-container"] {
-
         @include lg {
           width: 242.5px;
           height: 120px;
@@ -648,20 +660,20 @@
         @include ms {
           width: 258px;
         }
-      }}
+      }
+    }
 
     .calendar {
-
-      @include lg{
-          padding: 34px 50px 30px;
-          width: 737px;
+      @include lg {
+        padding: 34px 50px 30px;
+        width: 737px;
       }
 
-      @include md{
+      @include md {
         padding: 34px 36px 33px;
       }
 
-      @include ms{
+      @include ms {
         width: 768px;
       }
 

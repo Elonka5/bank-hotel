@@ -184,6 +184,10 @@
         line-height: 20px; /* 142.857% */
       }
 
+      @include ms {
+        width: 200px;
+      }
+
       &.mobile {
         display: none;
       }
