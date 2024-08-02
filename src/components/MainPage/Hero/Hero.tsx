@@ -4,13 +4,16 @@ import ButtonPoly from "../../ButtonPoly/ButtonPoly";
 import ButtonSince from "../../ButtonSince/ButtonSince";
 import { useState } from "react";
 import styles from "../../DatePickerComponent/DatePicker.module.scss";
-import { handleAnimationEnd, handleClick } from "../../../helpers/animationHandleForm";
+import {
+  handleAnimationEnd,
+  handleClick,
+} from "../../../helpers/animationHandleForm";
 
 const Hero = () => {
   const isDesktopOrLaptop = useMediaQuery({
-    query: "(min-width: 1024px)",
+    query: "(min-width: 768px)",
   });
-  const isMobile = useMediaQuery({ query: "(max-width: 1023.98px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 767.98px)" });
   const [isOpenForm, setIsOpenForm] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
