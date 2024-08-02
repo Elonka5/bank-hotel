@@ -27,6 +27,11 @@
     transform: translate(-305.5px, 100px) !important;
   }
 }
+@media screen and (max-width: 1023.98px) {
+  .datepicker .popperEnd {
+    transform: translate(-264px, 100px) !important;
+  }
+}
 .datepicker [class*=dropdown-indicator] {
   display: flex;
   justify-content: center;
@@ -316,6 +321,12 @@
   width: 737px;
   background: var(--white-100);
 }
+@media screen and (max-width: 1023.98px) {
+  .datepicker .calendar {
+    width: 728px;
+    padding: 20px;
+  }
+}
 .datepicker .calendar__title {
   display: flex;
   width: 305px;
@@ -346,6 +357,11 @@
   .datepicker .wrapper [class$=__input-container] {
     width: 305.5px;
     height: 100px;
+  }
+}
+@media screen and (max-width: 1023.98px) {
+  .datepicker .wrapper [class$=__input-container] {
+    width: 264px;
   }
 }
 .datepicker .wrapper [class$=__input-container] input {

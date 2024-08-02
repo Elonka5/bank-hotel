@@ -1,16 +1,18 @@
+import React from "react";
 import { useMediaQuery } from "react-responsive";
 import { NavProps } from "../../../entities/navprops";
 import ButtonPoly from "../../ButtonPoly/ButtonPoly";
 import Icon from "../../Icon/Icon";
 import ResponsiveImage from "../../ResponsiveImg/ResponsiveImg";
-import React from "react";
 
-const AboutUs = React.forwardRef<HTMLDivElement, NavProps>(({ id }, ref) => {
+// const AboutUs = React.forwardRef<HTMLDivElement, NavProps>(({ id }, ref) => {
+const AboutUs: React.FC<NavProps> = ({ id }) => {
   const isTablet = useMediaQuery({ minWidth: 767.98, maxWidth: 1439.98 });
   const isMobile = useMediaQuery({ maxWidth: 767.98 });
 
   return (
-    <section className="aboutus container" ref={ref} id={id}>
+    // <section className="aboutus container" ref={ref} id={id}>
+    <section className="aboutus container" id={id}>
       <div className="line-container"></div>
       {!isMobile ? (
         <>
@@ -105,6 +107,6 @@ const AboutUs = React.forwardRef<HTMLDivElement, NavProps>(({ id }, ref) => {
       )}
     </section>
   );
-});
+};
 
 export default AboutUs;

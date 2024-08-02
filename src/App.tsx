@@ -2,7 +2,6 @@ import { Suspense, lazy } from "react";
 // import { Navigate, Route, Routes } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
-import { ActiveSectionProvider } from "./helpers/ActiveSectionContext";
 
 const Main = lazy(() => import("./pages/MainPage"));
 const Rooms = lazy(() => import("./pages/RoomsPage"));
@@ -12,7 +11,6 @@ const NotFound = lazy(() => import("./pages/NotFoundPage"));
 function App() {
   return (
     <Suspense fallback={<p>Loading...</p>}>
-      {/* <ActiveSectionProvider> */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />} />
@@ -22,7 +20,6 @@ function App() {
         {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
-      {/* </ActiveSectionProvider> */}
     </Suspense>
   );
 }

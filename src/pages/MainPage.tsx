@@ -4,14 +4,13 @@ import Gallery from "../components/MainPage/Gallery/Gallery";
 import Facilities from "../components/MainPage/Facilities/Facilities";
 import Hero from "../components/MainPage/Hero/Hero";
 import RoomsApartments from "../components/MainPage/RoomsApartments/RoomsApartments";
-import { useActiveSection } from "../helpers/useActiveSection";
-import GetInTouch from "../components/GetInTouch/GetInTouch";
+// import { useActiveSection } from "../helpers/useActiveSection";
 import { useLocation } from "react-router-dom";
 
 const MainPage = () => {
   const location = useLocation();
-  const { homeRef, aboutRef, facilitiesRef, getintouchRef } =
-    useActiveSection();
+  // const { homeRef, aboutRef, facilitiesRef, getintouchRef } =
+  //   useActiveSection();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,16 +60,27 @@ const MainPage = () => {
 
   return (
     <main>
-      <Hero ref={homeRef} id="home" />
-      <AboutUs ref={aboutRef} id="about" />
+      <Hero id="home" />
+      <AboutUs id="about" />
 
-      <section ref={facilitiesRef} className="whitesection" id="facilities">
+      <section className="whitesection" id="facilities">
         <RoomsApartments />
         <Facilities />
       </section>
       <Gallery />
-      <GetInTouch ref={getintouchRef} id="contacts" />
+      {/* <GetInTouch id="contacts" /> */}
     </main>
+    // <main>
+    //   <Hero ref={homeRef} id="home" />
+    //   <AboutUs ref={aboutRef} id="about" />
+
+    //   <section ref={facilitiesRef} className="whitesection" id="facilities">
+    //     <RoomsApartments />
+    //     <Facilities />
+    //   </section>
+    //   <Gallery />
+    //   <GetInTouch ref={getintouchRef} id="contacts" />
+    // </main>
   );
 };
 

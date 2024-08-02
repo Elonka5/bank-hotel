@@ -52,7 +52,7 @@ const Facilities = () => {
           </div>
         </div>
       </div>
-      <Accordion/>
+      <Accordion />
     </section>
   );
 };

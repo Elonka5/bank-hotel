@@ -4,15 +4,15 @@ import { useMediaQuery } from "react-responsive";
 import "../../scss/layout/_header.scss";
 import Icon from "../Icon/Icon.tsx";
 import MobileMenu from "./MobileMenu.tsx";
-import { useActiveSection } from "../../helpers/useActiveSection.ts";
+// import { useActiveSection } from "../../helpers/useActiveSection.ts";
 import { navLinks } from "../../helpers/navLinks.ts";
 import { NavLinkType } from "../../entities/navLinkTypes.ts";
 
 const Header: React.FC = () => {
   const isNotDesktop = useMediaQuery({ maxWidth: 1439.98 });
   const [menuOpen, setMenuOpen] = useState(false);
-  // const [activeSection, setActiveSection] = useState<string | null>(null);
-  const { activeSection } = useActiveSection();
+  const [activeSection] = useState<string | null>(null);
+  // const { activeSection } = useActiveSection();
   const location = useLocation();
 
   useEffect(() => {
