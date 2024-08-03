@@ -3,7 +3,7 @@ import "../../scss/layout/_footer.scss";
 import Icon from "../Icon/Icon";
 
 const Footer = () => {
-  const isMobileSm = useMediaQuery({ maxWidth: 1023.99 });
+  const isMobileSm = useMediaQuery({ maxWidth: 767.98 });
 
   return (
     <footer className="footer">
@@ -31,7 +31,7 @@ const Footer = () => {
               </li>
               <li className="footer__list--item">
                 <h3 className="title">
-                  <span className="title__prefix">/</span>Social
+                  <span className="title__prefix">/</span>Socials
                 </h3>
                 <ul className="social--list">
                   <li>

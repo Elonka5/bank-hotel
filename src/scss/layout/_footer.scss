@@ -35,6 +35,10 @@
       gap: 146px;
     }
 
+    @include ms {
+      gap: 70px;
+    }
+
     &--item:not(:last-child) {
       max-width: 285px;
       width: 100%;
@@ -89,6 +93,11 @@
         font-size: 13px;
         line-height: 1.76;
       }
+
+      @include ms {
+        font-size: 12px;
+        line-height: 1.7;
+      }
     }
   }
 
@@ -116,6 +125,10 @@
 
     @include md {
       gap: 146px;
+    }
+
+    @include ms {
+      gap: 54px;
     }
 
     .rights,
@@ -151,6 +164,10 @@
         padding: 18px 20px;
         font-size: 12px;
         line-height: 1.6;
+      }
+
+      @include ms {
+        padding: 16px 28px;
       }
     }
   }

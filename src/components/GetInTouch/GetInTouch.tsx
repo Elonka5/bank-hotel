@@ -12,16 +12,15 @@ import {
   handleClick,
 } from "../../helpers/animationHandleForm";
 
-// const GetInTouch = React.forwardRef<HTMLDivElement, NavProps>(({ id }, ref) => {
 const GetInTouch: React.FC<NavProps> = ({ id }) => {
   const isDesktopLg = useMediaQuery({ minWidth: 1919.98 });
-  const isMobileSm = useMediaQuery({ maxWidth: 1023.98 });
+  const isMobileSm = useMediaQuery({ maxWidth: 767.98 });
+
   const [isOpenForm, setIsOpenForm] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
 
   return (
-    // <section className="section" ref={ref} id={id}>
     <section className="section" id={id}>
       <div className="container touch__container">
         <a className="touch__container--phone" href="tel:+380322975020">

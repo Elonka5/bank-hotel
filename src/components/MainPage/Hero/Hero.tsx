@@ -10,7 +10,6 @@ import {
   handleClick,
 } from "../../../helpers/animationHandleForm";
 
-// const Hero = React.forwardRef<HTMLDivElement, NavProps>(({ id }, ref) => {
 const Hero: React.FC<NavProps> = ({ id }) => {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 768px)",
@@ -21,7 +20,6 @@ const Hero: React.FC<NavProps> = ({ id }) => {
   const [isClosing, setIsClosing] = useState(false);
 
   return (
-    // <section className="hero container" ref={ref} id={id}>
     <section className="hero container" id={id}>
       <div className="hero__wrapper">
         <div className="hero__title">

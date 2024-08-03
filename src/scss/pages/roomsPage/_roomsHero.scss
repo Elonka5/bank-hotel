@@ -22,7 +22,7 @@ $bg-img-mobile: "/rooms-hero-mobile.webp";
 
   @include sm {
     position: relative;
-    margin-top:-85px;
+    margin-top: -85px;
     max-width: 375px;
   }
 
@@ -42,7 +42,7 @@ $bg-img-mobile: "/rooms-hero-mobile.webp";
     background-position: center;
     background-repeat: no-repeat;
     transition: background-image 2s ease-in-out;
-    padding: 50px 0;
+    padding: 99px 0;
 
     @include lg {
       height: 675px;

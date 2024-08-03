@@ -10,19 +10,6 @@ const TickerText: React.FC<Ticker> = ({
   return (
     <p className="ticker-text">
       {textArray.map((text, i) => (
-        // <span
-        //   key={i}
-        //   className={
-        //     highlightEveryNth && (i + 1) % highlightEveryNth === 0
-        //       ? "highlight"
-        //       : ""
-        //   }
-        // >
-        //   {highlightEveryNth && (i + 1) % highlightEveryNth === 0
-        //     ? `${text} &#xa9; `
-        //     : `${text} `}
-        // </span>
-
         <span
           key={i}
           className={
