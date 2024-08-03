@@ -2,7 +2,7 @@ import { useMediaQuery } from "react-responsive";
 import Icon from "../../../Icon/Icon";
 
 const GalleryHero = () => {
-  const isMobileSm = useMediaQuery({ maxWidth: 1023.99 });
+  const isMobileSm = useMediaQuery({ maxWidth: 767.98 });
 
   return (
     <div className="container gallery--hero">

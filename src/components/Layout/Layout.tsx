@@ -4,29 +4,15 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import GetInTouch from "../GetInTouch/GetInTouch";
 import Loader from "./Loader/Loader";
-
-// type ActiveSectionContextType = {
-//   getintouchRef: React.RefObject<HTMLDivElement>;
-// };
+import ButtonScrollToTop from "../ButtonScrollToTop/ButtonScrollToTop";
 
 const Layout = () => {
-  // const location = useLocation();
-
-  // useEffect(() => {
-  //   const hash = location.hash;
-  //   if (hash) {
-  //     const element = document.getElementById(hash.substring(1));
-  //     if (element) {
-  //       element.scrollIntoView({ behavior: "smooth" });
-  //     }
-  //   }
-  // }, [location]);
-
   return (
     <>
       <Header />
       <Suspense fallback={<Loader />}>
         <Outlet />
+        <ButtonScrollToTop />
       </Suspense>
       <GetInTouch id="contacts" />
       <Footer />

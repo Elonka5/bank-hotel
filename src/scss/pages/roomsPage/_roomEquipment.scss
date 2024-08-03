@@ -16,6 +16,10 @@
     padding: 144px 20px 1px;
   }
 
+  @include ms {
+    padding: 134px 20px 1px;
+  }
+
   @include sm {
     flex-direction: column;
     justify-content: flex-start;
@@ -44,6 +48,12 @@
         margin-bottom: 69px;
         width: 357px;
         height: 357px;
+      }
+
+      @include ms {
+        margin-bottom: 56px;
+        width: 300px;
+        height: 300px;
       }
 
       @include sm {
@@ -95,6 +105,10 @@
         line-height: 1.77;
       }
 
+      @include ms {
+        margin-bottom: 156px;
+      }
+
       @include sm {
         margin-bottom: 0;
       }
@@ -116,6 +130,12 @@
       margin-right: -62px;
       width: 80px;
       height: 80px;
+    }
+
+    @include ms {
+      margin-right: -54px;
+      width: 70px;
+      height: 70px;
     }
 
     @include sm {
@@ -142,6 +162,11 @@
       font-size: 18px;
     }
 
+    @include ms {
+      padding: 12px 24px;
+      font-size: 16px;
+    }
+
     @include sm {
       margin-left: auto;
     }
@@ -157,6 +182,10 @@
 
     @include md {
       padding-top: 56px;
+    }
+
+    @include ms {
+      padding-top: 46px;
     }
 
     @include sm {
@@ -178,6 +207,11 @@
         height: 500px;
       }
 
+      @include ms {
+        width: 350px;
+        height: 480px;
+      }
+
       @include sm {
         margin-bottom: 38px;
         width: 355px;
@@ -192,6 +226,12 @@
 
       @include md {
         max-width: 355px;
+        font-size: 13px;
+        line-height: 1.77;
+      }
+
+      @include ms {
+        max-width: 348px;
         font-size: 13px;
         line-height: 1.77;
       }

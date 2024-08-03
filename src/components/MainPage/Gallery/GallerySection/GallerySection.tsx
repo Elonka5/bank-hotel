@@ -5,7 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import ResponsiveImage from "../../../ResponsiveImg/ResponsiveImg";
 
 const GallerySection = () => {
-  const isMobileSm = useMediaQuery({ maxWidth: 1023.98 });
+  const isMobileSm = useMediaQuery({ maxWidth: 767.98 });
 
   return (
     <div className="container gallery--container">

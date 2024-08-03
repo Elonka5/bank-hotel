@@ -11,7 +11,6 @@ export const navSections = [
   },
   {
     id: 5,
-    // value: "Conference hall",
     value: "Facilities",
     to: "/#facilities",
   },

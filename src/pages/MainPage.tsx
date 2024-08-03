@@ -15,7 +15,7 @@ const MainPage = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sectionId = location.hash.substring(1);
-      if (sectionId) {
+      if (sectionId !== "home") {
         const element = document.getElementById(sectionId);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
@@ -68,19 +68,7 @@ const MainPage = () => {
         <Facilities />
       </section>
       <Gallery />
-      {/* <GetInTouch id="contacts" /> */}
     </main>
-    // <main>
-    //   <Hero ref={homeRef} id="home" />
-    //   <AboutUs ref={aboutRef} id="about" />
-
-    //   <section ref={facilitiesRef} className="whitesection" id="facilities">
-    //     <RoomsApartments />
-    //     <Facilities />
-    //   </section>
-    //   <Gallery />
-    //   <GetInTouch ref={getintouchRef} id="contacts" />
-    // </main>
   );
 };
 

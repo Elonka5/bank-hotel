@@ -617,6 +617,51 @@ address {
   color: var(--white-100);
 }
 
+.scrollToTop {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 76px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0 0;
+  background-color: var(--text-color-80);
+  border-radius: 100%;
+  border: none;
+  outline: none;
+  opacity: 0;
+  z-index: 90;
+  transition: 250ms ease-in-out;
+}
+.scrollToTop.visible {
+  opacity: 1;
+}
+.scrollToTop:hover {
+  background-color: var(--text-color-100);
+}
+@media screen and (max-width: 1439.98px) {
+  .scrollToTop {
+    width: 40px;
+    height: 40px;
+  }
+}
+.scrollToTop svg {
+  width: 20px;
+  height: 18px;
+  fill: #ffffff;
+  stroke: #ffffff;
+  stroke-width: 2px;
+  transform: rotate(90deg);
+}
+@media screen and (max-width: 1439.98px) {
+  .scrollToTop svg {
+    width: 10px;
+    height: 10px;
+  }
+}
+
 .accordion__item--open {
   display: flex;
   flex-direction: row;
@@ -1043,6 +1088,22 @@ address {
   overflow: hidden;
   transform: translateX(-30px);
 }
+@media screen and (max-width: 1919.98px) {
+  .ticker--container {
+    transform: translateX(-20px);
+  }
+}
+@media screen and (max-width: 1439.98px) {
+  .ticker--container {
+    transform: translateX(-16px);
+  }
+}
+@media screen and (max-width: 1023.98px) {
+  .ticker--container {
+    width: 105%;
+    transform: translateX(-18px);
+  }
+}
 
 .ticker--wrapper {
   display: flex;
@@ -1085,6 +1146,12 @@ address {
   .ticker-text {
     font-size: 60px;
     line-height: 1.3;
+  }
+}
+@media screen and (max-width: 1023.98px) {
+  .ticker-text {
+    font-size: 46px;
+    line-height: 1.1;
   }
 }
 .ticker-text .highlight {
@@ -2341,7 +2408,7 @@ address {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  background-image: url(~../../../assets/images/mainImages/desktop1920/main-best-desktop-1920.webp);
+  background-image: url(/main-best-desktop-1920.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -2349,14 +2416,14 @@ address {
 }
 @media screen and (max-width: 1919.98px) {
   .gallery--hero {
-    background-image: url(~../../../assets/images/mainImages/desktop1440/main-best-desktop-1440.webp);
+    background-image: url(/main-best-desktop-1440.webp);
   }
 }
 @media screen and (max-width: 1439.98px) {
   .gallery--hero {
     padding-top: 50px;
     padding-bottom: 149px;
-    background-image: url(~../../../assets/images/mainImages/tablet/main-best-tablet.webp);
+    background-image: url(/main-best-tablet.webp);
   }
 }
 @media screen and (max-width: 767.98px) {
@@ -2461,6 +2528,12 @@ address {
     padding-bottom: 100px;
   }
 }
+@media screen and (max-width: 1023.98px) {
+  .gallery--container {
+    padding-top: 76px;
+    padding-bottom: 76px;
+  }
+}
 @media screen and (max-width: 767.98px) {
   .gallery--container {
     padding-top: 69px;
@@ -2523,6 +2596,13 @@ address {
     font-size: 18px;
   }
 }
+@media screen and (max-width: 1023.98px) {
+  .gallery--container .gallery--part__left .section--introduction {
+    max-width: 120px;
+    margin-bottom: 180px;
+    font-size: 14px;
+  }
+}
 .gallery--container .gallery--part__left .img--wrapper__nopaddingLeft {
   width: 312px;
   height: 284px;
@@ -2544,6 +2624,11 @@ address {
     margin-bottom: 108px;
   }
 }
+@media screen and (max-width: 1023.98px) {
+  .gallery--container .gallery--part__left .img--wrapper__nopaddingLeft {
+    width: 140px;
+  }
+}
 .gallery--container .gallery--part__left .img--wrapper__left {
   width: 285px;
   height: 387px;
@@ -2558,6 +2643,11 @@ address {
   .gallery--container .gallery--part__left .img--wrapper__left {
     width: 126px;
     height: 171px;
+  }
+}
+@media screen and (max-width: 1023.98px) {
+  .gallery--container .gallery--part__left .img--wrapper__left {
+    width: 120px;
   }
 }
 .gallery--container .gallery--part__center {
@@ -2577,6 +2667,12 @@ address {
   .gallery--container .gallery--part__center {
     margin-left: 67px;
     margin-right: 67px;
+  }
+}
+@media screen and (max-width: 1023.98px) {
+  .gallery--container .gallery--part__center {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 @media screen and (max-width: 767.98px) {
@@ -2600,6 +2696,13 @@ address {
     width: 70px;
     height: 50px;
     margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 1023.98px) {
+  .gallery--container .gallery--part__center--label {
+    width: 60px;
+    height: 50px;
+    margin-bottom: 21px;
   }
 }
 @media screen and (max-width: 767.98px) {
@@ -2634,11 +2737,19 @@ address {
     line-height: 0.88;
   }
 }
+@media screen and (max-width: 1023.98px) {
+  .gallery--container .gallery--part__center .gallery--title {
+    width: 466px;
+    margin-bottom: 30px;
+    font-size: 76px;
+    line-height: 1;
+  }
+}
 @media screen and (max-width: 767.98px) {
   .gallery--container .gallery--part__center .gallery--title {
     max-width: 338px;
+    margin-bottom: 50px;
     font-size: 60px;
-    line-height: 1;
     text-align: center;
   }
 }
@@ -2664,9 +2775,14 @@ address {
     line-height: 1.76;
   }
 }
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 1023.98px) {
   .gallery--container .gallery--part__center .gallery--description {
     max-width: 354px;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .gallery--container .gallery--part__center .gallery--description {
     margin-bottom: 50px;
   }
 }
@@ -2689,8 +2805,17 @@ address {
 }
 @media screen and (max-width: 1439.98px) {
   .gallery--container .gallery--part__center .img--wrapper__center {
-    width: 482px;
+    max-width: 482px;
+    width: 100%;
     height: 316px;
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 1023.98px) {
+  .gallery--container .gallery--part__center .img--wrapper__center {
+    max-width: 460px;
+    width: 100%;
+    height: auto;
     margin-bottom: 50px;
   }
 }
@@ -2792,6 +2917,12 @@ address {
     height: 36px;
   }
 }
+@media screen and (max-width: 1023.98px) {
+  .gallery--container .gallery--part__center .gallery--info__wrapper .gallery--info__icon {
+    width: 32px;
+    height: 32px;
+  }
+}
 .gallery--container .gallery--part__center .gallery--info__wrapper .gallery--info {
   max-width: 350px;
   width: 100%;
@@ -2804,6 +2935,11 @@ address {
     max-width: 223px;
     font-size: 16px;
     text-transform: capitalize;
+  }
+}
+@media screen and (max-width: 1023.98px) {
+  .gallery--container .gallery--part__center .gallery--info__wrapper .gallery--info {
+    font-size: 14px;
   }
 }
 .gallery--container .gallery--part__right {
@@ -2832,6 +2968,12 @@ address {
     padding-top: 293px;
   }
 }
+@media screen and (max-width: 1023.98px) {
+  .gallery--container .gallery--part__right .img--wrapper__nopaddingRight {
+    width: 140px;
+    padding-top: 240px;
+  }
+}
 .gallery--container .img--wrapper__right {
   position: relative;
   width: 443px;
@@ -2849,11 +2991,22 @@ address {
   .gallery--container .img--wrapper__right {
     width: 251px;
     height: 161px;
+    margin-top: -26px;
   }
 }
 .gallery--container .ticker--box {
   margin-top: -80px;
   z-index: 1;
+}
+@media screen and (max-width: 1439.98px) {
+  .gallery--container .ticker--box {
+    margin-top: -44px;
+  }
+}
+@media screen and (max-width: 1023.98px) {
+  .gallery--container .ticker--box {
+    margin-top: -28px;
+  }
 }
 
 .hero__rooms {
@@ -2898,7 +3051,7 @@ address {
   background-position: center;
   background-repeat: no-repeat;
   transition: background-image 2s ease-in-out;
-  padding: 50px 0;
+  padding: 99px 0;
 }
 @media screen and (max-width: 1919.98px) {
   .hero__rooms--carousel {
@@ -3297,6 +3450,11 @@ address {
     padding: 144px 20px 1px;
   }
 }
+@media screen and (max-width: 1023.98px) {
+  .roomEqpt-wrapper {
+    padding: 134px 20px 1px;
+  }
+}
 @media screen and (max-width: 767.98px) {
   .roomEqpt-wrapper {
     flex-direction: column;
@@ -3328,6 +3486,13 @@ address {
     margin-bottom: 69px;
     width: 357px;
     height: 357px;
+  }
+}
+@media screen and (max-width: 1023.98px) {
+  .roomEqpt-wrapper__lef-part .roomEqpt__img--wrapper1 {
+    margin-bottom: 56px;
+    width: 300px;
+    height: 300px;
   }
 }
 @media screen and (max-width: 767.98px) {
@@ -3383,6 +3548,11 @@ address {
     line-height: 1.77;
   }
 }
+@media screen and (max-width: 1023.98px) {
+  .roomEqpt-wrapper__lef-part .roomEqpt__allRooms-descr {
+    margin-bottom: 156px;
+  }
+}
 @media screen and (max-width: 767.98px) {
   .roomEqpt-wrapper__lef-part .roomEqpt__allRooms-descr {
     margin-bottom: 0;
@@ -3405,6 +3575,13 @@ address {
     margin-right: -62px;
     width: 80px;
     height: 80px;
+  }
+}
+@media screen and (max-width: 1023.98px) {
+  .roomEqpt-wrapper .roomEqpt-label {
+    margin-right: -54px;
+    width: 70px;
+    height: 70px;
   }
 }
 @media screen and (max-width: 767.98px) {
@@ -3431,6 +3608,12 @@ address {
     font-size: 18px;
   }
 }
+@media screen and (max-width: 1023.98px) {
+  .roomEqpt-wrapper .roomEqpt__bookBtn {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+}
 @media screen and (max-width: 767.98px) {
   .roomEqpt-wrapper .roomEqpt__bookBtn {
     margin-left: auto;
@@ -3447,6 +3630,11 @@ address {
 @media screen and (max-width: 1439.98px) {
   .roomEqpt-wrapper__right-part {
     padding-top: 56px;
+  }
+}
+@media screen and (max-width: 1023.98px) {
+  .roomEqpt-wrapper__right-part {
+    padding-top: 46px;
   }
 }
 @media screen and (max-width: 767.98px) {
@@ -3471,6 +3659,12 @@ address {
     height: 500px;
   }
 }
+@media screen and (max-width: 1023.98px) {
+  .roomEqpt-wrapper__right-part .roomEqpt__img--wrapper2 {
+    width: 350px;
+    height: 480px;
+  }
+}
 @media screen and (max-width: 767.98px) {
   .roomEqpt-wrapper__right-part .roomEqpt__img--wrapper2 {
     margin-bottom: 38px;
@@ -3486,6 +3680,13 @@ address {
 @media screen and (max-width: 1439.98px) {
   .roomEqpt-wrapper__right-part .roomEqpt__room-descr {
     max-width: 355px;
+    font-size: 13px;
+    line-height: 1.77;
+  }
+}
+@media screen and (max-width: 1023.98px) {
+  .roomEqpt-wrapper__right-part .roomEqpt__room-descr {
+    max-width: 348px;
     font-size: 13px;
     line-height: 1.77;
   }

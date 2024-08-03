@@ -31,6 +31,10 @@
     padding-bottom: 100px;
   }
 
+  @include ms {
+    padding-top: 140px;
+  }
+
   @include sm {
     padding-top: 100px;
     padding-bottom: 140px;
@@ -53,6 +57,11 @@
       font-size: 38px;
     }
 
+    @include ms {
+      font-size: 32px;
+      text-underline-offset: 14px;
+    }
+
     @include sm {
       font-size: 20px;
     }
@@ -61,17 +70,23 @@
   &--icon-wave--wrapper {
     position: absolute;
     width: 100%;
-    height: 560px;
-    top: 26%;
+    height: 510px;
+    top: 28%;
     left: 0;
     z-index: 1;
 
     @include lg {
-      top: 25%;
+      height: 508px;
+      top: 27%;
     }
 
     @include md {
-      top: 18%;
+      height: 274px;
+      top: 26%;
+    }
+
+    @include ms {
+      top: 24%;
     }
 
     .icon-wave {
@@ -131,6 +146,11 @@
         font-size: 150px;
       }
 
+      @include ms {
+        gap: 20px;
+        font-size: 104px;
+      }
+
       @include sm {
         position: absolute;
         top: 112px;
@@ -175,6 +195,11 @@
           right: -85%;
         }
 
+        @include ms {
+          bottom: -130%;
+          right: -86%;
+        }
+
         @include sm {
           bottom: -84px;
           right: -70px;
@@ -190,6 +215,7 @@
       }
 
       .address--wrapper {
+        position: relative;
         margin-bottom: 177px;
         max-width: 284px;
         width: 100%;
@@ -197,7 +223,7 @@
         font-size: 26px;
         line-height: 1.19;
         color: var(--text-color-100);
-        z-index: 1;
+        z-index: 2;
 
         @include lg {
           margin-bottom: 180px;
@@ -208,6 +234,10 @@
         @include md {
           margin-bottom: 100px;
           max-width: 176px;
+        }
+
+        @include ms {
+          margin-bottom: 80px;
         }
 
         @include sm {
@@ -246,6 +276,10 @@
 
     @include md {
       margin-top: 171px;
+    }
+
+    @include ms {
+      margin-top: 106px;
     }
 
     &--title {

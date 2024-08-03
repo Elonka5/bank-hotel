@@ -3,7 +3,7 @@ import Icon from "../Icon/Icon";
 import ResponsiveImage from "../ResponsiveImg/ResponsiveImg";
 
 const RoomEquipment = () => {
-  const isMobileSm = useMediaQuery({ maxWidth: 1023.98 });
+  const isMobileSm = useMediaQuery({ maxWidth: 767.98 });
 
   return (
     <section className="section">
