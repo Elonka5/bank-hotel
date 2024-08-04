@@ -46,6 +46,7 @@ const Header: React.FC = () => {
     }
     console.log(sections);
     console.log(links);
+    console.log(viewportWidth);
     const cb: IntersectionObserverCallback = (entries) => {
       if (isManualScroll) return;
       entries.forEach((entry) => {
@@ -97,7 +98,7 @@ const Header: React.FC = () => {
     };
 
     const options = {
-      threshold: isNotDesktop ? [0, 0.2, 0.5, 0.8] : [0.2, 0.8],
+      threshold: isNotDesktop ? [0.8, 1] : [0, 0.2, 0.5, 1],
     };
 
     const sectionObserver = new IntersectionObserver(cb, options);
@@ -150,9 +151,6 @@ const Header: React.FC = () => {
                   <li key={id}>
                     <Link
                       className="nav--list__link"
-                      // className={`nav--list__link
-                      // ${isActive(to) ? "active" : ""}
-                      // `}
                       to={to}
                       onClick={handleLinkClick}
                     >
