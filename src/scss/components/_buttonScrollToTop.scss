@@ -31,8 +31,8 @@
   @include md {
     width: 40px;
     height: 40px;
-    // top: calc(100svh - 16px);
-    bottom: 60px;
+    top: calc(100svh - 56px);
+    // bottom: 60px;
   }
 
   svg {
