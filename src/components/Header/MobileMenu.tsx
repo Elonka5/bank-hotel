@@ -5,11 +5,7 @@ import Icon from "../Icon/Icon";
 import { MobileMenuProps } from "../../entities/mobileMenu";
 import { Link } from "react-router-dom";
 
-const MobileMenu: React.FC<MobileMenuProps> = ({
-  menuOpen,
-  onClick,
-  // isActive,
-}) => {
+const MobileMenu: React.FC<MobileMenuProps> = ({ menuOpen, onClick }) => {
   return (
     <div className={`mobile--menu--container  ${menuOpen ? "active" : ""}`}>
       <div className="container inner-wrapper">
@@ -19,9 +15,6 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
               <li key={id}>
                 <Link
                   className="nav--list--mobile__link"
-                  // className={`nav--list--mobile__link ${
-                  //   isActive(to) ? "active" : ""
-                  // }`}
                   to={to}
                   onClick={onClick}
                 >
