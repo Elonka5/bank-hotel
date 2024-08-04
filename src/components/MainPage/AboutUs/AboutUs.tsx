@@ -10,7 +10,7 @@ const AboutUs: React.FC<NavProps> = ({ id }) => {
   const isMobile = useMediaQuery({ maxWidth: 767.98 });
 
   return (
-    <section className="aboutus container" id={id}>
+    <section className="aboutus container section-observe" id={id}>
       <div className="line-container"></div>
       {!isMobile ? (
         <>

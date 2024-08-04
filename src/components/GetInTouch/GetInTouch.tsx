@@ -21,7 +21,7 @@ const GetInTouch: React.FC<NavProps> = ({ id }) => {
   const [isClosing, setIsClosing] = useState(false);
 
   return (
-    <section className="section" id={id}>
+    <section className="section section-observe" id={id}>
       <div className="container touch__container">
         <a className="touch__container--phone" href="tel:+380322975020">
           +38 032 297 50 20

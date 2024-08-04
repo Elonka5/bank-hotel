@@ -1,11 +1,12 @@
 import Icon from "../../Icon/Icon";
 import Accordion from "../Accordion/Accordion";
 import ResponsiveImage from "../../ResponsiveImg/ResponsiveImg";
+import { NavProps } from "../../../entities/navprops";
 
-const Facilities = () => {
+const Facilities: React.FC<NavProps> = ({ id }) => {
   return (
     <section className="facilities container">
-      <div className="facilities__wrapper">
+      <div className="facilities__wrapper section-observe" id={id}>
         <div className="facilities__wrapper--left">
           <p className="text">
             Art & Congress <span className="text--hall">hall</span>
