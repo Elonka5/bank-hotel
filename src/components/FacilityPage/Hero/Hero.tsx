@@ -2,7 +2,10 @@ import Icon from "../../Icon/Icon";
 
 const Hero = () => {
   return (
-    <section className="facility-hero container">
+    <section
+      className="facility-hero container section-observe"
+      id="restaurant"
+    >
       <h1 className="facility-hero__title">“Safe” restaurant</h1>
       <div className="facility-hero__descriptions">
         <div className="first-container">

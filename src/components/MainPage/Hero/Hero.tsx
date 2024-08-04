@@ -20,7 +20,7 @@ const Hero: React.FC<NavProps> = ({ id }) => {
   const [isClosing, setIsClosing] = useState(false);
 
   return (
-    <section className="hero container" id={id}>
+    <section className="hero container section-observe" id={id}>
       <div className="hero__wrapper">
         <div className="hero__title">
           <h1>

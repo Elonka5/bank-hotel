@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const MobileMenu: React.FC<MobileMenuProps> = ({
   menuOpen,
   onClick,
-  isActive,
+  // isActive,
 }) => {
   return (
     <div className={`mobile--menu--container  ${menuOpen ? "active" : ""}`}>
@@ -18,9 +18,10 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
             {navLinks.map(({ id, value, to }: NavLinkType) => (
               <li key={id}>
                 <Link
-                  className={`nav--list--mobile__link ${
-                    isActive(to) ? "active" : ""
-                  }`}
+                  className="nav--list--mobile__link"
+                  // className={`nav--list--mobile__link ${
+                  //   isActive(to) ? "active" : ""
+                  // }`}
                   to={to}
                   onClick={onClick}
                 >
