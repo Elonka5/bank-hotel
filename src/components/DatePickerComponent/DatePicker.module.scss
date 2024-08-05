@@ -559,6 +559,25 @@
         }
       }
     }
+    // === Class is added to the GetInTouch component on BookingRoomFormDatePicker for Mobile version of the RestaurantPage ===
+    &.restaurantPageStylesForm {
+      .wrapper {
+        [class$="__input-container"] {
+          & input {
+            color: var(--white-100);
+            &::placeholder {
+              color: var(--white-100);
+            }
+          }
+        }
+      }
+      [class*="dropdown-indicator"] {
+        &[class*="__close-icon"] {
+          fill: var(--white-100);
+        }
+      }
+    }
+    // ======
   }
 
   &.mobile_rooms {
@@ -625,6 +644,25 @@
         }
       }
     }
+    // === Class is added to the GetInTouch component on BookingRoomFormDatePicker ===
+    &.restaurantPageStylesForm {
+      .wrapper {
+        [class$="__input-container"] {
+          & input {
+            color: var(--white-100);
+            &::placeholder {
+              color: var(--white-100);
+            }
+          }
+        }
+      }
+      [class*="dropdown-indicator"] {
+        &[class*="__close-icon"] {
+          fill: var(--white-100);
+        }
+      }
+    }
+    // ====
   }
 
   // ====== HERO FORM STYLES ======

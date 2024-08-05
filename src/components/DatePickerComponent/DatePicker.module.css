@@ -473,6 +473,15 @@
 .datepicker.mobile .calendar__children [class*=buttons-wrapper] [class$=buttons], .datepicker.mobile_rooms .calendar__children [class*=buttons-wrapper] [class$=buttons] {
   margin-top: 14px;
 }
+.datepicker.mobile.restaurantPageStylesForm .wrapper [class$=__input-container] input, .datepicker.mobile_rooms.restaurantPageStylesForm .wrapper [class$=__input-container] input {
+  color: var(--white-100);
+}
+.datepicker.mobile.restaurantPageStylesForm .wrapper [class$=__input-container] input::placeholder, .datepicker.mobile_rooms.restaurantPageStylesForm .wrapper [class$=__input-container] input::placeholder {
+  color: var(--white-100);
+}
+.datepicker.mobile.restaurantPageStylesForm [class*=dropdown-indicator][class*=__close-icon], .datepicker.mobile_rooms.restaurantPageStylesForm [class*=dropdown-indicator][class*=__close-icon] {
+  fill: var(--white-100);
+}
 .datepicker.mobile_rooms .calendar {
   width: 375px;
 }
@@ -533,6 +542,15 @@
   font-size: 12px;
   line-height: 1.6;
   color: var(--text-color-100);
+}
+.datepicker.touch.restaurantPageStylesForm .wrapper [class$=__input-container] input {
+  color: var(--white-100);
+}
+.datepicker.touch.restaurantPageStylesForm .wrapper [class$=__input-container] input::placeholder {
+  color: var(--white-100);
+}
+.datepicker.touch.restaurantPageStylesForm [class*=dropdown-indicator][class*=__close-icon] {
+  fill: var(--white-100);
 }
 .datepicker.hero_rooms .popperEnd {
   transform: translate(-368.5px, 150px) !important;
