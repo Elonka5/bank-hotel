@@ -58,6 +58,7 @@
       .nav--list__link {
         padding-top: 40px;
         padding-bottom: 80px;
+        transition: color 1s;
 
         &.active {
           color: var(--secondary-color-100);

@@ -44,9 +44,7 @@ const Header: React.FC = () => {
     if (btnScroll) {
       btnScroll.addEventListener("click", handleLinkClick);
     }
-    console.log(sections);
-    console.log(links);
-    console.log(viewportWidth);
+
     const cb: IntersectionObserverCallback = (entries) => {
       if (isManualScroll) return;
       entries.forEach((entry) => {
@@ -57,7 +55,6 @@ const Header: React.FC = () => {
           // const activeLink = document.querySelector<HTMLAnchorElement>(
           //   `.nav--list__link[href="/#${activeId}"]`
           // );
-          console.log(activeId);
           const activeLink = Array.from(
             document.querySelectorAll<HTMLAnchorElement>(
               ".nav--list__link"
@@ -81,7 +78,6 @@ const Header: React.FC = () => {
             if (activeLink) {
               activeLink.classList.add("active");
             }
-            console.log(activeLink);
           } else if (activeLinkMobile) {
             activeLinkMobile.classList.add("active");
           }
