@@ -2,6 +2,10 @@
 
 .footer {
   background-color: var(--white-100);
+
+  &.restaurantPageStyles {
+    background-color: var(--primary-color-100);
+  }
 }
 
 .footer__container {
@@ -11,12 +15,14 @@
   justify-content: start;
   padding-top: 100px;
   padding-bottom: 100px;
+  border-top: 1px solid var(--text-color-24);
   gap: 30px;
   color: var(--text-color-100);
 
   @include md {
     padding-top: 70px;
     padding-bottom: 70px;
+    border-top: 1px solid var(--text-color-20);
   }
 
   @include sm {
@@ -24,6 +30,7 @@
     gap: 0;
     padding-top: 50px;
     padding-bottom: 50px;
+    border-top: 1px solid var(--text-color-16);
   }
 
   .footer__list {
@@ -63,25 +70,6 @@
         color: var(--secondary-color-100);
       }
     }
-
-    // .title::before {
-    //   content: "";
-    //   position: absolute;
-    //   top: -36%;
-    //   left: -1%;
-    //   // transform: translate(-50%, 50%);
-    //   display: block;
-    //   width: 2px;
-    //   height: 170%;
-    //   background-color: var(--secondary-color-100);
-    //   transform-origin: top left;
-    //   transform: rotate(20deg);
-
-    //   @include md {
-    //     top: -20%;
-    //     height: 144%;
-    //   }
-    // }
 
     .description {
       color: var(--text-color-80);
@@ -172,3 +160,31 @@
     }
   }
 }
+
+// ====== RESTAURANT PAGE STYLES ======
+
+.restaurantPageStyles {
+  .footer__container {
+    color: var(--white-100);
+    border-top: 1px solid var(--white-20);
+
+    @include ms {
+      border-top: 1px solid var(--white-12);
+    }
+
+    .description {
+      color: var(--white-100);
+    }
+
+    .rights {
+      color: var(--white-40);
+    }
+
+    .email--link {
+      color: var(--white-48);
+      border: 1px solid var(--white-64);
+    }
+  }
+}
+
+// =======================================

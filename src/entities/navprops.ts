@@ -1,3 +1,4 @@
 export type NavProps = {
-  id: string;
+  id?: string;
+  isRestaurantPage?: boolean;
 };

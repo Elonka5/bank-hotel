@@ -135,10 +135,11 @@ address {
   --primary-color-32: rgba(49, 63, 56, 0.32);
   --primary-color-24: rgba(49, 63, 56, 0.24);
   --primary-color-16: rgba(49, 63, 56, 0.16);
-  --primary-color-50: rgb(49, 63, 56, 0.5);
+  --primary-color-50: rgba(49, 63, 56, 0.5);
   --secondary-color-100: rgb(252, 208, 67);
   --secondary-color-80: rgba(252, 208, 67, 0.8);
   --secondary-color-64: rgba(252, 208, 67, 0.64);
+  --secondary-color-60: rgba(252, 208, 67, 0.6)
   --secondary-color-48: rgba(252, 208, 67, 0.48);
   --secondary-color-32: rgba(252, 208, 67, 0.32);
   --secondary-color-24: rgba(252, 208, 67, 0.24);
@@ -151,15 +152,17 @@ address {
   --text-color-32: rgba(27, 59, 54, 0.32);
   --text-color-24: rgba(27, 59, 54, 0.24);
   --text-color-16: rgba(27, 59, 54, 0.16);
+  --text-color-20: rgba(27, 59, 54, 0.2);
   --white-100: rgb(255, 252, 246);
   --white-20: rgb(255, 252, 246, 0.2);
+  --white-40: rgb(255, 252, 246, 0.4);
   --white-80: rgba(255, 252, 246, 0.8);
   --white-64: rgba(255, 252, 246, 0.64);
   --white-48: rgba(255, 252, 246, 0.48);
   --white-32: rgba(255, 252, 246, 0.32);
   --white-24: rgba(255, 252, 246, 0.24);
   --white-16: rgba(255, 252, 246, 0.16);
-  --white-12: #fffcf61f;
+  --white-12: rgba(255, 252, 246, 0.122);
   --text: #1b3b36;
   --lines-color: #3f5148;
   --other-error: #b03e3e;
@@ -461,6 +464,10 @@ address {
     height: 100px;
   }
 }
+.booking-form.touch.restaurantPageStylesForm {
+  background: var(--white-12);
+  backdrop-filter: blur(20px);
+}
 .booking-form.hero_rooms {
   position: absolute;
   top: 0;
@@ -530,6 +537,9 @@ address {
   .booking-form .form__select-container.touch.first-select::before {
     height: 35px;
   }
+}
+.booking-form .form__select-container.touch.restaurantPageStylesForm.first-select::before {
+  background-color: var(--white-100);
 }
 .booking-form .form__select-container.first-select::before {
   content: "";
@@ -616,6 +626,22 @@ address {
   opacity: 0.2;
   color: var(--white-100);
 }
+.booking-form .form__btn-submit.touch.restaurantPageStylesForm {
+  transition: 250ms ease-in-out;
+  background: var(--button-light-color-default);
+  color: var(--text-color-100);
+}
+.booking-form .form__btn-submit.touch.restaurantPageStylesForm:hover {
+  background: var(--button-light-color-hover);
+}
+.booking-form .form__btn-submit.touch.restaurantPageStylesForm:active {
+  background: var(--button-light-color-active);
+}
+.booking-form .form__btn-submit.touch.restaurantPageStylesForm:disabled {
+  background: var(--button-light-color-disabled);
+  opacity: 0.2;
+  color: var(--text-color-100);
+}
 
 .scrollToTop {
   position: fixed;
@@ -626,10 +652,10 @@ address {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 0 0;
-  background-color: var(--text-color-80);
+  padding: 8px;
+  background-color: var(--primary-color-80);
   border-radius: 100%;
-  border: none;
+  border: 1px solid var(--white-48);
   outline: none;
   opacity: 0;
   z-index: 90;
@@ -639,26 +665,49 @@ address {
   opacity: 1;
 }
 .scrollToTop:hover {
-  background-color: var(--text-color-100);
+  background-color: var(--button-light-color-hover);
+}
+.scrollToTop:hover svg {
+  transition: 250ms ease-in-out;
+  opacity: 1;
 }
 @media screen and (max-width: 1439.98px) {
   .scrollToTop {
-    width: 40px;
-    height: 40px;
+    justify-content: flex-start;
+    width: 60px;
+    height: 60px;
+    bottom: 100px;
+    right: -30px;
+    transition: 250ms ease-in-out;
+  }
+  .scrollToTop.opened {
+    justify-content: center;
+    gap: 20px;
+    width: 200px;
+    background-color: var(--button-light-color-hover);
+    color: var(--white-100);
+    font-family: "Miracle regular", sans-serif;
+    font-size: 22px;
+    transform: translateX(-40px);
+    border-radius: 10px;
+    transition: 250ms ease-in-out;
   }
 }
 .scrollToTop svg {
-  width: 20px;
-  height: 18px;
+  width: 18px;
+  height: 20px;
+  margin-top: 4px;
   fill: #ffffff;
   stroke: #ffffff;
   stroke-width: 2px;
   transform: rotate(90deg);
+  transition: 250ms ease-in-out;
 }
 @media screen and (max-width: 1439.98px) {
   .scrollToTop svg {
-    width: 10px;
-    height: 10px;
+    opacity: 0.7;
+    width: 15px;
+    height: 14px;
   }
 }
 

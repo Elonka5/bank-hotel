@@ -68,6 +68,11 @@
     @include md {
       height: 100px;
     }
+
+    &.restaurantPageStylesForm {
+      background: var(--white-12);
+      backdrop-filter: blur(20px);
+    }
   }
 
   &.hero_rooms {
@@ -149,6 +154,13 @@
             height: 35px;
           }
         }
+        // === Class is added to the GetInTouch component on BookingRoomFormDatePicker ===
+        &.restaurantPageStylesForm {
+          &.first-select::before {
+            background-color: var(--white-100);
+          }
+        }
+        // ====================================
       }
 
       &.first-select::before {
@@ -220,6 +232,12 @@
           $svg: no
         ) {
           color: var(--white-100);
+        }
+
+        &.restaurantPageStylesForm {
+          @include btn-state-changes($svg: no) {
+            color: var(--text-color-100);
+          }
         }
       }
     }

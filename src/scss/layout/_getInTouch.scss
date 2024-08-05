@@ -2,6 +2,10 @@
 
 .section {
   background-color: var(--white-100);
+
+  &.restaurantPageStyles {
+    background-color: var(--primary-color-100);
+  }
 }
 
 .touch__container {
@@ -15,11 +19,6 @@
   // background-size: contain;
   // background-position: center;
   // background-size: 1920px;
-
-  .touchDPForm {
-    background: var(--text-color-16);
-    backdrop-filter: blur(20px);
-  }
 
   @include lg {
     padding-top: 250px;
@@ -73,6 +72,7 @@
     height: 510px;
     top: 28%;
     left: 0;
+    color: var(--secondary-color-100);
     z-index: 1;
 
     @include lg {
@@ -95,28 +95,68 @@
     }
   }
 
+  .address--wrapper {
+    position: relative;
+    margin-top: 83px;
+    margin-left: 1256px;
+    max-width: 284px;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 26px;
+    line-height: 1.19;
+    color: var(--text-color-100);
+    z-index: 2;
+
+    @include lg {
+      margin-top: 81px;
+      margin-left: 950px;
+      max-width: 240px;
+      font-size: 18px;
+    }
+
+    @include md {
+      margin-top: 52px;
+      margin-left: 640px;
+      max-width: 176px;
+    }
+
+    @include ms {
+      margin-left: 498px;
+    }
+
+    @include sm {
+      margin-top: 71px;
+      margin-left: 180px;
+    }
+  }
+
   .touch__wrapper {
     position: relative;
     display: flex;
     justify-content: start;
     align-items: center;
     gap: 195px;
-    margin-top: 83px;
+    margin-top: 177px;
 
     @include lg {
       gap: 76px;
-      margin-top: 81px;
+      margin-top: 180px;
     }
 
     @include md {
       gap: 100px;
-      margin-top: 52px;
+      margin-top: 100px;
+    }
+
+    @include ms {
+      margin-top: 80px;
     }
 
     @include sm {
       justify-content: end;
       gap: 0;
-      margin-top: 71px;
+      margin-top: 0;
+      padding-top: 204px;
     }
 
     &--title {
@@ -124,6 +164,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-top: -218px;
       gap: 38px;
 
       font-family: "Miracle regular", sans-serif;
@@ -143,6 +184,7 @@
 
       @include md {
         gap: 29px;
+        margin-bottom: -124px;
         font-size: 150px;
       }
 
@@ -153,7 +195,7 @@
 
       @include sm {
         position: absolute;
-        top: 112px;
+        top: 290px;
         left: 0;
         gap: 0;
         font-size: 84px;
@@ -181,7 +223,7 @@
 
       .second-title-part {
         position: absolute;
-        bottom: -166%;
+        bottom: -160%;
         right: -75%;
         color: var(--secondary-color-100);
 
@@ -214,37 +256,6 @@
         align-items: flex-end;
       }
 
-      .address--wrapper {
-        position: relative;
-        margin-bottom: 177px;
-        max-width: 284px;
-        width: 100%;
-        text-transform: uppercase;
-        font-size: 26px;
-        line-height: 1.19;
-        color: var(--text-color-100);
-        z-index: 2;
-
-        @include lg {
-          margin-bottom: 180px;
-          max-width: 240px;
-          font-size: 18px;
-        }
-
-        @include md {
-          margin-bottom: 100px;
-          max-width: 176px;
-        }
-
-        @include ms {
-          margin-bottom: 80px;
-        }
-
-        @include sm {
-          margin-bottom: 204px;
-        }
-      }
-
       .touch__img--wrapper {
         width: 443px;
         height: 443px;
@@ -275,7 +286,7 @@
     }
 
     @include md {
-      margin-top: 171px;
+      margin-top: 119px;
     }
 
     @include ms {
@@ -296,4 +307,73 @@
       }
     }
   }
+
+  // === For Mobile Form in GetInTouch additional style ===
+  .touchDPForm {
+    background: var(--text-color-16);
+    backdrop-filter: blur(20px);
+  }
+  // ===
 }
+
+// ====== RESTAURANT PAGE STYLES ======
+
+.restaurantPageStyles {
+  .touch__container--phone {
+    text-align: end;
+    color: var(--white-100);
+  }
+
+  .touch__container {
+    &--phone {
+      position: relative;
+      text-decoration-color: var(--white-48);
+      text-underline-offset: 12px;
+      z-index: 1;
+    }
+    .address--wrapper {
+      margin-left: 0;
+      color: var(--white-100);
+    }
+
+    &--icon-wave--wrapper {
+      height: 480px;
+      top: 24%;
+      color: var(--white-20);
+      z-index: 0;
+
+      @include lg {
+        height: 530px;
+        top: 19%;
+      }
+
+      @include md {
+        height: 420px;
+        top: 18%;
+      }
+
+      @include ms {
+        height: 400px;
+        top: 12%;
+      }
+
+      .icon-wave {
+        transform: rotateY(180deg);
+      }
+    }
+
+    .touch__wrapper {
+      &--title {
+        color: var(--white-100);
+      }
+    }
+  }
+
+  .touch__form--wrapper {
+    &--title {
+      color: var(--white-100);
+    }
+  }
+}
+
+// =======================================
