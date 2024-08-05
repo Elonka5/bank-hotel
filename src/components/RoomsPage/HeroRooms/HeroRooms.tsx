@@ -78,10 +78,11 @@ const HeroRooms: React.FC = () => {
       )}
 
       <div
-        className="hero__rooms--carousel"
+        className="hero__rooms--carousel  section-observe"
         style={{
           backgroundImage: `url(${getCurrentImages()[currentImageIndex]})`,
         }}
+        id="rooms"
       >
         <div className="carousel__dots">
           {getCurrentImages().map((_, index) => (

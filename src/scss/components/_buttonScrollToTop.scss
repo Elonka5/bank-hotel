@@ -7,10 +7,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 0 0;
-  background-color: var(--text-color-80);
+  padding: 8px;
+  background-color: var(--primary-color-80);
   border-radius: 100%;
-  border: none;
+  border: 1px solid var(--white-48);
   outline: none;
   opacity: 0;
   z-index: 90;
@@ -21,25 +21,49 @@
   }
 
   &:hover {
-    background-color: var(--text-color-100);
+    background-color: var(--button-light-color-hover);
+  }
+  &:hover svg {
+    @include transition-standart;
+    opacity: 1;
   }
 
   @include md {
-    width: 40px;
-    height: 40px;
+    justify-content: flex-start;
+    width: 60px;
+    height: 60px;
+    bottom: 100px;
+    right: -30px;
+    @include transition-standart;
+
+    &.opened {
+      justify-content: center;
+      gap: 20px;
+      width: 200px;
+      background-color: var(--button-light-color-hover);
+      color: var(--white-100);
+      font-family: "Miracle regular", sans-serif;
+      font-size: 22px;
+      transform: translateX(-40px);
+      border-radius: 10px;
+      @include transition-standart;
+    }
   }
 
   svg {
-    width: 20px;
-    height: 18px;
+    width: 18px;
+    height: 20px;
+    margin-top: 4px;
     fill: #ffffff;
     stroke: #ffffff;
     stroke-width: 2px;
     transform: rotate(90deg);
+    @include transition-standart;
 
     @include md {
-      width: 10px;
-      height: 10px;
+      opacity: 0.7;
+      width: 15px;
+      height: 14px;
     }
   }
 }

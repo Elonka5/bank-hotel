@@ -1,19 +1,21 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import "../../scss/layout/_header.scss";
 import Icon from "../Icon/Icon.tsx";
 import MobileMenu from "./MobileMenu.tsx";
-// import { useActiveSection } from "../../helpers/useActiveSection.ts";
 import { navLinks } from "../../helpers/navLinks.ts";
 import { NavLinkType } from "../../entities/navLinkTypes.ts";
+import { useAfterLoad } from "../../helpers/useAfterLoad.ts";
 
 const Header: React.FC = () => {
   const isNotDesktop = useMediaQuery({ maxWidth: 1439.98 });
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSection] = useState<string | null>(null);
-  // const { activeSection } = useActiveSection();
+  const [isManualScroll, setIsManualScroll] = useState(false);
+  const isPageLoaded = useAfterLoad();
+
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (menuOpen) {
@@ -25,18 +27,100 @@ const Header: React.FC = () => {
   }, [menuOpen]);
 
   const handleToggleMenu = () => {
+    handleLinkClick();
     setMenuOpen(!menuOpen);
   };
 
-  const isActive = (path: string) => {
-    const sectionPath = path.split(" ")[1];
-    return sectionPath
-      ? activeSection === sectionPath
-      : location.pathname + location.hash === path;
-  };
+  const viewportWidth = window.innerWidth;
 
-  // window.addEventListener("scroll", changeColor);
-  // ------------------------------------------------------
+  useEffect(() => {
+    if (!isPageLoaded) return;
+    const sections = document.querySelectorAll<HTMLElement>(".section-observe");
+    const links = document.querySelectorAll<HTMLAnchorElement>(
+      ".nav--list__link, .nav--list--mobile__link"
+    );
+    const btnScroll = document.querySelector<HTMLButtonElement>(".scrollToTop");
+
+    if (btnScroll) {
+      btnScroll.addEventListener("click", handleLinkClick);
+    }
+
+    const cb: IntersectionObserverCallback = (entries) => {
+      if (isManualScroll) return;
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+          links.forEach((link) => link.classList.remove("active"));
+
+          const activeId = entry.target.id;
+          // const activeLink = document.querySelector<HTMLAnchorElement>(
+          //   `.nav--list__link[href="/#${activeId}"]`
+          // );
+          const activeLink = Array.from(
+            document.querySelectorAll<HTMLAnchorElement>(
+              ".nav--list__link"
+              // ".nav--list__link, .nav--list--mobile__link"
+            )
+          ).find((link) => {
+            const href = link.getAttribute("href");
+            return href === `/${activeId}` || href === `/#${activeId}`;
+          });
+
+          const activeLinkMobile = Array.from(
+            document.querySelectorAll<HTMLAnchorElement>(
+              ".nav--list--mobile__link"
+            )
+          ).find((link) => {
+            const href = link.getAttribute("href");
+            return href === `/${activeId}` || href === `/#${activeId}`;
+          });
+
+          if (viewportWidth > 1439.98) {
+            if (activeLink) {
+              activeLink.classList.add("active");
+            }
+          } else if (activeLinkMobile) {
+            activeLinkMobile.classList.add("active");
+          }
+
+          if (location.hash.includes("#") && location.hash !== `#${activeId}`) {
+            navigate(`#${activeId}`, { replace: true });
+          }
+
+          if (location.pathname === "/" && location.hash !== `#${activeId}`) {
+            navigate(`#${activeId}`, { replace: true });
+          }
+        }
+      });
+    };
+
+    const options = {
+      threshold: isNotDesktop ? [0.8, 1] : [0, 0.2, 0.5, 1],
+    };
+
+    const sectionObserver = new IntersectionObserver(cb, options);
+
+    if (sections.length > 1) {
+      sections.forEach((section) => sectionObserver.observe(section));
+    }
+
+    return () => {
+      sectionObserver.disconnect();
+      btnScroll?.removeEventListener("click", handleLinkClick);
+    };
+  }, [
+    location.hash,
+    location.pathname,
+    navigate,
+    isManualScroll,
+    isPageLoaded,
+    viewportWidth,
+    isNotDesktop,
+  ]);
+
+  const handleLinkClick = () => {
+    setIsManualScroll(true);
+    setTimeout(() => setIsManualScroll(false), 1000);
+  };
 
   return (
     <header className="header">
@@ -62,10 +146,9 @@ const Header: React.FC = () => {
                 {navLinks.map(({ id, value, to }: NavLinkType) => (
                   <li key={id}>
                     <Link
-                      className={`nav--list__link
-                      ${isActive(to) ? "active" : ""}
-                      `}
+                      className="nav--list__link"
                       to={to}
+                      onClick={handleLinkClick}
                     >
                       {value}
                     </Link>
@@ -100,7 +183,7 @@ const Header: React.FC = () => {
         <MobileMenu
           menuOpen={menuOpen}
           onClick={handleToggleMenu}
-          isActive={isActive}
+          // isActive={isActive}
         />
       )}
     </header>

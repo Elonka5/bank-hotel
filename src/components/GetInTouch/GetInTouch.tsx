@@ -22,7 +22,9 @@ const GetInTouch: React.FC<NavProps> = ({ id, isRestaurantPage }) => {
 
   return (
     <section
-      className={`section ${isRestaurantPage ? "restaurantPageStyles" : ""}`}
+      className={`section section-observe ${
+        isRestaurantPage ? "restaurantPageStyles" : ""
+      }`}
       id={id}
     >
       <div className="container touch__container">
