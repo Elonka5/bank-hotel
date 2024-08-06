@@ -11,7 +11,6 @@ const MainPage = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // const handleScroll = () => {
     const sectionId = location.hash.substring(1);
     if (sectionId !== "home") {
       const element = document.getElementById(sectionId);
@@ -23,8 +22,6 @@ const MainPage = () => {
       // document.documentElement.scrollTop = 0;
       window.scrollTo(0, 0);
     }
-    // };
-    // handleScroll();
   }, [location]);
 
   return (
