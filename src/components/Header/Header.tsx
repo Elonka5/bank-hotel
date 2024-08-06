@@ -1,4 +1,4 @@
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, Location } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import "../../scss/layout/_header.scss";
@@ -7,31 +7,56 @@ import MobileMenu from "./MobileMenu.tsx";
 import { navLinks } from "../../helpers/navLinks.ts";
 import { NavLinkType } from "../../entities/navLinkTypes.ts";
 import { useAfterLoad } from "../../helpers/useAfterLoad.ts";
+import useHandleActiveLinks from "../../helpers/useHandleActiveLinks.ts";
+import useTopVisible from "../../helpers/useTopVisible.ts";
 
 const Header: React.FC = () => {
   const isNotDesktop = useMediaQuery({ maxWidth: 1439.98 });
   const [menuOpen, setMenuOpen] = useState(false);
   const [isManualScroll, setIsManualScroll] = useState(false);
+  const [activeId, setActiveId] = useState<string>("");
   const isPageLoaded = useAfterLoad();
+  const isTopVisible = useTopVisible();
 
-  const location = useLocation();
-  const navigate = useNavigate();
+  const location: Location = useLocation();
 
   useEffect(() => {
     if (menuOpen) {
+      if (!isNotDesktop) {
+        setMenuOpen(false);
+      }
       document.body.classList.add("no-scroll");
     }
     if (!menuOpen) {
       document.body.classList.remove("no-scroll");
     }
-  }, [menuOpen]);
+  }, [menuOpen, isNotDesktop]);
 
   const handleToggleMenu = () => {
-    handleLinkClick();
+    menuOpen ? setIsManualScroll(true) : setIsManualScroll(false);
     setMenuOpen(!menuOpen);
   };
 
-  const viewportWidth = window.innerWidth;
+  useEffect(() => {
+    if (!isPageLoaded) return;
+    const btnScroll = document.querySelector<HTMLButtonElement>(".scrollToTop");
+    if (!btnScroll) return;
+
+    const handleToTopClick = () => {
+      setIsManualScroll(true);
+    };
+
+    if (btnScroll) {
+      btnScroll.addEventListener("click", handleToTopClick);
+    }
+
+    if (isTopVisible) {
+      setIsManualScroll(false);
+    }
+    return () => {
+      btnScroll.removeEventListener("click", handleToTopClick);
+    };
+  }, [isTopVisible, isPageLoaded]);
 
   useEffect(() => {
     if (!isPageLoaded) return;
@@ -39,62 +64,28 @@ const Header: React.FC = () => {
     const links = document.querySelectorAll<HTMLAnchorElement>(
       ".nav--list__link, .nav--list--mobile__link"
     );
-    const btnScroll = document.querySelector<HTMLButtonElement>(".scrollToTop");
-
-    if (btnScroll) {
-      btnScroll.addEventListener("click", handleLinkClick);
-    }
 
     const cb: IntersectionObserverCallback = (entries) => {
-      if (isManualScroll) return;
       entries.forEach((entry) => {
-        if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-          links.forEach((link) => link.classList.remove("active"));
+        const intersectionRatio = isNotDesktop ? 0.5 : 0.5;
+        if (
+          entry.isIntersecting &&
+          entry.intersectionRatio > intersectionRatio
+        ) {
+          setActiveId(entry.target.id);
 
-          const activeId = entry.target.id;
-          // const activeLink = document.querySelector<HTMLAnchorElement>(
-          //   `.nav--list__link[href="/#${activeId}"]`
-          // );
-          const activeLink = Array.from(
-            document.querySelectorAll<HTMLAnchorElement>(
-              ".nav--list__link"
-              // ".nav--list__link, .nav--list--mobile__link"
-            )
-          ).find((link) => {
-            const href = link.getAttribute("href");
-            return href === `/${activeId}` || href === `/#${activeId}`;
-          });
-
-          const activeLinkMobile = Array.from(
-            document.querySelectorAll<HTMLAnchorElement>(
-              ".nav--list--mobile__link"
-            )
-          ).find((link) => {
-            const href = link.getAttribute("href");
-            return href === `/${activeId}` || href === `/#${activeId}`;
-          });
-
-          if (viewportWidth > 1439.98) {
-            if (activeLink) {
-              activeLink.classList.add("active");
-            }
-          } else if (activeLinkMobile) {
-            activeLinkMobile.classList.add("active");
-          }
-
-          if (location.hash.includes("#") && location.hash !== `#${activeId}`) {
-            navigate(`#${activeId}`, { replace: true });
-          }
-
-          if (location.pathname === "/" && location.hash !== `#${activeId}`) {
-            navigate(`#${activeId}`, { replace: true });
-          }
+          links.forEach((link) =>
+            link.text.toLowerCase() !== activeId
+              ? link.classList.remove("active")
+              : null
+          );
         }
       });
     };
 
     const options = {
-      threshold: isNotDesktop ? [0.8, 1] : [0, 0.2, 0.5, 1],
+      // rootMargin: "0px 0px 0px -50px",
+      threshold: isNotDesktop ? 0.8 : [0, 0.2, 0.5, 1],
     };
 
     const sectionObserver = new IntersectionObserver(cb, options);
@@ -105,17 +96,10 @@ const Header: React.FC = () => {
 
     return () => {
       sectionObserver.disconnect();
-      btnScroll?.removeEventListener("click", handleLinkClick);
     };
-  }, [
-    location.hash,
-    location.pathname,
-    navigate,
-    isManualScroll,
-    isPageLoaded,
-    viewportWidth,
-    isNotDesktop,
-  ]);
+  }, [isManualScroll, isPageLoaded, isNotDesktop, activeId]);
+
+  useHandleActiveLinks(activeId, location, isManualScroll);
 
   const handleLinkClick = () => {
     setIsManualScroll(true);
@@ -180,11 +164,7 @@ const Header: React.FC = () => {
       </div>
 
       {isNotDesktop && (
-        <MobileMenu
-          menuOpen={menuOpen}
-          onClick={handleToggleMenu}
-          // isActive={isActive}
-        />
+        <MobileMenu menuOpen={menuOpen} onClick={handleToggleMenu} />
       )}
     </header>
   );
