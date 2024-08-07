@@ -13,22 +13,30 @@ Booking Management: Users can check room availability and make bookings directly
 
 # Installation
 1. Clone the repository:
+
 git clone https://github.com/your-username/bankhotel.git
+
 cd bankhotel
+
 2. Install dependencies:
+
 npm install
 
 # Running the Project
 To run the project locally using Vite, follow these steps:
 
 1. Start the development server:
+
 npm run dev
+
 This command will start the Vite development server, and you can view the website by navigating to http://localhost:3000 in your browser.
 
 2. Build for production:
+
 npm run build
+
 This command will build the project for production and output the files into the dist directory.
 
 # Design Mockup
 You can view the design mockup of the BankHotel website at the following link
-## To get more details you can visit [Mockup File](https://www.figma.com/design/P8030s2PTv0ZwOmtCKwose/BankHotel-Free-UI-Kit-(Community)?node-id=28-1632&m=dev)
+## [Mockup](https://www.figma.com/design/P8030s2PTv0ZwOmtCKwose/BankHotel-Free-UI-Kit-(Community)?node-id=28-1632&m=dev)
