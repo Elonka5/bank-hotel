@@ -13,13 +13,12 @@ body {
 }
 body::-webkit-scrollbar {
   width: 8px;
-  background-color: var(--primary-color-100);
+  background-color: var(--white-80);
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color-100);
-
-  border-radius: 12px;
+  background-color: var(--secondary-color-80);
+  border-radius: 8px;
 }
 
 h1,

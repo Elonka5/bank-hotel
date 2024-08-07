@@ -7,8 +7,6 @@ const Loader = () => {
     const timer = setTimeout(() => {
       setIsVisible(false);
     }, 1000);
-
-    // Очищення таймера при демонтажі компонента
     return () => clearTimeout(timer);
   }, []);
 

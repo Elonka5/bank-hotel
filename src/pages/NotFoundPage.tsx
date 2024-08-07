@@ -6,7 +6,7 @@ const NotFoundPage = () => {
   return (
     <>
     <Header/>
-    <div className="notfound__container">
+    <div className="notfound__container container">
       <div className="notfound__container--content">
           <h1 className="title">404</h1>
      <p className="text">Looks like you got lost in hotel</p>
