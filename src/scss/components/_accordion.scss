@@ -204,7 +204,15 @@
 .accordion__openwrapper {
   &--left {
     display: flex;
-    align-items: center;
+    padding-top: 442px;
+
+    @include lg {
+      padding-top: 330px;
+    }
+
+    @include md {
+      padding-top: 162px;
+     }
 
     @include ms {
      margin-right: 80px;
@@ -240,6 +248,10 @@
     display: flex;
     flex-direction: column;
     padding-top: 96px;
+
+    @include lg {
+      padding-top: 72px;
+    }
 
     @include md {
       padding-top: 47px;
@@ -302,6 +314,7 @@
       }
 
       @include sm {
+        width: 355px;
         height: 424px;
       }
     }
@@ -327,6 +340,10 @@
     img {
       @include md {
         margin-bottom: 31px;
+      }
+
+      @include sm {
+        margin-bottom: 0;
       }
     }
   }
