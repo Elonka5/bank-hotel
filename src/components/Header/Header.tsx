@@ -1,5 +1,5 @@
 import { Link, NavLink, useLocation, Location } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import "../../scss/layout/_header.scss";
 import Icon from "../Icon/Icon.tsx";
@@ -17,6 +17,7 @@ const Header: React.FC = () => {
   const [activeId, setActiveId] = useState<string>("");
   const isPageLoaded = useAfterLoad();
   const isTopVisible = useTopVisible();
+  const timeoutRef = useRef<number | null>(null);
 
   const location: Location = useLocation();
 
@@ -101,10 +102,25 @@ const Header: React.FC = () => {
 
   useHandleActiveLinks(activeId, location, isManualScroll);
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     setIsManualScroll(true);
-    setTimeout(() => setIsManualScroll(false), 1000);
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = window.setTimeout(
+      () => setIsManualScroll(false),
+      1000
+    );
+    if (e.currentTarget.classList.contains("header--container__logo")) {
+      setMenuOpen(false);
+    }
   };
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <header className="header">
@@ -119,7 +135,7 @@ const Header: React.FC = () => {
         <NavLink
           className="header--container__logo"
           to="/#home"
-          onClick={() => setMenuOpen(false)}
+          onClick={handleLinkClick}
         >
           BankHotel
         </NavLink>

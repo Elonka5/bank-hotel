@@ -13,18 +13,14 @@ const Loader = () => {
   }, []);
 
   return (
-    
-  //   <div className="loader__backdrop">
-  //     <span className="loader"></span>
-  //   </div>
-  <div className="loader__backdrop">
-  <div className={`container_loader ${isVisible ? '' : 'fade-out'}`}>
-  <div className="ring"></div>
-  <div className="ring"></div>
-  <div className="ring"></div>
-  <p>Loading...</p>
-</div>
-</div>
+    <div className="loader__backdrop">
+      <div className={`container_loader ${isVisible ? "" : "fade-out"}`}>
+        <div className="ring"></div>
+        <div className="ring"></div>
+        <div className="ring"></div>
+        <p>Loading...</p>
+      </div>
+    </div>
   );
 };
 

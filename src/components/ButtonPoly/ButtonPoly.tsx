@@ -15,7 +15,6 @@ interface ButtonProps {
 }
 
 const ButtonPoly = ({
-  // text,
   children,
   type = "button",
   className = "button",
