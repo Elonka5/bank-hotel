@@ -46,7 +46,7 @@ const AboutUs: React.FC<NavProps> = ({ id }) => {
             </div>
           </div>
           <div className="aboutus__rightwrapper">
-            <Icon className="label" width={144} height={147} iconId="label" />
+            <Icon className="label" width={144} height={147} iconId="label" ariaLabel="label" />
             <div className="aboutus__rightwrapper--imgwrapper">
               <ResponsiveImage
                 alt="about-us-image"
@@ -90,7 +90,7 @@ const AboutUs: React.FC<NavProps> = ({ id }) => {
             />
           </div>
           <div className="aboutus__mobilewrapper">
-            <Icon className="label" width={85} height={147} iconId="label" />
+            <Icon className="label" width={85} height={147} iconId="label" ariaLabel="label" />
             <p className="aboutus__leftwrapper--text">High quality</p>
             <p className="aboutus__leftwrapper--textdescr">
               The hotel was reopened to visitors in 2016. The building was

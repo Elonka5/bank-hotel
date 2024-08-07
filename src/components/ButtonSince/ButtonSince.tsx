@@ -22,7 +22,13 @@ const ButtonSince = ({
       className={`btnSince ${className}`}
       disabled={disabled}
     >
-      <Icon className="star" width={35} height={35} iconId="star" />
+      <Icon
+        className="star"
+        width={35}
+        height={35}
+        iconId="star"
+        ariaLabel="star"
+      />
       {text}
     </button>
   );

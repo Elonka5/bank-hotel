@@ -1,7 +1,7 @@
 import { useMediaQuery } from "react-responsive";
 import ButtonPoly from "../../../ButtonPoly/ButtonPoly";
 import ResponsiveFetchImg from "../../../ResponsiveImg/ResponsiveFetchImg";
-import { AccordionItemProps } from "./AccordionItem";
+import { AccordionItemProps } from "../../../../redux/interface/interface";
 
 const ClosedAccordionItem: React.FC<AccordionItemProps> = ({
   item,

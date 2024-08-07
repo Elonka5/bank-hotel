@@ -7,9 +7,9 @@ const GalleryHero = () => {
   return (
     <div className="container gallery--hero">
       {!isMobileSm ? (
-        <Icon className="gallery--hero__icon-wave" iconId="line" />
+        <Icon className="gallery--hero__icon-wave" iconId="line" ariaLabel="wave" />
       ) : (
-        <Icon className="gallery--hero__icon-wave" iconId="wave-maxSm" />
+        <Icon className="gallery--hero__icon-wave" iconId="wave-maxSm" ariaLabel="wave" />
       )}
 
       <h2 className="gallery--hero__title">Best apartments</h2>

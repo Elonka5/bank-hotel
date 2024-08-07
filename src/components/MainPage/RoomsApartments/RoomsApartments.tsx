@@ -1,9 +1,9 @@
 import { getApartmentsThunk } from "../../../redux/apartments/apartmentsThunk";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks/hooks";
 import { ApartmentsInterface } from "../../../redux/interface/interface";
+import { useEffect, useState } from "react";
 import ButtonPoly from "../../ButtonPoly/ButtonPoly";
 import RoomsApartmentsItem from "./RoomsApartmentsItem/RoomsApartmentsItem";
-import { useEffect, useState } from "react";
 
 const RoomsApartments = () => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);

@@ -14,7 +14,7 @@ const Hero = () => {
         <div className="second-container">
           <div className="second-container__circle"></div>
           <div className="second-container__descriptions">
-            <Icon iconId="label" className="label" />
+            <Icon iconId="label" className="label" ariaLabel="label" />
             <p className="descr">
               Bank Hotel proudly welcomes you to the Safe Restaurant, a place
               where you will wish you could dine every day. The restaurant

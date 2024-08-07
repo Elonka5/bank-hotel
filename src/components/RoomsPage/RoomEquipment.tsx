@@ -10,7 +10,7 @@ const RoomEquipment = () => {
       <div className="container roomEqpt-wrapper">
         <div className="roomEqpt-wrapper__lef-part">
           {!isMobileSm && (
-            <Icon className="roomEqpt-label" iconId="label-roomEqpt" />
+            <Icon className="roomEqpt-label" iconId="label-roomEqpt" ariaLabel="label" />
           )}
           <div className="roomEqpt__img--wrapper1">
             <ResponsiveImage
@@ -41,7 +41,7 @@ const RoomEquipment = () => {
             />
           </div>
           {isMobileSm && (
-            <Icon className="roomEqpt-label" iconId="label-roomEqpt" />
+            <Icon className="roomEqpt-label" iconId="label-roomEqpt" ariaLabel="label" />
           )}
           <p className="roomEqpt__room-descr">
             The Superior twin includes two functional zones: a living room with

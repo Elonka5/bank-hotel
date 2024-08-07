@@ -33,7 +33,7 @@ const GallerySection = () => {
         <div className="gallery--part__center">
           <Icon
             className="gallery--part__center--label"
-            iconId="label-gallery"
+            iconId="label-gallery" ariaLabel="label-gallery"
           />
           <h2 className="gallery--title">Our gallery</h2>
           <p className="gallery--description">
@@ -96,7 +96,7 @@ const GallerySection = () => {
             )}
 
             <div className="gallery--info__wrapper">
-              <Icon className="gallery--info__icon" iconId="polygon-fill" />
+              <Icon className="gallery--info__icon" iconId="polygon-fill" ariaLabel="polygon-fill" />
               <p className="gallery--info">
                 It is our pleasure to meet your most unrealistic expectations.
               </p>

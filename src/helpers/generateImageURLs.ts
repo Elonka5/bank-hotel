@@ -26,15 +26,12 @@ export const generateImageURLs = async (baseName: string, sizes: string[], path:
         urls[key] = baseName ? await getDownloadURL(storageRef(storage, `${path}/${filePath}`)) : placeholderImage;
       } catch (error) {
         if ((error as FirebaseError).code === 'storage/object-not-found') {
-          // console.warn(`Image ${filePath} not found at path ${path}.`);
+          console.warn(`Image ${filePath} not found at path ${path}.`);
         } else {
-          // console.error(`Failed to load image ${filePath} from path ${path}: `, error);
+          console.error(`Failed to load image ${filePath} from path ${path}: `, error);
         }
         urls[key] = placeholderImage;
       }
-    } else {
-      // console.warn(`Image ${filePath} not found at path ${path}.`);
-      urls[key] = placeholderImage;
     }
   }
   return urls;

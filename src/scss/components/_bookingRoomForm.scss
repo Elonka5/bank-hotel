@@ -50,6 +50,9 @@
     &.open {
       animation: 1000ms linear animation-form-open;
     }
+    &.mobile_rooms{
+      top: 75px;
+    }
   }
 
   &.touch {

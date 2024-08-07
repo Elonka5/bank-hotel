@@ -1,15 +1,15 @@
 import { useEffect, useState, useCallback, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
-import ButtonPoly from "../../ButtonPoly/ButtonPoly";
 import { images } from "../../../helpers/heroRoomsBgImg";
-import Icon from "../../Icon/Icon";
-import BookingRoomFormDatePicker from "../../BookingRoomForm/BookingRoomFormDatePicker";
-import styles from "../../DatePickerComponent/DatePicker.module.scss";
 import {
   classNameForm,
   handleAnimationEnd,
   handleClick,
 } from "../../../helpers/animationHandleForm";
+import ButtonPoly from "../../ButtonPoly/ButtonPoly";
+import Icon from "../../Icon/Icon";
+import BookingRoomFormDatePicker from "../../BookingRoomForm/BookingRoomFormDatePicker";
+import styles from "../../DatePickerComponent/DatePicker.module.scss";
 import HeroRoomsDescription from "./HeroRoomsDescription";
 
 const HeroRooms: React.FC = () => {
@@ -73,7 +73,7 @@ const HeroRooms: React.FC = () => {
     <section className="hero__rooms">
       {isMobile && (
         <div className="touch__container--icon-wave--wrapper">
-          <Icon className="icon-wave" iconId="wave-hero-rooms" />
+          <Icon className="icon-wave" iconId="wave-hero-rooms" ariaLabel="wave" />
         </div>
       )}
 

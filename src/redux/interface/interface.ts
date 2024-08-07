@@ -84,6 +84,12 @@ export interface IBookingState {
 export interface ServiceState {
   error: string | null;
   isLoading: boolean;
-  openModal: boolean;
-  modalContent: string;
+}
+
+export interface AccordionItemProps {
+  item: AccordionItemInterface;
+  index: number;
+  isOpen: boolean;
+  onToggle: () => void;
+  nextItemOpen?: boolean;
 }

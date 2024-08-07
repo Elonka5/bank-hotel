@@ -167,6 +167,7 @@ const DatePickerComponent: React.FC<IDatePickerProps> = ({
             className={iconClassName}
             width={iconWidth}
             height={iconHeight}
+            ariaLabel="cancel"
           />
         </BottomButtonsComponents>
       </DatePicker>
