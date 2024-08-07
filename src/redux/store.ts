@@ -11,7 +11,6 @@ import {
   REGISTER,
 } from "redux-persist";
 import { rootReducer } from "./root/rootSlice";
-import { roomsReducer } from "./rooms/roomsSlice";
 import { imageReducer } from "./images/imagesSlice";
 import { accordionReducer } from "./accordion/accordionSlice";
 import { apartmentsReducer } from "./apartments/apartmentsSlice";
@@ -27,7 +26,6 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 const store = configureStore({
   reducer: {
     service: persistedReducer,
-    rooms: roomsReducer,
     image: imageReducer,
     accordion: accordionReducer,
     apartments: apartmentsReducer,

@@ -63,7 +63,9 @@ const ButtonScrollToTop = () => {
         onClick={handleClickBtnToTop}
         ref={refBtn}
       >
-        {!isOpened && <Icon iconId="scroll-to-top" />}
+        {!isOpened && (
+          <Icon iconId="scroll-to-top" ariaLabel="scroll-to-top" />
+        )}
         {isOpened && "Click To Top"}
       </button>
     </>

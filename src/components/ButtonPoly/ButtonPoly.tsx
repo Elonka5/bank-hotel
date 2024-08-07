@@ -39,8 +39,9 @@ const ButtonPoly = ({
         width={iconWidth}
         height={iconHeight}
         iconId={iconPolygonId}
+        ariaLabel="polygon"
       />
-      {iconArrowId ? <Icon className={iconArrow} iconId={iconArrowId} /> : ""}
+      {iconArrowId ? <Icon className={iconArrow} iconId={iconArrowId} ariaLabel="arrow" /> : ""}
     </button>
   );
 };

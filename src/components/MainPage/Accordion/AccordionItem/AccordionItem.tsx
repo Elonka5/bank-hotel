@@ -1,15 +1,9 @@
 import React from "react";
 import OpenAccordionItem from "./OpenAccordionItem";
 import ClosedAccordionItem from "./ClosedAccordionItem";
-import { AccordionItemInterface } from "../../../../redux/interface/interface";
+import { AccordionItemProps } from "../../../../redux/interface/interface";
 
-export interface AccordionItemProps {
-  item: AccordionItemInterface;
-  index: number;
-  isOpen: boolean;
-  onToggle: () => void;
-  nextItemOpen?: boolean;
-}
+
 
 const AccordionItem: React.FC<AccordionItemProps> = ({
   item,

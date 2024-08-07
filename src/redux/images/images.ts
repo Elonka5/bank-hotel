@@ -23,9 +23,6 @@ export const fetchImg = createAsyncThunk<
         const url = await getDownloadURL(storageRef(storage, `${path}/${filePath}`));
         images.push({ id: `img-${size}`, path: `${path}/${filePath}`, url });
       }
-      //  else {
-      //   console.warn(`Image ${filePath} not found at path ${path}.`);
-      // }
     }
 
     return images;

@@ -1,4 +1,4 @@
-import { createSlice, isAnyOf, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, isAnyOf} from "@reduxjs/toolkit";
 import { getAccordionThunk } from "../accordion/accordionThunk";
 import { fetchImg } from "../images/images";
 import { getApartmentsThunk } from "../apartments/apartmentsThunk";
@@ -7,21 +7,12 @@ import { ServiceState } from "../interface/interface";
 const initialState: ServiceState = {
   error: null,
   isLoading: false,
-  openModal: false,
-  modalContent: "",
 };
 
 const serviceSlice = createSlice({
   name: "service",
   initialState,
-  reducers: {
-    setModalStatus: (state, action: PayloadAction<boolean>) => {
-      state.openModal = action.payload;
-    },
-    setModalContent: (state, action: PayloadAction<string>) => {
-      state.modalContent = action.payload;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addMatcher(
@@ -59,7 +50,5 @@ const serviceSlice = createSlice({
       );
   },
 });
-
-export const { setModalStatus, setModalContent } = serviceSlice.actions;
 
 export const rootReducer = serviceSlice.reducer;

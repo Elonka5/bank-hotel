@@ -85,6 +85,7 @@ const Footer: React.FC<NavProps> = ({ isRestaurantPage }) => {
                     width={31}
                     height={17}
                     iconId="arrow-right"
+                    ariaLabel="email-link"
                   />
                 </a>
               </div>

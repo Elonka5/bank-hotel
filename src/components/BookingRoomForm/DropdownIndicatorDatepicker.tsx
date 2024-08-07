@@ -91,6 +91,7 @@ const DropdownIndicatorDatepicker: React.FC<IDropdownType> = ({
         width={24}
         height={24}
         iconId={isClosedIcon ? "icons8-cancel" : "arrow-up-and-down"}
+        ariaLabel={isClosedIcon ? "cancel" : "arrow-up-and-down"}
       />
     </button>
   );

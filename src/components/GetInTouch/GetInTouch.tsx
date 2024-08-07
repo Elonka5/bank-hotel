@@ -35,9 +35,9 @@ const GetInTouch: React.FC<NavProps> = ({ id, isRestaurantPage }) => {
         {!isMobileSm && (
           <div className="touch__container--icon-wave--wrapper">
             {isDesktopLg ? (
-              <Icon className="icon-wave" iconId="wave-Lg" />
+              <Icon className="icon-wave" iconId="wave-Lg" ariaLabel="wave" />
             ) : (
-              <Icon className="icon-wave" iconId="wave-maxLg" />
+              <Icon className="icon-wave" iconId="wave-maxLg" ariaLabel="wave" />
             )}
           </div>
         )}
@@ -55,7 +55,7 @@ const GetInTouch: React.FC<NavProps> = ({ id, isRestaurantPage }) => {
         <div className="touch__wrapper">
           <h2 className="touch__wrapper--title">
             Get in
-            <Icon className="icon--star" iconId="star-16" />
+            <Icon className="icon--star" iconId="star-16" ariaLabel="star" />
             <span className="second-title-part">touch</span>
           </h2>
 

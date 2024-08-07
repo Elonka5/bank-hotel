@@ -170,9 +170,9 @@ const Header: React.FC = () => {
               onClick={handleToggleMenu}
             >
               {!menuOpen ? (
-                <Icon width={40} height={30} iconId="menu-burger" />
+                <Icon width={40} height={30} iconId="menu-burger" ariaLabel="menu-burger" />
               ) : (
-                <Icon width={30} height={30} iconId="menu-close" />
+                <Icon width={30} height={30} iconId="menu-close" ariaLabel="menu-close" />
               )}
             </button>
           </div>

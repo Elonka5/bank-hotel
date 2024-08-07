@@ -23,6 +23,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ menuOpen, onClick }) => {
                   <Icon
                     className="nav--list--mobile__link__icon"
                     iconId="star-8"
+                    ariaLabel="star"
                   />
                 </Link>
               </li>

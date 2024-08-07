@@ -31,6 +31,7 @@ const CustomHeaderComponent: React.FC<ICustomHeaderProps> = ({
             iconId="arrow-datepicker"
             width={16}
             height={16}
+            ariaLabel="arrow-decrease-month"
           />
         </button>
         <button
@@ -43,6 +44,7 @@ const CustomHeaderComponent: React.FC<ICustomHeaderProps> = ({
             iconId="arrow-datepicker"
             width={16}
             height={16}
+            ariaLabel="arrow-increase-month"
           />
         </button>
       </div>

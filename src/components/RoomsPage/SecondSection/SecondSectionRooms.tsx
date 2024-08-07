@@ -10,6 +10,7 @@ const SecondSectionRooms = () => {
         <Icon
           iconId={!isMobile ? "wave-room-page-1" : "wave-room-page-2"}
           className="icon-wave"
+          ariaLabel="wave"
         />
       </div>
       <div className="second-rooms__room">

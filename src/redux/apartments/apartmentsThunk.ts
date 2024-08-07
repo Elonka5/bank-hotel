@@ -26,14 +26,14 @@ export const getApartmentsThunk: AsyncThunk<ApartmentsInterface[], undefined, As
 
       const sizes = ['1920', '1440', '1024', '375'];
 
-      const updatedAccordionData = await Promise.all(apartmentsData.map(async (item) => {
+      const updatedApartmentsData = await Promise.all(apartmentsData.map(async (item) => {
         const path = `main`;
         const imageLeftResolutions = await generateImageURLs(item.imgLeft, sizes, path);
         const imageRightResolutions = await generateImageURLs(item.imgRight, sizes, path);
 
         return { ...item, imageLeftResolutions, imageRightResolutions };
       }));
-      return updatedAccordionData;
+      return updatedApartmentsData;
     } catch (error: unknown) {
       let errorMessage = 'An unknown error occurred';
       if (error instanceof Error) {

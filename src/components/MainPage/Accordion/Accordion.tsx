@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import AccordionItem from "./AccordionItem/AccordionItem";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks/hooks";
 import { getAccordionThunk } from "../../../redux/accordion/accordionThunk";
 import { AccordionItemInterface } from "../../../redux/interface/interface";
+import AccordionItem from "./AccordionItem/AccordionItem";
 
 const Accordion: React.FC = () => {
   const [openItemId, setOpenItemId] = useState<number | null>(1);

@@ -1,7 +1,7 @@
+import { NavProps } from "../../../entities/navprops";
 import Icon from "../../Icon/Icon";
 import Accordion from "../Accordion/Accordion";
 import ResponsiveImage from "../../ResponsiveImg/ResponsiveImg";
-import { NavProps } from "../../../entities/navprops";
 
 const Facilities: React.FC<NavProps> = ({ id }) => {
   return (
@@ -26,7 +26,7 @@ const Facilities: React.FC<NavProps> = ({ id }) => {
             faci
             <br />
             <span>
-              <Icon className="star" width={70} height={70} iconId="star-8" />
+              <Icon className="star" width={70} height={70} iconId="star-8" ariaLabel="star" />
               lities
             </span>
           </h2>
@@ -43,6 +43,7 @@ const Facilities: React.FC<NavProps> = ({ id }) => {
             iconId="label-second"
             width={190}
             height={190}
+            ariaLabel="label"
           />
           <div className="thumb">
             <ResponsiveImage
